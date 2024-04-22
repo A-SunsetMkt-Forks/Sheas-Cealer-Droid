@@ -1,0 +1,50 @@
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:behaviors="clr-namespace:CommunityToolkit.Maui.Behaviors;assembly=CommunityToolkit.Maui"
+             xmlns:consts="clr-namespace:Sheas_Cealer_Droid.Consts"
+             xmlns:preses="clr-namespace:Sheas_Cealer_Droid.Preses"
+             x:Class="Sheas_Cealer_Droid.Pages.ReadyPage" x:DataType="preses:ReadyPres"
+             Loaded="ReadyPage_Loaded" Appearing="ReadyPage_Appearing" NavigatingFrom="ReadyPage_NavigatingFrom" NavigatedTo="ReadyPage_NavigatedTo">
+    <Grid x:Name="ReadyGrid"
+          RowDefinitions="*,1.2*" RowSpacing="24"
+          Padding="24">
+        <Grid.GestureRecognizers>
+            <SwipeGestureRecognizer Direction="Right" Threshold="50"
+                                    Swiped="PrevSwipeGestureRecognizer_Swiped" />
+            <SwipeGestureRecognizer Direction="Left" Threshold="50"
+                                    Swiped="NextSwipeGestureRecognizer_Swiped" />
+        </Grid.GestureRecognizers>
+
+        <Grid RowDefinitions="*,Auto" RowSpacing="24"
+              Grid.Row="0">
+            <Image Source="party_popper_illu.png"
+                   Grid.Row="0" />
+            <Label Text="{x:Static consts:ReadyMultilangConst.TitleLabelText}"
+                   Grid.Row="1" HorizontalTextAlignment="Center" FontSize="Title" FontAttributes="Bold" />
+        </Grid>
+        <Grid RowDefinitions="*,Auto"
+              Grid.Row="1">
+            <VerticalStackLayout Spacing="48"
+                                 Grid.Row="0">
+                <Label Text="{Binding BrowserName, StringFormat={x:Static consts:ReadyMultilangConst.GuideLabelText}, TargetNullValue={x:Static consts:ReadyMultilangConst.GuideLabelTextBrowserNameFallback}}"
+                       HorizontalTextAlignment="Center" />
+                <Button x:Name="StartButton"
+                        Text="{x:Static consts:ReadyMultilangConst.StartButtonText}"
+                        ToolTipProperties.Text="{x:Static consts:ReadyMultilangConst.StartButtonTooltip}"
+                        IsEnabled="{Binding IsFlagCopied}"
+                        Clicked="StartButton_Clicked" />
+            </VerticalStackLayout>
+            <ImageButton Source="left_icon.png"
+                         ToolTipProperties.Text="{x:Static consts:GlobalMultilangConst.PrevButtonTooltip}"
+                         IsEnabled="{Binding IsFlagCopied}"
+                         Grid.Row="1" HorizontalOptions="Start" WidthRequest="56" HeightRequest="56" CornerRadius="28"
+                         Clicked="PrevButton_Clicked">
+                <ImageButton.Behaviors>
+                    <behaviors:IconTintColorBehavior TintColor="{AppThemeBinding Light={StaticResource White}, Dark={StaticResource Gray900}}" />
+                </ImageButton.Behaviors>
+            </ImageButton>
+            <IndicatorView Position="2"
+                           Grid.Row="1" HorizontalOptions="Center" VerticalOptions="End" />
+        </Grid>
+    </Grid>
+</ContentPage>

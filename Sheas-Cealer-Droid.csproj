@@ -2,8 +2,9 @@
 
 	<PropertyGroup>
 		<Title>Sheas Cealer Droid</Title>
-		<ApplicationTitle>Sheas Cealer Droid</ApplicationTitle>
 		<Product>Sheas Cealer Droid</Product>
+		<Trademark>Sheas Cealer Droid</Trademark>
+		<ApplicationTitle>Cealer</ApplicationTitle>
 		<ApplicationId>spacetime.sheas.cealer</ApplicationId>
 		<Description>Just Ceal It</Description>
 		<PackageReleaseNotes>Just Ceal It</PackageReleaseNotes>
@@ -16,95 +17,192 @@
 		<ApplicationDisplayVersion>0.0.0</ApplicationDisplayVersion>
 		<ApplicationVersion>1</ApplicationVersion>
 		<PackageTags>Tool;Sheas;Cealer;Droid;Sni</PackageTags>
-		<PackageIcon>Sheas-Cealer-Droid-Logo.png</PackageIcon>
+		<PackageIcon>Sheas Cealer Droid Logo.png</PackageIcon>
 		<PackageReadmeFile>README.md</PackageReadmeFile>
 		<PackageProjectUrl>https://github.com/SpaceTimee/Sheas-Cealer-Droid</PackageProjectUrl>
 		<RepositoryUrl>https://github.com/SpaceTimee/Sheas-Cealer-Droid</RepositoryUrl>
 		<RepositoryType>git</RepositoryType>
-		<Copyright>Copyright ©  2077</Copyright>
+		<Copyright>Copyright © 2077</Copyright>
 		<OutputType>Exe</OutputType>
-		<TargetFrameworks>net8.0-maccatalyst;net8.0-android34.0</TargetFrameworks>
-		<TargetPlatformMinVersion Condition="$([MSBuild]::GetTargetPlatformIdentifier('$(TargetFramework)')) == 'windows'">10.0.17763.0</TargetPlatformMinVersion>
-		<SupportedOSPlatformVersion Condition="$([MSBuild]::GetTargetPlatformIdentifier('$(TargetFramework)')) == 'windows'">10.0.17763.0</SupportedOSPlatformVersion>
-		<SupportedOSPlatformVersion Condition="$([MSBuild]::GetTargetPlatformIdentifier('$(TargetFramework)')) == 'ios'">11.0</SupportedOSPlatformVersion>
-		<SupportedOSPlatformVersion Condition="$([MSBuild]::GetTargetPlatformIdentifier('$(TargetFramework)')) == 'maccatalyst'">13.1</SupportedOSPlatformVersion>
-		<SupportedOSPlatformVersion Condition="$([MSBuild]::GetTargetPlatformIdentifier('$(TargetFramework)')) == 'android'">21.0</SupportedOSPlatformVersion>
-		<SupportedOSPlatformVersion Condition="$([MSBuild]::GetTargetPlatformIdentifier('$(TargetFramework)')) == 'tizen'">6.5</SupportedOSPlatformVersion>
+		<TargetFrameworks>net9.0-android35.0</TargetFrameworks>
+		<SupportedOSPlatformVersion>21.0</SupportedOSPlatformVersion>
 		<RootNamespace>Sheas_Cealer_Droid</RootNamespace>
 		<Nullable>enable</Nullable>
 		<UseMaui>true</UseMaui>
+		<MauiVersion>9.0.60</MauiVersion>
 		<SingleProject>true</SingleProject>
-		<ImplicitUsings>enable</ImplicitUsings>
+		<ImplicitUsings>disable</ImplicitUsings>
 		<AllowUnsafeBlocks>True</AllowUnsafeBlocks>
+		<CheckForOverflowUnderflow>True</CheckForOverflowUnderflow>
 		<ErrorReport>none</ErrorReport>
-	</PropertyGroup>
-
-	<PropertyGroup Condition="'$(Configuration)|$(TargetFramework)|$(Platform)'=='Debug|net8.0-maccatalyst|AnyCPU'">
-		<ApplicationTitle>Sheas Cealer Droid</ApplicationTitle>
-		<ApplicationId>spacetime.sheas.cealer</ApplicationId>
-		<ApplicationDisplayVersion>0.0.0</ApplicationDisplayVersion>
-		<CheckForOverflowUnderflow>True</CheckForOverflowUnderflow>
-	</PropertyGroup>
-
-	<PropertyGroup Condition="'$(Configuration)|$(TargetFramework)|$(Platform)'=='Debug|net8.0-android34.0|AnyCPU'">
-		<ApplicationTitle>Sheas Cealer Droid</ApplicationTitle>
-		<ApplicationId>spacetime.sheas.cealer</ApplicationId>
-		<ApplicationDisplayVersion>0.0.0</ApplicationDisplayVersion>
-		<CheckForOverflowUnderflow>True</CheckForOverflowUnderflow>
-		<AndroidEnableMultiDex>True</AndroidEnableMultiDex>
+		<PlatformsProjectFolder>Plats</PlatformsProjectFolder>
+		<AppDesignerFolder>Props</AppDesignerFolder>
+		<NeutralLanguage>en</NeutralLanguage>
 		<EnableLLVM>True</EnableLLVM>
 		<AndroidKeyStore>False</AndroidKeyStore>
-		<PublishTrimmed>False</PublishTrimmed>
-		<TrimMode>link</TrimMode>
 	</PropertyGroup>
 
-	<PropertyGroup Condition="'$(Configuration)|$(TargetFramework)|$(Platform)'=='Release|net8.0-maccatalyst|AnyCPU'">
-		<ApplicationTitle>Sheas Cealer Droid</ApplicationTitle>
-		<ApplicationId>spacetime.sheas.cealer</ApplicationId>
-		<ApplicationDisplayVersion>0.0.0</ApplicationDisplayVersion>
-		<CheckForOverflowUnderflow>True</CheckForOverflowUnderflow>
-	</PropertyGroup>
-
-	<PropertyGroup Condition="'$(Configuration)|$(TargetFramework)|$(Platform)'=='Release|net8.0-android34.0|AnyCPU'">
-		<ApplicationTitle>Sheas Cealer Droid</ApplicationTitle>
-		<ApplicationId>spacetime.sheas.cealer</ApplicationId>
-		<ApplicationDisplayVersion>0.0.0</ApplicationDisplayVersion>
-		<CheckForOverflowUnderflow>True</CheckForOverflowUnderflow>
-		<AndroidEnableMultiDex>True</AndroidEnableMultiDex>
+	<PropertyGroup Condition="'$(Configuration)'=='Release'">
 		<AndroidLinkTool>r8</AndroidLinkTool>
-		<EnableLLVM>True</EnableLLVM>
-		<AndroidKeyStore>False</AndroidKeyStore>
-		<PublishTrimmed>False</PublishTrimmed>
-		<TrimMode>link</TrimMode>
 	</PropertyGroup>
 
 	<ItemGroup>
-		<!-- App Icon -->
-		<MauiIcon Include="Resources\AppIcon\appicon.svg" ForegroundFile="Resources\AppIcon\appiconfg.svg" Color="#512BD4" />
-
-		<!-- Splash Screen -->
-		<MauiSplashScreen Include="Resources\Splash\splash.svg" Color="#512BD4" BaseSize="128,128" />
-
-		<!-- Images -->
-		<MauiImage Include="Resources\Images\*" />
-		<MauiImage Update="Resources\Images\dotnet_bot.png" Resize="True" BaseSize="300,185" />
-
-		<!-- Custom Fonts -->
-		<MauiFont Include="Resources\Fonts\*" />
-
-		<!-- Raw Assets (also remove the "Resources\Raw" prefix) -->
-		<MauiAsset Include="Resources\Raw\**" LogicalName="%(RecursiveDir)%(Filename)%(Extension)" />
+		<MauiIcon Include="Rsces\Logos\app_bkgd.svg" ForegroundFile="Rsces\Logos\app_logo.png" Color="#FFE9EE" ForegroundScale="0.5" />
+		<MauiSplashScreen Include="Rsces\Logos\app_logo.png" Color="#FFE9EE" />
+		<MauiImage Include="Rsces\Images\*" />
+		<MauiImage Include="Rsces\Logos\app_logo.png" BaseSize="256,256" />
 	</ItemGroup>
 
 	<ItemGroup>
+		<MauiXaml Update="Pages\AboutPage.xaml">
+			<Generator>MSBuild:Compile</Generator>
+		</MauiXaml>
+		<MauiXaml Update="Pages\BrowserPage.xaml">
+			<Generator>MSBuild:Compile</Generator>
+		</MauiXaml>
+		<MauiXaml Update="Pages\ReadyPage.xaml">
+			<Generator>MSBuild:Compile</Generator>
+		</MauiXaml>
+		<MauiXaml Update="Pages\FlagPage.xaml">
+			<Generator>MSBuild:Compile</Generator>
+		</MauiXaml>
+		<MauiXaml Update="Pages\SettingsPage.xaml">
+			<Generator>MSBuild:Compile</Generator>
+		</MauiXaml>
+	</ItemGroup>
+
+	<ItemGroup>
+		<None Remove=".filenesting.json" />
+		<None Remove=".gitattributes" />
+		<None Remove=".gitignore" />
 		<None Remove="README.md" />
-		<None Remove="Sheas-Cealer-Droid-Logo.png" />
+		<None Remove="README_EN.md" />
 	</ItemGroup>
 
 	<ItemGroup>
-		<PackageReference Include="Microsoft.Maui.Controls" Version="8.0.20" />
-		<PackageReference Include="Microsoft.Maui.Controls.Compatibility" Version="8.0.20" />
-		<PackageReference Include="Microsoft.Extensions.Logging.Debug" Version="8.0.0" />
+		<PackageReference Include="CommunityToolkit.Maui" Version="*" />
+		<PackageReference Include="CommunityToolkit.Mvvm" Version="*" />
+    <PackageReference Include="Microsoft.Maui.Controls" Version="*" />
+	</ItemGroup>
+
+	<ItemGroup>
+		<Reference Include="Ona-Core">
+			<HintPath>..\Ona-Core\bin\Release\net8.0\Ona-Core.dll</HintPath>
+		</Reference>
+		<Reference Include="Sheas-Core">
+			<HintPath>..\Sheas-Core\bin\Release\net8.0\Sheas-Core.dll</HintPath>
+		</Reference>
+	</ItemGroup>
+
+	<ItemGroup>
+		<Compile Update="Consts\AboutMultilangConst.Designer.cs">
+			<DependentUpon>AboutMultilangConst.resx</DependentUpon>
+			<DesignTime>True</DesignTime>
+			<AutoGen>True</AutoGen>
+		</Compile>
+		<Compile Update="Consts\SettingsMultilangConst.Designer.cs">
+			<DependentUpon>SettingsMultilangConst.resx</DependentUpon>
+			<DesignTime>True</DesignTime>
+			<AutoGen>True</AutoGen>
+		</Compile>
+		<Compile Update="Consts\BrowserMultilangConst.Designer.cs">
+			<DependentUpon>BrowserMultilangConst.resx</DependentUpon>
+			<DesignTime>True</DesignTime>
+			<AutoGen>True</AutoGen>
+		</Compile>
+		<Compile Update="Consts\FlagMultilangConst.Designer.cs">
+			<DependentUpon>FlagMultilangConst.resx</DependentUpon>
+			<DesignTime>True</DesignTime>
+			<AutoGen>True</AutoGen>
+		</Compile>
+		<Compile Update="Consts\AppMultilangConst.Designer.cs">
+			<DependentUpon>AppMultilangConst.resx</DependentUpon>
+			<DesignTime>True</DesignTime>
+			<AutoGen>True</AutoGen>
+		</Compile>
+		<Compile Update="Consts\ReadyMultilangConst.Designer.cs">
+			<DependentUpon>ReadyMultilangConst.resx</DependentUpon>
+			<DesignTime>True</DesignTime>
+			<AutoGen>True</AutoGen>
+		</Compile>
+		<Compile Update="Consts\MainMultilangConst.Designer.cs">
+			<DependentUpon>MainMultilangConst.resx</DependentUpon>
+			<DesignTime>True</DesignTime>
+			<AutoGen>True</AutoGen>
+		</Compile>
+		<Compile Update="Consts\GlobalMultilangConst.Designer.cs">
+			<DesignTime>True</DesignTime>
+			<AutoGen>True</AutoGen>
+			<DependentUpon>GlobalMultilangConst.resx</DependentUpon>
+		</Compile>
+	</ItemGroup>
+
+	<ItemGroup>
+		<EmbeddedResource Update="Consts\AboutMultilangConst.resx">
+			<SubType>Designer</SubType>
+			<LastGenOutput>AboutMultilangConst.Designer.cs</LastGenOutput>
+			<Generator>PublicResXFileCodeGenerator</Generator>
+		</EmbeddedResource>
+		<EmbeddedResource Update="Consts\AboutMultilangConst.zh.resx">
+			<SubType>Designer</SubType>
+			<Generator></Generator>
+		</EmbeddedResource>
+		<EmbeddedResource Update="Consts\SettingsMultilangConst.resx">
+			<SubType>Designer</SubType>
+			<LastGenOutput>SettingsMultilangConst.Designer.cs</LastGenOutput>
+			<Generator>PublicResXFileCodeGenerator</Generator>
+		</EmbeddedResource>
+		<EmbeddedResource Update="Consts\SettingsMultilangConst.zh.resx">
+			<SubType>Designer</SubType>
+			<Generator></Generator>
+		</EmbeddedResource>
+		<EmbeddedResource Update="Consts\BrowserMultilangConst.resx">
+			<LastGenOutput>BrowserMultilangConst.Designer.cs</LastGenOutput>
+			<Generator>PublicResXFileCodeGenerator</Generator>
+		</EmbeddedResource>
+		<EmbeddedResource Update="Consts\BrowserMultilangConst.zh.resx">
+			<SubType>Designer</SubType>
+			<Generator></Generator>
+		</EmbeddedResource>
+		<EmbeddedResource Update="Consts\FlagMultilangConst.resx">
+			<LastGenOutput>FlagMultilangConst.Designer.cs</LastGenOutput>
+			<Generator>PublicResXFileCodeGenerator</Generator>
+		</EmbeddedResource>
+		<EmbeddedResource Update="Consts\FlagMultilangConst.zh.resx">
+			<SubType>Designer</SubType>
+			<Generator></Generator>
+		</EmbeddedResource>
+		<EmbeddedResource Update="Consts\AppMultilangConst.resx">
+			<LastGenOutput>AppMultilangConst.Designer.cs</LastGenOutput>
+			<Generator>PublicResXFileCodeGenerator</Generator>
+		</EmbeddedResource>
+		<EmbeddedResource Update="Consts\AppMultilangConst.zh.resx">
+			<SubType>Designer</SubType>
+			<Generator></Generator>
+		</EmbeddedResource>
+		<EmbeddedResource Update="Consts\ReadyMultilangConst.resx">
+			<LastGenOutput>ReadyMultilangConst.Designer.cs</LastGenOutput>
+			<Generator>PublicResXFileCodeGenerator</Generator>
+		</EmbeddedResource>
+		<EmbeddedResource Update="Consts\GlobalMultilangConst.zh.resx">
+			<SubType>Designer</SubType>
+			<Generator></Generator>
+		</EmbeddedResource>
+		<EmbeddedResource Update="Consts\MainMultilangConst.resx">
+			<LastGenOutput>MainMultilangConst.Designer.cs</LastGenOutput>
+			<Generator>PublicResXFileCodeGenerator</Generator>
+		</EmbeddedResource>
+		<EmbeddedResource Update="Consts\MainMultilangConst.zh.resx">
+			<SubType>Designer</SubType>
+			<Generator></Generator>
+		</EmbeddedResource>
+		<EmbeddedResource Update="Consts\GlobalMultilangConst.resx">
+			<Generator>PublicResXFileCodeGenerator</Generator>
+			<LastGenOutput>GlobalMultilangConst.Designer.cs</LastGenOutput>
+		</EmbeddedResource>
+		<EmbeddedResource Update="Consts\ReadyMultilangConst.zh.resx">
+			<Generator></Generator>
+		</EmbeddedResource>
 	</ItemGroup>
 
 </Project>

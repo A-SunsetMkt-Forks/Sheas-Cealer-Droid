@@ -1,0 +1,90 @@
+﻿<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:behaviors="clr-namespace:CommunityToolkit.Maui.Behaviors;assembly=CommunityToolkit.Maui"
+             xmlns:consts="clr-namespace:Sheas_Cealer_Droid.Consts"
+             xmlns:convs="clr-namespace:Sheas_Cealer_Droid.Convs"
+             xmlns:models="clr-namespace:Sheas_Cealer_Droid.Models"
+             xmlns:preses="clr-namespace:Sheas_Cealer_Droid.Preses"
+             x:Class="Sheas_Cealer_Droid.Pages.MainPage" x:DataType="preses:MainPres"
+             Loaded="MainWin_Loaded">
+    <ContentPage.ToolbarItems>
+        <ToolbarItem IconImageSource="{AppThemeBinding Light=github_icon.png, Dark=github_dark_icon.png}"
+                     ToolTipProperties.Text="{x:Static consts:MainMultilangConst.GithubToolbarItemTooltip}"
+                     Clicked="GithubToolbarItem_Clicked" />
+        <ToolbarItem Text="{x:Static consts:MainMultilangConst.UpdateToolbarItemText}"
+                     ToolTipProperties.Text="{x:Static consts:MainMultilangConst.UpdateToolbarItemTooltip}"
+                     Order="Secondary"
+                     Clicked="UpdateToolbarItem_Clicked" />
+    </ContentPage.ToolbarItems>
+
+    <Grid RowDefinitions="*,56">
+        <Grid.GestureRecognizers>
+            <SwipeGestureRecognizer Direction="Right" Threshold="50"
+                                    Swiped="LayoutSwipeGestureRecognizer_Swiped" />
+        </Grid.GestureRecognizers>
+
+        <CollectionView ItemsSource="{Binding CealHostRulesCollection}"
+                        Grid.Row="0">
+            <CollectionView.ItemTemplate>
+                <DataTemplate x:DataType="models:CealHostRule">
+                    <Grid Margin="8,2,8,2">
+                        <Border BackgroundColor="{AppThemeBinding Light={StaticResource Gray100}, Dark={StaticResource Gray850}}"
+                                StrokeShape="RoundRectangle 8" Margin="4">
+                            <Grid Margin="8">
+                                <VerticalStackLayout>
+                                    <Label Margin="20,4" FontSize="Subtitle">
+                                        <Label.Text>
+                                            <MultiBinding StringFormat="{}{0} ({1})">
+                                                <Binding Path="Domain" />
+                                                <Binding Path="Sni" />
+                                            </MultiBinding>
+                                        </Label.Text>
+                                    </Label>
+                                    <Label Text="{Binding Ip}"
+                                           Margin="20,4" FontSize="Caption" />
+                                </VerticalStackLayout>
+                                <AbsoluteLayout>
+                                    <Border AbsoluteLayout.LayoutBounds="0,0.5,4,1" AbsoluteLayout.LayoutFlags="PositionProportional,HeightProportional"
+                                            BackgroundColor="{AppThemeBinding Light={StaticResource Primary500}, Dark={StaticResource Primary800}}"
+                                            StrokeShape="RoundRectangle 8" />
+                                </AbsoluteLayout>
+                            </Grid>
+                        </Border>
+                    </Grid>
+                </DataTemplate>
+            </CollectionView.ItemTemplate>
+            <CollectionView.Header>
+                <ContentView Margin="0,6,0,0" />
+            </CollectionView.Header>
+            <CollectionView.Footer>
+                <ContentView Margin="0,0,0,6" />
+            </CollectionView.Footer>
+        </CollectionView>
+        <ActivityIndicator IsRunning="{Binding IsPageLoading}"
+                           Grid.Row="0" HorizontalOptions="Center" VerticalOptions="Center" />
+        <Grid Grid.Row="1">
+            <Border Background="{AppThemeBinding Light={StaticResource Primary50}, Dark={StaticResource Gray850}}">
+                <Label Text="{Binding StatusMessage}"
+                       VerticalTextAlignment="Center" Margin="28,0,0,0" />
+            </Border>
+            <AbsoluteLayout>
+                <ProgressBar x:Name="StatusProgressBar"
+                             AbsoluteLayout.LayoutBounds="0.5,1,1,112" AbsoluteLayout.LayoutFlags="PositionProportional,WidthProportional"
+                             IsVisible="{Binding StatusProgress, Converter={x:Static convs:MainConv.MainStatusProgressBarIsVisibleConv}}"
+                             Progress="{Binding StatusProgress, Mode=TwoWay}" />
+                <Grid AbsoluteLayout.LayoutBounds="0.9,0,56,56" AbsoluteLayout.LayoutFlags="PositionProportional" TranslationY="-28"
+                      Rotation="{Binding IsCommandLineUtd, Converter={x:Static convs:MainConv.MainLaunchButtonRotationConv}}">
+                    <ImageButton Source="app_icon.png"
+                                 ToolTipProperties.Text="{Binding IsCommandLineUtd, Converter={x:Static convs:MainConv.MainLaunchButtonTooltipConv}}"
+                                 CornerRadius="28"
+                                 BackgroundColor="{Binding IsCommandLineUtd, Converter={x:Static convs:MainConv.MainLaunchButtonBackgroundColorConv}}"
+                                 Clicked="LaunchButton_Click">
+                        <ImageButton.Behaviors>
+                            <behaviors:IconTintColorBehavior TintColor="{AppThemeBinding Light={StaticResource White}, Dark={StaticResource Gray900}}" />
+                        </ImageButton.Behaviors>
+                    </ImageButton>
+                </Grid>
+            </AbsoluteLayout>
+        </Grid>
+    </Grid>
+</ContentPage>

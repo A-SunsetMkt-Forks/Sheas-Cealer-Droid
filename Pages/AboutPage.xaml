@@ -1,0 +1,64 @@
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:consts="clr-namespace:Sheas_Cealer_Droid.Consts"
+             xmlns:models="clr-namespace:Sheas_Cealer_Droid.Models"
+             x:Class="Sheas_Cealer_Droid.Pages.AboutPage"
+             Title="{x:Static consts:GlobalMultilangConst.AboutShellContentTitle}"
+             Shell.FlyoutBehavior="Disabled">
+    <CollectionView>
+        <CollectionView.ItemsSource>
+            <x:Array Type="{x:Type models:AboutInfo}">
+                <models:AboutInfo Title="{x:Static consts:AboutMultilangConst.DeveloperAboutInfoTitle}"
+                                  Content="{x:Static consts:AboutMultilangConst.DeveloperAboutInfoContent}" />
+                <models:AboutInfo Title="{x:Static consts:AboutMultilangConst.VersionAboutInfoTitle}"
+                                  Content="{x:Static consts:AboutConst.VersionAboutInfoContent}" />
+                <models:AboutInfo Title="{x:Static consts:AboutMultilangConst.RepoAboutInfoTitle}"
+                                  Url="{x:Static consts:AboutConst.RepoAboutInfoUrl}" />
+                <models:AboutInfo Title="{x:Static consts:AboutMultilangConst.DocsAboutInfoTitle}"
+                                  Url="{x:Static consts:AboutConst.DocsAboutInfoUrl}" />
+                <models:AboutInfo Title="{x:Static consts:AboutMultilangConst.ContactAboutInfoTitle}"
+                                  Url="{x:Static consts:AboutConst.ContactAboutInfoUrl}" />
+                <models:AboutInfo Title="{x:Static consts:AboutMultilangConst.IssueAboutInfoTitle}"
+                                  Url="{x:Static consts:AboutConst.IssueAboutInfoUrl}" />
+                <models:AboutInfo Title="{x:Static consts:AboutMultilangConst.CenterAboutInfoTitle}"
+                                  Url="{x:Static consts:AboutConst.CenterAboutInfoUrl}" />
+                <models:AboutInfo Title="{x:Static consts:AboutMultilangConst.BlogAboutInfoTitle}"
+                                  Url="{x:Static consts:AboutConst.BlogAboutInfoUrl}" />
+                <models:AboutInfo Title="{x:Static consts:AboutMultilangConst.EulaAboutInfoTitle}"
+                                  Url="{x:Static consts:AboutConst.EulaAboutInfoUrl}" />
+            </x:Array>
+        </CollectionView.ItemsSource>
+        <CollectionView.ItemTemplate>
+            <DataTemplate x:DataType="models:AboutInfo">
+                <Grid Margin="8,2,8,2">
+                    <Border BackgroundColor="{AppThemeBinding Light={StaticResource Gray100}, Dark={StaticResource Gray850}}"
+                            StrokeShape="RoundRectangle 8" Margin="4">
+                        <Grid Margin="8">
+                            <Grid ColumnDefinitions="Auto,*" RowDefinitions="Auto,Auto" ColumnSpacing="20">
+                                <Label Text="{Binding Title}"
+                                       Grid.Column="0" Grid.Row="0" Margin="20,4,0,4" FontSize="Subtitle" VerticalTextAlignment="Center" HorizontalTextAlignment="End" />
+                                <Label Text="{Binding Content}"
+                                       IsVisible="{Binding Content, TargetNullValue=False}"
+                                       Grid.Column="1" Grid.Row="0" Margin="0,4,20,4" FontSize="Subtitle" VerticalTextAlignment="Center" HorizontalTextAlignment="End" />
+                                <Label Text="{Binding Url}"
+                                       IsVisible="{Binding Url, TargetNullValue=False}"
+                                       Grid.ColumnSpan="2" Grid.Row="1" Margin="20,4" FontSize="Caption" />
+                            </Grid>
+                            <AbsoluteLayout>
+                                <Border AbsoluteLayout.LayoutBounds="0,0.5,4,1" AbsoluteLayout.LayoutFlags="PositionProportional,HeightProportional"
+                                        BackgroundColor="{AppThemeBinding Light={StaticResource Primary500}, Dark={StaticResource Primary800}}"
+                                        StrokeShape="RoundRectangle 8" />
+                            </AbsoluteLayout>
+                        </Grid>
+                    </Border>
+                </Grid>
+            </DataTemplate>
+        </CollectionView.ItemTemplate>
+        <CollectionView.Header>
+            <ContentView Margin="0,6,0,0" />
+        </CollectionView.Header>
+        <CollectionView.Footer>
+            <ContentView Margin="0,0,0,6" />
+        </CollectionView.Footer>
+    </CollectionView>
+</ContentPage>

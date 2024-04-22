@@ -23,5 +23,9 @@ Global
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {3C977FD6-5797-4545-B4BA-8941C0F37E51}
+		RESX_DuplicateKeyHandling = Fail
+		RESX_ConfirmAddLanguageFile = True
+		RESX_AutoCreateNewLanguageFiles = True
+		RESX_SortFileContentOnSave = True
 	EndGlobalSection
 EndGlobal

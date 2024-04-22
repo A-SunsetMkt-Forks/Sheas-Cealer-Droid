@@ -1,0 +1,57 @@
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:consts="clr-namespace:Sheas_Cealer_Droid.Consts"
+             xmlns:models="clr-namespace:Sheas_Cealer_Droid.Models"
+             xmlns:preses="clr-namespace:Sheas_Cealer_Droid.Preses"
+             x:Class="Sheas_Cealer_Droid.Pages.SettingsPage" x:DataType="preses:SettingsPres"
+             Title="{x:Static consts:GlobalMultilangConst.SettingsShellContentTitle}"
+             Shell.FlyoutBehavior="Disabled"
+             NavigatedFrom="SettingsPage_NavigatedFrom">
+    <CollectionView>
+        <CollectionView.ItemsSource>
+            <x:Array Type="{x:Type models:SettingsItem}">
+                <models:SettingsItem Title="{x:Static consts:SettingsMultilangConst.BrowserSettingsItemTitle}">
+                    <models:SettingsItem.View>
+                        <Picker x:Name="BrowserPicker"
+                                BindingContext="{Binding BindingContext, Source={x:RelativeSource AncestorType={x:Type ContentPage}}}"
+                                Title="{x:Static consts:GlobalMultilangConst.BrowserPickerTitle}"
+                                ToolTipProperties.Text="{x:Static consts:GlobalMultilangConst.BrowserPickerTooltip}"
+                                ItemsSource="{Binding BrowserNameCollection}"
+                                SelectedItem="{Binding BrowserName}" />
+                    </models:SettingsItem.View>
+                </models:SettingsItem>
+            </x:Array>
+        </CollectionView.ItemsSource>
+        <CollectionView.ItemTemplate>
+            <DataTemplate x:DataType="models:SettingsItem">
+                <Grid Margin="8,2,8,2">
+                    <Border BackgroundColor="{AppThemeBinding Light={StaticResource Gray100}, Dark={StaticResource Gray850}}"
+                            StrokeShape="RoundRectangle 8" Margin="4">
+                        <Grid Margin="8">
+                            <Grid ColumnDefinitions="Auto,*" RowDefinitions="Auto,Auto" ColumnSpacing="20">
+                                <Label Text="{Binding Title}"
+                                       Grid.Column="0" Grid.Row="0" Margin="20,4,0,4" FontSize="Subtitle" VerticalTextAlignment="Center" />
+                                <ContentView Content="{Binding View}"
+                                             Grid.Column="1" Grid.Row="0" Margin="0,4,20,4" />
+                                <Label Text="{Binding Content}"
+                                       IsVisible="{Binding Content, TargetNullValue=False}"
+                                       Grid.ColumnSpan="2" Grid.Row="1" Margin="20,4" FontSize="Caption" />
+                            </Grid>
+                            <AbsoluteLayout>
+                                <Border AbsoluteLayout.LayoutBounds="0,0.5,4,1" AbsoluteLayout.LayoutFlags="PositionProportional,HeightProportional"
+                                        BackgroundColor="{AppThemeBinding Light={StaticResource Primary500}, Dark={StaticResource Primary800}}"
+                                        StrokeShape="RoundRectangle 8" />
+                            </AbsoluteLayout>
+                        </Grid>
+                    </Border>
+                </Grid>
+            </DataTemplate>
+        </CollectionView.ItemTemplate>
+        <CollectionView.Header>
+            <ContentView Margin="0,6,0,0" />
+        </CollectionView.Header>
+        <CollectionView.Footer>
+            <ContentView Margin="0,0,0,6" />
+        </CollectionView.Footer>
+    </CollectionView>
+</ContentPage>

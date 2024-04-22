@@ -1,15 +1,67 @@
-<?xml version="1.0" encoding="UTF-8" ?>
-<Shell
-    x:Class="Sheas_Cealer_Droid.AppShell"
-    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
-    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-    xmlns:local="clr-namespace:Sheas_Cealer_Droid"
-    Shell.FlyoutBehavior="Disabled"
-    Title="Sheas_Cealer_Droid">
+<Shell xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+       xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+       xmlns:behaviors="clr-namespace:CommunityToolkit.Maui.Behaviors;assembly=CommunityToolkit.Maui"
+       xmlns:consts="clr-namespace:Sheas_Cealer_Droid.Consts"
+       xmlns:pages="clr-namespace:Sheas_Cealer_Droid.Pages"
+       x:Class="Sheas_Cealer_Droid.AppShell"
+       FlyoutBackgroundColor="{AppThemeBinding Light={StaticResource Gray50}, Dark={StaticResource Gray900}}"
+       Loaded="AppShell_Loaded" Navigating="AppShell_Navigating">
+    <Shell.Behaviors>
+        <behaviors:StatusBarBehavior StatusBarColor="{AppThemeBinding Light={StaticResource Primary50}, Dark={StaticResource Gray850}}"
+                                     StatusBarStyle="{AppThemeBinding Light=DarkContent, Dark=LightContent}" />
+    </Shell.Behaviors>
+    <Shell.FlyoutHeader>
+        <Grid MinimumHeightRequest="60">
+            <Border Margin="0,0,0,4">
+                <Grid ColumnDefinitions="*,*" ColumnSpacing="16"
+                      Padding="8">
+                    <Grid.Background>
+                        <LinearGradientBrush StartPoint="0.5,0" EndPoint="0.5,1">
+                            <GradientStop Color="{AppThemeBinding Light={StaticResource Primary50}, Dark={StaticResource Gray850}}"
+                                          Offset="0" />
+                            <GradientStop Color="{AppThemeBinding Light={StaticResource Secondary50}, Dark={StaticResource Gray850}}"
+                                          Offset="1" />
+                        </LinearGradientBrush>
+                    </Grid.Background>
+                    <Label Text="{x:Static consts:AppMultilangConst.SheasLabelText}"
+                           Grid.Column="0" HorizontalTextAlignment="Center" VerticalTextAlignment="Center" FontSize="Title" />
+                    <Label Text="{x:Static consts:AppMultilangConst.CealerLabelText}"
+                           Grid.Column="1" HorizontalTextAlignment="Center" VerticalTextAlignment="Center" FontSize="Title" />
+                    <Image Source="app_logo.png"
+                           Grid.ColumnSpan="2" />
+                </Grid>
+            </Border>
+        </Grid>
+    </Shell.FlyoutHeader>
 
-    <ShellContent
-        Title="Home"
-        ContentTemplate="{DataTemplate local:MainPage}"
-        Route="MainPage" />
+    <!--Todo: 添加搜索功能 https://learn.microsoft.com/en-us/dotnet/maui/fundamentals/shell/search?view=net-maui-9.0，添加 SemanticProperties 可访问性-->
 
+    <ShellContent x:Name="MainShellContent"
+                  ContentTemplate="{DataTemplate pages:MainPage}"
+                  Title="{x:Static consts:AppMultilangConst.MainShellContentTitle}"
+                  FlyoutItemIsVisible="False"
+                  Route="MainPage" />
+    <ShellContent ContentTemplate="{DataTemplate pages:SettingsPage}"
+                  Title="{x:Static consts:GlobalMultilangConst.SettingsShellContentTitle}"
+                  Icon="{AppThemeBinding Light=settings_icon.png, Dark=settings_dark_icon.png}"
+                  Route="SettingsPage" />
+    <ShellContent ContentTemplate="{DataTemplate pages:AboutPage}"
+                  Title="{x:Static consts:GlobalMultilangConst.AboutShellContentTitle}"
+                  Icon="{AppThemeBinding Light=about_icon.png, Dark=about_dark_icon.png}"
+                  Route="AboutPage" />
+
+    <TabBar x:Name="GuideTabBar">
+        <ShellContent ContentTemplate="{DataTemplate pages:BrowserPage}"
+                      Title="{x:Static consts:AppMultilangConst.BrowserShellContentTitle}"
+                      Icon="circle_icon.png"
+                      Route="BrowserPage" />
+        <ShellContent ContentTemplate="{DataTemplate pages:FlagPage}"
+                      Title="{x:Static consts:AppMultilangConst.FlagShellContentTitle}"
+                      Icon="ring_icon.png"
+                      Route="FlagPage" />
+        <ShellContent ContentTemplate="{DataTemplate pages:ReadyPage}"
+                      Title="{x:Static consts:AppMultilangConst.ReadyShellContentTitle}"
+                      Icon="happy_icon.png"
+                      Route="ReadyPage" />
+    </TabBar>
 </Shell>

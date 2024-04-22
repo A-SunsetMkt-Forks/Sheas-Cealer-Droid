@@ -1,0 +1,57 @@
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:behaviors="clr-namespace:CommunityToolkit.Maui.Behaviors;assembly=CommunityToolkit.Maui"
+             xmlns:consts="clr-namespace:Sheas_Cealer_Droid.Consts"
+             xmlns:convs="clr-namespace:Sheas_Cealer_Droid.Convs"
+             xmlns:preses="clr-namespace:Sheas_Cealer_Droid.Preses"
+             x:Class="Sheas_Cealer_Droid.Pages.BrowserPage" x:DataType="preses:BrowserPres"
+             Loaded="BrowserPage_Loaded" NavigatingFrom="BrowserPage_NavigatingFrom" NavigatedFrom="BrowserPage_NavigatedFrom" NavigatedTo="BrowserPage_NavigatedTo">
+    <Grid x:Name="BrowserGrid"
+          RowDefinitions="*,1.2*" RowSpacing="24"
+          Padding="24" Opacity="0">
+        <Grid.GestureRecognizers>
+            <SwipeGestureRecognizer Direction="Right" Threshold="50"
+                                    Swiped="PrevSwipeGestureRecognizer_Swiped" />
+            <SwipeGestureRecognizer Direction="Left" Threshold="50"
+                                    Swiped="NextSwipeGestureRecognizer_Swiped" />
+        </Grid.GestureRecognizers>
+
+        <Grid RowDefinitions="*,Auto" RowSpacing="24"
+              Grid.Row="0">
+            <Image x:Name="PrimaryHeroImage"
+                   Source="mobile_phone_illu.png"
+                   Grid.Row="0" />
+            <Image x:Name="SecondaryHeroImage"
+                   Source="mobile_phone_with_arrow_illu.png"
+                   Grid.Row="0" Opacity="0" />
+            <Label Text="{x:Static consts:BrowserMultilangConst.TitleLabelText}"
+                   Grid.Row="1" HorizontalTextAlignment="Center" FontSize="Title" FontAttributes="Bold" />
+        </Grid>
+        <Grid RowDefinitions="*,Auto"
+              Grid.Row="1">
+            <VerticalStackLayout Spacing="48"
+                                 Grid.Row="0">
+                <Label Text="{x:Static consts:BrowserMultilangConst.GuideLabelText}"
+                       HorizontalTextAlignment="Center" />
+                <Picker x:Name="BrowserPicker"
+                        Title="{x:Static consts:GlobalMultilangConst.BrowserPickerTitle}"
+                        ToolTipProperties.Text="{x:Static consts:GlobalMultilangConst.BrowserPickerTooltip}"
+                        ItemsSource="{Binding BrowserNameCollection}"
+                        SelectedItem="{Binding BrowserName}"
+                        SelectedIndexChanged="BrowserPicker_SelectedIndexChanged" />
+            </VerticalStackLayout>
+            <ImageButton x:Name="NextButton"
+                         Source="right_icon.png"
+                         ToolTipProperties.Text="{x:Static consts:GlobalMultilangConst.NextButtonTooltip}"
+                         IsEnabled="{Binding BrowserName, Converter={x:Static convs:BrowserConv.BrowserNextButtonIsEnabledConv}}"
+                         Grid.Row="1" HorizontalOptions="End" WidthRequest="56" HeightRequest="56" CornerRadius="28"
+                         Clicked="NextButton_Clicked">
+                <ImageButton.Behaviors>
+                    <behaviors:IconTintColorBehavior TintColor="{AppThemeBinding Light={StaticResource White}, Dark={StaticResource Gray900}}" />
+                </ImageButton.Behaviors>
+            </ImageButton>
+            <IndicatorView Position="0"
+                           Grid.Row="1" HorizontalOptions="Center" VerticalOptions="End" />
+        </Grid>
+    </Grid>
+</ContentPage>

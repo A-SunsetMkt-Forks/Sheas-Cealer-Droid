@@ -1,0 +1,34 @@
+{
+    "root": true,
+    "dependentFileProviders": {
+        "add": {
+            "fileToFile": {
+                "add": {
+                    "GlobalMultilangConst.resx": [ "GlobalConst.cs" ],
+                    "GlobalMultilangConst.zh.resx": [ "GlobalConst.cs" ],
+                    "AppMultilangConst.resx": [ "AppConst.cs" ],
+                    "AppMultilangConst.zh.resx": [ "AppConst.cs" ],
+                    "MainMultilangConst.resx": [ "MainConst.cs" ],
+                    "MainMultilangConst.zh.resx": [ "MainConst.cs" ],
+                    "SettingsMultilangConst.resx": [ "SettingsConst.cs" ],
+                    "SettingsMultilangConst.zh.resx": [ "SettingsConst.cs" ],
+                    "AboutMultilangConst.resx": [ "AboutConst.cs" ],
+                    "AboutMultilangConst.zh.resx": [ "AboutConst.cs" ],
+                    "BrowserMultilangConst.resx": [ "BrowserConst.cs" ],
+                    "BrowserMultilangConst.zh.resx": [ "BrowserConst.cs" ],
+                    "FlagMultilangConst.resx": [ "FlagConst.cs" ],
+                    "FlagMultilangConst.zh.resx": [ "FlagConst.cs" ],
+                    "ReadyMultilangConst.resx": [ "ReadyConst.cs" ],
+                    "ReadyMultilangConst.zh.resx": [ "ReadyConst.cs" ],
+
+                    "BrowserNextButtonIsEnabledConv.cs": [ "BrowserConv.cs" ],
+                    "FlagLinkButtonIsEnabledConv.cs": [ "FlagConv.cs" ],
+                    "MainLaunchButtonBackgroundColorConv.cs": [ "MainConv.cs" ],
+                    "MainLaunchButtonRotationConv.cs": [ "MainConv.cs" ],
+                    "MainLaunchButtonTooltipConv.cs": [ "MainConv.cs" ],
+                    "MainStatusProgressBarIsVisibleConv.cs": [ "MainConv.cs" ]
+                }
+            }
+        }
+    }
+}

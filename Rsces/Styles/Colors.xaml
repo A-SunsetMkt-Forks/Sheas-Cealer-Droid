@@ -1,0 +1,22 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml">
+    <Color x:Key="Primary50">#FFE4EB</Color>    <!--Light Bar Primary Background-->
+    <Color x:Key="Primary200">#FF608C</Color>   <!--Light Launch Button Background-->
+    <Color x:Key="Primary500">#FF0059</Color>   <!--Light View Background-->
+    <Color x:Key="Primary800">#C40052</Color>   <!--Dark View Background | Dark Launch Button Background-->
+
+    <Color x:Key="Secondary50">#FFE8E6</Color>  <!--Light Bar Secondary Background-->
+
+    <Color x:Key="Tertiary400">#FFA600</Color>  <!--Light Launch Button Background-->
+    <Color x:Key="Tertiary800">#F26800</Color>  <!--Dark Launch Button Background-->
+
+    <Color x:Key="White">White</Color>          <!--Light White Foreground-->
+    <Color x:Key="Gray50">#FAFAFA</Color>       <!--Light Base Background-->
+    <Color x:Key="Gray100">#F5F5F5</Color>      <!--Light Card Background-->
+    <Color x:Key="Gray300">#E0E0E0</Color>      <!--Light Disabled Background | Dark White Foreground-->
+    <Color x:Key="Gray400">#BDBDBD</Color>      <!--Light Launch Button Background-->
+    <Color x:Key="Gray700">#616161</Color>      <!--Dark Launch Button Background-->
+    <Color x:Key="Gray800">#424242</Color>      <!--Dark Disabled Background-->
+    <Color x:Key="Gray850">#292929</Color>      <!--Dark Card Background | Dark Bar Background-->
+    <Color x:Key="Gray900">#212121</Color>      <!--Dark Base Background | Dark Black Foreground | Light Black Foreground-->
+</ResourceDictionary>
