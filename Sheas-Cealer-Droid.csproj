@@ -1,0 +1,110 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+	<PropertyGroup>
+		<Title>Sheas Cealer Droid</Title>
+		<ApplicationTitle>Sheas Cealer Droid</ApplicationTitle>
+		<Product>Sheas Cealer Droid</Product>
+		<ApplicationId>spacetime.sheas.cealer</ApplicationId>
+		<Description>Just Ceal It</Description>
+		<PackageReleaseNotes>Just Ceal It</PackageReleaseNotes>
+		<Authors>Space Time</Authors>
+		<Company>SpaceTime Studio</Company>
+		<AssemblyVersion>0.0.0</AssemblyVersion>
+		<Version>0.0.0</Version>
+		<FileVersion>0.0.0</FileVersion>
+		<InformationalVersion>0.0.0</InformationalVersion>
+		<ApplicationDisplayVersion>0.0.0</ApplicationDisplayVersion>
+		<ApplicationVersion>1</ApplicationVersion>
+		<PackageTags>Tool;Sheas;Cealer;Droid;Sni</PackageTags>
+		<PackageIcon>Sheas-Cealer-Droid-Logo.png</PackageIcon>
+		<PackageReadmeFile>README.md</PackageReadmeFile>
+		<PackageProjectUrl>https://github.com/SpaceTimee/Sheas-Cealer-Droid</PackageProjectUrl>
+		<RepositoryUrl>https://github.com/SpaceTimee/Sheas-Cealer-Droid</RepositoryUrl>
+		<RepositoryType>git</RepositoryType>
+		<Copyright>Copyright ©  2077</Copyright>
+		<OutputType>Exe</OutputType>
+		<TargetFrameworks>net8.0-maccatalyst;net8.0-android34.0</TargetFrameworks>
+		<TargetPlatformMinVersion Condition="$([MSBuild]::GetTargetPlatformIdentifier('$(TargetFramework)')) == 'windows'">10.0.17763.0</TargetPlatformMinVersion>
+		<SupportedOSPlatformVersion Condition="$([MSBuild]::GetTargetPlatformIdentifier('$(TargetFramework)')) == 'windows'">10.0.17763.0</SupportedOSPlatformVersion>
+		<SupportedOSPlatformVersion Condition="$([MSBuild]::GetTargetPlatformIdentifier('$(TargetFramework)')) == 'ios'">11.0</SupportedOSPlatformVersion>
+		<SupportedOSPlatformVersion Condition="$([MSBuild]::GetTargetPlatformIdentifier('$(TargetFramework)')) == 'maccatalyst'">13.1</SupportedOSPlatformVersion>
+		<SupportedOSPlatformVersion Condition="$([MSBuild]::GetTargetPlatformIdentifier('$(TargetFramework)')) == 'android'">21.0</SupportedOSPlatformVersion>
+		<SupportedOSPlatformVersion Condition="$([MSBuild]::GetTargetPlatformIdentifier('$(TargetFramework)')) == 'tizen'">6.5</SupportedOSPlatformVersion>
+		<RootNamespace>Sheas_Cealer_Droid</RootNamespace>
+		<Nullable>enable</Nullable>
+		<UseMaui>true</UseMaui>
+		<SingleProject>true</SingleProject>
+		<ImplicitUsings>enable</ImplicitUsings>
+		<AllowUnsafeBlocks>True</AllowUnsafeBlocks>
+		<ErrorReport>none</ErrorReport>
+	</PropertyGroup>
+
+	<PropertyGroup Condition="'$(Configuration)|$(TargetFramework)|$(Platform)'=='Debug|net8.0-maccatalyst|AnyCPU'">
+		<ApplicationTitle>Sheas Cealer Droid</ApplicationTitle>
+		<ApplicationId>spacetime.sheas.cealer</ApplicationId>
+		<ApplicationDisplayVersion>0.0.0</ApplicationDisplayVersion>
+		<CheckForOverflowUnderflow>True</CheckForOverflowUnderflow>
+	</PropertyGroup>
+
+	<PropertyGroup Condition="'$(Configuration)|$(TargetFramework)|$(Platform)'=='Debug|net8.0-android34.0|AnyCPU'">
+		<ApplicationTitle>Sheas Cealer Droid</ApplicationTitle>
+		<ApplicationId>spacetime.sheas.cealer</ApplicationId>
+		<ApplicationDisplayVersion>0.0.0</ApplicationDisplayVersion>
+		<CheckForOverflowUnderflow>True</CheckForOverflowUnderflow>
+		<AndroidEnableMultiDex>True</AndroidEnableMultiDex>
+		<EnableLLVM>True</EnableLLVM>
+		<AndroidKeyStore>False</AndroidKeyStore>
+		<PublishTrimmed>False</PublishTrimmed>
+		<TrimMode>link</TrimMode>
+	</PropertyGroup>
+
+	<PropertyGroup Condition="'$(Configuration)|$(TargetFramework)|$(Platform)'=='Release|net8.0-maccatalyst|AnyCPU'">
+		<ApplicationTitle>Sheas Cealer Droid</ApplicationTitle>
+		<ApplicationId>spacetime.sheas.cealer</ApplicationId>
+		<ApplicationDisplayVersion>0.0.0</ApplicationDisplayVersion>
+		<CheckForOverflowUnderflow>True</CheckForOverflowUnderflow>
+	</PropertyGroup>
+
+	<PropertyGroup Condition="'$(Configuration)|$(TargetFramework)|$(Platform)'=='Release|net8.0-android34.0|AnyCPU'">
+		<ApplicationTitle>Sheas Cealer Droid</ApplicationTitle>
+		<ApplicationId>spacetime.sheas.cealer</ApplicationId>
+		<ApplicationDisplayVersion>0.0.0</ApplicationDisplayVersion>
+		<CheckForOverflowUnderflow>True</CheckForOverflowUnderflow>
+		<AndroidEnableMultiDex>True</AndroidEnableMultiDex>
+		<AndroidLinkTool>r8</AndroidLinkTool>
+		<EnableLLVM>True</EnableLLVM>
+		<AndroidKeyStore>False</AndroidKeyStore>
+		<PublishTrimmed>False</PublishTrimmed>
+		<TrimMode>link</TrimMode>
+	</PropertyGroup>
+
+	<ItemGroup>
+		<!-- App Icon -->
+		<MauiIcon Include="Resources\AppIcon\appicon.svg" ForegroundFile="Resources\AppIcon\appiconfg.svg" Color="#512BD4" />
+
+		<!-- Splash Screen -->
+		<MauiSplashScreen Include="Resources\Splash\splash.svg" Color="#512BD4" BaseSize="128,128" />
+
+		<!-- Images -->
+		<MauiImage Include="Resources\Images\*" />
+		<MauiImage Update="Resources\Images\dotnet_bot.png" Resize="True" BaseSize="300,185" />
+
+		<!-- Custom Fonts -->
+		<MauiFont Include="Resources\Fonts\*" />
+
+		<!-- Raw Assets (also remove the "Resources\Raw" prefix) -->
+		<MauiAsset Include="Resources\Raw\**" LogicalName="%(RecursiveDir)%(Filename)%(Extension)" />
+	</ItemGroup>
+
+	<ItemGroup>
+		<None Remove="README.md" />
+		<None Remove="Sheas-Cealer-Droid-Logo.png" />
+	</ItemGroup>
+
+	<ItemGroup>
+		<PackageReference Include="Microsoft.Maui.Controls" Version="8.0.20" />
+		<PackageReference Include="Microsoft.Maui.Controls.Compatibility" Version="8.0.20" />
+		<PackageReference Include="Microsoft.Extensions.Logging.Debug" Version="8.0.0" />
+	</ItemGroup>
+
+</Project>
