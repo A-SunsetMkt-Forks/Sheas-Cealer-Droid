@@ -126,8 +126,14 @@
   <data name="BrowserPickerTooltip" xml:space="preserve">
     <value>点击打开浏览器选择弹窗</value>
   </data>
+  <data name="NextButtonDescription" xml:space="preserve">
+    <value>下一步</value>
+  </data>
   <data name="NextButtonTooltip" xml:space="preserve">
     <value>点击进入下一步</value>
+  </data>
+  <data name="PrevButtonDescription" xml:space="preserve">
+    <value>上一步</value>
   </data>
   <data name="PrevButtonTooltip" xml:space="preserve">
     <value>点击返回上一步</value>

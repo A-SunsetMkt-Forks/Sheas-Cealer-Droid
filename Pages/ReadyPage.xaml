@@ -36,6 +36,7 @@
             </VerticalStackLayout>
             <ImageButton Source="left_icon.png"
                          ToolTipProperties.Text="{x:Static consts:GlobalMultilangConst.PrevButtonTooltip}"
+                         SemanticProperties.Description="{x:Static consts:GlobalMultilangConst.PrevButtonDescription}"
                          IsEnabled="{Binding IsFlagCopied}"
                          Grid.Row="1" HorizontalOptions="Start" WidthRequest="56" HeightRequest="56" CornerRadius="28"
                          Clicked="PrevButton_Clicked">

@@ -43,6 +43,7 @@
             <ImageButton x:Name="NextButton"
                          Source="right_icon.png"
                          ToolTipProperties.Text="{x:Static consts:GlobalMultilangConst.NextButtonTooltip}"
+                         SemanticProperties.Description="{x:Static consts:GlobalMultilangConst.NextButtonDescription}"
                          IsEnabled="{Binding BrowserName, Converter={x:Static convs:BrowserConv.BrowserNextButtonIsEnabledConv}}"
                          Grid.Row="1" HorizontalOptions="End" WidthRequest="56" HeightRequest="56" CornerRadius="28"
                          Clicked="NextButton_Clicked">

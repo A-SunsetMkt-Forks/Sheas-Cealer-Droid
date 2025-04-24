@@ -126,8 +126,14 @@
   <data name="BrowserPickerTooltip" xml:space="preserve">
     <value>Tap to open a browser selection pop-up</value>
   </data>
+  <data name="NextButtonDescription" xml:space="preserve">
+    <value>Next</value>
+  </data>
   <data name="NextButtonTooltip" xml:space="preserve">
     <value>Tap to proceed to the next step</value>
+  </data>
+  <data name="PrevButtonDescription" xml:space="preserve">
+    <value>Prev</value>
   </data>
   <data name="PrevButtonTooltip" xml:space="preserve">
     <value>Tap to return to the previous step</value>

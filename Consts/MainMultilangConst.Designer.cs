@@ -97,6 +97,15 @@ namespace Sheas_Cealer_Droid.Consts {
         }
         
         /// <summary>
+        ///   查找类似 Github 的本地化字符串。
+        /// </summary>
+        public static string GithubToolbarItemDescription {
+            get {
+                return ResourceManager.GetString("GithubToolbarItemDescription", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   查找类似 Tap to jump to my github repo 的本地化字符串。
         /// </summary>
         public static string GithubToolbarItemTooltip {
@@ -111,6 +120,15 @@ namespace Sheas_Cealer_Droid.Consts {
         public static string LaunchButtonActiveTooltip {
             get {
                 return ResourceManager.GetString("LaunchButtonActiveTooltip", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   查找类似 Launch 的本地化字符串。
+        /// </summary>
+        public static string LaunchButtonDescription {
+            get {
+                return ResourceManager.GetString("LaunchButtonDescription", resourceCulture);
             }
         }
         

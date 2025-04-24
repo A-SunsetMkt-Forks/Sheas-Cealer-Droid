@@ -10,6 +10,7 @@
     <ContentPage.ToolbarItems>
         <ToolbarItem IconImageSource="{AppThemeBinding Light=github_icon.png, Dark=github_dark_icon.png}"
                      ToolTipProperties.Text="{x:Static consts:MainMultilangConst.GithubToolbarItemTooltip}"
+                     SemanticProperties.Description="{x:Static consts:MainMultilangConst.GithubToolbarItemDescription}"
                      Clicked="GithubToolbarItem_Clicked" />
         <ToolbarItem Text="{x:Static consts:MainMultilangConst.UpdateToolbarItemText}"
                      ToolTipProperties.Text="{x:Static consts:MainMultilangConst.UpdateToolbarItemTooltip}"
@@ -76,6 +77,7 @@
                       Rotation="{Binding IsCommandLineUtd, Converter={x:Static convs:MainConv.MainLaunchButtonRotationConv}}">
                     <ImageButton Source="app_icon.png"
                                  ToolTipProperties.Text="{Binding IsCommandLineUtd, Converter={x:Static convs:MainConv.MainLaunchButtonTooltipConv}}"
+                                 SemanticProperties.Description="{x:Static consts:MainMultilangConst.LaunchButtonDescription}"
                                  CornerRadius="28"
                                  BackgroundColor="{Binding IsCommandLineUtd, Converter={x:Static convs:MainConv.MainLaunchButtonBackgroundColorConv}}"
                                  Clicked="LaunchButton_Click">

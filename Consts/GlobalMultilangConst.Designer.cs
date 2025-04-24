@@ -180,11 +180,29 @@ namespace Sheas_Cealer_Droid.Consts {
         }
         
         /// <summary>
+        ///   查找类似 Next 的本地化字符串。
+        /// </summary>
+        public static string NextButtonDescription {
+            get {
+                return ResourceManager.GetString("NextButtonDescription", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   查找类似 Tap to proceed to the next step 的本地化字符串。
         /// </summary>
         public static string NextButtonTooltip {
             get {
                 return ResourceManager.GetString("NextButtonTooltip", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   查找类似 Prev 的本地化字符串。
+        /// </summary>
+        public static string PrevButtonDescription {
+            get {
+                return ResourceManager.GetString("PrevButtonDescription", resourceCulture);
             }
         }
         
