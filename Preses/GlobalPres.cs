@@ -13,9 +13,9 @@ using System.Text.Json;
 
 namespace Sheas_Cealer_Droid.Preses;
 
-internal partial class GlobalPres : ObservableObject
+internal abstract partial class GlobalPres : ObservableObject
 {
-    internal GlobalPres() => BrowserNameCollection.CollectionChanged += BrowserNameCollection_CollectionChanged;
+    protected GlobalPres() => BrowserNameCollection.CollectionChanged += BrowserNameCollection_CollectionChanged;
 
     [ObservableProperty]
     private static string? browserName = Preferences.Default.Get<string?>(nameof(BrowserName), null);
