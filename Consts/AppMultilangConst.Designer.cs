@@ -22,7 +22,7 @@ namespace Sheas_Cealer_Droid.Consts {
     [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Resources.Tools.StronglyTypedResourceBuilder", "17.0.0.0")]
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
     [global::System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
-    public class AppMultilangConst {
+    internal class AppMultilangConst {
         
         private static global::System.Resources.ResourceManager resourceMan;
         
@@ -36,7 +36,7 @@ namespace Sheas_Cealer_Droid.Consts {
         ///   返回此类使用的缓存的 ResourceManager 实例。
         /// </summary>
         [global::System.ComponentModel.EditorBrowsableAttribute(global::System.ComponentModel.EditorBrowsableState.Advanced)]
-        public static global::System.Resources.ResourceManager ResourceManager {
+        internal static global::System.Resources.ResourceManager ResourceManager {
             get {
                 if (object.ReferenceEquals(resourceMan, null)) {
                     global::System.Resources.ResourceManager temp = new global::System.Resources.ResourceManager("Sheas_Cealer_Droid.Consts.AppMultilangConst", typeof(AppMultilangConst).Assembly);
@@ -51,7 +51,7 @@ namespace Sheas_Cealer_Droid.Consts {
         ///   使用此强类型资源类的所有资源查找执行重写。
         /// </summary>
         [global::System.ComponentModel.EditorBrowsableAttribute(global::System.ComponentModel.EditorBrowsableState.Advanced)]
-        public static global::System.Globalization.CultureInfo Culture {
+        internal static global::System.Globalization.CultureInfo Culture {
             get {
                 return resourceCulture;
             }
@@ -63,7 +63,7 @@ namespace Sheas_Cealer_Droid.Consts {
         /// <summary>
         ///   查找类似 {0} ❌ 的本地化字符串。
         /// </summary>
-        public static string _ErrorToastMsg {
+        internal static string _ErrorToastMsg {
             get {
                 return ResourceManager.GetString("_ErrorToastMsg", resourceCulture);
             }
@@ -72,7 +72,7 @@ namespace Sheas_Cealer_Droid.Consts {
         /// <summary>
         ///   查找类似 First 的本地化字符串。
         /// </summary>
-        public static string BrowserShellContentTitle {
+        internal static string BrowserShellContentTitle {
             get {
                 return ResourceManager.GetString("BrowserShellContentTitle", resourceCulture);
             }
@@ -81,7 +81,7 @@ namespace Sheas_Cealer_Droid.Consts {
         /// <summary>
         ///   查找类似 Cealer 的本地化字符串。
         /// </summary>
-        public static string CealerLabelText {
+        internal static string CealerLabelText {
             get {
                 return ResourceManager.GetString("CealerLabelText", resourceCulture);
             }
@@ -90,7 +90,7 @@ namespace Sheas_Cealer_Droid.Consts {
         /// <summary>
         ///   查找类似 Then 的本地化字符串。
         /// </summary>
-        public static string FlagShellContentTitle {
+        internal static string FlagShellContentTitle {
             get {
                 return ResourceManager.GetString("FlagShellContentTitle", resourceCulture);
             }
@@ -99,7 +99,7 @@ namespace Sheas_Cealer_Droid.Consts {
         /// <summary>
         ///   查找类似 Sheas Cealer 的本地化字符串。
         /// </summary>
-        public static string MainShellContentTitle {
+        internal static string MainShellContentTitle {
             get {
                 return ResourceManager.GetString("MainShellContentTitle", resourceCulture);
             }
@@ -108,7 +108,7 @@ namespace Sheas_Cealer_Droid.Consts {
         /// <summary>
         ///   查找类似 Finally 的本地化字符串。
         /// </summary>
-        public static string ReadyShellContentTitle {
+        internal static string ReadyShellContentTitle {
             get {
                 return ResourceManager.GetString("ReadyShellContentTitle", resourceCulture);
             }
@@ -117,7 +117,7 @@ namespace Sheas_Cealer_Droid.Consts {
         /// <summary>
         ///   查找类似 Sheas 的本地化字符串。
         /// </summary>
-        public static string SheasLabelText {
+        internal static string SheasLabelText {
             get {
                 return ResourceManager.GetString("SheasLabelText", resourceCulture);
             }

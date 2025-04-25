@@ -22,7 +22,7 @@ namespace Sheas_Cealer_Droid.Consts {
     [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Resources.Tools.StronglyTypedResourceBuilder", "17.0.0.0")]
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
     [global::System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
-    public class BrowserMultilangConst {
+    internal class BrowserMultilangConst {
         
         private static global::System.Resources.ResourceManager resourceMan;
         
@@ -36,7 +36,7 @@ namespace Sheas_Cealer_Droid.Consts {
         ///   返回此类使用的缓存的 ResourceManager 实例。
         /// </summary>
         [global::System.ComponentModel.EditorBrowsableAttribute(global::System.ComponentModel.EditorBrowsableState.Advanced)]
-        public static global::System.Resources.ResourceManager ResourceManager {
+        internal static global::System.Resources.ResourceManager ResourceManager {
             get {
                 if (object.ReferenceEquals(resourceMan, null)) {
                     global::System.Resources.ResourceManager temp = new global::System.Resources.ResourceManager("Sheas_Cealer_Droid.Consts.BrowserMultilangConst", typeof(BrowserMultilangConst).Assembly);
@@ -51,7 +51,7 @@ namespace Sheas_Cealer_Droid.Consts {
         ///   使用此强类型资源类的所有资源查找执行重写。
         /// </summary>
         [global::System.ComponentModel.EditorBrowsableAttribute(global::System.ComponentModel.EditorBrowsableState.Advanced)]
-        public static global::System.Globalization.CultureInfo Culture {
+        internal static global::System.Globalization.CultureInfo Culture {
             get {
                 return resourceCulture;
             }
@@ -63,7 +63,7 @@ namespace Sheas_Cealer_Droid.Consts {
         /// <summary>
         ///   查找类似 •ᴗ• 的本地化字符串。
         /// </summary>
-        public static string _EasterEggMsg {
+        internal static string _EasterEggMsg {
             get {
                 return ResourceManager.GetString("_EasterEggMsg", resourceCulture);
             }
@@ -76,7 +76,7 @@ namespace Sheas_Cealer_Droid.Consts {
         ///
         ///(Don’t worry, everything here can be changed anytime later) 的本地化字符串。
         /// </summary>
-        public static string GuideLabelText {
+        internal static string GuideLabelText {
             get {
                 return ResourceManager.GetString("GuideLabelText", resourceCulture);
             }
@@ -85,7 +85,7 @@ namespace Sheas_Cealer_Droid.Consts {
         /// <summary>
         ///   查找类似 ✨ Welcome 🌟 的本地化字符串。
         /// </summary>
-        public static string TitleLabelText {
+        internal static string TitleLabelText {
             get {
                 return ResourceManager.GetString("TitleLabelText", resourceCulture);
             }

@@ -22,7 +22,7 @@ namespace Sheas_Cealer_Droid.Consts {
     [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Resources.Tools.StronglyTypedResourceBuilder", "17.0.0.0")]
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
     [global::System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
-    public class FlagMultilangConst {
+    internal class FlagMultilangConst {
         
         private static global::System.Resources.ResourceManager resourceMan;
         
@@ -36,7 +36,7 @@ namespace Sheas_Cealer_Droid.Consts {
         ///   返回此类使用的缓存的 ResourceManager 实例。
         /// </summary>
         [global::System.ComponentModel.EditorBrowsableAttribute(global::System.ComponentModel.EditorBrowsableState.Advanced)]
-        public static global::System.Resources.ResourceManager ResourceManager {
+        internal static global::System.Resources.ResourceManager ResourceManager {
             get {
                 if (object.ReferenceEquals(resourceMan, null)) {
                     global::System.Resources.ResourceManager temp = new global::System.Resources.ResourceManager("Sheas_Cealer_Droid.Consts.FlagMultilangConst", typeof(FlagMultilangConst).Assembly);
@@ -51,7 +51,7 @@ namespace Sheas_Cealer_Droid.Consts {
         ///   使用此强类型资源类的所有资源查找执行重写。
         /// </summary>
         [global::System.ComponentModel.EditorBrowsableAttribute(global::System.ComponentModel.EditorBrowsableState.Advanced)]
-        public static global::System.Globalization.CultureInfo Culture {
+        internal static global::System.Globalization.CultureInfo Culture {
             get {
                 return resourceCulture;
             }
@@ -63,7 +63,7 @@ namespace Sheas_Cealer_Droid.Consts {
         /// <summary>
         ///   查找类似 Link copied ✅ 的本地化字符串。
         /// </summary>
-        public static string _LinkCopiedToastMsg {
+        internal static string _LinkCopiedToastMsg {
             get {
                 return ResourceManager.GetString("_LinkCopiedToastMsg", resourceCulture);
             }
@@ -76,7 +76,7 @@ namespace Sheas_Cealer_Droid.Consts {
         ///
         ///(If u run into any probs, feel free 2 join our chat 4 help) 的本地化字符串。
         /// </summary>
-        public static string GuideLabelText {
+        internal static string GuideLabelText {
             get {
                 return ResourceManager.GetString("GuideLabelText", resourceCulture);
             }
@@ -89,7 +89,7 @@ namespace Sheas_Cealer_Droid.Consts {
         ///
         ///Uh, wait a moment, I’m not done memorizing my lines yet 的本地化字符串。
         /// </summary>
-        public static string GuideLabelTextBrowserNameFallback {
+        internal static string GuideLabelTextBrowserNameFallback {
             get {
                 return ResourceManager.GetString("GuideLabelTextBrowserNameFallback", resourceCulture);
             }
@@ -98,7 +98,7 @@ namespace Sheas_Cealer_Droid.Consts {
         /// <summary>
         ///   查找类似 Copy Link 的本地化字符串。
         /// </summary>
-        public static string LinkButtonText {
+        internal static string LinkButtonText {
             get {
                 return ResourceManager.GetString("LinkButtonText", resourceCulture);
             }
@@ -107,7 +107,7 @@ namespace Sheas_Cealer_Droid.Consts {
         /// <summary>
         ///   查找类似 Tap to copy a flag jump link 的本地化字符串。
         /// </summary>
-        public static string LinkButtonTooltip {
+        internal static string LinkButtonTooltip {
             get {
                 return ResourceManager.GetString("LinkButtonTooltip", resourceCulture);
             }
@@ -116,7 +116,7 @@ namespace Sheas_Cealer_Droid.Consts {
         /// <summary>
         ///   查找类似 ✨ Nice Work 🌟 的本地化字符串。
         /// </summary>
-        public static string TitleLabelText {
+        internal static string TitleLabelText {
             get {
                 return ResourceManager.GetString("TitleLabelText", resourceCulture);
             }

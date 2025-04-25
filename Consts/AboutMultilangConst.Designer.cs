@@ -22,7 +22,7 @@ namespace Sheas_Cealer_Droid.Consts {
     [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Resources.Tools.StronglyTypedResourceBuilder", "17.0.0.0")]
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
     [global::System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
-    public class AboutMultilangConst {
+    internal class AboutMultilangConst {
         
         private static global::System.Resources.ResourceManager resourceMan;
         
@@ -36,7 +36,7 @@ namespace Sheas_Cealer_Droid.Consts {
         ///   返回此类使用的缓存的 ResourceManager 实例。
         /// </summary>
         [global::System.ComponentModel.EditorBrowsableAttribute(global::System.ComponentModel.EditorBrowsableState.Advanced)]
-        public static global::System.Resources.ResourceManager ResourceManager {
+        internal static global::System.Resources.ResourceManager ResourceManager {
             get {
                 if (object.ReferenceEquals(resourceMan, null)) {
                     global::System.Resources.ResourceManager temp = new global::System.Resources.ResourceManager("Sheas_Cealer_Droid.Consts.AboutMultilangConst", typeof(AboutMultilangConst).Assembly);
@@ -51,7 +51,7 @@ namespace Sheas_Cealer_Droid.Consts {
         ///   使用此强类型资源类的所有资源查找执行重写。
         /// </summary>
         [global::System.ComponentModel.EditorBrowsableAttribute(global::System.ComponentModel.EditorBrowsableState.Advanced)]
-        public static global::System.Globalization.CultureInfo Culture {
+        internal static global::System.Globalization.CultureInfo Culture {
             get {
                 return resourceCulture;
             }
@@ -63,7 +63,7 @@ namespace Sheas_Cealer_Droid.Consts {
         /// <summary>
         ///   查找类似 My Blog 的本地化字符串。
         /// </summary>
-        public static string BlogAboutInfoTitle {
+        internal static string BlogAboutInfoTitle {
             get {
                 return ResourceManager.GetString("BlogAboutInfoTitle", resourceCulture);
             }
@@ -72,7 +72,7 @@ namespace Sheas_Cealer_Droid.Consts {
         /// <summary>
         ///   查找类似 About Me 的本地化字符串。
         /// </summary>
-        public static string CenterAboutInfoTitle {
+        internal static string CenterAboutInfoTitle {
             get {
                 return ResourceManager.GetString("CenterAboutInfoTitle", resourceCulture);
             }
@@ -81,7 +81,7 @@ namespace Sheas_Cealer_Droid.Consts {
         /// <summary>
         ///   查找类似 Contact Me 的本地化字符串。
         /// </summary>
-        public static string ContactAboutInfoTitle {
+        internal static string ContactAboutInfoTitle {
             get {
                 return ResourceManager.GetString("ContactAboutInfoTitle", resourceCulture);
             }
@@ -90,7 +90,7 @@ namespace Sheas_Cealer_Droid.Consts {
         /// <summary>
         ///   查找类似 Space Time 的本地化字符串。
         /// </summary>
-        public static string DeveloperAboutInfoContent {
+        internal static string DeveloperAboutInfoContent {
             get {
                 return ResourceManager.GetString("DeveloperAboutInfoContent", resourceCulture);
             }
@@ -99,7 +99,7 @@ namespace Sheas_Cealer_Droid.Consts {
         /// <summary>
         ///   查找类似 Developer 的本地化字符串。
         /// </summary>
-        public static string DeveloperAboutInfoTitle {
+        internal static string DeveloperAboutInfoTitle {
             get {
                 return ResourceManager.GetString("DeveloperAboutInfoTitle", resourceCulture);
             }
@@ -108,7 +108,7 @@ namespace Sheas_Cealer_Droid.Consts {
         /// <summary>
         ///   查找类似 Usage Docs 的本地化字符串。
         /// </summary>
-        public static string DocsAboutInfoTitle {
+        internal static string DocsAboutInfoTitle {
             get {
                 return ResourceManager.GetString("DocsAboutInfoTitle", resourceCulture);
             }
@@ -117,7 +117,7 @@ namespace Sheas_Cealer_Droid.Consts {
         /// <summary>
         ///   查找类似 License Agreement 的本地化字符串。
         /// </summary>
-        public static string EulaAboutInfoTitle {
+        internal static string EulaAboutInfoTitle {
             get {
                 return ResourceManager.GetString("EulaAboutInfoTitle", resourceCulture);
             }
@@ -126,7 +126,7 @@ namespace Sheas_Cealer_Droid.Consts {
         /// <summary>
         ///   查找类似 Issue Feedback 的本地化字符串。
         /// </summary>
-        public static string IssueAboutInfoTitle {
+        internal static string IssueAboutInfoTitle {
             get {
                 return ResourceManager.GetString("IssueAboutInfoTitle", resourceCulture);
             }
@@ -135,7 +135,7 @@ namespace Sheas_Cealer_Droid.Consts {
         /// <summary>
         ///   查找类似 Github Repo 的本地化字符串。
         /// </summary>
-        public static string RepoAboutInfoTitle {
+        internal static string RepoAboutInfoTitle {
             get {
                 return ResourceManager.GetString("RepoAboutInfoTitle", resourceCulture);
             }
@@ -144,7 +144,7 @@ namespace Sheas_Cealer_Droid.Consts {
         /// <summary>
         ///   查找类似 Version 的本地化字符串。
         /// </summary>
-        public static string VersionAboutInfoTitle {
+        internal static string VersionAboutInfoTitle {
             get {
                 return ResourceManager.GetString("VersionAboutInfoTitle", resourceCulture);
             }

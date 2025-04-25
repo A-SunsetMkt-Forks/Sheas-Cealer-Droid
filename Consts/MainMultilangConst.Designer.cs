@@ -22,7 +22,7 @@ namespace Sheas_Cealer_Droid.Consts {
     [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Resources.Tools.StronglyTypedResourceBuilder", "17.0.0.0")]
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
     [global::System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
-    public class MainMultilangConst {
+    internal class MainMultilangConst {
         
         private static global::System.Resources.ResourceManager resourceMan;
         
@@ -36,7 +36,7 @@ namespace Sheas_Cealer_Droid.Consts {
         ///   返回此类使用的缓存的 ResourceManager 实例。
         /// </summary>
         [global::System.ComponentModel.EditorBrowsableAttribute(global::System.ComponentModel.EditorBrowsableState.Advanced)]
-        public static global::System.Resources.ResourceManager ResourceManager {
+        internal static global::System.Resources.ResourceManager ResourceManager {
             get {
                 if (object.ReferenceEquals(resourceMan, null)) {
                     global::System.Resources.ResourceManager temp = new global::System.Resources.ResourceManager("Sheas_Cealer_Droid.Consts.MainMultilangConst", typeof(MainMultilangConst).Assembly);
@@ -51,7 +51,7 @@ namespace Sheas_Cealer_Droid.Consts {
         ///   使用此强类型资源类的所有资源查找执行重写。
         /// </summary>
         [global::System.ComponentModel.EditorBrowsableAttribute(global::System.ComponentModel.EditorBrowsableState.Advanced)]
-        public static global::System.Globalization.CultureInfo Culture {
+        internal static global::System.Globalization.CultureInfo Culture {
             get {
                 return resourceCulture;
             }
@@ -63,7 +63,7 @@ namespace Sheas_Cealer_Droid.Consts {
         /// <summary>
         ///   查找类似 Injection complete. Tap the button to stop 的本地化字符串。
         /// </summary>
-        public static string _ActiveStatusMessage {
+        internal static string _ActiveStatusMessage {
             get {
                 return ResourceManager.GetString("_ActiveStatusMessage", resourceCulture);
             }
@@ -72,7 +72,7 @@ namespace Sheas_Cealer_Droid.Consts {
         /// <summary>
         ///   查找类似 Injection is inactive. Tap the button to start 的本地化字符串。
         /// </summary>
-        public static string _InactiveStatusMessage {
+        internal static string _InactiveStatusMessage {
             get {
                 return ResourceManager.GetString("_InactiveStatusMessage", resourceCulture);
             }
@@ -81,7 +81,7 @@ namespace Sheas_Cealer_Droid.Consts {
         /// <summary>
         ///   查找类似 Partial injection complete. Tap the button to stop 的本地化字符串。
         /// </summary>
-        public static string _PartialStatusMessage {
+        internal static string _PartialStatusMessage {
             get {
                 return ResourceManager.GetString("_PartialStatusMessage", resourceCulture);
             }
@@ -90,7 +90,7 @@ namespace Sheas_Cealer_Droid.Consts {
         /// <summary>
         ///   查找类似 Host update available. Tap the button to update 的本地化字符串。
         /// </summary>
-        public static string _UpdateStatusMessage {
+        internal static string _UpdateStatusMessage {
             get {
                 return ResourceManager.GetString("_UpdateStatusMessage", resourceCulture);
             }
@@ -99,7 +99,7 @@ namespace Sheas_Cealer_Droid.Consts {
         /// <summary>
         ///   查找类似 Github 的本地化字符串。
         /// </summary>
-        public static string GithubToolbarItemDescription {
+        internal static string GithubToolbarItemDescription {
             get {
                 return ResourceManager.GetString("GithubToolbarItemDescription", resourceCulture);
             }
@@ -108,7 +108,7 @@ namespace Sheas_Cealer_Droid.Consts {
         /// <summary>
         ///   查找类似 Tap to jump to my github repo 的本地化字符串。
         /// </summary>
-        public static string GithubToolbarItemTooltip {
+        internal static string GithubToolbarItemTooltip {
             get {
                 return ResourceManager.GetString("GithubToolbarItemTooltip", resourceCulture);
             }
@@ -117,7 +117,7 @@ namespace Sheas_Cealer_Droid.Consts {
         /// <summary>
         ///   查找类似 Tap to stop cealing 的本地化字符串。
         /// </summary>
-        public static string LaunchButtonActiveTooltip {
+        internal static string LaunchButtonActiveTooltip {
             get {
                 return ResourceManager.GetString("LaunchButtonActiveTooltip", resourceCulture);
             }
@@ -126,7 +126,7 @@ namespace Sheas_Cealer_Droid.Consts {
         /// <summary>
         ///   查找类似 Launch 的本地化字符串。
         /// </summary>
-        public static string LaunchButtonDescription {
+        internal static string LaunchButtonDescription {
             get {
                 return ResourceManager.GetString("LaunchButtonDescription", resourceCulture);
             }
@@ -135,7 +135,7 @@ namespace Sheas_Cealer_Droid.Consts {
         /// <summary>
         ///   查找类似 Tap to start cealing 的本地化字符串。
         /// </summary>
-        public static string LaunchButtonInactiveTooltip {
+        internal static string LaunchButtonInactiveTooltip {
             get {
                 return ResourceManager.GetString("LaunchButtonInactiveTooltip", resourceCulture);
             }
@@ -144,7 +144,7 @@ namespace Sheas_Cealer_Droid.Consts {
         /// <summary>
         ///   查找类似 Tap to update host 的本地化字符串。
         /// </summary>
-        public static string LaunchButtonUpdateTooltip {
+        internal static string LaunchButtonUpdateTooltip {
             get {
                 return ResourceManager.GetString("LaunchButtonUpdateTooltip", resourceCulture);
             }
@@ -153,7 +153,7 @@ namespace Sheas_Cealer_Droid.Consts {
         /// <summary>
         ///   查找类似 Check host for update 的本地化字符串。
         /// </summary>
-        public static string UpdateToolbarItemText {
+        internal static string UpdateToolbarItemText {
             get {
                 return ResourceManager.GetString("UpdateToolbarItemText", resourceCulture);
             }
@@ -162,7 +162,7 @@ namespace Sheas_Cealer_Droid.Consts {
         /// <summary>
         ///   查找类似 Tap to check host for update 的本地化字符串。
         /// </summary>
-        public static string UpdateToolbarItemTooltip {
+        internal static string UpdateToolbarItemTooltip {
             get {
                 return ResourceManager.GetString("UpdateToolbarItemTooltip", resourceCulture);
             }

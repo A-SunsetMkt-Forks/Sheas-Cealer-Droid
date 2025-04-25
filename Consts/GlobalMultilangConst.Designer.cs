@@ -22,7 +22,7 @@ namespace Sheas_Cealer_Droid.Consts {
     [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Resources.Tools.StronglyTypedResourceBuilder", "17.0.0.0")]
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
     [global::System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
-    public class GlobalMultilangConst {
+    internal class GlobalMultilangConst {
         
         private static global::System.Resources.ResourceManager resourceMan;
         
@@ -36,7 +36,7 @@ namespace Sheas_Cealer_Droid.Consts {
         ///   返回此类使用的缓存的 ResourceManager 实例。
         /// </summary>
         [global::System.ComponentModel.EditorBrowsableAttribute(global::System.ComponentModel.EditorBrowsableState.Advanced)]
-        public static global::System.Resources.ResourceManager ResourceManager {
+        internal static global::System.Resources.ResourceManager ResourceManager {
             get {
                 if (object.ReferenceEquals(resourceMan, null)) {
                     global::System.Resources.ResourceManager temp = new global::System.Resources.ResourceManager("Sheas_Cealer_Droid.Consts.GlobalMultilangConst", typeof(GlobalMultilangConst).Assembly);
@@ -51,7 +51,7 @@ namespace Sheas_Cealer_Droid.Consts {
         ///   使用此强类型资源类的所有资源查找执行重写。
         /// </summary>
         [global::System.ComponentModel.EditorBrowsableAttribute(global::System.ComponentModel.EditorBrowsableState.Advanced)]
-        public static global::System.Globalization.CultureInfo Culture {
+        internal static global::System.Globalization.CultureInfo Culture {
             get {
                 return resourceCulture;
             }
@@ -63,7 +63,7 @@ namespace Sheas_Cealer_Droid.Consts {
         /// <summary>
         ///   查找类似 Other (Custom) 的本地化字符串。
         /// </summary>
-        public static string _BrowserNameCollectionCustomTitle {
+        internal static string _BrowserNameCollectionCustomTitle {
             get {
                 return ResourceManager.GetString("_BrowserNameCollectionCustomTitle", resourceCulture);
             }
@@ -72,7 +72,7 @@ namespace Sheas_Cealer_Droid.Consts {
         /// <summary>
         ///   查找类似 Browser name cannot be empty or contain whitespace characters 的本地化字符串。
         /// </summary>
-        public static string _CustomBrowserNameErrorToastMsg {
+        internal static string _CustomBrowserNameErrorToastMsg {
             get {
                 return ResourceManager.GetString("_CustomBrowserNameErrorToastMsg", resourceCulture);
             }
@@ -83,7 +83,7 @@ namespace Sheas_Cealer_Droid.Consts {
         ///
         ///(Must support opening chrome://flags) 的本地化字符串。
         /// </summary>
-        public static string _CustomBrowserNamePopupMsg {
+        internal static string _CustomBrowserNamePopupMsg {
             get {
                 return ResourceManager.GetString("_CustomBrowserNamePopupMsg", resourceCulture);
             }
@@ -92,7 +92,7 @@ namespace Sheas_Cealer_Droid.Consts {
         /// <summary>
         ///   查找类似 Custom Browser Name 的本地化字符串。
         /// </summary>
-        public static string _CustomBrowserNamePopupTitle {
+        internal static string _CustomBrowserNamePopupTitle {
             get {
                 return ResourceManager.GetString("_CustomBrowserNamePopupTitle", resourceCulture);
             }
@@ -101,7 +101,7 @@ namespace Sheas_Cealer_Droid.Consts {
         /// <summary>
         ///   查找类似 Accept 的本地化字符串。
         /// </summary>
-        public static string _PopupAcceptText {
+        internal static string _PopupAcceptText {
             get {
                 return ResourceManager.GetString("_PopupAcceptText", resourceCulture);
             }
@@ -110,7 +110,7 @@ namespace Sheas_Cealer_Droid.Consts {
         /// <summary>
         ///   查找类似 Cancel 的本地化字符串。
         /// </summary>
-        public static string _PopupCancelText {
+        internal static string _PopupCancelText {
             get {
                 return ResourceManager.GetString("_PopupCancelText", resourceCulture);
             }
@@ -119,7 +119,7 @@ namespace Sheas_Cealer_Droid.Consts {
         /// <summary>
         ///   查找类似 Where are you going? Come back 😟 的本地化字符串。
         /// </summary>
-        public static string _SkipWarning1ToastMsg {
+        internal static string _SkipWarning1ToastMsg {
             get {
                 return ResourceManager.GetString("_SkipWarning1ToastMsg", resourceCulture);
             }
@@ -128,7 +128,7 @@ namespace Sheas_Cealer_Droid.Consts {
         /// <summary>
         ///   查找类似 Get back here! No skipping allowed 😡 的本地化字符串。
         /// </summary>
-        public static string _SkipWarning2ToastMsg {
+        internal static string _SkipWarning2ToastMsg {
             get {
                 return ResourceManager.GetString("_SkipWarning2ToastMsg", resourceCulture);
             }
@@ -137,7 +137,7 @@ namespace Sheas_Cealer_Droid.Consts {
         /// <summary>
         ///   查找类似 How about we explore the area ahead of us later 😇 的本地化字符串。
         /// </summary>
-        public static string _SkipWarning3ToastMsg {
+        internal static string _SkipWarning3ToastMsg {
             get {
                 return ResourceManager.GetString("_SkipWarning3ToastMsg", resourceCulture);
             }
@@ -146,7 +146,7 @@ namespace Sheas_Cealer_Droid.Consts {
         /// <summary>
         ///   查找类似 U&apos;r not there yet 😮 的本地化字符串。
         /// </summary>
-        public static string _SkipWarning4ToastMsg {
+        internal static string _SkipWarning4ToastMsg {
             get {
                 return ResourceManager.GetString("_SkipWarning4ToastMsg", resourceCulture);
             }
@@ -155,7 +155,7 @@ namespace Sheas_Cealer_Droid.Consts {
         /// <summary>
         ///   查找类似 About 的本地化字符串。
         /// </summary>
-        public static string AboutShellContentTitle {
+        internal static string AboutShellContentTitle {
             get {
                 return ResourceManager.GetString("AboutShellContentTitle", resourceCulture);
             }
@@ -164,7 +164,7 @@ namespace Sheas_Cealer_Droid.Consts {
         /// <summary>
         ///   查找类似 Select a Chromium-based browser 的本地化字符串。
         /// </summary>
-        public static string BrowserPickerTitle {
+        internal static string BrowserPickerTitle {
             get {
                 return ResourceManager.GetString("BrowserPickerTitle", resourceCulture);
             }
@@ -173,7 +173,7 @@ namespace Sheas_Cealer_Droid.Consts {
         /// <summary>
         ///   查找类似 Tap to open a browser selection pop-up 的本地化字符串。
         /// </summary>
-        public static string BrowserPickerTooltip {
+        internal static string BrowserPickerTooltip {
             get {
                 return ResourceManager.GetString("BrowserPickerTooltip", resourceCulture);
             }
@@ -182,7 +182,7 @@ namespace Sheas_Cealer_Droid.Consts {
         /// <summary>
         ///   查找类似 Next 的本地化字符串。
         /// </summary>
-        public static string NextButtonDescription {
+        internal static string NextButtonDescription {
             get {
                 return ResourceManager.GetString("NextButtonDescription", resourceCulture);
             }
@@ -191,7 +191,7 @@ namespace Sheas_Cealer_Droid.Consts {
         /// <summary>
         ///   查找类似 Tap to proceed to the next step 的本地化字符串。
         /// </summary>
-        public static string NextButtonTooltip {
+        internal static string NextButtonTooltip {
             get {
                 return ResourceManager.GetString("NextButtonTooltip", resourceCulture);
             }
@@ -200,7 +200,7 @@ namespace Sheas_Cealer_Droid.Consts {
         /// <summary>
         ///   查找类似 Prev 的本地化字符串。
         /// </summary>
-        public static string PrevButtonDescription {
+        internal static string PrevButtonDescription {
             get {
                 return ResourceManager.GetString("PrevButtonDescription", resourceCulture);
             }
@@ -209,7 +209,7 @@ namespace Sheas_Cealer_Droid.Consts {
         /// <summary>
         ///   查找类似 Tap to return to the previous step 的本地化字符串。
         /// </summary>
-        public static string PrevButtonTooltip {
+        internal static string PrevButtonTooltip {
             get {
                 return ResourceManager.GetString("PrevButtonTooltip", resourceCulture);
             }
@@ -218,7 +218,7 @@ namespace Sheas_Cealer_Droid.Consts {
         /// <summary>
         ///   查找类似 Settings 的本地化字符串。
         /// </summary>
-        public static string SettingsShellContentTitle {
+        internal static string SettingsShellContentTitle {
             get {
                 return ResourceManager.GetString("SettingsShellContentTitle", resourceCulture);
             }
