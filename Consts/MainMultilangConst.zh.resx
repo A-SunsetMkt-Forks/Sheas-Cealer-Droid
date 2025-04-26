@@ -135,6 +135,15 @@
   <data name="LaunchButtonUpdateTooltip" xml:space="preserve">
     <value>点击更新规则</value>
   </data>
+  <data name="MainSearchHandlerClearIconName" xml:space="preserve">
+    <value>清除</value>
+  </data>
+  <data name="MainSearchHandlerPlaceholder" xml:space="preserve">
+    <value>搜索伪造规则</value>
+  </data>
+  <data name="MainSearchHandlerQueryIconName" xml:space="preserve">
+    <value>搜索</value>
+  </data>
   <data name="UpdateToolbarItemText" xml:space="preserve">
     <value>检查规则更新</value>
   </data>

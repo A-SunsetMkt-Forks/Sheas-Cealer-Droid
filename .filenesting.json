@@ -26,6 +26,7 @@
                     "MainLaunchButtonBackgroundColorConv.cs": [ "MainConv.cs" ],
                     "MainLaunchButtonRotationConv.cs": [ "MainConv.cs" ],
                     "MainLaunchButtonTooltipConv.cs": [ "MainConv.cs" ],
+                    "MainSearchDomainLabelTextConv.cs": [ "MainConv.cs" ],
                     "MainStatusProgressBarIsVisibleConv.cs": [ "MainConv.cs" ]
                 }
             }

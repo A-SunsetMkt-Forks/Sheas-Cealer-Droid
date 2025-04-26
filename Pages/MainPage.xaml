@@ -3,10 +3,45 @@
              xmlns:behaviors="clr-namespace:CommunityToolkit.Maui.Behaviors;assembly=CommunityToolkit.Maui"
              xmlns:consts="clr-namespace:Sheas_Cealer_Droid.Consts"
              xmlns:convs="clr-namespace:Sheas_Cealer_Droid.Convs"
+             xmlns:handlers="clr-namespace:Sheas_Cealer_Droid.Handlers"
              xmlns:models="clr-namespace:Sheas_Cealer_Droid.Models"
              xmlns:preses="clr-namespace:Sheas_Cealer_Droid.Preses"
              x:Class="Sheas_Cealer_Droid.Pages.MainPage" x:DataType="preses:MainPres"
              Loaded="MainWin_Loaded">
+    <Shell.SearchHandler>
+        <handlers:MainSearchHandler SearchCollection="{Binding CealHostRulesCollection}"
+                                    SearchBoxVisibility="Collapsible" QueryIcon="search_icon.png" ClearIcon="clear_icon.png"
+                                    QueryIconName="{x:Static consts:MainMultilangConst.MainSearchHandlerQueryIconName}"
+                                    ClearIconName="{x:Static consts:MainMultilangConst.MainSearchHandlerClearIconName}"
+                                    Placeholder="{x:Static consts:MainMultilangConst.MainSearchHandlerPlaceholder}"
+                                    BackgroundColor="{AppThemeBinding Light={StaticResource Gray100}, Dark={StaticResource Gray850}}"
+                                    TextColor="{AppThemeBinding Light={StaticResource Gray900}, Dark={StaticResource Gray300}}"
+                                    CancelButtonColor="{AppThemeBinding Light={StaticResource Gray900}, Dark={StaticResource Gray300}}"
+                                    ItemSelected="MainSearchHandler_ItemSelected">
+            <handlers:MainSearchHandler.ItemTemplate>
+                <DataTemplate x:DataType="models:CealHostRule">
+                    <Grid Margin="8,2,8,2">
+                        <Border BackgroundColor="{AppThemeBinding Light={StaticResource Gray100}, Dark={StaticResource Gray850}}"
+                                StrokeShape="RoundRectangle 8" Margin="4">
+                            <Grid Margin="8">
+                                <VerticalStackLayout>
+                                    <Label Text="{Binding Domain, Converter={x:Static convs:MainConv.MainSearchDomainLabelTextConv}}"
+                                           Margin="20,4" FontSize="Subtitle" />
+                                    <Label Text="{Binding Ip}"
+                                           Margin="20,4" FontSize="Caption" />
+                                </VerticalStackLayout>
+                                <AbsoluteLayout>
+                                    <Border AbsoluteLayout.LayoutBounds="0,0.5,4,1" AbsoluteLayout.LayoutFlags="PositionProportional,HeightProportional"
+                                            BackgroundColor="{AppThemeBinding Light={StaticResource Primary500}, Dark={StaticResource Primary800}}"
+                                            StrokeShape="RoundRectangle 8" />
+                                </AbsoluteLayout>
+                            </Grid>
+                        </Border>
+                    </Grid>
+                </DataTemplate>
+            </handlers:MainSearchHandler.ItemTemplate>
+        </handlers:MainSearchHandler>
+    </Shell.SearchHandler>
     <ContentPage.ToolbarItems>
         <ToolbarItem IconImageSource="{AppThemeBinding Light=github_icon.png, Dark=github_dark_icon.png}"
                      ToolTipProperties.Text="{x:Static consts:MainMultilangConst.GithubToolbarItemTooltip}"
@@ -24,7 +59,8 @@
                                     Swiped="LayoutSwipeGestureRecognizer_Swiped" />
         </Grid.GestureRecognizers>
 
-        <CollectionView ItemsSource="{Binding CealHostRulesCollection}"
+        <CollectionView x:Name="MainCollectionView"
+                        ItemsSource="{Binding CealHostRulesCollection}"
                         Grid.Row="0">
             <CollectionView.ItemTemplate>
                 <DataTemplate x:DataType="models:CealHostRule">

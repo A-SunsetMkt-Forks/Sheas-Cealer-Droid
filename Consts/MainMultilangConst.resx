@@ -135,6 +135,15 @@
   <data name="LaunchButtonUpdateTooltip" xml:space="preserve">
     <value>Tap to update host</value>
   </data>
+  <data name="MainSearchHandlerClearIconName" xml:space="preserve">
+    <value>Clear</value>
+  </data>
+  <data name="MainSearchHandlerPlaceholder" xml:space="preserve">
+    <value>Search for host</value>
+  </data>
+  <data name="MainSearchHandlerQueryIconName" xml:space="preserve">
+    <value>Search</value>
+  </data>
   <data name="UpdateToolbarItemText" xml:space="preserve">
     <value>Check host for update</value>
   </data>

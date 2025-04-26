@@ -34,8 +34,6 @@
         </Grid>
     </Shell.FlyoutHeader>
 
-    <!--Todo: 添加搜索功能 https://learn.microsoft.com/en-us/dotnet/maui/fundamentals/shell/search?view=net-maui-9.0-->
-
     <ShellContent x:Name="MainShellContent"
                   ContentTemplate="{DataTemplate pages:MainPage}"
                   Title="{x:Static consts:AppMultilangConst.MainShellContentTitle}"

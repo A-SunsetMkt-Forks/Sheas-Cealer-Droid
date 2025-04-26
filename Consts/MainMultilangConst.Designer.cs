@@ -151,6 +151,33 @@ namespace Sheas_Cealer_Droid.Consts {
         }
         
         /// <summary>
+        ///   查找类似 Clear 的本地化字符串。
+        /// </summary>
+        internal static string MainSearchHandlerClearIconName {
+            get {
+                return ResourceManager.GetString("MainSearchHandlerClearIconName", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   查找类似 Search for host 的本地化字符串。
+        /// </summary>
+        internal static string MainSearchHandlerPlaceholder {
+            get {
+                return ResourceManager.GetString("MainSearchHandlerPlaceholder", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   查找类似 Search 的本地化字符串。
+        /// </summary>
+        internal static string MainSearchHandlerQueryIconName {
+            get {
+                return ResourceManager.GetString("MainSearchHandlerQueryIconName", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   查找类似 Check host for update 的本地化字符串。
         /// </summary>
         internal static string UpdateToolbarItemText {

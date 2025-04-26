@@ -3,6 +3,7 @@ using Microsoft.Maui.ApplicationModel;
 using Microsoft.Maui.Controls;
 using Ona_Core;
 using Sheas_Cealer_Droid.Consts;
+using Sheas_Cealer_Droid.Models;
 using Sheas_Cealer_Droid.Preses;
 using Sheas_Cealer_Droid.Utils;
 using System;
@@ -62,6 +63,8 @@ public partial class MainPage : ContentPage
 
         await StatusManager.RefreshCurrentStatus(MainPres, CealHostRulesDict.ContainsValue(null));
     }
+
+    private void MainSearchHandler_ItemSelected(object _, CealHostRule e) => MainCollectionView.ScrollTo(e, position: ScrollToPosition.Center);
 
     private void GithubToolbarItem_Clicked(object sender, EventArgs e) => Browser.Default.OpenAsync(MainConst.GithubRepoUrl);
     private async void UpdateToolbarItem_Clicked(object? sender, EventArgs e)
