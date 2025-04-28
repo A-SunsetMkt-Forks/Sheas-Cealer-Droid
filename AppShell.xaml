@@ -4,7 +4,7 @@
        xmlns:consts="clr-namespace:Sheas_Cealer_Droid.Consts"
        xmlns:pages="clr-namespace:Sheas_Cealer_Droid.Pages"
        x:Class="Sheas_Cealer_Droid.AppShell"
-       FlyoutBackgroundColor="{AppThemeBinding Light={StaticResource Gray50}, Dark={StaticResource Gray900}}"
+       FlyoutBackgroundColor="{AppThemeBinding Light={DynamicResource Gray50}, Dark={DynamicResource Gray900}}"
        Loaded="AppShell_Loaded" Navigating="AppShell_Navigating">
     <Shell.Behaviors>
         <behaviors:StatusBarBehavior StatusBarColor="{AppThemeBinding Light={StaticResource Primary50}, Dark={StaticResource Gray850}}"
@@ -17,9 +17,9 @@
                       Padding="8">
                     <Grid.Background>
                         <LinearGradientBrush StartPoint="0.5,0" EndPoint="0.5,1">
-                            <GradientStop Color="{AppThemeBinding Light={StaticResource Primary50}, Dark={StaticResource Gray850}}"
+                            <GradientStop Color="{AppThemeBinding Light={DynamicResource Primary50}, Dark={DynamicResource Gray850}}"
                                           Offset="0" />
-                            <GradientStop Color="{AppThemeBinding Light={StaticResource Secondary50}, Dark={StaticResource Gray850}}"
+                            <GradientStop Color="{AppThemeBinding Light={DynamicResource Secondary50}, Dark={DynamicResource Gray850}}"
                                           Offset="1" />
                         </LinearGradientBrush>
                     </Grid.Background>

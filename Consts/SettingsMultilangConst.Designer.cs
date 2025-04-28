@@ -68,5 +68,32 @@ namespace Sheas_Cealer_Droid.Consts {
                 return ResourceManager.GetString("BrowserSettingsItemTitle", resourceCulture);
             }
         }
+        
+        /// <summary>
+        ///   查找类似 Select a UI color flavor 的本地化字符串。
+        /// </summary>
+        internal static string ThemeColorPickerTitle {
+            get {
+                return ResourceManager.GetString("ThemeColorPickerTitle", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   查找类似 Tap to open a flavor color selection pop-up 的本地化字符串。
+        /// </summary>
+        internal static string ThemeColorPickerTooltip {
+            get {
+                return ResourceManager.GetString("ThemeColorPickerTooltip", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   查找类似 Flavor Color 的本地化字符串。
+        /// </summary>
+        internal static string ThemeColorSettingsItemTitle {
+            get {
+                return ResourceManager.GetString("ThemeColorSettingsItemTitle", resourceCulture);
+            }
+        }
     }
 }

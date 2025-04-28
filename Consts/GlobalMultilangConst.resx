@@ -173,4 +173,22 @@
   <data name="_SkipWarning4ToastMsg" xml:space="preserve">
     <value>U'r not there yet 😮</value>
   </data>
+  <data name="_ThemeColorBlueName" xml:space="preserve">
+    <value>Triple Ice Cream</value>
+  </data>
+  <data name="_ThemeColorGreenName" xml:space="preserve">
+    <value>Tetraploid Melon</value>
+  </data>
+  <data name="_ThemeColorOrangeName" xml:space="preserve">
+    <value>Hexavalent Orange Juice</value>
+  </data>
+  <data name="_ThemeColorRedName" xml:space="preserve">
+    <value>A Strawberry Milk</value>
+  </data>
+  <data name="_ThemeColorRestartToApplyToastMsg" xml:space="preserve">
+    <value>Flavor is changing, restart to taste the new flavor 🍹</value>
+  </data>
+  <data name="_ThemeColorYellowName" xml:space="preserve">
+    <value>Dihydrate Citric Acid</value>
+  </data>
 </root>

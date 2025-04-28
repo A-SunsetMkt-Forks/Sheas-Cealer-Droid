@@ -173,4 +173,22 @@
   <data name="_SkipWarning4ToastMsg" xml:space="preserve">
     <value>还没到这一步呢 😮</value>
   </data>
+  <data name="_ThemeColorBlueName" xml:space="preserve">
+    <value>三倍冰淇淋</value>
+  </data>
+  <data name="_ThemeColorGreenName" xml:space="preserve">
+    <value>四体哈密瓜</value>
+  </data>
+  <data name="_ThemeColorOrangeName" xml:space="preserve">
+    <value>六价橘子汁</value>
+  </data>
+  <data name="_ThemeColorRedName" xml:space="preserve">
+    <value>一杯草莓乳</value>
+  </data>
+  <data name="_ThemeColorRestartToApplyToastMsg" xml:space="preserve">
+    <value>口味改变啦，重启品尝新口味 🍹</value>
+  </data>
+  <data name="_ThemeColorYellowName" xml:space="preserve">
+    <value>二水柠檬酸</value>
+  </data>
 </root>

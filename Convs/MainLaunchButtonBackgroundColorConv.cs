@@ -15,10 +15,10 @@ internal class MainLaunchButtonBackgroundColorConv : IValueConverter
         return Application.Current!.RequestedTheme switch
         {
             AppTheme.Light => isCommandLineUtd.HasValue ?
-            isCommandLineUtd.Value ? Application.Current.Resources["Primary200"] : Application.Current.Resources["Tertiary400"] : Application.Current.Resources["Gray400"],
+            isCommandLineUtd.Value ? Application.Current.Resources["Primary400"] : Application.Current.Resources["Tertiary400"] : Application.Current.Resources["Gray400"],
 
             AppTheme.Dark => isCommandLineUtd.HasValue ?
-            isCommandLineUtd.Value ? Application.Current.Resources["Primary800"] : Application.Current.Resources["Tertiary800"] : Application.Current.Resources["Gray700"],
+            isCommandLineUtd.Value ? Application.Current.Resources["Primary700"] : Application.Current.Resources["Tertiary700"] : Application.Current.Resources["Gray700"],
 
             _ => new UnreachableException()
         };

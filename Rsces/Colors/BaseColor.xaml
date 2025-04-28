@@ -1,14 +1,14 @@
 ﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
                     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml">
-    <Color x:Key="Primary50">#FFE4EB</Color>    <!--Light Bar Primary Background-->
-    <Color x:Key="Primary200">#FF608C</Color>   <!--Light Launch Button Background-->
-    <Color x:Key="Primary500">#FF0059</Color>   <!--Light View Background-->
-    <Color x:Key="Primary800">#C40052</Color>   <!--Dark View Background | Dark Launch Button Background-->
+    <Color x:Key="Primary50">#FAFAFA</Color>    <!--Light Bar Primary Background-->
+    <Color x:Key="Primary400">#BDBDBD</Color>   <!--Light Launch Button Background-->
+    <Color x:Key="Primary500">#9E9E9E</Color>   <!--Light View Background-->
+    <Color x:Key="Primary700">#616161</Color>   <!--Dark View Background | Dark Launch Button Background-->
 
-    <Color x:Key="Secondary50">#FFE8E6</Color>  <!--Light Bar Secondary Background-->
+    <Color x:Key="Secondary50">#FAFAFA</Color>  <!--Light Bar Secondary Background-->
 
-    <Color x:Key="Tertiary400">#FFA600</Color>  <!--Light Launch Button Background-->
-    <Color x:Key="Tertiary800">#F26800</Color>  <!--Dark Launch Button Background-->
+    <Color x:Key="Tertiary400">#BDBDBD</Color>  <!--Light Launch Button Background-->
+    <Color x:Key="Tertiary700">#616161</Color>  <!--Dark Launch Button Background-->
 
     <Color x:Key="White">White</Color>          <!--Light White Foreground-->
     <Color x:Key="Gray50">#FAFAFA</Color>       <!--Light Base Background-->

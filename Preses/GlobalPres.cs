@@ -18,6 +18,15 @@ internal abstract partial class GlobalPres : ObservableObject
     protected GlobalPres() => BrowserNameCollection.CollectionChanged += BrowserNameCollection_CollectionChanged;
 
     [ObservableProperty]
+    private static string themeColorName = Preferences.Default.Get(nameof(ThemeColorName), GlobalConst._ThemeColorRedName);
+    async partial void OnThemeColorNameChanged(string value)
+    {
+        Preferences.Default.Set(nameof(ThemeColorName), value);
+
+        await Toast.Make(GlobalConst._ThemeColorRestartToApplyToastMsg).Show();
+    }
+
+    [ObservableProperty]
     private static string? browserName = Preferences.Default.Get<string?>(nameof(BrowserName), null);
     async partial void OnBrowserNameChanged(string? oldValue, string? newValue)
     {

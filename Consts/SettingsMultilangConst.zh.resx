@@ -120,4 +120,13 @@
   <data name="BrowserSettingsItemTitle" xml:space="preserve">
     <value>浏览器</value>
   </data>
+  <data name="ThemeColorPickerTitle" xml:space="preserve">
+    <value>选择一种 UI 颜色风味</value>
+  </data>
+  <data name="ThemeColorPickerTooltip" xml:space="preserve">
+    <value>点击打开口味色选择弹窗</value>
+  </data>
+  <data name="ThemeColorSettingsItemTitle" xml:space="preserve">
+    <value>口味色</value>
+  </data>
 </root>

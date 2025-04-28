@@ -1,0 +1,13 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+                    x:Class="Sheas_Cealer_Droid.Colors.YellowColor">
+    <Color x:Key="Primary50">#F9FEE6</Color>
+    <Color x:Key="Primary400">#CAF200</Color>
+    <Color x:Key="Primary500">#CAF200</Color>
+    <Color x:Key="Primary700">#9FB000</Color>
+
+    <Color x:Key="Secondary50">#F4FEEB</Color>
+
+    <Color x:Key="Tertiary400">#00F228</Color>
+    <Color x:Key="Tertiary700">#00B500</Color>
+</ResourceDictionary>

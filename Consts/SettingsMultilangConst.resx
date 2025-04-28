@@ -120,4 +120,13 @@
   <data name="BrowserSettingsItemTitle" xml:space="preserve">
     <value>Browser</value>
   </data>
+  <data name="ThemeColorPickerTitle" xml:space="preserve">
+    <value>Select a UI color flavor</value>
+  </data>
+  <data name="ThemeColorPickerTooltip" xml:space="preserve">
+    <value>Tap to open a flavor color selection pop-up</value>
+  </data>
+  <data name="ThemeColorSettingsItemTitle" xml:space="preserve">
+    <value>Flavor Color</value>
+  </data>
 </root>

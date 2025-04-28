@@ -153,6 +153,60 @@ namespace Sheas_Cealer_Droid.Consts {
         }
         
         /// <summary>
+        ///   查找类似 Triple Ice Cream 的本地化字符串。
+        /// </summary>
+        internal static string _ThemeColorBlueName {
+            get {
+                return ResourceManager.GetString("_ThemeColorBlueName", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   查找类似 Tetraploid Melon 的本地化字符串。
+        /// </summary>
+        internal static string _ThemeColorGreenName {
+            get {
+                return ResourceManager.GetString("_ThemeColorGreenName", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   查找类似 Hexavalent Orange Juice 的本地化字符串。
+        /// </summary>
+        internal static string _ThemeColorOrangeName {
+            get {
+                return ResourceManager.GetString("_ThemeColorOrangeName", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   查找类似 A Strawberry Milk 的本地化字符串。
+        /// </summary>
+        internal static string _ThemeColorRedName {
+            get {
+                return ResourceManager.GetString("_ThemeColorRedName", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   查找类似 Flavor is changing, restart to taste the new flavor 🍹 的本地化字符串。
+        /// </summary>
+        internal static string _ThemeColorRestartToApplyToastMsg {
+            get {
+                return ResourceManager.GetString("_ThemeColorRestartToApplyToastMsg", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   查找类似 Dihydrate Citric Acid 的本地化字符串。
+        /// </summary>
+        internal static string _ThemeColorYellowName {
+            get {
+                return ResourceManager.GetString("_ThemeColorYellowName", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   查找类似 About 的本地化字符串。
         /// </summary>
         internal static string AboutShellContentTitle {

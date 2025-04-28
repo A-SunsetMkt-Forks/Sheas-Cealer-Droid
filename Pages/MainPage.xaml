@@ -14,14 +14,14 @@
                                     QueryIconName="{x:Static consts:MainMultilangConst.MainSearchHandlerQueryIconName}"
                                     ClearIconName="{x:Static consts:MainMultilangConst.MainSearchHandlerClearIconName}"
                                     Placeholder="{x:Static consts:MainMultilangConst.MainSearchHandlerPlaceholder}"
-                                    BackgroundColor="{AppThemeBinding Light={StaticResource Gray100}, Dark={StaticResource Gray850}}"
-                                    TextColor="{AppThemeBinding Light={StaticResource Gray900}, Dark={StaticResource Gray300}}"
-                                    CancelButtonColor="{AppThemeBinding Light={StaticResource Gray900}, Dark={StaticResource Gray300}}"
+                                    BackgroundColor="{AppThemeBinding Light={DynamicResource Gray100}, Dark={DynamicResource Gray850}}"
+                                    TextColor="{AppThemeBinding Light={DynamicResource Gray900}, Dark={DynamicResource Gray300}}"
+                                    CancelButtonColor="{AppThemeBinding Light={DynamicResource Gray900}, Dark={DynamicResource Gray300}}"
                                     ItemSelected="MainSearchHandler_ItemSelected">
             <handlers:MainSearchHandler.ItemTemplate>
                 <DataTemplate x:DataType="models:CealHostRule">
                     <Grid Margin="8,2,8,2">
-                        <Border BackgroundColor="{AppThemeBinding Light={StaticResource Gray100}, Dark={StaticResource Gray850}}"
+                        <Border BackgroundColor="{AppThemeBinding Light={DynamicResource Gray100}, Dark={DynamicResource Gray850}}"
                                 StrokeShape="RoundRectangle 8" Margin="4">
                             <Grid Margin="8">
                                 <VerticalStackLayout>
@@ -32,7 +32,7 @@
                                 </VerticalStackLayout>
                                 <AbsoluteLayout>
                                     <Border AbsoluteLayout.LayoutBounds="0,0.5,4,1" AbsoluteLayout.LayoutFlags="PositionProportional,HeightProportional"
-                                            BackgroundColor="{AppThemeBinding Light={StaticResource Primary500}, Dark={StaticResource Primary800}}"
+                                            BackgroundColor="{AppThemeBinding Light={DynamicResource Primary500}, Dark={DynamicResource Primary700}}"
                                             StrokeShape="RoundRectangle 8" />
                                 </AbsoluteLayout>
                             </Grid>
@@ -65,7 +65,7 @@
             <CollectionView.ItemTemplate>
                 <DataTemplate x:DataType="models:CealHostRule">
                     <Grid Margin="8,2,8,2">
-                        <Border BackgroundColor="{AppThemeBinding Light={StaticResource Gray100}, Dark={StaticResource Gray850}}"
+                        <Border BackgroundColor="{AppThemeBinding Light={DynamicResource Gray100}, Dark={DynamicResource Gray850}}"
                                 StrokeShape="RoundRectangle 8" Margin="4">
                             <Grid Margin="8">
                                 <VerticalStackLayout>
@@ -82,7 +82,7 @@
                                 </VerticalStackLayout>
                                 <AbsoluteLayout>
                                     <Border AbsoluteLayout.LayoutBounds="0,0.5,4,1" AbsoluteLayout.LayoutFlags="PositionProportional,HeightProportional"
-                                            BackgroundColor="{AppThemeBinding Light={StaticResource Primary500}, Dark={StaticResource Primary800}}"
+                                            BackgroundColor="{AppThemeBinding Light={DynamicResource Primary500}, Dark={DynamicResource Primary700}}"
                                             StrokeShape="RoundRectangle 8" />
                                 </AbsoluteLayout>
                             </Grid>
@@ -100,7 +100,7 @@
         <ActivityIndicator IsRunning="{Binding IsPageLoading}"
                            Grid.Row="0" HorizontalOptions="Center" VerticalOptions="Center" />
         <Grid Grid.Row="1">
-            <Border Background="{AppThemeBinding Light={StaticResource Primary50}, Dark={StaticResource Gray850}}">
+            <Border Background="{AppThemeBinding Light={DynamicResource Primary50}, Dark={DynamicResource Gray850}}">
                 <Label Text="{Binding StatusMessage}"
                        VerticalTextAlignment="Center" Margin="28,0,0,0" />
             </Border>

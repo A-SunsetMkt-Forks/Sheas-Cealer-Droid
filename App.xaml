@@ -4,8 +4,8 @@
     <Application.Resources>
         <ResourceDictionary>
             <ResourceDictionary.MergedDictionaries>
-                <ResourceDictionary Source="Rsces/Styles/Colors.xaml" />
-                <ResourceDictionary Source="Rsces/Styles/Styles.xaml" />
+                <ResourceDictionary Source="Rsces/Colors/BaseColor.xaml" />
+                <ResourceDictionary Source="Rsces/Styles/BaseStyle.xaml" />
             </ResourceDictionary.MergedDictionaries>
         </ResourceDictionary>
     </Application.Resources>

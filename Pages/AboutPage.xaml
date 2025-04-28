@@ -31,7 +31,7 @@
         <CollectionView.ItemTemplate>
             <DataTemplate x:DataType="models:AboutInfo">
                 <Grid Margin="8,2,8,2">
-                    <Border BackgroundColor="{AppThemeBinding Light={StaticResource Gray100}, Dark={StaticResource Gray850}}"
+                    <Border BackgroundColor="{AppThemeBinding Light={DynamicResource Gray100}, Dark={DynamicResource Gray850}}"
                             StrokeShape="RoundRectangle 8" Margin="4">
                         <Grid Margin="8">
                             <Grid ColumnDefinitions="Auto,*" RowDefinitions="Auto,Auto" ColumnSpacing="20">
@@ -46,7 +46,7 @@
                             </Grid>
                             <AbsoluteLayout>
                                 <Border AbsoluteLayout.LayoutBounds="0,0.5,4,1" AbsoluteLayout.LayoutFlags="PositionProportional,HeightProportional"
-                                        BackgroundColor="{AppThemeBinding Light={StaticResource Primary500}, Dark={StaticResource Primary800}}"
+                                        BackgroundColor="{AppThemeBinding Light={DynamicResource Primary500}, Dark={DynamicResource Primary700}}"
                                         StrokeShape="RoundRectangle 8" />
                             </AbsoluteLayout>
                         </Grid>

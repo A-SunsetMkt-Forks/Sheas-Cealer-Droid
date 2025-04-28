@@ -14,5 +14,5 @@ public partial class SettingsPage : ContentPage
         BindingContext = SettingsPres = new();
     }
 
-    private void SettingsPage_NavigatedFrom(object sender, NavigatedFromEventArgs e) => BrowserPicker.BindingContext = null;
+    private void SettingsPage_NavigatedFrom(object sender, NavigatedFromEventArgs e) => BrowserPicker.BindingContext = ThemeColorPicker.BindingContext = null;
 }
