@@ -21,8 +21,6 @@
                     "ReadyMultilangConst.resx": [ "ReadyConst.cs" ],
                     "ReadyMultilangConst.zh.resx": [ "ReadyConst.cs" ],
 
-                    "BrowserNextButtonIsEnabledConv.cs": [ "BrowserConv.cs" ],
-                    "FlagLinkButtonIsEnabledConv.cs": [ "FlagConv.cs" ],
                     "MainLaunchButtonBackgroundColorConv.cs": [ "MainConv.cs" ],
                     "MainLaunchButtonRotationConv.cs": [ "MainConv.cs" ],
                     "MainLaunchButtonTooltipConv.cs": [ "MainConv.cs" ],

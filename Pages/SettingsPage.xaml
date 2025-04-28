@@ -13,7 +13,7 @@
                 <models:SettingsItem Title="{x:Static consts:SettingsMultilangConst.BrowserSettingsItemTitle}">
                     <models:SettingsItem.View>
                         <Picker x:Name="BrowserPicker"
-                                BindingContext="{Binding BindingContext, Source={x:RelativeSource AncestorType={x:Type ContentPage}}}"
+                                BindingContext="{Binding BindingContext, Source={x:RelativeSource AncestorType={x:Type ContentPage}}, x:DataType=ContentPage}"
                                 Title="{x:Static consts:GlobalMultilangConst.BrowserPickerTitle}"
                                 ToolTipProperties.Text="{x:Static consts:GlobalMultilangConst.BrowserPickerTooltip}"
                                 ItemsSource="{Binding BrowserNameCollection}"
@@ -23,7 +23,7 @@
                 <models:SettingsItem Title="{x:Static consts:SettingsMultilangConst.ThemeColorSettingsItemTitle}">
                     <models:SettingsItem.View>
                         <Picker x:Name="ThemeColorPicker"
-                                BindingContext="{Binding BindingContext, Source={x:RelativeSource AncestorType={x:Type ContentPage}}}"
+                                BindingContext="{Binding BindingContext, Source={x:RelativeSource AncestorType={x:Type ContentPage}}, x:DataType=ContentPage}"
                                 Title="{x:Static consts:SettingsMultilangConst.ThemeColorPickerTitle}"
                                 ToolTipProperties.Text="{x:Static consts:SettingsMultilangConst.ThemeColorPickerTooltip}"
                                 ItemsSource="{x:Static consts:SettingsConst.ThemeColorNameArray}"
@@ -44,7 +44,7 @@
                                 <ContentView Content="{Binding View}"
                                              Grid.Column="1" Grid.Row="0" Margin="0,4,20,4" />
                                 <Label Text="{Binding Content}"
-                                       IsVisible="{Binding Content, TargetNullValue=False}"
+                                       IsVisible="{Binding Content, StringFormat=True, TargetNullValue=False}"
                                        Grid.ColumnSpan="2" Grid.Row="1" Margin="20,4" FontSize="Caption" />
                             </Grid>
                             <AbsoluteLayout>

@@ -30,16 +30,17 @@
 		<Nullable>enable</Nullable>
 		<UseMaui>true</UseMaui>
 		<MauiVersion>9.0.60</MauiVersion>
+		<MauiEnableXamlCBindingWithSourceCompilation>true</MauiEnableXamlCBindingWithSourceCompilation>
 		<SingleProject>true</SingleProject>
 		<ImplicitUsings>disable</ImplicitUsings>
-		<AllowUnsafeBlocks>True</AllowUnsafeBlocks>
-		<CheckForOverflowUnderflow>True</CheckForOverflowUnderflow>
+		<AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+		<CheckForOverflowUnderflow>true</CheckForOverflowUnderflow>
 		<ErrorReport>none</ErrorReport>
 		<PlatformsProjectFolder>Plats</PlatformsProjectFolder>
 		<AppDesignerFolder>Props</AppDesignerFolder>
 		<NeutralLanguage>en</NeutralLanguage>
-		<EnableLLVM>True</EnableLLVM>
-		<AndroidKeyStore>False</AndroidKeyStore>
+		<EnableLLVM>true</EnableLLVM>
+		<AndroidKeyStore>false</AndroidKeyStore>
 	</PropertyGroup>
 
 	<PropertyGroup Condition="'$(Configuration)'=='Release'">
@@ -70,19 +71,19 @@
 			<Generator>MSBuild:Compile</Generator>
 		</MauiXaml>
 		<MauiXaml Update="Rsces\Colors\GreenColor.xaml">
-		  <Generator>MSBuild:Compile</Generator>
+			<Generator>MSBuild:Compile</Generator>
 		</MauiXaml>
 		<MauiXaml Update="Rsces\Colors\YellowColor.xaml">
-		  <Generator>MSBuild:Compile</Generator>
+			<Generator>MSBuild:Compile</Generator>
 		</MauiXaml>
 		<MauiXaml Update="Rsces\Colors\OrangeColor.xaml">
-		  <Generator>MSBuild:Compile</Generator>
+			<Generator>MSBuild:Compile</Generator>
 		</MauiXaml>
 		<MauiXaml Update="Rsces\Colors\BlueColor.xaml">
-		  <Generator>MSBuild:Compile</Generator>
+			<Generator>MSBuild:Compile</Generator>
 		</MauiXaml>
 		<MauiXaml Update="Rsces\Colors\RedColor.xaml">
-		  <Generator>MSBuild:Compile</Generator>
+			<Generator>MSBuild:Compile</Generator>
 		</MauiXaml>
 	</ItemGroup>
 
@@ -112,42 +113,42 @@
 	<ItemGroup>
 		<Compile Update="Consts\AboutMultilangConst.Designer.cs">
 			<DependentUpon>AboutMultilangConst.resx</DependentUpon>
-			<DesignTime>True</DesignTime>
-			<AutoGen>True</AutoGen>
+			<DesignTime>true</DesignTime>
+			<AutoGen>true</AutoGen>
 		</Compile>
 		<Compile Update="Consts\SettingsMultilangConst.Designer.cs">
 			<DependentUpon>SettingsMultilangConst.resx</DependentUpon>
-			<DesignTime>True</DesignTime>
-			<AutoGen>True</AutoGen>
+			<DesignTime>true</DesignTime>
+			<AutoGen>true</AutoGen>
 		</Compile>
 		<Compile Update="Consts\BrowserMultilangConst.Designer.cs">
 			<DependentUpon>BrowserMultilangConst.resx</DependentUpon>
-			<DesignTime>True</DesignTime>
-			<AutoGen>True</AutoGen>
+			<DesignTime>true</DesignTime>
+			<AutoGen>true</AutoGen>
 		</Compile>
 		<Compile Update="Consts\FlagMultilangConst.Designer.cs">
 			<DependentUpon>FlagMultilangConst.resx</DependentUpon>
-			<DesignTime>True</DesignTime>
-			<AutoGen>True</AutoGen>
+			<DesignTime>true</DesignTime>
+			<AutoGen>true</AutoGen>
 		</Compile>
 		<Compile Update="Consts\AppMultilangConst.Designer.cs">
 			<DependentUpon>AppMultilangConst.resx</DependentUpon>
-			<DesignTime>True</DesignTime>
-			<AutoGen>True</AutoGen>
+			<DesignTime>true</DesignTime>
+			<AutoGen>true</AutoGen>
 		</Compile>
 		<Compile Update="Consts\ReadyMultilangConst.Designer.cs">
 			<DependentUpon>ReadyMultilangConst.resx</DependentUpon>
-			<DesignTime>True</DesignTime>
-			<AutoGen>True</AutoGen>
+			<DesignTime>true</DesignTime>
+			<AutoGen>true</AutoGen>
 		</Compile>
 		<Compile Update="Consts\MainMultilangConst.Designer.cs">
 			<DependentUpon>MainMultilangConst.resx</DependentUpon>
-			<DesignTime>True</DesignTime>
-			<AutoGen>True</AutoGen>
+			<DesignTime>true</DesignTime>
+			<AutoGen>true</AutoGen>
 		</Compile>
 		<Compile Update="Consts\GlobalMultilangConst.Designer.cs">
-			<DesignTime>True</DesignTime>
-			<AutoGen>True</AutoGen>
+			<DesignTime>true</DesignTime>
+			<AutoGen>true</AutoGen>
 			<DependentUpon>GlobalMultilangConst.resx</DependentUpon>
 		</Compile>
 	</ItemGroup>

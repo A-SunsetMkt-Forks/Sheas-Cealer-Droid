@@ -2,7 +2,6 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:behaviors="clr-namespace:CommunityToolkit.Maui.Behaviors;assembly=CommunityToolkit.Maui"
              xmlns:consts="clr-namespace:Sheas_Cealer_Droid.Consts"
-             xmlns:convs="clr-namespace:Sheas_Cealer_Droid.Convs"
              xmlns:preses="clr-namespace:Sheas_Cealer_Droid.Preses"
              x:Class="Sheas_Cealer_Droid.Pages.BrowserPage" x:DataType="preses:BrowserPres"
              Loaded="BrowserPage_Loaded" NavigatingFrom="BrowserPage_NavigatingFrom" NavigatedFrom="BrowserPage_NavigatedFrom" NavigatedTo="BrowserPage_NavigatedTo">
@@ -44,7 +43,7 @@
                          Source="right_icon.png"
                          ToolTipProperties.Text="{x:Static consts:GlobalMultilangConst.NextButtonTooltip}"
                          SemanticProperties.Description="{x:Static consts:GlobalMultilangConst.NextButtonDescription}"
-                         IsEnabled="{Binding BrowserName, Converter={x:Static convs:BrowserConv.BrowserNextButtonIsEnabledConv}}"
+                         IsEnabled="{Binding BrowserName, StringFormat=True, TargetNullValue=False}"
                          Grid.Row="1" HorizontalOptions="End" WidthRequest="56" HeightRequest="56" CornerRadius="28"
                          Clicked="NextButton_Clicked">
                 <ImageButton.Behaviors>

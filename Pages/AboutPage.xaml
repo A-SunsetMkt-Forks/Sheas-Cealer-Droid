@@ -38,10 +38,10 @@
                                 <Label Text="{Binding Title}"
                                        Grid.Column="0" Grid.Row="0" Margin="20,4,0,4" FontSize="Subtitle" VerticalTextAlignment="Center" HorizontalTextAlignment="End" />
                                 <Label Text="{Binding Content}"
-                                       IsVisible="{Binding Content, TargetNullValue=False}"
+                                       IsVisible="{Binding Content, StringFormat=True, TargetNullValue=False}"
                                        Grid.Column="1" Grid.Row="0" Margin="0,4,20,4" FontSize="Subtitle" VerticalTextAlignment="Center" HorizontalTextAlignment="End" />
                                 <Label Text="{Binding Url}"
-                                       IsVisible="{Binding Url, TargetNullValue=False}"
+                                       IsVisible="{Binding Url, StringFormat=True, TargetNullValue=False}"
                                        Grid.ColumnSpan="2" Grid.Row="1" Margin="20,4" FontSize="Caption" />
                             </Grid>
                             <AbsoluteLayout>
