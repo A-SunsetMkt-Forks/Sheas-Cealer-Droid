@@ -1,3 +1,3 @@
 ﻿namespace Sheas_Cealer_Droid.Consts;
 
-internal abstract class BrowserConst : BrowserMultilangConst { }
+internal abstract class BrowserConst : BrowserMultilangConst;

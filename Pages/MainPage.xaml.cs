@@ -116,7 +116,7 @@ public partial class MainPage : ContentPage
                 return;
 
             JsonDocumentOptions cealHostOptions = new() { AllowTrailingCommas = true, CommentHandling = JsonCommentHandling.Skip };
-            JsonElement cealHostArray = JsonDocument.Parse(cealHostStream, cealHostOptions).RootElement;
+            JsonElement cealHostArray = (await JsonDocument.ParseAsync(cealHostStream, cealHostOptions)).RootElement;
 
             foreach (JsonElement cealHostRule in cealHostArray.EnumerateArray())
             {
