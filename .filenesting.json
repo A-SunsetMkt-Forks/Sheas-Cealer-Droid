@@ -25,7 +25,8 @@
                     "MainLaunchButtonRotationConv.cs": [ "MainConv.cs" ],
                     "MainLaunchButtonTooltipConv.cs": [ "MainConv.cs" ],
                     "MainSearchDomainLabelTextConv.cs": [ "MainConv.cs" ],
-                    "MainStatusProgressBarIsVisibleConv.cs": [ "MainConv.cs" ]
+                    "MainStatusProgressBarIsVisibleConv.cs": [ "MainConv.cs" ],
+                    "FlagGuideLabelTextConv.cs": [ "FlagConv.cs" ]
                 }
             }
         }

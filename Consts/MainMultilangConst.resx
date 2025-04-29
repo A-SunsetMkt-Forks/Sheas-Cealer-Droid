@@ -150,13 +150,13 @@
     <value>Tap to check host for update</value>
   </data>
   <data name="_ActiveStatusMessage" xml:space="preserve">
-    <value>Injection complete. Tap the button to stop</value>
+    <value>Injection complete. Use the browser to test</value>
   </data>
   <data name="_InactiveStatusMessage" xml:space="preserve">
     <value>Injection is inactive. Tap the button to start</value>
   </data>
   <data name="_PartialStatusMessage" xml:space="preserve">
-    <value>Partial injection complete. Tap the button to stop</value>
+    <value>Partial injection complete. Use the browser to test</value>
   </data>
   <data name="_UpdateStatusMessage" xml:space="preserve">
     <value>Host update available. Tap the button to update</value>

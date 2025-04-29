@@ -2,6 +2,7 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:behaviors="clr-namespace:CommunityToolkit.Maui.Behaviors;assembly=CommunityToolkit.Maui"
              xmlns:consts="clr-namespace:Sheas_Cealer_Droid.Consts"
+             xmlns:convs="clr-namespace:Sheas_Cealer_Droid.Convs"
              xmlns:preses="clr-namespace:Sheas_Cealer_Droid.Preses"
              x:Class="Sheas_Cealer_Droid.Pages.FlagPage" x:DataType="preses:FlagPres"
              Loaded="FlagPage_Loaded" Appearing="FlagPage_Appearing" NavigatingFrom="FlagPage_NavigatingFrom" NavigatedFrom="FlagPage_NavigatedFrom" NavigatedTo="FlagPage_NavigatedTo">
@@ -29,7 +30,7 @@
               Grid.Row="1">
             <VerticalStackLayout Spacing="48"
                                  Grid.Row="0">
-                <Label Text="{Binding BrowserName, StringFormat={x:Static consts:FlagMultilangConst.GuideLabelText}, TargetNullValue={x:Static consts:FlagMultilangConst.GuideLabelTextBrowserNameFallback}}"
+                <Label Text="{Binding BrowserName, Converter={x:Static convs:FlagConv.FlagGuideLabelTextConv}, TargetNullValue={x:Static consts:FlagMultilangConst.GuideLabelTextBrowserNameFallback}}"
                        HorizontalTextAlignment="Center" />
                 <Button x:Name="LinkButton"
                         Text="{x:Static consts:FlagMultilangConst.LinkButtonText}"
