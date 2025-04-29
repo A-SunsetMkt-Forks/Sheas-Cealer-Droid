@@ -4,8 +4,7 @@
        xmlns:consts="clr-namespace:Sheas_Cealer_Droid.Consts"
        xmlns:pages="clr-namespace:Sheas_Cealer_Droid.Pages"
        x:Class="Sheas_Cealer_Droid.AppShell"
-       FlyoutBackgroundColor="{AppThemeBinding Light={DynamicResource Gray50}, Dark={DynamicResource Gray900}}"
-       Loaded="AppShell_Loaded" Navigating="AppShell_Navigating">
+       FlyoutBackgroundColor="{AppThemeBinding Light={DynamicResource Gray50}, Dark={DynamicResource Gray900}}">
     <Shell.Behaviors>
         <behaviors:StatusBarBehavior StatusBarColor="{AppThemeBinding Light={StaticResource Primary50}, Dark={StaticResource Gray850}}"
                                      StatusBarStyle="{AppThemeBinding Light=DarkContent, Dark=LightContent}" />
@@ -39,14 +38,15 @@
                   Title="{x:Static consts:AppMultilangConst.MainShellContentTitle}"
                   FlyoutItemIsVisible="False"
                   Route="MainPage" />
-    <ShellContent ContentTemplate="{DataTemplate pages:SettingsPage}"
-                  Title="{x:Static consts:GlobalMultilangConst.SettingsShellContentTitle}"
-                  Icon="{AppThemeBinding Light=settings_icon.png, Dark=settings_dark_icon.png}"
-                  Route="SettingsPage" />
-    <ShellContent ContentTemplate="{DataTemplate pages:AboutPage}"
-                  Title="{x:Static consts:GlobalMultilangConst.AboutShellContentTitle}"
-                  Icon="{AppThemeBinding Light=about_icon.png, Dark=about_dark_icon.png}"
-                  Route="AboutPage" />
+
+    <MenuItem Text="{x:Static consts:GlobalMultilangConst.SettingsMenuItemTitle}"
+              IconImageSource="{AppThemeBinding Light=settings_icon.png, Dark=settings_dark_icon.png}"
+              CommandParameter="{x:Type pages:SettingsPage}"
+              Clicked="DetailMenuItem_Clicked" />
+    <MenuItem Text="{x:Static consts:GlobalMultilangConst.AboutMenuItemTitle}"
+              IconImageSource="{AppThemeBinding Light=about_icon.png, Dark=about_dark_icon.png}"
+              CommandParameter="{x:Type pages:AboutPage}"
+              Clicked="DetailMenuItem_Clicked" />
 
     <TabBar x:Name="GuideTabBar">
         <ShellContent ContentTemplate="{DataTemplate pages:BrowserPage}"

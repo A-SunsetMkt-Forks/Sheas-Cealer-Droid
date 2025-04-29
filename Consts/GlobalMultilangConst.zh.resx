@@ -116,7 +116,7 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <data name="AboutShellContentTitle" xml:space="preserve">
+  <data name="AboutMenuItemTitle" xml:space="preserve">
     <value>关于</value>
   </data>
   <data name="BrowserPickerTitle" xml:space="preserve">
@@ -137,7 +137,7 @@
   <data name="PrevButtonTooltip" xml:space="preserve">
     <value>点击返回上一步</value>
   </data>
-  <data name="SettingsShellContentTitle" xml:space="preserve">
+  <data name="SettingsMenuItemTitle" xml:space="preserve">
     <value>设置</value>
   </data>
   <data name="_BrowserNameCollectionCustomTitle" xml:space="preserve">

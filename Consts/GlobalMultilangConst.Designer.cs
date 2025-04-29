@@ -209,9 +209,9 @@ namespace Sheas_Cealer_Droid.Consts {
         /// <summary>
         ///   查找类似 About 的本地化字符串。
         /// </summary>
-        internal static string AboutShellContentTitle {
+        internal static string AboutMenuItemTitle {
             get {
-                return ResourceManager.GetString("AboutShellContentTitle", resourceCulture);
+                return ResourceManager.GetString("AboutMenuItemTitle", resourceCulture);
             }
         }
         
@@ -272,9 +272,9 @@ namespace Sheas_Cealer_Droid.Consts {
         /// <summary>
         ///   查找类似 Settings 的本地化字符串。
         /// </summary>
-        internal static string SettingsShellContentTitle {
+        internal static string SettingsMenuItemTitle {
             get {
-                return ResourceManager.GetString("SettingsShellContentTitle", resourceCulture);
+                return ResourceManager.GetString("SettingsMenuItemTitle", resourceCulture);
             }
         }
     }

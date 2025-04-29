@@ -3,7 +3,7 @@
              xmlns:consts="clr-namespace:Sheas_Cealer_Droid.Consts"
              xmlns:models="clr-namespace:Sheas_Cealer_Droid.Models"
              x:Class="Sheas_Cealer_Droid.Pages.AboutPage"
-             Title="{x:Static consts:GlobalMultilangConst.AboutShellContentTitle}"
+             Title="{x:Static consts:GlobalMultilangConst.AboutMenuItemTitle}"
              Shell.FlyoutBehavior="Disabled">
     <CollectionView>
         <CollectionView.ItemsSource>

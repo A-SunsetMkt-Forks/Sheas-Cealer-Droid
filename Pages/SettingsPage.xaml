@@ -4,7 +4,7 @@
              xmlns:models="clr-namespace:Sheas_Cealer_Droid.Models"
              xmlns:preses="clr-namespace:Sheas_Cealer_Droid.Preses"
              x:Class="Sheas_Cealer_Droid.Pages.SettingsPage" x:DataType="preses:SettingsPres"
-             Title="{x:Static consts:GlobalMultilangConst.SettingsShellContentTitle}"
+             Title="{x:Static consts:GlobalMultilangConst.SettingsMenuItemTitle}"
              Shell.FlyoutBehavior="Disabled"
              NavigatedFrom="SettingsPage_NavigatedFrom">
     <CollectionView>
@@ -22,8 +22,7 @@
                 </models:SettingsItem>
                 <models:SettingsItem Title="{x:Static consts:SettingsMultilangConst.ThemeColorSettingsItemTitle}">
                     <models:SettingsItem.View>
-                        <Picker x:Name="ThemeColorPicker"
-                                BindingContext="{Binding BindingContext, Source={x:RelativeSource AncestorType={x:Type ContentPage}}, x:DataType=ContentPage}"
+                        <Picker BindingContext="{Binding BindingContext, Source={x:RelativeSource AncestorType={x:Type ContentPage}}, x:DataType=ContentPage}"
                                 Title="{x:Static consts:SettingsMultilangConst.ThemeColorPickerTitle}"
                                 ToolTipProperties.Text="{x:Static consts:SettingsMultilangConst.ThemeColorPickerTooltip}"
                                 ItemsSource="{x:Static consts:SettingsConst.ThemeColorNameArray}"

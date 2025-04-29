@@ -11,24 +11,27 @@
 * 适用平台: Android (其他平台请参考[相关项目](https://github.com/SpaceTimee/Sheas-Cealer-Droid#相关项目))
 
 ## 词汇解释
-**[Cealer Dict](https://github.com/SpaceTimee/Sheas-Cealer-Droid/wiki/Cealer-Dict)**
+[正式版解除封印]
 
 ## 注意事项
 1. 内置伪造规则在 [Cealing Host 存储库](https://github.com/SpaceTimee/Cealing-Host) 持续更新
 2. 本项目及所有相关资源仅供**抵御网络非法监听**和**开展网络安全研究**使用，无意绕过任何国家审查设备的审查
 3. 为避免不必要的麻烦，使用前请先阅读[**使用协议**](https://flowus.cn/wikis/share/577da6d7-1260-42b1-b082-b7e879efa767)
-4. Cealer 仍处于**开发阶段**，但每个正式版发布前会尽量确保其**稳定可用**
-5. Github Release 中会保留目前能够使用的**所有版本**，但强烈推荐使用**最新版**
+4. Cealer 仍处于**测试阶段**，正式版计划在 **2025.5.30** 发布，欢迎收藏订阅本项目
 
 ## 下载地址
 1. Github (首选): [https://github.com/SpaceTimee/Sheas-Cealer-Droid/releases](https://github.com/SpaceTimee/Sheas-Cealer-Droid/releases)
-2. 蓝奏云 (大陆推荐): 准备中
+2. 蓝奏云 (大陆推荐): [正式版解除封印]
+3. 群文件 (参与内测): 参考[联系方式](https://github.com/SpaceTimee/Sheas-Cealer-Droid#联系方式)
 
 ## 食用文档
-**[Cealer Docs](https://github.com/SpaceTimee/Sheas-Cealer-Droid/wiki/Cealer-Docs)**
+[正式版解除封印]
 
 ## 项目构建
-[Cealer Build](https://github.com/SpaceTimee/Sheas-Cealer-Droid/wiki/Cealer-Build)
+[正式版解除封印]
+
+## 未来路线
+正式版计划添加自定义伪造规则、上游链接和额外参数的功能以及优化英语本地化体验
 
 ## 项目原理
 利用 Chromium 内核的启动参数特性伪造 SNI 拓展标记，详细原理可参考[这篇文章](https://nicebowl.fun/24_8)

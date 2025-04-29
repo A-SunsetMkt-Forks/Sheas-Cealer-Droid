@@ -11,24 +11,27 @@
 * Applicable platform: Android (For other system, please refer to [Projects](https://github.com/SpaceTimee/Sheas-Cealer-Droid?tab=readme-ov-file#Projects))
 
 ## Vocabulary
-**[Cealer Dict](https://github.com/SpaceTimee/Sheas-Cealer-Droid/wiki/Cealer-Dict)**
+[Unsealed in official version]
 
 ## Notes
 1. The Built-in Cealing Host is continuously updated in the [Cealing Host repository](https://github.com/SpaceTimee/Cealing-Host)
 2. This project and all its resources are for the sole purpose of **defending against illegal network monitoring** and **conducting network security research**, and are not intended to bypass the censorship of any country
 3. Please read the [**EULA**](https://flowus.cn/wikis/share/577da6d7-1260-42b1-b082-b7e879efa767) before use
-4. Cealer is still in the **development stage**, but each production version will be **stable and available** before release
-5. Github Release will retain **all versions** that can be used currently, but it is strongly recommended to use the **latest version**
+4. Cealer is still in **testing phase**, with the official release scheduled for **2025.5.30**. You're welcome to star and subscribe to this project
 
 ## Download
 1. Github (preferred): [https://github.com/SpaceTimee/Sheas-Cealer-Droid/releases](https://github.com/SpaceTimee/Sheas-Cealer-Droid/releases)
-2. Lanzou (recommended in mainland China): In preparation
+2. Lanzou (recommended in mainland China): [Unsealed in official version]
+3. Group File (participate in internal testing): Please refer to [Contacts](https://github.com/SpaceTimee/Sheas-Cealer-Droid#Contacts)
 
 ## Docs
-**[Cealer Docs](https://github.com/SpaceTimee/Sheas-Cealer-Droid/wiki/Cealer-Docs)**
+[Unsealed in official version]
 
 ## Build
-[Cealer Build](https://github.com/SpaceTimee/Sheas-Cealer-Droid/wiki/Cealer-Build)
+[Unsealed in official version]
+
+## Roadmap
+The official release is planned to support the custom of Cealing Host, Upstream Url, and Extra Args, as well as improvements to the English localization experience
 
 ## Principles
 Using the startup parameter feature of the Chromium kernel to conceal SNI. For more detailes, please refer to [this article](https://nicebowl.fun/24_8)

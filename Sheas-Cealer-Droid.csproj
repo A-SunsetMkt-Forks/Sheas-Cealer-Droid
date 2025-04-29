@@ -40,6 +40,7 @@
 		<AppDesignerFolder>Props</AppDesignerFolder>
 		<NeutralLanguage>en</NeutralLanguage>
 		<EnableLLVM>true</EnableLLVM>
+    <RunAOTCompilation>false</RunAOTCompilation>
 		<AndroidKeyStore>false</AndroidKeyStore>
 	</PropertyGroup>
 

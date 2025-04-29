@@ -1,34 +1,33 @@
 ﻿using Microsoft.Maui.Controls;
 using Microsoft.Maui.Storage;
-using Sheas_Cealer_Droid.Consts;
 using System;
-using System.Linq;
+using System.Collections.Generic;
 
 namespace Sheas_Cealer_Droid;
 
 public partial class AppShell : Shell
 {
+    private readonly List<Type> DetailPageTypeArray = [];
+
     internal AppShell()
     {
         InitializeComponent();
 
         CurrentItem = Preferences.Default.Get("IsFirstRunning", true) ? GuideTabBar : MainShellContent;
     }
-    private void AppShell_Loaded(object sender, EventArgs e)
-    {
-        foreach (Type detailPageType in AppConst.DetailPageTypeArray)
-            Routing.RegisterRoute(detailPageType.Name, detailPageType);
-    }
 
-    private void AppShell_Navigating(object sender, ShellNavigatingEventArgs e)
+    private async void DetailMenuItem_Clicked(object sender, EventArgs e)
     {
-        string targetPageName = e.Target.Location.OriginalString.TrimStart('/');
+        MenuItem senderMenuItem = (MenuItem)sender;
+        Type targetDetailPageType = (Type)senderMenuItem.CommandParameter;
 
-        if (e.Source == ShellNavigationSource.ShellItemChanged && AppConst.DetailPageTypeArray.Any(t => t.Name == targetPageName))
+        if (!DetailPageTypeArray.Contains(targetDetailPageType))
         {
-            GoToAsync(targetPageName);
+            Routing.RegisterRoute(targetDetailPageType.Name, targetDetailPageType);
 
-            e.Cancel();
+            DetailPageTypeArray.Add(targetDetailPageType);
         }
+
+        await GoToAsync(targetDetailPageType.Name);
     }
 }
