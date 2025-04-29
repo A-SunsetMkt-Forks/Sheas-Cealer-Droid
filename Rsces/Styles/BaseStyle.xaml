@@ -26,7 +26,11 @@
 
     <Style TargetType="Border">
         <Setter Property="StrokeThickness" Value="0" />
-        <Setter Property="Shadow" Value="0 0 4 Black 0.25" />
+        <Setter Property="Shadow">
+            <Setter.Value>
+                <Shadow Opacity="0.25" Radius="4" />
+            </Setter.Value>
+        </Setter>
     </Style>
 
     <Style TargetType="Label">
@@ -38,7 +42,11 @@
         <Setter Property="TextColor" Value="{AppThemeBinding Light={DynamicResource White}, Dark={DynamicResource Gray900}}" />
         <Setter Property="CornerRadius" Value="8" />
         <Setter Property="Padding" Value="16" />
-        <Setter Property="Shadow" Value="0 0 4 Black 0.25" />
+        <Setter Property="Shadow">
+            <Setter.Value>
+                <Shadow Opacity="0.25" Radius="4" />
+            </Setter.Value>
+        </Setter>
         <Setter Property="VisualStateManager.VisualStateGroups">
             <VisualStateGroupList>
                 <VisualStateGroup x:Name="CommonStates">
@@ -62,7 +70,11 @@
     <Style TargetType="ImageButton">
         <Setter Property="BackgroundColor" Value="{AppThemeBinding Light={DynamicResource Primary500}, Dark={DynamicResource Primary700}}" />
         <Setter Property="Padding" Value="16" />
-        <Setter Property="Shadow" Value="0 0 4 Black 0.25" />
+        <Setter Property="Shadow">
+            <Setter.Value>
+                <Shadow Opacity="0.25" Radius="4" />
+            </Setter.Value>
+        </Setter>
         <Setter Property="VisualStateManager.VisualStateGroups">
             <VisualStateGroupList>
                 <VisualStateGroup x:Name="CommonStates">
