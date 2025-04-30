@@ -109,7 +109,7 @@
     </Style>
 
     <Style TargetType="IndicatorView">
-        <Setter Property="Count" Value="3" />
+        <Setter Property="Count" Value="4" />
         <Setter Property="SelectedIndicatorColor" Value="{AppThemeBinding Light={DynamicResource Primary500}, Dark={DynamicResource Primary700}}" />
     </Style>
 </ResourceDictionary>

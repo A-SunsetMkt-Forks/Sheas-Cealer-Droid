@@ -58,7 +58,7 @@
                     <behaviors:IconTintColorBehavior TintColor="{AppThemeBinding Light={StaticResource White}, Dark={StaticResource Gray900}}" />
                 </ImageButton.Behaviors>
             </ImageButton>
-            <IndicatorView Position="1"
+            <IndicatorView Position="2"
                            Grid.Row="1" HorizontalOptions="Center" VerticalOptions="End" />
         </Grid>
     </Grid>

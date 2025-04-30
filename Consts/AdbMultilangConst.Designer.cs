@@ -114,7 +114,7 @@ namespace Sheas_Cealer_Droid.Consts {
         }
         
         /// <summary>
-        ///   查找类似 🏆 Almost there 🎖️ 的本地化字符串。
+        ///   查找类似 🏆 Almost There 🎖️ 的本地化字符串。
         /// </summary>
         internal static string TitleLabelText {
             get {
