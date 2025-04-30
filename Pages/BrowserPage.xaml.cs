@@ -28,7 +28,11 @@ public partial class BrowserPage : ContentPage
 
         new ViewFadeAnim(BrowserGrid, ViewFadeAnim.FadeType.In).Commit(this, nameof(BrowserGrid) + nameof(ViewFadeAnim), 8, 1000);
         new HeroImageSwitchAnim(PrimaryHeroImage, SecondaryHeroImage).Commit(this, nameof(PrimaryHeroImage) + nameof(SecondaryHeroImage) + nameof(HeroImageSwitchAnim), 8, 10000, repeat: () => true);
-        new ViewFloatAnim(BrowserPicker, ViewFloatAnim.FloatOrientation.Y, 5).Commit(this, nameof(BrowserPicker) + nameof(ViewFloatAnim), 8, 3000, repeat: () => true);
+
+        if (string.IsNullOrEmpty(BrowserPres.BrowserName))
+            new ViewFloatAnim(BrowserPicker, ViewFloatAnim.FloatOrientation.Y, 5).Commit(this, nameof(BrowserPicker) + nameof(ViewFloatAnim), 8, 3000, repeat: () => true);
+        else
+            new ViewFloatAnim(NextButton, ViewFloatAnim.FloatOrientation.X, 5).Commit(this, nameof(NextButton) + nameof(ViewFloatAnim), 8, 3000, repeat: () => true);
 
         IsFirstLoaded = false;
     }
