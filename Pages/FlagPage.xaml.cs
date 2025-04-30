@@ -42,11 +42,17 @@ public partial class FlagPage : ContentPage
     {
         Page nextPage = (Page)typeof(NavigatedFromEventArgs).GetProperty("DestinationPage", BindingFlags.NonPublic | BindingFlags.Instance)!.GetValue(e)!;
 
-        if (!FlagPres.IsFlagCopied && nextPage.GetType() == typeof(ReadyPage))
+        if (!FlagPres.IsFlagCopied && nextPage.GetType() == typeof(AdbPage))
         {
             await Toast.Make(GlobalConst.SkipWarningArray[new Random().Next(4)]).Show();
             await Task.Delay(300);
             await Shell.Current.GoToAsync($"//{nameof(FlagPage)}");
+        }
+        else if (!FlagPres.IsCommandLineExist && nextPage.GetType() == typeof(ReadyPage))
+        {
+            await Toast.Make(GlobalConst.SkipWarningArray[new Random().Next(4)]).Show();
+            await Task.Delay(300);
+            await Shell.Current.GoToAsync($"//{nameof(AdbPage)}");
         }
     }
     private void FlagPage_NavigatingFrom(object sender, NavigatingFromEventArgs e) => new PageSwitchAnim(this, IsNextNavigating ? PageSwitchAnim.SwitchDirection.Left : PageSwitchAnim.SwitchDirection.Right, PageSwitchAnim.SwitchType.Out).Commit(this, nameof(FlagPage) + nameof(PageSwitchAnim), 8, 100);
@@ -82,7 +88,7 @@ public partial class FlagPage : ContentPage
     {
         IsNextNavigating = true;
 
-        await Shell.Current.GoToAsync($"//{nameof(ReadyPage)}");
+        await Shell.Current.GoToAsync($"//{nameof(AdbPage)}");
     }
 
     private void PrevSwipeGestureRecognizer_Swiped(object sender, SwipedEventArgs e) => PrevButton_Clicked(null!, null!);

@@ -57,6 +57,10 @@
                       Title="{x:Static consts:AppMultilangConst.FlagShellContentTitle}"
                       Icon="ring_icon.png"
                       Route="FlagPage" />
+        <ShellContent ContentTemplate="{DataTemplate pages:AdbPage}"
+                      Title="{x:Static consts:AppMultilangConst.AdbShellContentTitle}"
+                      Icon="neutral_icon.png"
+                      Route="AdbPage" />
         <ShellContent ContentTemplate="{DataTemplate pages:ReadyPage}"
                       Title="{x:Static consts:AppMultilangConst.ReadyShellContentTitle}"
                       Icon="happy_icon.png"

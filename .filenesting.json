@@ -18,6 +18,8 @@
                     "BrowserMultilangConst.zh.resx": [ "BrowserConst.cs" ],
                     "FlagMultilangConst.resx": [ "FlagConst.cs" ],
                     "FlagMultilangConst.zh.resx": [ "FlagConst.cs" ],
+                    "AdbMultilangConst.resx": [ "AdbConst.cs" ],
+                    "AdbMultilangConst.zh.resx": [ "AdbConst.cs" ],
                     "ReadyMultilangConst.resx": [ "ReadyConst.cs" ],
                     "ReadyMultilangConst.zh.resx": [ "ReadyConst.cs" ],
 

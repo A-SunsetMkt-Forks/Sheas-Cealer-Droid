@@ -117,7 +117,7 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <data name="GuideLabelText" xml:space="preserve">
-    <value>{}Now, let's turn on the "Enable command line on non-rooted devices" option in {0}
+    <value>Now, let's turn on the "Enable command line on non-rooted devices" option in {0}
 
 Just tap the Copy Link button below, open it in {0}, and set the option to Enabled
 
@@ -137,7 +137,7 @@ Uh, wait a moment, I’m not done memorizing my lines yet</value>
     <value>Tap to copy a flag jump link</value>
   </data>
   <data name="TitleLabelText" xml:space="preserve">
-    <value>✨ Nice Work 🌟</value>
+    <value>💯 Nice Work 🔥</value>
   </data>
   <data name="_LinkCopiedToastMsg" xml:space="preserve">
     <value>Link copied ✅</value>

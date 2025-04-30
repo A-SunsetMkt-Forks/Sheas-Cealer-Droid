@@ -1,3 +1,4 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
 <root>
   <!-- 
     Microsoft ResX Schema 
@@ -116,30 +117,30 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="CommandButtonText" xml:space="preserve">
+    <value>Copy Command</value>
+  </data>
+  <data name="CommandButtonTooltip" xml:space="preserve">
+    <value>Tap to copy an ADB command</value>
+  </data>
   <data name="GuideLabelText" xml:space="preserve">
-    <value>现在让我们启用 {0} 浏览器的 Enable command line on non-rooted devices 选项
+    <value>Next, we need to create a chrome-command-line file with ADB
 
-点击下面的复制链接按钮并在 {0} 浏览器中打开，然后将这个选项设置为 Enabled 即可
+Turn on developer options → enable USB debugging, then tap the Copy Command button below and run it in your ADB terminal
 
-(如果遇到任何问题，欢迎加入项目群找我帮忙)</value>
+(Feeling overwhelmed? Don’t hesitate to ask AI or search engines for help)</value>
   </data>
   <data name="GuideLabelTextBrowserNameFallback" xml:space="preserve">
-    <value>(啊？导演，他怎么这么快就到这里了，剧本明明不是这样写的)
+    <value>(Here I come, finally my turn to shine)
 
-现在让我们启用... 额... 所选浏览器的...
+Next, we need to create a...
 
-额额，等我准备一下，我稿子还没背完</value>
-  </data>
-  <data name="LinkButtonText" xml:space="preserve">
-    <value>复制链接</value>
-  </data>
-  <data name="LinkButtonTooltip" xml:space="preserve">
-    <value>点击复制设置项跳转链接</value>
+OMG, skipping ahead are u? No spoilers then</value>
   </data>
   <data name="TitleLabelText" xml:space="preserve">
-    <value>💯 做的好 🔥</value>
+    <value>🏆 Almost there 🎖️</value>
   </data>
-  <data name="_LinkCopiedToastMsg" xml:space="preserve">
-    <value>链接已复制 ✅</value>
+  <data name="_CommandCopiedToastMsg" xml:space="preserve">
+    <value>Command copied ✅</value>
   </data>
 </root>

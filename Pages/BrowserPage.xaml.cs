@@ -46,11 +46,17 @@ public partial class BrowserPage : ContentPage
             await Task.Delay(300);
             await Shell.Current.GoToAsync($"//{nameof(BrowserPage)}");
         }
-        else if (!BrowserPres.IsFlagCopied && nextPage.GetType() == typeof(ReadyPage))
+        else if (!BrowserPres.IsFlagCopied && nextPage.GetType() == typeof(AdbPage))
         {
             await Toast.Make(GlobalConst.SkipWarningArray[new Random().Next(4)]).Show();
             await Task.Delay(300);
             await Shell.Current.GoToAsync($"//{nameof(FlagPage)}");
+        }
+        else if (!BrowserPres.IsCommandLineExist && nextPage.GetType() == typeof(ReadyPage))
+        {
+            await Toast.Make(GlobalConst.SkipWarningArray[new Random().Next(4)]).Show();
+            await Task.Delay(300);
+            await Shell.Current.GoToAsync($"//{nameof(AdbPage)}");
         }
     }
     private void BrowserPage_NavigatingFrom(object sender, NavigatingFromEventArgs e) => new PageSwitchAnim(this, PageSwitchAnim.SwitchDirection.Left, PageSwitchAnim.SwitchType.Out).Commit(this, nameof(BrowserPage) + nameof(PageSwitchAnim), 8, 100);

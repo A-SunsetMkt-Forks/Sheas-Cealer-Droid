@@ -38,8 +38,6 @@ public partial class MainPage : ContentPage
         {
             CealHostWatcher.Changed += CealHostWatcher_Changed;
 
-            if (!File.Exists(MainConst.CommandLinePath))
-                await File.Create(MainConst.CommandLinePath).DisposeAsync();
             if (!File.Exists(MainConst.UpstreamHostPath))
                 await File.Create(MainConst.UpstreamHostPath).DisposeAsync();
 

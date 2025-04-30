@@ -62,4 +62,7 @@ internal abstract partial class GlobalPres : ObservableObject
 
     [ObservableProperty]
     private static bool isFlagCopied = false;
+
+    [ObservableProperty]
+    private static bool isCommandLineExist = false;
 }

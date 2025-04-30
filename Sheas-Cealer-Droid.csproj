@@ -62,6 +62,9 @@
 		<MauiXaml Update="Pages\BrowserPage.xaml">
 			<Generator>MSBuild:Compile</Generator>
 		</MauiXaml>
+		<MauiXaml Update="Pages\AdbPage.xaml">
+		  <Generator>MSBuild:Compile</Generator>
+		</MauiXaml>
 		<MauiXaml Update="Pages\ReadyPage.xaml">
 			<Generator>MSBuild:Compile</Generator>
 		</MauiXaml>
@@ -117,6 +120,11 @@
 			<DesignTime>true</DesignTime>
 			<AutoGen>true</AutoGen>
 		</Compile>
+		<Compile Update="Consts\AdbMultilangConst.Designer.cs">
+		  <DependentUpon>AdbMultilangConst.resx</DependentUpon>
+		  <DesignTime>true</DesignTime>
+		  <AutoGen>true</AutoGen>
+		</Compile>
 		<Compile Update="Consts\SettingsMultilangConst.Designer.cs">
 			<DependentUpon>SettingsMultilangConst.resx</DependentUpon>
 			<DesignTime>true</DesignTime>
@@ -163,6 +171,14 @@
 		<EmbeddedResource Update="Consts\AboutMultilangConst.zh.resx">
 			<SubType>Designer</SubType>
 			<Generator></Generator>
+		</EmbeddedResource>
+		<EmbeddedResource Update="Consts\AdbMultilangConst.resx">
+		  <LastGenOutput>AdbMultilangConst.Designer.cs</LastGenOutput>
+		  <Generator>ResXFileCodeGenerator</Generator>
+		</EmbeddedResource>
+		<EmbeddedResource Update="Consts\AdbMultilangConst.zh.resx">
+		  <SubType>Designer</SubType>
+		  <Generator></Generator>
 		</EmbeddedResource>
 		<EmbeddedResource Update="Consts\SettingsMultilangConst.resx">
 			<SubType>Designer</SubType>

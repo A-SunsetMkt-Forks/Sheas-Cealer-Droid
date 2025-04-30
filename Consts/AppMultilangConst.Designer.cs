@@ -70,6 +70,15 @@ namespace Sheas_Cealer_Droid.Consts {
         }
         
         /// <summary>
+        ///   查找类似 Then 的本地化字符串。
+        /// </summary>
+        internal static string AdbShellContentTitle {
+            get {
+                return ResourceManager.GetString("AdbShellContentTitle", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   查找类似 First 的本地化字符串。
         /// </summary>
         internal static string BrowserShellContentTitle {
@@ -88,7 +97,7 @@ namespace Sheas_Cealer_Droid.Consts {
         }
         
         /// <summary>
-        ///   查找类似 Then 的本地化字符串。
+        ///   查找类似 Next 的本地化字符串。
         /// </summary>
         internal static string FlagShellContentTitle {
             get {

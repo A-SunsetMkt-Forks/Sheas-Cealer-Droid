@@ -22,14 +22,14 @@ namespace Sheas_Cealer_Droid.Consts {
     [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Resources.Tools.StronglyTypedResourceBuilder", "17.0.0.0")]
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
     [global::System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
-    internal class FlagMultilangConst {
+    internal class AdbMultilangConst {
         
         private static global::System.Resources.ResourceManager resourceMan;
         
         private static global::System.Globalization.CultureInfo resourceCulture;
         
         [global::System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1811:AvoidUncalledPrivateCode")]
-        internal FlagMultilangConst() {
+        internal AdbMultilangConst() {
         }
         
         /// <summary>
@@ -39,7 +39,7 @@ namespace Sheas_Cealer_Droid.Consts {
         internal static global::System.Resources.ResourceManager ResourceManager {
             get {
                 if (object.ReferenceEquals(resourceMan, null)) {
-                    global::System.Resources.ResourceManager temp = new global::System.Resources.ResourceManager("Sheas_Cealer_Droid.Consts.FlagMultilangConst", typeof(FlagMultilangConst).Assembly);
+                    global::System.Resources.ResourceManager temp = new global::System.Resources.ResourceManager("Sheas_Cealer_Droid.Consts.AdbMultilangConst", typeof(AdbMultilangConst).Assembly);
                     resourceMan = temp;
                 }
                 return resourceMan;
@@ -61,20 +61,38 @@ namespace Sheas_Cealer_Droid.Consts {
         }
         
         /// <summary>
-        ///   查找类似 Link copied ✅ 的本地化字符串。
+        ///   查找类似 Command copied ✅ 的本地化字符串。
         /// </summary>
-        internal static string _LinkCopiedToastMsg {
+        internal static string _CommandCopiedToastMsg {
             get {
-                return ResourceManager.GetString("_LinkCopiedToastMsg", resourceCulture);
+                return ResourceManager.GetString("_CommandCopiedToastMsg", resourceCulture);
             }
         }
         
         /// <summary>
-        ///   查找类似 Now, let&apos;s turn on the &quot;Enable command line on non-rooted devices&quot; option in {0}
+        ///   查找类似 Copy Command 的本地化字符串。
+        /// </summary>
+        internal static string CommandButtonText {
+            get {
+                return ResourceManager.GetString("CommandButtonText", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   查找类似 Tap to copy an ADB command 的本地化字符串。
+        /// </summary>
+        internal static string CommandButtonTooltip {
+            get {
+                return ResourceManager.GetString("CommandButtonTooltip", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   查找类似 Next, we need to create a chrome-command-line file with ADB
         ///
-        ///Just tap the Copy Link button below, open it in {0}, and set the option to Enabled
+        ///Turn on developer options → enable USB debugging, then tap the Copy Command button below and run it in your ADB terminal
         ///
-        ///(If u run into any probs, feel free 2 join our chat 4 help) 的本地化字符串。
+        ///(Feeling overwhelmed? Don’t hesitate to ask AI or search engines for help) 的本地化字符串。
         /// </summary>
         internal static string GuideLabelText {
             get {
@@ -83,11 +101,11 @@ namespace Sheas_Cealer_Droid.Consts {
         }
         
         /// <summary>
-        ///   查找类似 (Huh? Director, how did he get here so quickly? The script didn’t say that)
+        ///   查找类似 (Here I come, finally my turn to shine)
         ///
-        ///Now, let’s turn on... uh... the selected browser’s...
+        ///Next, we need to create a...
         ///
-        ///Uh, wait a moment, I’m not done memorizing my lines yet 的本地化字符串。
+        ///OMG, skipping ahead are u? No spoilers then 的本地化字符串。
         /// </summary>
         internal static string GuideLabelTextBrowserNameFallback {
             get {
@@ -96,25 +114,7 @@ namespace Sheas_Cealer_Droid.Consts {
         }
         
         /// <summary>
-        ///   查找类似 Copy Link 的本地化字符串。
-        /// </summary>
-        internal static string LinkButtonText {
-            get {
-                return ResourceManager.GetString("LinkButtonText", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   查找类似 Tap to copy a flag jump link 的本地化字符串。
-        /// </summary>
-        internal static string LinkButtonTooltip {
-            get {
-                return ResourceManager.GetString("LinkButtonTooltip", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   查找类似 💯 Nice Work 🔥 的本地化字符串。
+        ///   查找类似 🏆 Almost there 🎖️ 的本地化字符串。
         /// </summary>
         internal static string TitleLabelText {
             get {

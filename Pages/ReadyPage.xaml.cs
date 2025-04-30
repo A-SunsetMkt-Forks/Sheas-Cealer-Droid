@@ -57,7 +57,7 @@ public partial class ReadyPage : ContentPage
     {
         IsNextNavigating = false;
 
-        await Shell.Current.GoToAsync($"//{nameof(FlagPage)}");
+        await Shell.Current.GoToAsync($"//{nameof(AdbPage)}");
     }
 
     private void PrevSwipeGestureRecognizer_Swiped(object sender, SwipedEventArgs e) => PrevButton_Clicked(null!, null!);
