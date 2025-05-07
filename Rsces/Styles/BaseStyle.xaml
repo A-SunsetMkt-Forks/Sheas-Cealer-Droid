@@ -99,6 +99,11 @@
         </Setter>
     </Style>
 
+    <Style TargetType="Switch">
+        <Setter Property="ThumbColor" Value="{AppThemeBinding Light={DynamicResource Primary500}, Dark={DynamicResource Primary700}}" />
+        <Setter Property="OnColor" Value="{AppThemeBinding Light={DynamicResource Primary300}, Dark={DynamicResource Primary900}}" />
+    </Style>
+
     <Style TargetType="Picker">
         <Setter Property="TextColor" Value="{AppThemeBinding Light={DynamicResource Gray900}, Dark={DynamicResource Gray300}}" />
         <Setter Property="TitleColor" Value="{AppThemeBinding Light={DynamicResource Gray900}, Dark={DynamicResource Gray300}}" />

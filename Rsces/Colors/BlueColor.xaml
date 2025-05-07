@@ -2,9 +2,11 @@
                     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
                     x:Class="Sheas_Cealer_Droid.Colors.BlueColor">
     <Color x:Key="Primary50">#E0F1FE</Color>
+    <Color x:Key="Primary300">#B4DCFE</Color>
     <Color x:Key="Primary400">#40AFFF</Color>
     <Color x:Key="Primary500">#40AFFF</Color>
     <Color x:Key="Primary700">#005DC9</Color>
+    <Color x:Key="Primary900">#003EA8</Color>
 
     <Color x:Key="Secondary50">#E5ECFE</Color>
 

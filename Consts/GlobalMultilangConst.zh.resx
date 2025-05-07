@@ -160,6 +160,9 @@
   <data name="_PopupCancelText" xml:space="preserve">
     <value>取消</value>
   </data>
+  <data name="_SettingsRestartToApplyToastMsg" xml:space="preserve">
+    <value>设置已更改，重启应用新配置 🔄</value>
+  </data>
   <data name="_SkipWarning1ToastMsg" xml:space="preserve">
     <value>你要去哪，快回来 😟</value>
   </data>

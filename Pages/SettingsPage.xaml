@@ -29,6 +29,13 @@
                                 SelectedItem="{Binding ThemeColorName}" />
                     </models:SettingsItem.View>
                 </models:SettingsItem>
+                <models:SettingsItem Title="{x:Static consts:SettingsMultilangConst.SearchEnabledSettingsItemTitle}">
+                    <models:SettingsItem.View>
+                        <Switch BindingContext="{Binding BindingContext, Source={x:RelativeSource AncestorType={x:Type ContentPage}}, x:DataType=ContentPage}"
+                                IsToggled="{Binding IsSearchEnabled}"
+                                ToolTipProperties.Text="{x:Static consts:SettingsMultilangConst.SearchEnabledSwitchTooltip}" />
+                    </models:SettingsItem.View>
+                </models:SettingsItem>
             </x:Array>
         </CollectionView.ItemsSource>
         <CollectionView.ItemTemplate>

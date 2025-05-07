@@ -119,6 +119,12 @@
   <data name="BrowserSettingsItemTitle" xml:space="preserve">
     <value>浏览器</value>
   </data>
+  <data name="SearchEnabledSettingsItemTitle" xml:space="preserve">
+    <value>启用搜索</value>
+  </data>
+  <data name="SearchEnabledSwitchTooltip" xml:space="preserve">
+    <value>点击切换搜索功能启用状态</value>
+  </data>
   <data name="ThemeColorPickerTitle" xml:space="preserve">
     <value>选择一种 UI 颜色风味</value>
   </data>

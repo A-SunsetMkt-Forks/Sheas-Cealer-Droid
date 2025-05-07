@@ -119,6 +119,12 @@
   <data name="BrowserSettingsItemTitle" xml:space="preserve">
     <value>Browser</value>
   </data>
+  <data name="SearchEnabledSettingsItemTitle" xml:space="preserve">
+    <value>Enable Search</value>
+  </data>
+  <data name="SearchEnabledSwitchTooltip" xml:space="preserve">
+    <value>Click to toggle the search feature on / off</value>
+  </data>
   <data name="ThemeColorPickerTitle" xml:space="preserve">
     <value>Select a UI color flavor</value>
   </data>

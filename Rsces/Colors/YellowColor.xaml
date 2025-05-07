@@ -2,9 +2,11 @@
                     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
                     x:Class="Sheas_Cealer_Droid.Colors.YellowColor">
     <Color x:Key="Primary50">#F9FEE6</Color>
+    <Color x:Key="Primary300">#DBF86B</Color>
     <Color x:Key="Primary400">#CAF200</Color>
     <Color x:Key="Primary500">#CAF200</Color>
     <Color x:Key="Primary700">#9FB000</Color>
+    <Color x:Key="Primary900">#878800</Color>
 
     <Color x:Key="Secondary50">#F4FEEB</Color>
 

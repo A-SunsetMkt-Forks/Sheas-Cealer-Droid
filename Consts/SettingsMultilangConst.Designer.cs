@@ -70,6 +70,24 @@ namespace Sheas_Cealer_Droid.Consts {
         }
         
         /// <summary>
+        ///   查找类似 Enable Search 的本地化字符串。
+        /// </summary>
+        internal static string SearchEnabledSettingsItemTitle {
+            get {
+                return ResourceManager.GetString("SearchEnabledSettingsItemTitle", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   查找类似 Click to toggle the search feature on / off 的本地化字符串。
+        /// </summary>
+        internal static string SearchEnabledSwitchTooltip {
+            get {
+                return ResourceManager.GetString("SearchEnabledSwitchTooltip", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   查找类似 Select a UI color flavor 的本地化字符串。
         /// </summary>
         internal static string ThemeColorPickerTitle {

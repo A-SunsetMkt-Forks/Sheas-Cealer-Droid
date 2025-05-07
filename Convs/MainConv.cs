@@ -6,5 +6,6 @@ internal static class MainConv
     internal static MainLaunchButtonRotationConv MainLaunchButtonRotationConv => new();
     internal static MainLaunchButtonTooltipConv MainLaunchButtonTooltipConv => new();
     internal static MainSearchDomainLabelTextConv MainSearchDomainLabelTextConv => new();
+    internal static MainSearchHandlerSearchBoxVisibilityConv MainSearchHandlerSearchBoxVisibilityConv => new();
     internal static MainStatusProgressBarIsVisibleConv MainStatusProgressBarIsVisibleConv => new();
 }

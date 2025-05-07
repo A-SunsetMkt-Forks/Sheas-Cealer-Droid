@@ -61,6 +61,15 @@ internal abstract partial class GlobalPres : ObservableObject
     public ObservableCollection<CealHostRule> CealHostRulesCollection => cealHostRulesCollection;
 
     [ObservableProperty]
+    private static bool isSearchEnabled = Preferences.Default.Get(nameof(IsSearchEnabled), true);
+    async partial void OnIsSearchEnabledChanged(bool value)
+    {
+        Preferences.Default.Set(nameof(IsSearchEnabled), value);
+
+        await Toast.Make(GlobalConst._SettingsRestartToApplyToastMsg).Show();
+    }
+
+    [ObservableProperty]
     private static bool isFlagCopied = Preferences.Default.Get(nameof(IsFlagCopied), false);
     partial void OnIsFlagCopiedChanged(bool value) => Preferences.Default.Set(nameof(IsFlagCopied), value);
 

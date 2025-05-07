@@ -160,6 +160,9 @@
   <data name="_PopupCancelText" xml:space="preserve">
     <value>Cancel</value>
   </data>
+  <data name="_SettingsRestartToApplyToastMsg" xml:space="preserve">
+    <value>Setting is changing, restart to apply the new config 🔄</value>
+  </data>
   <data name="_SkipWarning1ToastMsg" xml:space="preserve">
     <value>Where are you going? Come back 😟</value>
   </data>

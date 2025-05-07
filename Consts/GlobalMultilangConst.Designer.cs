@@ -117,6 +117,15 @@ namespace Sheas_Cealer_Droid.Consts {
         }
         
         /// <summary>
+        ///   查找类似 Setting is changing, restart to apply the new config 🔄 的本地化字符串。
+        /// </summary>
+        internal static string _SettingsRestartToApplyToastMsg {
+            get {
+                return ResourceManager.GetString("_SettingsRestartToApplyToastMsg", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   查找类似 Where are you going? Come back 😟 的本地化字符串。
         /// </summary>
         internal static string _SkipWarning1ToastMsg {
