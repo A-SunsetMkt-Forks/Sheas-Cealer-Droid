@@ -26,19 +26,22 @@
             <Label Text="{x:Static consts:BrowserMultilangConst.TitleLabelText}"
                    Grid.Row="1" HorizontalTextAlignment="Center" FontSize="Title" FontAttributes="Bold" />
         </Grid>
-        <Grid RowDefinitions="*,Auto"
+        <Grid RowDefinitions="*,Auto" RowSpacing="24"
               Grid.Row="1">
-            <VerticalStackLayout Spacing="48"
-                                 Grid.Row="0">
-                <Label Text="{x:Static consts:BrowserMultilangConst.GuideLabelText}"
-                       HorizontalTextAlignment="Center" />
-                <Picker x:Name="BrowserPicker"
-                        Title="{x:Static consts:GlobalMultilangConst.BrowserPickerTitle}"
-                        ToolTipProperties.Text="{x:Static consts:GlobalMultilangConst.BrowserPickerTooltip}"
-                        ItemsSource="{Binding BrowserNameCollection}"
-                        SelectedItem="{Binding BrowserName}"
-                        SelectedIndexChanged="BrowserPicker_SelectedIndexChanged" />
-            </VerticalStackLayout>
+            <ScrollView Grid.Row="0">
+                <VerticalStackLayout Spacing="48"
+                                     VerticalOptions="Center">
+                    <Label Text="{x:Static consts:BrowserMultilangConst.GuideLabelText}"
+                           HorizontalTextAlignment="Center" />
+                    <Picker x:Name="BrowserPicker"
+                            Title="{x:Static consts:GlobalMultilangConst.BrowserPickerTitle}"
+                            ToolTipProperties.Text="{x:Static consts:GlobalMultilangConst.BrowserPickerTooltip}"
+                            ItemsSource="{Binding BrowserNameCollection}"
+                            SelectedItem="{Binding BrowserName}"
+                            Margin="4"
+                            SelectedIndexChanged="BrowserPicker_SelectedIndexChanged" />
+                </VerticalStackLayout>
+            </ScrollView>
             <ImageButton x:Name="NextButton"
                          Source="right_icon.png"
                          ToolTipProperties.Text="{x:Static consts:GlobalMultilangConst.NextButtonTooltip}"

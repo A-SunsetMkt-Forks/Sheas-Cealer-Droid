@@ -29,7 +29,15 @@ public partial class FlagPage : ContentPage
             return;
 
         new HeroImageSwitchAnim(PrimaryHeroImage, SecondaryHeroImage).Commit(this, nameof(PrimaryHeroImage) + nameof(SecondaryHeroImage) + nameof(HeroImageSwitchAnim), 8, 10000, repeat: () => true);
-        new ViewFloatAnim(LinkButton, ViewFloatAnim.FloatOrientation.Y, 5).Commit(this, nameof(LinkButton) + nameof(ViewFloatAnim), 8, 3000, repeat: () => true);
+
+        if (!FlagPres.IsFlagCopied)
+            new ViewFloatAnim(LinkButton, ViewFloatAnim.FloatOrientation.Y, -5).Commit(this, nameof(LinkButton) + nameof(ViewFloatAnim), 8, 3000, repeat: () => true);
+        else
+        {
+            IsNextNavigating = true;
+
+            new ViewFloatAnim(NextButton, ViewFloatAnim.FloatOrientation.X, -5).Commit(this, nameof(NextButton) + nameof(ViewFloatAnim), 8, 3000, repeat: () => true);
+        }
 
         IsFirstLoaded = false;
     }
@@ -42,7 +50,7 @@ public partial class FlagPage : ContentPage
     {
         Page nextPage = (Page)typeof(NavigatedFromEventArgs).GetProperty("DestinationPage", BindingFlags.NonPublic | BindingFlags.Instance)!.GetValue(e)!;
 
-        if (!FlagPres.IsFlagCopied && nextPage.GetType() == typeof(AdbPage))
+        if (!FlagPres.IsFlagCopied && (nextPage.GetType() == typeof(AdbPage) || nextPage.GetType() == typeof(ReadyPage)))
         {
             await Toast.Make(GlobalConst.SkipWarningArray[new Random().Next(4)]).Show();
             await Task.Delay(300);
@@ -75,7 +83,7 @@ public partial class FlagPage : ContentPage
         FlagPres.IsFlagCopied = true;
 
         this.AbortAnimation(nameof(LinkButton) + nameof(ViewFloatAnim));
-        new ViewFloatAnim(NextButton, ViewFloatAnim.FloatOrientation.X, 5).Commit(this, nameof(NextButton) + nameof(ViewFloatAnim), 8, 3000, repeat: () => true);
+        new ViewFloatAnim(NextButton, ViewFloatAnim.FloatOrientation.X, -5).Commit(this, nameof(NextButton) + nameof(ViewFloatAnim), 8, 3000, repeat: () => true);
     }
 
     private async void PrevButton_Clicked(object sender, EventArgs e)

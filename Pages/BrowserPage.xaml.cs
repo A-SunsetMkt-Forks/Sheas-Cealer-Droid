@@ -30,9 +30,9 @@ public partial class BrowserPage : ContentPage
         new HeroImageSwitchAnim(PrimaryHeroImage, SecondaryHeroImage).Commit(this, nameof(PrimaryHeroImage) + nameof(SecondaryHeroImage) + nameof(HeroImageSwitchAnim), 8, 10000, repeat: () => true);
 
         if (string.IsNullOrEmpty(BrowserPres.BrowserName))
-            new ViewFloatAnim(BrowserPicker, ViewFloatAnim.FloatOrientation.Y, 5).Commit(this, nameof(BrowserPicker) + nameof(ViewFloatAnim), 8, 3000, repeat: () => true);
+            new ViewFloatAnim(BrowserPicker, ViewFloatAnim.FloatOrientation.Y, -5).Commit(this, nameof(BrowserPicker) + nameof(ViewFloatAnim), 8, 3000, repeat: () => true);
         else
-            new ViewFloatAnim(NextButton, ViewFloatAnim.FloatOrientation.X, 5).Commit(this, nameof(NextButton) + nameof(ViewFloatAnim), 8, 3000, repeat: () => true);
+            new ViewFloatAnim(NextButton, ViewFloatAnim.FloatOrientation.X, -5).Commit(this, nameof(NextButton) + nameof(ViewFloatAnim), 8, 3000, repeat: () => true);
 
         IsFirstLoaded = false;
     }
@@ -46,7 +46,7 @@ public partial class BrowserPage : ContentPage
             await Task.Delay(300);
             await Shell.Current.GoToAsync($"//{nameof(BrowserPage)}");
         }
-        else if (!BrowserPres.IsFlagCopied && nextPage.GetType() == typeof(AdbPage))
+        else if (!BrowserPres.IsFlagCopied && (nextPage.GetType() == typeof(AdbPage) || nextPage.GetType() == typeof(ReadyPage)))
         {
             await Toast.Make(GlobalConst.SkipWarningArray[new Random().Next(4)]).Show();
             await Task.Delay(300);
@@ -69,13 +69,13 @@ public partial class BrowserPage : ContentPage
             if (this.AnimationIsRunning(nameof(BrowserPicker) + nameof(ViewFloatAnim)))
             {
                 this.AbortAnimation(nameof(BrowserPicker) + nameof(ViewFloatAnim));
-                new ViewFloatAnim(NextButton, ViewFloatAnim.FloatOrientation.X, 5).Commit(this, nameof(NextButton) + nameof(ViewFloatAnim), 8, 3000, repeat: () => true);
+                new ViewFloatAnim(NextButton, ViewFloatAnim.FloatOrientation.X, -5).Commit(this, nameof(NextButton) + nameof(ViewFloatAnim), 8, 3000, repeat: () => true);
             }
         }
         else if (this.AnimationIsRunning(nameof(NextButton) + nameof(ViewFloatAnim)))
         {
             this.AbortAnimation(nameof(NextButton) + nameof(ViewFloatAnim));
-            new ViewFloatAnim(BrowserPicker, ViewFloatAnim.FloatOrientation.Y, 5).Commit(this, nameof(BrowserPicker) + nameof(ViewFloatAnim), 8, 3000, repeat: () => true);
+            new ViewFloatAnim(BrowserPicker, ViewFloatAnim.FloatOrientation.Y, -5).Commit(this, nameof(BrowserPicker) + nameof(ViewFloatAnim), 8, 3000, repeat: () => true);
         }
     }
 

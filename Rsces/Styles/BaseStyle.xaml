@@ -24,6 +24,11 @@
         <Setter Property="Shell.TabBarUnselectedColor" Value="{AppThemeBinding Light={DynamicResource Gray900}, Dark={DynamicResource Gray300}}" />
     </Style>
 
+    <Style TargetType="ScrollView">
+        <Setter Property="HorizontalScrollBarVisibility" Value="Never" />
+        <Setter Property="VerticalScrollBarVisibility" Value="Never" />
+    </Style>
+
     <Style TargetType="Border">
         <Setter Property="StrokeThickness" Value="0" />
         <Setter Property="Shadow">

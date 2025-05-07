@@ -61,8 +61,10 @@ internal abstract partial class GlobalPres : ObservableObject
     public ObservableCollection<CealHostRule> CealHostRulesCollection => cealHostRulesCollection;
 
     [ObservableProperty]
-    private static bool isFlagCopied = false;
+    private static bool isFlagCopied = Preferences.Default.Get(nameof(IsFlagCopied), false);
+    partial void OnIsFlagCopiedChanged(bool value) => Preferences.Default.Set(nameof(IsFlagCopied), value);
 
     [ObservableProperty]
-    private static bool isCommandLineExist = false;
+    private static bool isCommandLineExist = Preferences.Default.Get(nameof(IsCommandLineExist), false);
+    partial void OnIsCommandLineExistChanged(bool value) => Preferences.Default.Set(nameof(IsCommandLineExist), value);
 }

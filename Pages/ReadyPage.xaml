@@ -22,18 +22,21 @@
             <Label Text="{x:Static consts:ReadyMultilangConst.TitleLabelText}"
                    Grid.Row="1" HorizontalTextAlignment="Center" FontSize="Title" FontAttributes="Bold" />
         </Grid>
-        <Grid RowDefinitions="*,Auto"
+        <Grid RowDefinitions="*,Auto" RowSpacing="24"
               Grid.Row="1">
-            <VerticalStackLayout Spacing="48"
-                                 Grid.Row="0">
-                <Label Text="{Binding BrowserName, StringFormat={x:Static consts:ReadyMultilangConst.GuideLabelText}, TargetNullValue={x:Static consts:ReadyMultilangConst.GuideLabelTextBrowserNameFallback}}"
-                       HorizontalTextAlignment="Center" />
-                <Button x:Name="StartButton"
-                        Text="{x:Static consts:ReadyMultilangConst.StartButtonText}"
-                        ToolTipProperties.Text="{x:Static consts:ReadyMultilangConst.StartButtonTooltip}"
-                        IsEnabled="{Binding IsCommandLineExist}"
-                        Clicked="StartButton_Clicked" />
-            </VerticalStackLayout>
+            <ScrollView Grid.Row="0">
+                <VerticalStackLayout Spacing="48"
+                                     VerticalOptions="Center">
+                    <Label Text="{Binding BrowserName, StringFormat={x:Static consts:ReadyMultilangConst.GuideLabelText}, TargetNullValue={x:Static consts:ReadyMultilangConst.GuideLabelTextBrowserNameFallback}}"
+                           HorizontalTextAlignment="Center" />
+                    <Button x:Name="StartButton"
+                            Text="{x:Static consts:ReadyMultilangConst.StartButtonText}"
+                            ToolTipProperties.Text="{x:Static consts:ReadyMultilangConst.StartButtonTooltip}"
+                            IsEnabled="{Binding IsCommandLineExist}"
+                            Margin="4"
+                            Clicked="StartButton_Clicked" />
+                </VerticalStackLayout>
+            </ScrollView>
             <ImageButton Source="left_icon.png"
                          ToolTipProperties.Text="{x:Static consts:GlobalMultilangConst.PrevButtonTooltip}"
                          SemanticProperties.Description="{x:Static consts:GlobalMultilangConst.PrevButtonDescription}"

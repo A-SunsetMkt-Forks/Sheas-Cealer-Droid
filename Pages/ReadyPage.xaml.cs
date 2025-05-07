@@ -26,7 +26,7 @@ public partial class ReadyPage : ContentPage
         if (!IsFirstLoaded)
             return;
 
-        new ViewFloatAnim(StartButton, ViewFloatAnim.FloatOrientation.Y, 5).Commit(this, nameof(StartButton) + nameof(ViewFloatAnim), 8, 3000, repeat: () => true);
+        new ViewFloatAnim(StartButton, ViewFloatAnim.FloatOrientation.Y, -5).Commit(this, nameof(StartButton) + nameof(ViewFloatAnim), 8, 3000, repeat: () => true);
 
         IsFirstLoaded = false;
     }

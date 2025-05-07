@@ -36,7 +36,15 @@ public partial class AdbPage : ContentPage
         CommandLineTimer.Start();
 
         new HeroImageSwitchAnim(PrimaryHeroImage, SecondaryHeroImage).Commit(this, nameof(PrimaryHeroImage) + nameof(SecondaryHeroImage) + nameof(HeroImageSwitchAnim), 8, 10000, repeat: () => true);
-        new ViewFloatAnim(CommandButton, ViewFloatAnim.FloatOrientation.Y, 5).Commit(this, nameof(CommandButton) + nameof(ViewFloatAnim), 8, 3000, repeat: () => true);
+
+        if (!AdbPres.IsCommandLineExist)
+            new ViewFloatAnim(CommandButton, ViewFloatAnim.FloatOrientation.Y, -5).Commit(this, nameof(CommandButton) + nameof(ViewFloatAnim), 8, 3000, repeat: () => true);
+        else
+        {
+            IsNextNavigating = true;
+
+            new ViewFloatAnim(NextButton, ViewFloatAnim.FloatOrientation.X, -5).Commit(this, nameof(NextButton) + nameof(ViewFloatAnim), 8, 3000, repeat: () => true);
+        }
 
         IsFirstLoaded = false;
     }
@@ -68,14 +76,6 @@ public partial class AdbPage : ContentPage
     {
         await Clipboard.Default.SetTextAsync(AdbConst.AdbCommand);
         await Toast.Make(AdbConst._CommandCopiedToastMsg).Show();
-
-        if (AdbPres.IsCommandLineExist)
-            return;
-
-        IsNextNavigating = true;
-
-        this.AbortAnimation(nameof(CommandButton) + nameof(ViewFloatAnim));
-        new ViewFloatAnim(NextButton, ViewFloatAnim.FloatOrientation.X, 5).Commit(this, nameof(NextButton) + nameof(ViewFloatAnim), 8, 3000, repeat: () => true);
     }
 
     private async void PrevButton_Clicked(object sender, EventArgs e)
@@ -93,8 +93,28 @@ public partial class AdbPage : ContentPage
 
     private void CommandLineTimer_Tick(object? sender, EventArgs e)
     {
+        if (!AdbPres.IsFlagCopied)
+            return;
+
         if (File.Exists(MainConst.CommandLinePath))
-            AdbPres.IsCommandLineExist = true;
+        {
+            if (!AdbPres.IsCommandLineExist)
+            {
+                IsNextNavigating = true;
+                AdbPres.IsCommandLineExist = true;
+
+                this.AbortAnimation(nameof(CommandButton) + nameof(ViewFloatAnim));
+                new ViewFloatAnim(NextButton, ViewFloatAnim.FloatOrientation.X, -5).Commit(this, nameof(NextButton) + nameof(ViewFloatAnim), 8, 3000, repeat: () => true);
+            }
+        }
+        else if (AdbPres.IsCommandLineExist)
+        {
+            IsNextNavigating = false;
+            AdbPres.IsCommandLineExist = false;
+
+            this.AbortAnimation(nameof(NextButton) + nameof(ViewFloatAnim));
+            new ViewFloatAnim(CommandButton, ViewFloatAnim.FloatOrientation.Y, -5).Commit(this, nameof(CommandButton) + nameof(ViewFloatAnim), 8, 3000, repeat: () => true);
+        }
     }
 
     private void PrevSwipeGestureRecognizer_Swiped(object sender, SwipedEventArgs e) => PrevButton_Clicked(null!, null!);

@@ -11,13 +11,13 @@ internal class ViewFloatAnim : Animation
     {
         if (floatOrientation == FloatOrientation.X)
         {
-            Add(0, 0.5, new Animation(v => floatView.TranslationX = v, floatOffset / 2, -floatOffset / 2, Easing.SinInOut));
-            Add(0.5, 1, new Animation(v => floatView.TranslationX = v, -floatOffset / 2, floatOffset / 2, Easing.SinInOut));
+            Add(0, 0.5, new Animation(v => floatView.TranslationX = v, 0, floatOffset, Easing.SinInOut));
+            Add(0.5, 1, new Animation(v => floatView.TranslationX = v, floatOffset, 0, Easing.SinInOut));
         }
         else
         {
-            Add(0, 0.5, new Animation(v => floatView.TranslationY = v, floatOffset / 2, -floatOffset / 2, Easing.SinInOut));
-            Add(0.5, 1, new Animation(v => floatView.TranslationY = v, -floatOffset / 2, floatOffset / 2, Easing.SinInOut));
+            Add(0, 0.5, new Animation(v => floatView.TranslationY = v, 0, floatOffset, Easing.SinInOut));
+            Add(0.5, 1, new Animation(v => floatView.TranslationY = v, floatOffset, 0, Easing.SinInOut));
         }
     }
 }

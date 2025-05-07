@@ -90,7 +90,7 @@ public partial class MainPage : ContentPage
 
                 return;
             }
-            catch when (sender == null) { }
+            catch when (sender == null) { await Task.Delay(TimeSpan.FromSeconds(0.1)); }
             catch
             {
                 MainPres.StatusProgress = 1;

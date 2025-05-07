@@ -25,18 +25,21 @@
             <Label Text="{x:Static consts:AdbMultilangConst.TitleLabelText}"
                    Grid.Row="1" HorizontalTextAlignment="Center" FontSize="Title" FontAttributes="Bold" />
         </Grid>
-        <Grid RowDefinitions="*,Auto"
+        <Grid RowDefinitions="*,Auto" RowSpacing="24"
               Grid.Row="1">
-            <VerticalStackLayout Spacing="48"
-                                 Grid.Row="0">
-                <Label Text="{x:Static consts:AdbMultilangConst.GuideLabelText}"
-                       HorizontalTextAlignment="Center" />
-                <Button x:Name="CommandButton"
-                        Text="{x:Static consts:AdbMultilangConst.CommandButtonText}"
-                        ToolTipProperties.Text="{x:Static consts:AdbMultilangConst.CommandButtonTooltip}"
-                        IsEnabled="{Binding IsFlagCopied}"
-                        Clicked="CommandButton_Clicked" />
-            </VerticalStackLayout>
+            <ScrollView Grid.Row="0">
+                <VerticalStackLayout Spacing="48"
+                                     VerticalOptions="Center">
+                    <Label Text="{x:Static consts:AdbMultilangConst.GuideLabelText}"
+                           HorizontalTextAlignment="Center" />
+                    <Button x:Name="CommandButton"
+                            Text="{x:Static consts:AdbMultilangConst.CommandButtonText}"
+                            ToolTipProperties.Text="{x:Static consts:AdbMultilangConst.CommandButtonTooltip}"
+                            IsEnabled="{Binding IsFlagCopied}"
+                            Margin="4"
+                            Clicked="CommandButton_Clicked" />
+                </VerticalStackLayout>
+            </ScrollView>
             <ImageButton Source="left_icon.png"
                          ToolTipProperties.Text="{x:Static consts:GlobalMultilangConst.PrevButtonTooltip}"
                          SemanticProperties.Description="{x:Static consts:GlobalMultilangConst.PrevButtonDescription}"
