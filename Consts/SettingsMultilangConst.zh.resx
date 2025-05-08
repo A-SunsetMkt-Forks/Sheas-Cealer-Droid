@@ -141,9 +141,9 @@
     <value>口味色</value>
   </data>
   <data name="UpstreamUrlEntryTooltip" xml:space="preserve">
-    <value>点击编辑上游规则更新链接</value>
+    <value>点击编辑上游规则更新源链接</value>
   </data>
   <data name="UpstreamUrlSettingsItemTitle" xml:space="preserve">
-    <value>上游链接</value>
+    <value>规则源</value>
   </data>
 </root>

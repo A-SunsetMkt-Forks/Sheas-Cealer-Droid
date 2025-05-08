@@ -52,6 +52,7 @@
                     <models:SettingsItem.View>
                         <Button Text="{x:Static consts:GlobalMultilangConst.LinkButtonText}"
                                 ToolTipProperties.Text="{x:Static consts:GlobalMultilangConst.LinkButtonTooltip}"
+                                Style="{x:StaticResource FlatButton}"
                                 HorizontalOptions="End"
                                 Command="{x:Static pages:SettingsPage.LinkButton_ClickedCommand}" />
                     </models:SettingsItem.View>
@@ -60,6 +61,7 @@
                     <models:SettingsItem.View>
                         <Button Text="{x:Static consts:GlobalMultilangConst.CommandButtonText}"
                                 ToolTipProperties.Text="{x:Static consts:GlobalMultilangConst.CommandButtonTooltip}"
+                                Style="{x:StaticResource FlatButton}"
                                 HorizontalOptions="End"
                                 Command="{x:Static pages:SettingsPage.CommandButton_ClickedCommand}" />
                     </models:SettingsItem.View>

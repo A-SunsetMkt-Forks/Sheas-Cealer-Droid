@@ -133,7 +133,7 @@ namespace Sheas_Cealer_Droid.Consts {
         }
         
         /// <summary>
-        ///   查找类似 Tap to edit the upstream host updating url 的本地化字符串。
+        ///   查找类似 Tap to edit the upstream host updating source 的本地化字符串。
         /// </summary>
         internal static string UpstreamUrlEntryTooltip {
             get {
@@ -142,7 +142,7 @@ namespace Sheas_Cealer_Droid.Consts {
         }
         
         /// <summary>
-        ///   查找类似 Upstream Url 的本地化字符串。
+        ///   查找类似 Host Source 的本地化字符串。
         /// </summary>
         internal static string UpstreamUrlSettingsItemTitle {
             get {

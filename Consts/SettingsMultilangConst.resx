@@ -141,9 +141,9 @@
     <value>Flavor Color</value>
   </data>
   <data name="UpstreamUrlEntryTooltip" xml:space="preserve">
-    <value>Tap to edit the upstream host updating url</value>
+    <value>Tap to edit the upstream host updating source</value>
   </data>
   <data name="UpstreamUrlSettingsItemTitle" xml:space="preserve">
-    <value>Upstream Url</value>
+    <value>Host Source</value>
   </data>
 </root>
