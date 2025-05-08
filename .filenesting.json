@@ -29,7 +29,8 @@
                     "MainSearchDomainLabelTextConv.cs": [ "MainConv.cs" ],
                     "MainSearchHandlerSearchBoxVisibilityConv.cs": [ "MainConv.cs" ],
                     "MainStatusProgressBarIsVisibleConv.cs": [ "MainConv.cs" ],
-                    "FlagGuideLabelTextConv.cs": [ "FlagConv.cs" ]
+                    "AdbGuideLabelTextConv.cs": [ "AdbConv.cs" ],
+                    "ReadyGuideLabelTextConv.cs": [ "ReadyConv.cs" ]
                 }
             }
         }

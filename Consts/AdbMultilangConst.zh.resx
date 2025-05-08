@@ -129,7 +129,7 @@
 
 (感到汗流浃背了吗，不妨问问 AI 和搜索引擎)</value>
   </data>
-  <data name="GuideLabelTextBrowserNameFallback" xml:space="preserve">
+  <data name="GuideLabelTextIsFlagCopiedFallback" xml:space="preserve">
     <value>(来了来了，终于要轮到我出场啦)
 
 接下来我们需要用 ADB 命令创建一个...

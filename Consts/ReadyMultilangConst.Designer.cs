@@ -89,9 +89,9 @@ namespace Sheas_Cealer_Droid.Consts {
         ///
         ///Um... not ready yet? Guess I’ll catch a few more zzzs... 的本地化字符串。
         /// </summary>
-        internal static string GuideLabelTextBrowserNameFallback {
+        internal static string GuideLabelTextIsCommandLineExistFallback {
             get {
-                return ResourceManager.GetString("GuideLabelTextBrowserNameFallback", resourceCulture);
+                return ResourceManager.GetString("GuideLabelTextIsCommandLineExistFallback", resourceCulture);
             }
         }
         

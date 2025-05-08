@@ -123,7 +123,7 @@ Press Any Key to jump into the main page
 
 (Oh btw, if U like it, don’t forget to drop a star on GitHub)</value>
   </data>
-  <data name="GuideLabelTextBrowserNameFallback" xml:space="preserve">
+  <data name="GuideLabelTextIsCommandLineExistFallback" xml:space="preserve">
     <value>(Whoa, is it showtime already? Oops, overslept again)
 
 Haah~ All set and ready to go. Welcome to Sheas Cealer

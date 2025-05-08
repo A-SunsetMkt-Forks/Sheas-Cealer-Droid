@@ -123,7 +123,7 @@
 
 (哦对了，别忘了在 Github 上给我点个 Star)</value>
   </data>
-  <data name="GuideLabelTextBrowserNameFallback" xml:space="preserve">
+  <data name="GuideLabelTextIsCommandLineExistFallback" xml:space="preserve">
     <value>(哇，到演出时间了吗？糟糕，又睡过头了)
 
 哈啊～ 一切准备就绪，欢迎使用 Sheas Cealer

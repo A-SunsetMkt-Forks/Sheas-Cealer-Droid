@@ -129,7 +129,7 @@ Turn on developer options → enable USB debugging, then tap the Copy Command bu
 
 (Feeling overwhelmed? Don’t hesitate to ask AI or search engines for help)</value>
   </data>
-  <data name="GuideLabelTextBrowserNameFallback" xml:space="preserve">
+  <data name="GuideLabelTextIsFlagCopiedFallback" xml:space="preserve">
     <value>(Here I come, finally my turn to shine)
 
 Next, we need to create a...

@@ -107,9 +107,9 @@ namespace Sheas_Cealer_Droid.Consts {
         ///
         ///OMG, skipping ahead are u? No spoilers then 的本地化字符串。
         /// </summary>
-        internal static string GuideLabelTextBrowserNameFallback {
+        internal static string GuideLabelTextIsFlagCopiedFallback {
             get {
-                return ResourceManager.GetString("GuideLabelTextBrowserNameFallback", resourceCulture);
+                return ResourceManager.GetString("GuideLabelTextIsFlagCopiedFallback", resourceCulture);
             }
         }
         
