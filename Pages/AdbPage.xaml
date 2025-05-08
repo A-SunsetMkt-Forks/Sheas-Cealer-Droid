@@ -35,8 +35,8 @@
                     <Label Text="{Binding IsFlagCopied, Converter={x:Static convs:AdbConv.AdbGuideLabelTextConv}}"
                            HorizontalTextAlignment="Center" />
                     <Button x:Name="CommandButton"
-                            Text="{x:Static consts:AdbMultilangConst.CommandButtonText}"
-                            ToolTipProperties.Text="{x:Static consts:AdbMultilangConst.CommandButtonTooltip}"
+                            Text="{x:Static consts:GlobalMultilangConst.CommandButtonText}"
+                            ToolTipProperties.Text="{x:Static consts:GlobalMultilangConst.CommandButtonTooltip}"
                             IsEnabled="{Binding IsFlagCopied}"
                             Margin="4"
                             Clicked="CommandButton_Clicked" />

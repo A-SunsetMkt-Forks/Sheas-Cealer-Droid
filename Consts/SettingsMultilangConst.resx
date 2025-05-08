@@ -119,6 +119,12 @@
   <data name="BrowserSettingsItemTitle" xml:space="preserve">
     <value>Browser</value>
   </data>
+  <data name="CommandSettingsItemTitle" xml:space="preserve">
+    <value>Adb Command</value>
+  </data>
+  <data name="LinkSettingsItemTitle" xml:space="preserve">
+    <value>Flag Link</value>
+  </data>
   <data name="SearchEnabledSettingsItemTitle" xml:space="preserve">
     <value>Enable Search</value>
   </data>

@@ -73,8 +73,8 @@ public partial class FlagPage : ContentPage
 
     private async void LinkButton_Clicked(object sender, EventArgs e)
     {
-        await Clipboard.Default.SetTextAsync(FlagConst.FlagUrl);
-        await Toast.Make(FlagConst._LinkCopiedToastMsg).Show();
+        await Clipboard.Default.SetTextAsync(GlobalConst.FlagUrl);
+        await Toast.Make(GlobalConst._LinkCopiedToastMsg).Show();
 
         if (FlagPres.IsFlagCopied)
             return;

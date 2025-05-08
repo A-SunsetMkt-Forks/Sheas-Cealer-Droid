@@ -2,6 +2,7 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:consts="clr-namespace:Sheas_Cealer_Droid.Consts"
              xmlns:models="clr-namespace:Sheas_Cealer_Droid.Models"
+             xmlns:pages="clr-namespace:Sheas_Cealer_Droid.Pages"
              xmlns:preses="clr-namespace:Sheas_Cealer_Droid.Preses"
              x:Class="Sheas_Cealer_Droid.Pages.SettingsPage" x:DataType="preses:SettingsPres"
              Title="{x:Static consts:GlobalMultilangConst.SettingsMenuItemTitle}"
@@ -26,7 +27,9 @@
                                Text="{Binding UpstreamUrl}"
                                Placeholder="{x:Static consts:GlobalConst.DefaultUpstreamUrl}"
                                ToolTipProperties.Text="{x:Static consts:SettingsMultilangConst.UpstreamUrlEntryTooltip}"
-                               Keyboard="Url" ReturnType="Default" IsSpellCheckEnabled="False" IsTextPredictionEnabled="False" />
+                               Keyboard="Url" ReturnType="Default" IsSpellCheckEnabled="False" IsTextPredictionEnabled="False"
+                               ReturnCommandParameter="{Binding Source={x:RelativeSource Self}, x:DataType=Entry}"
+                               ReturnCommand="{x:Static pages:SettingsPage.UpstreamUrlEntry_CompletedCommand}" />
                     </models:SettingsItem.View>
                 </models:SettingsItem>
                 <models:SettingsItem Title="{x:Static consts:SettingsMultilangConst.ThemeColorSettingsItemTitle}">
@@ -43,6 +46,22 @@
                         <Switch BindingContext="{Binding BindingContext, Source={x:RelativeSource AncestorType={x:Type ContentPage}}, x:DataType=ContentPage}"
                                 IsToggled="{Binding IsSearchEnabled}"
                                 ToolTipProperties.Text="{x:Static consts:SettingsMultilangConst.SearchEnabledSwitchTooltip}" />
+                    </models:SettingsItem.View>
+                </models:SettingsItem>
+                <models:SettingsItem Title="{x:Static consts:SettingsMultilangConst.LinkSettingsItemTitle}">
+                    <models:SettingsItem.View>
+                        <Button Text="{x:Static consts:GlobalMultilangConst.LinkButtonText}"
+                                ToolTipProperties.Text="{x:Static consts:GlobalMultilangConst.LinkButtonTooltip}"
+                                HorizontalOptions="End"
+                                Command="{x:Static pages:SettingsPage.LinkButton_ClickedCommand}" />
+                    </models:SettingsItem.View>
+                </models:SettingsItem>
+                <models:SettingsItem Title="{x:Static consts:SettingsMultilangConst.CommandSettingsItemTitle}">
+                    <models:SettingsItem.View>
+                        <Button Text="{x:Static consts:GlobalMultilangConst.CommandButtonText}"
+                                ToolTipProperties.Text="{x:Static consts:GlobalMultilangConst.CommandButtonTooltip}"
+                                HorizontalOptions="End"
+                                Command="{x:Static pages:SettingsPage.CommandButton_ClickedCommand}" />
                     </models:SettingsItem.View>
                 </models:SettingsItem>
             </x:Array>

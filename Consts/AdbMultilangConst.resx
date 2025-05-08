@@ -116,12 +116,6 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <data name="CommandButtonText" xml:space="preserve">
-    <value>Copy Command</value>
-  </data>
-  <data name="CommandButtonTooltip" xml:space="preserve">
-    <value>Tap to copy an ADB command</value>
-  </data>
   <data name="GuideLabelText" xml:space="preserve">
     <value>Next, we need to create a chrome-command-line file with ADB
 
@@ -138,8 +132,5 @@ OMG, skipping ahead are u? No spoilers then</value>
   </data>
   <data name="TitleLabelText" xml:space="preserve">
     <value>🏆 Almost There 🎖️</value>
-  </data>
-  <data name="_CommandCopiedToastMsg" xml:space="preserve">
-    <value>Command copied ✅</value>
   </data>
 </root>

@@ -130,16 +130,7 @@ Now, let’s turn on... uh... the selected browser’s...
 
 Uh, wait a moment, I’m not done memorizing my lines yet</value>
   </data>
-  <data name="LinkButtonText" xml:space="preserve">
-    <value>Copy Link</value>
-  </data>
-  <data name="LinkButtonTooltip" xml:space="preserve">
-    <value>Tap to copy a flag jump link</value>
-  </data>
   <data name="TitleLabelText" xml:space="preserve">
     <value>💯 Nice Work 🔥</value>
-  </data>
-  <data name="_LinkCopiedToastMsg" xml:space="preserve">
-    <value>Link copied ✅</value>
   </data>
 </root>

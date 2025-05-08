@@ -84,8 +84,8 @@ public partial class AdbPage : ContentPage
 
     private async void CommandButton_Clicked(object sender, EventArgs e)
     {
-        await Clipboard.Default.SetTextAsync(AdbConst.AdbCommand);
-        await Toast.Make(AdbConst._CommandCopiedToastMsg).Show();
+        await Clipboard.Default.SetTextAsync(GlobalConst.AdbCommand);
+        await Toast.Make(GlobalConst._CommandCopiedToastMsg).Show();
     }
 
     private async void PrevButton_Clicked(object sender, EventArgs e)

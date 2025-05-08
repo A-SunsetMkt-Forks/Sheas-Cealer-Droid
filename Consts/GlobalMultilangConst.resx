@@ -125,6 +125,18 @@
   <data name="BrowserPickerTooltip" xml:space="preserve">
     <value>Tap to open a browser selection pop-up</value>
   </data>
+  <data name="CommandButtonText" xml:space="preserve">
+    <value>Copy Command</value>
+  </data>
+  <data name="CommandButtonTooltip" xml:space="preserve">
+    <value>Tap to copy an ADB command</value>
+  </data>
+  <data name="LinkButtonText" xml:space="preserve">
+    <value>Copy Link</value>
+  </data>
+  <data name="LinkButtonTooltip" xml:space="preserve">
+    <value>Tap to copy a flag jump link</value>
+  </data>
   <data name="NextButtonDescription" xml:space="preserve">
     <value>Next</value>
   </data>
@@ -143,6 +155,9 @@
   <data name="_BrowserNameCollectionCustomTitle" xml:space="preserve">
     <value>Other (Custom)</value>
   </data>
+  <data name="_CommandCopiedToastMsg" xml:space="preserve">
+    <value>Command copied ✅</value>
+  </data>
   <data name="_CustomBrowserNameErrorToastMsg" xml:space="preserve">
     <value>Browser name cannot be empty or contain whitespace characters</value>
   </data>
@@ -153,6 +168,9 @@
   </data>
   <data name="_CustomBrowserNamePopupTitle" xml:space="preserve">
     <value>Custom Browser Name</value>
+  </data>
+  <data name="_LinkCopiedToastMsg" xml:space="preserve">
+    <value>Link copied ✅</value>
   </data>
   <data name="_PopupAcceptText" xml:space="preserve">
     <value>Accept</value>

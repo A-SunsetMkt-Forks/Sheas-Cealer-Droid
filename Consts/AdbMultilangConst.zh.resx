@@ -116,12 +116,6 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <data name="CommandButtonText" xml:space="preserve">
-    <value>复制命令</value>
-  </data>
-  <data name="CommandButtonTooltip" xml:space="preserve">
-    <value>点击复制 ADB 命令</value>
-  </data>
   <data name="GuideLabelText" xml:space="preserve">
     <value>接下来我们需要用 ADB 命令创建一个 chrome-command-line 文件
 
@@ -138,8 +132,5 @@
   </data>
   <data name="TitleLabelText" xml:space="preserve">
     <value>🏆 快到了 🎖️</value>
-  </data>
-  <data name="_CommandCopiedToastMsg" xml:space="preserve">
-    <value>命令已复制 ✅</value>
   </data>
 </root>

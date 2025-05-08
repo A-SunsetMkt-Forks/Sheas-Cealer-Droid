@@ -1,5 +1,11 @@
+using CommunityToolkit.Maui.Alerts;
+using Microsoft.Maui.ApplicationModel.DataTransfer;
 using Microsoft.Maui.Controls;
+using Sheas_Cealer_Droid.Consts;
 using Sheas_Cealer_Droid.Preses;
+using System;
+using System.Threading.Tasks;
+using System.Windows.Input;
 
 namespace Sheas_Cealer_Droid.Pages;
 
@@ -14,4 +20,26 @@ public partial class SettingsPage : ContentPage
         BindingContext = SettingsPres = new();
     }
     private void SettingsPage_NavigatedFrom(object sender, NavigatedFromEventArgs e) => BrowserPicker.BindingContext = null;
+
+    internal static ICommand UpstreamUrlEntry_CompletedCommand => new Command(sender => UpstreamUrlEntry_Completed(sender, null!));
+    private static void UpstreamUrlEntry_Completed(object sender, EventArgs e)
+    {
+        Entry senderEntry = (Entry)sender;
+
+        senderEntry.Unfocus();
+    }
+
+    internal static ICommand LinkButton_ClickedCommand => new Command(async () => await LinkButton_Clicked(null!, null!));
+    private static async Task LinkButton_Clicked(object sender, EventArgs e)
+    {
+        await Clipboard.Default.SetTextAsync(GlobalConst.FlagUrl);
+        await Toast.Make(GlobalConst._LinkCopiedToastMsg).Show();
+    }
+
+    internal static ICommand CommandButton_ClickedCommand => new Command(async () => await CommandButton_Clicked(null!, null!));
+    private static async Task CommandButton_Clicked(object sender, EventArgs e)
+    {
+        await Clipboard.Default.SetTextAsync(GlobalConst.AdbCommand);
+        await Toast.Make(GlobalConst._CommandCopiedToastMsg).Show();
+    }
 }

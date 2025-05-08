@@ -70,6 +70,15 @@ namespace Sheas_Cealer_Droid.Consts {
         }
         
         /// <summary>
+        ///   查找类似 Command copied ✅ 的本地化字符串。
+        /// </summary>
+        internal static string _CommandCopiedToastMsg {
+            get {
+                return ResourceManager.GetString("_CommandCopiedToastMsg", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   查找类似 Browser name cannot be empty or contain whitespace characters 的本地化字符串。
         /// </summary>
         internal static string _CustomBrowserNameErrorToastMsg {
@@ -95,6 +104,15 @@ namespace Sheas_Cealer_Droid.Consts {
         internal static string _CustomBrowserNamePopupTitle {
             get {
                 return ResourceManager.GetString("_CustomBrowserNamePopupTitle", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   查找类似 Link copied ✅ 的本地化字符串。
+        /// </summary>
+        internal static string _LinkCopiedToastMsg {
+            get {
+                return ResourceManager.GetString("_LinkCopiedToastMsg", resourceCulture);
             }
         }
         
@@ -239,6 +257,42 @@ namespace Sheas_Cealer_Droid.Consts {
         internal static string BrowserPickerTooltip {
             get {
                 return ResourceManager.GetString("BrowserPickerTooltip", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   查找类似 Copy Command 的本地化字符串。
+        /// </summary>
+        internal static string CommandButtonText {
+            get {
+                return ResourceManager.GetString("CommandButtonText", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   查找类似 Tap to copy an ADB command 的本地化字符串。
+        /// </summary>
+        internal static string CommandButtonTooltip {
+            get {
+                return ResourceManager.GetString("CommandButtonTooltip", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   查找类似 Copy Link 的本地化字符串。
+        /// </summary>
+        internal static string LinkButtonText {
+            get {
+                return ResourceManager.GetString("LinkButtonText", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   查找类似 Tap to copy a flag jump link 的本地化字符串。
+        /// </summary>
+        internal static string LinkButtonTooltip {
+            get {
+                return ResourceManager.GetString("LinkButtonTooltip", resourceCulture);
             }
         }
         

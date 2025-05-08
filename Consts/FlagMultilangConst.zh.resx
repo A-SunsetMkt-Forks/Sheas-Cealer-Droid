@@ -130,16 +130,7 @@
 
 额额，等我准备一下，我稿子还没背完</value>
   </data>
-  <data name="LinkButtonText" xml:space="preserve">
-    <value>复制链接</value>
-  </data>
-  <data name="LinkButtonTooltip" xml:space="preserve">
-    <value>点击复制设置项跳转链接</value>
-  </data>
   <data name="TitleLabelText" xml:space="preserve">
     <value>💯 做的好 🔥</value>
-  </data>
-  <data name="_LinkCopiedToastMsg" xml:space="preserve">
-    <value>链接已复制 ✅</value>
   </data>
 </root>

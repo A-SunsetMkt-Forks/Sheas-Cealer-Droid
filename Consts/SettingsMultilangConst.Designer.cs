@@ -70,6 +70,24 @@ namespace Sheas_Cealer_Droid.Consts {
         }
         
         /// <summary>
+        ///   查找类似 Adb Command 的本地化字符串。
+        /// </summary>
+        internal static string CommandSettingsItemTitle {
+            get {
+                return ResourceManager.GetString("CommandSettingsItemTitle", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   查找类似 Flag Link 的本地化字符串。
+        /// </summary>
+        internal static string LinkSettingsItemTitle {
+            get {
+                return ResourceManager.GetString("LinkSettingsItemTitle", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   查找类似 Enable Search 的本地化字符串。
         /// </summary>
         internal static string SearchEnabledSettingsItemTitle {

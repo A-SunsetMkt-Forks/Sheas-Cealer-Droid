@@ -61,33 +61,6 @@ namespace Sheas_Cealer_Droid.Consts {
         }
         
         /// <summary>
-        ///   查找类似 Command copied ✅ 的本地化字符串。
-        /// </summary>
-        internal static string _CommandCopiedToastMsg {
-            get {
-                return ResourceManager.GetString("_CommandCopiedToastMsg", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   查找类似 Copy Command 的本地化字符串。
-        /// </summary>
-        internal static string CommandButtonText {
-            get {
-                return ResourceManager.GetString("CommandButtonText", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   查找类似 Tap to copy an ADB command 的本地化字符串。
-        /// </summary>
-        internal static string CommandButtonTooltip {
-            get {
-                return ResourceManager.GetString("CommandButtonTooltip", resourceCulture);
-            }
-        }
-        
-        /// <summary>
         ///   查找类似 Next, we need to create a chrome-command-line file with ADB
         ///
         ///Turn on developer options → enable USB debugging, then tap the Copy Command button below and run it in your ADB terminal

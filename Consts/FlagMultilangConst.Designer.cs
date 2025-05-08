@@ -61,15 +61,6 @@ namespace Sheas_Cealer_Droid.Consts {
         }
         
         /// <summary>
-        ///   查找类似 Link copied ✅ 的本地化字符串。
-        /// </summary>
-        internal static string _LinkCopiedToastMsg {
-            get {
-                return ResourceManager.GetString("_LinkCopiedToastMsg", resourceCulture);
-            }
-        }
-        
-        /// <summary>
         ///   查找类似 Now, let&apos;s turn on the &quot;Enable command line on non-rooted devices&quot; option in {0}
         ///
         ///Just tap the Copy Link button below, open it in {0}, and set the option to Enabled
@@ -92,24 +83,6 @@ namespace Sheas_Cealer_Droid.Consts {
         internal static string GuideLabelTextBrowserNameFallback {
             get {
                 return ResourceManager.GetString("GuideLabelTextBrowserNameFallback", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   查找类似 Copy Link 的本地化字符串。
-        /// </summary>
-        internal static string LinkButtonText {
-            get {
-                return ResourceManager.GetString("LinkButtonText", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   查找类似 Tap to copy a flag jump link 的本地化字符串。
-        /// </summary>
-        internal static string LinkButtonTooltip {
-            get {
-                return ResourceManager.GetString("LinkButtonTooltip", resourceCulture);
             }
         }
         

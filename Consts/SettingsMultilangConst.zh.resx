@@ -119,6 +119,12 @@
   <data name="BrowserSettingsItemTitle" xml:space="preserve">
     <value>浏览器</value>
   </data>
+  <data name="CommandSettingsItemTitle" xml:space="preserve">
+    <value>Adb 命令</value>
+  </data>
+  <data name="LinkSettingsItemTitle" xml:space="preserve">
+    <value>Flag 链接</value>
+  </data>
   <data name="SearchEnabledSettingsItemTitle" xml:space="preserve">
     <value>启用搜索</value>
   </data>
