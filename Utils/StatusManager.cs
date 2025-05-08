@@ -9,7 +9,7 @@ internal static class StatusManager
 {
     internal static async Task RefreshCurrentStatus(MainPres mainPres, bool cealHostRulesDictContainNull = false)
     {
-        if (string.IsNullOrWhiteSpace(await File.ReadAllTextAsync(MainConst.CommandLinePath)))
+        if (string.IsNullOrWhiteSpace(await File.ReadAllTextAsync(GlobalConst.CommandLinePath)))
         {
             mainPres.IsCommandLineUtd = null;
             mainPres.StatusMessage = MainConst._InactiveStatusMessage;

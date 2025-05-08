@@ -23,7 +23,7 @@ public partial class App : Application
 
         Resources.Add((ResourceDictionary)Activator.CreateInstance(GlobalConst.ThemeColorDictionary[AppPres.ThemeColorName])!);
     }
-    protected override Window CreateWindow(IActivationState? activationState) => new(new AppShell());
+    protected override Window CreateWindow(IActivationState? activationState) => new(new AppShell(AppPres));
 
     private async void AppAndroidEnvironment_UnhandledExceptionRaiser(object? sender, RaiseThrowableEventArgs e)
     {

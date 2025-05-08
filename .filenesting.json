@@ -23,6 +23,8 @@
                     "ReadyMultilangConst.resx": [ "ReadyConst.cs" ],
                     "ReadyMultilangConst.zh.resx": [ "ReadyConst.cs" ],
 
+                    "GlobalIndicatorViewCountConv.cs": [ "GlobalConv.cs" ],
+                    "AppAdbShellContentTitleConv.cs": [ "AppConv.cs" ],
                     "MainLaunchButtonBackgroundColorConv.cs": [ "MainConv.cs" ],
                     "MainLaunchButtonRotationConv.cs": [ "MainConv.cs" ],
                     "MainLaunchButtonTooltipConv.cs": [ "MainConv.cs" ],
@@ -30,7 +32,9 @@
                     "MainSearchHandlerSearchBoxVisibilityConv.cs": [ "MainConv.cs" ],
                     "MainStatusProgressBarIsVisibleConv.cs": [ "MainConv.cs" ],
                     "AdbGuideLabelTextConv.cs": [ "AdbConv.cs" ],
-                    "ReadyGuideLabelTextConv.cs": [ "ReadyConv.cs" ]
+                    "AdbIndicatorViewPositionConv.cs": [ "AdbConv.cs" ],
+                    "ReadyGuideLabelTextConv.cs": [ "ReadyConv.cs" ],
+                    "ReadyIndicatorViewPositionConv.cs": [ "ReadyConv.cs" ]
                 }
             }
         }

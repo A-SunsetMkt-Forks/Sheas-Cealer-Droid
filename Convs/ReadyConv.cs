@@ -3,4 +3,5 @@
 internal static class ReadyConv
 {
     internal static ReadyGuideLabelTextConv ReadyGuideLabelTextConv => new();
+    internal static ReadyIndicatorViewPositionConv ReadyIndicatorViewPositionConv => new();
 }

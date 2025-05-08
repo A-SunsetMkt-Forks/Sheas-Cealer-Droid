@@ -53,9 +53,9 @@ public partial class MainPage : ContentPage
     private async void LaunchButton_Click(object sender, EventArgs e)
     {
         if (MainPres.IsCommandLineUtd == true)
-            await File.WriteAllTextAsync(MainConst.CommandLinePath, string.Empty);
+            await File.WriteAllTextAsync(GlobalConst.CommandLinePath, string.Empty);
         else if (MainPres.IsCommandLineUtd == null)
-            await File.WriteAllTextAsync(MainConst.CommandLinePath, $"{MainPres.BrowserName!.ToLowerInvariant()} {CealArgs}");
+            await File.WriteAllTextAsync(GlobalConst.CommandLinePath, $"{MainPres.BrowserName!.ToLowerInvariant()} {CealArgs}");
         else
             await File.WriteAllTextAsync(MainConst.UpstreamHostPath, LatestUpstreamHostString);
 
@@ -174,9 +174,9 @@ public partial class MainPage : ContentPage
 
             CealArgs = @$"--host-rules=""{hostRules.TrimEnd(',')}"" --host-resolver-rules=""{hostResolverRules.TrimEnd(',')}"" --test-type --ignore-certificate-errors";
 
-            if (!string.IsNullOrWhiteSpace(await File.ReadAllTextAsync(MainConst.CommandLinePath)))
+            if (!string.IsNullOrWhiteSpace(await File.ReadAllTextAsync(GlobalConst.CommandLinePath)))
             {
-                await File.WriteAllTextAsync(MainConst.CommandLinePath, $"{MainPres.BrowserName!.ToLowerInvariant()} {CealArgs}");
+                await File.WriteAllTextAsync(GlobalConst.CommandLinePath, $"{MainPres.BrowserName!.ToLowerInvariant()} {CealArgs}");
 
                 await StatusManager.RefreshCurrentStatus(MainPres, CealHostRulesDict.ContainsValue(null));
             }

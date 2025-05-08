@@ -2,8 +2,10 @@
        xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
        xmlns:behaviors="clr-namespace:CommunityToolkit.Maui.Behaviors;assembly=CommunityToolkit.Maui"
        xmlns:consts="clr-namespace:Sheas_Cealer_Droid.Consts"
+       xmlns:convs="clr-namespace:Sheas_Cealer_Droid.Convs"
        xmlns:pages="clr-namespace:Sheas_Cealer_Droid.Pages"
-       x:Class="Sheas_Cealer_Droid.AppShell"
+       xmlns:preses="clr-namespace:Sheas_Cealer_Droid.Preses"
+       x:Class="Sheas_Cealer_Droid.AppShell" x:DataType="preses:AppPres"
        FlyoutBackgroundColor="{AppThemeBinding Light={DynamicResource Gray50}, Dark={DynamicResource Gray900}}">
     <Shell.Behaviors>
         <behaviors:StatusBarBehavior StatusBarColor="{AppThemeBinding Light={StaticResource Primary50}, Dark={StaticResource Gray850}}"
@@ -48,17 +50,21 @@
               CommandParameter="{x:Type pages:AboutPage}"
               Clicked="DetailMenuItem_Clicked" />
 
-    <TabBar x:Name="GuideTabBar">
-        <ShellContent ContentTemplate="{DataTemplate pages:BrowserPage}"
+    <TabBar>
+        <ShellContent x:Name="BrowserShellContent"
+                      ContentTemplate="{DataTemplate pages:BrowserPage}"
                       Title="{x:Static consts:AppMultilangConst.BrowserShellContentTitle}"
                       Icon="circle_icon.png"
-                      Route="BrowserPage" />
+                      Route="BrowserPage"
+                      IsVisible="{Binding IsFirstRunning}" />
         <ShellContent ContentTemplate="{DataTemplate pages:FlagPage}"
                       Title="{x:Static consts:AppMultilangConst.FlagShellContentTitle}"
                       Icon="ring_icon.png"
-                      Route="FlagPage" />
-        <ShellContent ContentTemplate="{DataTemplate pages:AdbPage}"
-                      Title="{x:Static consts:AppMultilangConst.AdbShellContentTitle}"
+                      Route="FlagPage"
+                      IsVisible="{Binding IsFirstRunning}" />
+        <ShellContent x:Name="AdbShellContent"
+                      ContentTemplate="{DataTemplate pages:AdbPage}"
+                      Title="{Binding IsFirstRunning, Converter={x:Static convs:AppConv.AppAdbShellContentTitleConv}, Mode=OneTime}"
                       Icon="neutral_icon.png"
                       Route="AdbPage" />
         <ShellContent ContentTemplate="{DataTemplate pages:ReadyPage}"

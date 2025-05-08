@@ -1,6 +1,5 @@
 using CommunityToolkit.Maui.Alerts;
 using Microsoft.Maui.Controls;
-using Microsoft.Maui.Storage;
 using Sheas_Cealer_Droid.Anims;
 using Sheas_Cealer_Droid.Consts;
 using Sheas_Cealer_Droid.Preses;
@@ -46,11 +45,11 @@ public partial class ReadyPage : ContentPage
 
     private async void StartButton_Clicked(object sender, EventArgs e)
     {
-        Preferences.Default.Set("IsFirstRunning", false);
-
         IsNextNavigating = true;
 
         await Shell.Current.GoToAsync($"//{nameof(MainPage)}");
+
+        ReadyPres.IsFirstRunning = false;
     }
 
     private async void PrevButton_Clicked(object sender, EventArgs e)

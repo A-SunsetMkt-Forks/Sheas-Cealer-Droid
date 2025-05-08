@@ -6,7 +6,8 @@
              xmlns:preses="clr-namespace:Sheas_Cealer_Droid.Preses"
              x:Class="Sheas_Cealer_Droid.Pages.AdbPage" x:DataType="preses:AdbPres"
              Loaded="AdbPage_Loaded" Appearing="AdbPage_Appearing" NavigatingFrom="AdbPage_NavigatingFrom" NavigatedFrom="AdbPage_NavigatedFrom" NavigatedTo="AdbPage_NavigatedTo">
-    <Grid RowDefinitions="*,1.2*" RowSpacing="24"
+    <Grid x:Name="AdbGrid"
+          RowDefinitions="*,1.2*" RowSpacing="24"
           Padding="24">
         <Grid.GestureRecognizers>
             <SwipeGestureRecognizer Direction="Right" Threshold="50"
@@ -45,6 +46,7 @@
                          ToolTipProperties.Text="{x:Static consts:GlobalMultilangConst.PrevButtonTooltip}"
                          SemanticProperties.Description="{x:Static consts:GlobalMultilangConst.PrevButtonDescription}"
                          IsEnabled="{Binding IsFlagCopied}"
+                         IsVisible="{Binding IsFirstRunning}"
                          Grid.Row="1" HorizontalOptions="Start" WidthRequest="56" HeightRequest="56" CornerRadius="28"
                          Clicked="PrevButton_Clicked">
                 <ImageButton.Behaviors>
@@ -62,7 +64,8 @@
                     <behaviors:IconTintColorBehavior TintColor="{AppThemeBinding Light={StaticResource White}, Dark={StaticResource Gray900}}" />
                 </ImageButton.Behaviors>
             </ImageButton>
-            <IndicatorView Position="2"
+            <IndicatorView Count="{Binding IsFirstRunning, Converter={x:Static convs:GlobalConv.GlobalIndicatorViewCountConv}, Mode=OneTime}"
+                           Position="{Binding IsFirstRunning, Converter={x:Static convs:AdbConv.AdbIndicatorViewPositionConv}, Mode=OneTime}"
                            Grid.Row="1" HorizontalOptions="Center" VerticalOptions="End" />
         </Grid>
     </Grid>

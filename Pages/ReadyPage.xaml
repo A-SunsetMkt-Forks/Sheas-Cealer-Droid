@@ -48,7 +48,8 @@
                     <behaviors:IconTintColorBehavior TintColor="{AppThemeBinding Light={StaticResource White}, Dark={StaticResource Gray900}}" />
                 </ImageButton.Behaviors>
             </ImageButton>
-            <IndicatorView Position="3"
+            <IndicatorView Count="{Binding IsFirstRunning, Converter={x:Static convs:GlobalConv.GlobalIndicatorViewCountConv}, Mode=OneTime}"
+                           Position="{Binding IsFirstRunning, Converter={x:Static convs:ReadyConv.ReadyIndicatorViewPositionConv}, Mode=OneTime}"
                            Grid.Row="1" HorizontalOptions="Center" VerticalOptions="End" />
         </Grid>
     </Grid>

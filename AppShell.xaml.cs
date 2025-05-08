@@ -1,19 +1,25 @@
 ﻿using Microsoft.Maui.Controls;
-using Microsoft.Maui.Storage;
+using Sheas_Cealer_Droid.Consts;
+using Sheas_Cealer_Droid.Preses;
 using System;
 using System.Collections.Generic;
+using System.IO;
 
 namespace Sheas_Cealer_Droid;
 
 public partial class AppShell : Shell
 {
+    private readonly AppPres AppPres;
     private readonly List<Type> DetailPageTypeArray = [];
 
-    internal AppShell()
+    internal AppShell(AppPres appPres)
     {
         InitializeComponent();
 
-        CurrentItem = Preferences.Default.Get("IsFirstRunning", true) ? GuideTabBar : MainShellContent;
+        BindingContext = AppPres = appPres;
+
+        CurrentItem = AppPres.IsFirstRunning ? BrowserShellContent :
+            File.Exists(GlobalConst.CommandLinePath) ? MainShellContent : AdbShellContent;
     }
 
     private async void DetailMenuItem_Clicked(object sender, EventArgs e)

@@ -74,6 +74,10 @@ internal abstract partial class GlobalPres : ObservableObject
     }
 
     [ObservableProperty]
+    private static bool isFirstRunning = Preferences.Default.Get(nameof(IsFirstRunning), true);
+    partial void OnIsFirstRunningChanged(bool value) => Preferences.Default.Set(nameof(IsFirstRunning), value);
+
+    [ObservableProperty]
     private static bool isFlagCopied = Preferences.Default.Get(nameof(IsFlagCopied), false);
     partial void OnIsFlagCopiedChanged(bool value) => Preferences.Default.Set(nameof(IsFlagCopied), value);
 

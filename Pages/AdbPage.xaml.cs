@@ -35,6 +35,13 @@ public partial class AdbPage : ContentPage
         CommandLineTimer.Tick += CommandLineTimer_Tick;
         CommandLineTimer.Start();
 
+        if (!AdbPres.IsFirstRunning)
+        {
+            IsNextNavigating = true;
+
+            new ViewFadeAnim(AdbGrid, ViewFadeAnim.FadeType.In).Commit(this, nameof(AdbGrid) + nameof(ViewFadeAnim), 8, 1000);
+        }
+
         new HeroImageSwitchAnim(PrimaryHeroImage, SecondaryHeroImage).Commit(this, nameof(PrimaryHeroImage) + nameof(SecondaryHeroImage) + nameof(HeroImageSwitchAnim), 8, 10000, repeat: () => true);
 
         if (!AdbPres.IsCommandLineExist)
@@ -67,7 +74,10 @@ public partial class AdbPage : ContentPage
     private void AdbPage_NavigatingFrom(object sender, NavigatingFromEventArgs e) => new PageSwitchAnim(this, IsNextNavigating ? PageSwitchAnim.SwitchDirection.Left : PageSwitchAnim.SwitchDirection.Right, PageSwitchAnim.SwitchType.Out).Commit(this, nameof(AdbPage) + nameof(PageSwitchAnim), 8, 100);
     private void AdbPage_NavigatedTo(object sender, NavigatedToEventArgs e)
     {
-        Page previousPage = (Page)typeof(NavigatedToEventArgs).GetProperty("PreviousPage", BindingFlags.NonPublic | BindingFlags.Instance)!.GetValue(e)!;
+        Page? previousPage = (Page)typeof(NavigatedToEventArgs).GetProperty("PreviousPage", BindingFlags.NonPublic | BindingFlags.Instance)?.GetValue(e)!;
+
+        if (previousPage == null)
+            return;
 
         new PageSwitchAnim(this, previousPage.GetType() == typeof(FlagPage) ? PageSwitchAnim.SwitchDirection.Left : PageSwitchAnim.SwitchDirection.Right, PageSwitchAnim.SwitchType.In).Commit(this, nameof(AdbPage) + nameof(PageSwitchAnim), 8, 100);
     }
@@ -80,6 +90,9 @@ public partial class AdbPage : ContentPage
 
     private async void PrevButton_Clicked(object sender, EventArgs e)
     {
+        if (!AdbPres.IsFirstRunning)
+            return;
+
         IsNextNavigating = false;
 
         await Shell.Current.GoToAsync($"//{nameof(FlagPage)}");
@@ -96,7 +109,7 @@ public partial class AdbPage : ContentPage
         if (!AdbPres.IsFlagCopied)
             return;
 
-        if (File.Exists(MainConst.CommandLinePath))
+        if (File.Exists(GlobalConst.CommandLinePath))
         {
             if (!AdbPres.IsCommandLineExist)
             {

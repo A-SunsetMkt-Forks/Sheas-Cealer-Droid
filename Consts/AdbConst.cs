@@ -2,5 +2,5 @@
 
 internal abstract class AdbConst : AdbMultilangConst
 {
-    internal static string AdbCommand => @$"adb shell ""touch {MainConst.CommandLinePath} && chmod 666 {MainConst.CommandLinePath}""";
+    internal static string AdbCommand => @$"adb shell ""touch {GlobalConst.CommandLinePath} && chmod 666 {GlobalConst.CommandLinePath}""";
 }
