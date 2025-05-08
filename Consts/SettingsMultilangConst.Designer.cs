@@ -79,7 +79,7 @@ namespace Sheas_Cealer_Droid.Consts {
         }
         
         /// <summary>
-        ///   查找类似 Click to toggle the search feature on / off 的本地化字符串。
+        ///   查找类似 Tap to toggle the search feature on / off 的本地化字符串。
         /// </summary>
         internal static string SearchEnabledSwitchTooltip {
             get {
@@ -111,6 +111,24 @@ namespace Sheas_Cealer_Droid.Consts {
         internal static string ThemeColorSettingsItemTitle {
             get {
                 return ResourceManager.GetString("ThemeColorSettingsItemTitle", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   查找类似 Tap to edit the upstream host updating url 的本地化字符串。
+        /// </summary>
+        internal static string UpstreamUrlEntryTooltip {
+            get {
+                return ResourceManager.GetString("UpstreamUrlEntryTooltip", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   查找类似 Upstream Url 的本地化字符串。
+        /// </summary>
+        internal static string UpstreamUrlSettingsItemTitle {
+            get {
+                return ResourceManager.GetString("UpstreamUrlSettingsItemTitle", resourceCulture);
             }
         }
     }

@@ -104,6 +104,12 @@
         <Setter Property="OnColor" Value="{AppThemeBinding Light={DynamicResource Primary300}, Dark={DynamicResource Primary900}}" />
     </Style>
 
+    <Style TargetType="Entry">
+        <Setter Property="ClearButtonVisibility" Value="WhileEditing" />
+        <Setter Property="TextColor" Value="{AppThemeBinding Light={DynamicResource Gray900}, Dark={DynamicResource Gray300}}" />
+        <Setter Property="HorizontalTextAlignment" Value="Center" />
+    </Style>
+
     <Style TargetType="Picker">
         <Setter Property="TextColor" Value="{AppThemeBinding Light={DynamicResource Gray900}, Dark={DynamicResource Gray300}}" />
         <Setter Property="TitleColor" Value="{AppThemeBinding Light={DynamicResource Gray900}, Dark={DynamicResource Gray300}}" />

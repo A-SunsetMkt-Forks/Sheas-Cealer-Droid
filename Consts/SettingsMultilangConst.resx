@@ -123,7 +123,7 @@
     <value>Enable Search</value>
   </data>
   <data name="SearchEnabledSwitchTooltip" xml:space="preserve">
-    <value>Click to toggle the search feature on / off</value>
+    <value>Tap to toggle the search feature on / off</value>
   </data>
   <data name="ThemeColorPickerTitle" xml:space="preserve">
     <value>Select a UI color flavor</value>
@@ -133,5 +133,11 @@
   </data>
   <data name="ThemeColorSettingsItemTitle" xml:space="preserve">
     <value>Flavor Color</value>
+  </data>
+  <data name="UpstreamUrlEntryTooltip" xml:space="preserve">
+    <value>Tap to edit the upstream host updating url</value>
+  </data>
+  <data name="UpstreamUrlSettingsItemTitle" xml:space="preserve">
+    <value>Upstream Url</value>
   </data>
 </root>

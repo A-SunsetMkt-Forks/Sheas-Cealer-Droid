@@ -20,6 +20,15 @@
                                 SelectedItem="{Binding BrowserName}" />
                     </models:SettingsItem.View>
                 </models:SettingsItem>
+                <models:SettingsItem Title="{x:Static consts:SettingsMultilangConst.UpstreamUrlSettingsItemTitle}">
+                    <models:SettingsItem.View>
+                        <Entry BindingContext="{Binding BindingContext, Source={x:RelativeSource AncestorType={x:Type ContentPage}}, x:DataType=ContentPage}"
+                               Text="{Binding UpstreamUrl}"
+                               Placeholder="{x:Static consts:GlobalConst.DefaultUpstreamUrl}"
+                               ToolTipProperties.Text="{x:Static consts:SettingsMultilangConst.UpstreamUrlEntryTooltip}"
+                               Keyboard="Url" ReturnType="Default" IsSpellCheckEnabled="False" IsTextPredictionEnabled="False" />
+                    </models:SettingsItem.View>
+                </models:SettingsItem>
                 <models:SettingsItem Title="{x:Static consts:SettingsMultilangConst.ThemeColorSettingsItemTitle}">
                     <models:SettingsItem.View>
                         <Picker BindingContext="{Binding BindingContext, Source={x:RelativeSource AncestorType={x:Type ContentPage}}, x:DataType=ContentPage}"

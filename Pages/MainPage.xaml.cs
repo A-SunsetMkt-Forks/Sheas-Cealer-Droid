@@ -74,7 +74,7 @@ public partial class MainPage : ContentPage
                 await StatusProgressBar.ProgressTo(0, 0, Easing.Linear);
                 await StatusProgressBar.ProgressTo(0.2, 100, Easing.CubicIn);
 
-                LatestUpstreamHostString = await Http.GetAsync<string>(MainConst.DefaultUpstreamUrl, MainClient);
+                LatestUpstreamHostString = await Http.GetAsync<string>(string.IsNullOrEmpty(MainPres.UpstreamUrl) ? GlobalConst.DefaultUpstreamUrl : MainPres.UpstreamUrl, MainClient);
                 string localUpstreamHostString = await File.ReadAllTextAsync(MainConst.UpstreamHostPath);
 
                 try { LatestUpstreamHostString = Encoding.UTF8.GetString(Convert.FromBase64String(LatestUpstreamHostString)); }
@@ -90,7 +90,7 @@ public partial class MainPage : ContentPage
 
                 return;
             }
-            catch when (sender == null) { await Task.Delay(TimeSpan.FromSeconds(0.1)); }
+            catch when (sender == null) { await Task.Delay(TimeSpan.FromSeconds(1)); }
             catch
             {
                 MainPres.StatusProgress = 1;

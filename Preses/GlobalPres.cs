@@ -56,6 +56,10 @@ internal abstract partial class GlobalPres : ObservableObject
     public ObservableCollection<string> BrowserNameCollection => browserNameCollection;
     private void BrowserNameCollection_CollectionChanged(object? sender, NotifyCollectionChangedEventArgs e) => Preferences.Default.Set(nameof(BrowserNameCollection), JsonSerializer.Serialize(BrowserNameCollection));
 
+    [ObservableProperty]
+    private static string upstreamUrl = Preferences.Default.Get(nameof(UpstreamUrl), string.Empty);
+    partial void OnUpstreamUrlChanged(string value) => Preferences.Default.Set(nameof(UpstreamUrl), value);
+
     private static readonly ObservableCollection<CealHostRule> cealHostRulesCollection = [];
     [SuppressMessage("Performance", "CA1822"), SuppressMessage("CodeQuality", "IDE0079")]
     public ObservableCollection<CealHostRule> CealHostRulesCollection => cealHostRulesCollection;
