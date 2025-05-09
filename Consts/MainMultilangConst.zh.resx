@@ -143,10 +143,10 @@
   <data name="MainSearchHandlerQueryIconName" xml:space="preserve">
     <value>搜索</value>
   </data>
-  <data name="UpdateToolbarItemText" xml:space="preserve">
+  <data name="UpdateHostToolbarItemText" xml:space="preserve">
     <value>检查规则更新</value>
   </data>
-  <data name="UpdateToolbarItemTooltip" xml:space="preserve">
+  <data name="UpdateHostToolbarItemTooltip" xml:space="preserve">
     <value>点击检查规则更新</value>
   </data>
   <data name="_ActiveStatusMessage" xml:space="preserve">

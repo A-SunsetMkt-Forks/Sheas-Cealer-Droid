@@ -198,18 +198,18 @@ namespace Sheas_Cealer_Droid.Consts {
         /// <summary>
         ///   查找类似 Check host for update 的本地化字符串。
         /// </summary>
-        internal static string UpdateToolbarItemText {
+        internal static string UpdateHostToolbarItemText {
             get {
-                return ResourceManager.GetString("UpdateToolbarItemText", resourceCulture);
+                return ResourceManager.GetString("UpdateHostToolbarItemText", resourceCulture);
             }
         }
         
         /// <summary>
         ///   查找类似 Tap to check host for update 的本地化字符串。
         /// </summary>
-        internal static string UpdateToolbarItemTooltip {
+        internal static string UpdateHostToolbarItemTooltip {
             get {
-                return ResourceManager.GetString("UpdateToolbarItemTooltip", resourceCulture);
+                return ResourceManager.GetString("UpdateHostToolbarItemTooltip", resourceCulture);
             }
         }
     }

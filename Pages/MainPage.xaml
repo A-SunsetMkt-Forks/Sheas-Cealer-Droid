@@ -48,10 +48,10 @@
                      ToolTipProperties.Text="{x:Static consts:MainMultilangConst.GithubToolbarItemTooltip}"
                      SemanticProperties.Description="{x:Static consts:MainMultilangConst.GithubToolbarItemDescription}"
                      Clicked="GithubToolbarItem_Clicked" />
-        <ToolbarItem Text="{x:Static consts:MainMultilangConst.UpdateToolbarItemText}"
-                     ToolTipProperties.Text="{x:Static consts:MainMultilangConst.UpdateToolbarItemTooltip}"
+        <ToolbarItem Text="{x:Static consts:MainMultilangConst.UpdateHostToolbarItemText}"
+                     ToolTipProperties.Text="{x:Static consts:MainMultilangConst.UpdateHostToolbarItemTooltip}"
                      Order="Secondary"
-                     Clicked="UpdateToolbarItem_Clicked" />
+                     Clicked="UpdateHostToolbarItem_Clicked" />
     </ContentPage.ToolbarItems>
 
     <Grid RowDefinitions="*,56">

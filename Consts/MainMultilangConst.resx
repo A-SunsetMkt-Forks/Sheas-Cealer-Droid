@@ -143,10 +143,10 @@
   <data name="MainSearchHandlerQueryIconName" xml:space="preserve">
     <value>Search</value>
   </data>
-  <data name="UpdateToolbarItemText" xml:space="preserve">
+  <data name="UpdateHostToolbarItemText" xml:space="preserve">
     <value>Check host for update</value>
   </data>
-  <data name="UpdateToolbarItemTooltip" xml:space="preserve">
+  <data name="UpdateHostToolbarItemTooltip" xml:space="preserve">
     <value>Tap to check host for update</value>
   </data>
   <data name="_ActiveStatusMessage" xml:space="preserve">

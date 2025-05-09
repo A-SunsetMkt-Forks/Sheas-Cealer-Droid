@@ -45,7 +45,7 @@ public partial class MainPage : ContentPage
                 CealHostWatcher_Changed(null!, new(new(), Path.GetDirectoryName(cealHostPath)!, Path.GetFileName(cealHostPath)));
 
             if (MainPres.IsUpdateHostEnabled)
-                UpdateToolbarItem_Clicked(null, null!);
+                UpdateHostToolbarItem_Clicked(null, null!);
 
             try
             {
@@ -75,7 +75,7 @@ public partial class MainPage : ContentPage
     private void MainSearchHandler_ItemSelected(object _, CealHostRule e) => MainCollectionView.ScrollTo(e, position: ScrollToPosition.Center);
 
     private void GithubToolbarItem_Clicked(object sender, EventArgs e) => Browser.Default.OpenAsync(MainConst.GithubRepoUrl);
-    private async void UpdateToolbarItem_Clicked(object? sender, EventArgs e)
+    private async void UpdateHostToolbarItem_Clicked(object? sender, EventArgs e)
     {
         do
         {
