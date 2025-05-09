@@ -117,7 +117,7 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <data name="GuideLabelText" xml:space="preserve">
-    <value>Next, we need to create a chrome-command-line file with ADB
+    <value>Next, we need to create a "chrome-command-line" file with ADB
 
 Turn on developer options → enable USB debugging, then tap the Copy Command button below and run it in your ADB terminal
 

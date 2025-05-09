@@ -70,11 +70,29 @@ namespace Sheas_Cealer_Droid.Consts {
         }
         
         /// <summary>
+        ///   查找类似 Copy the ADB command to create a &quot;chrome-command-line&quot; file 的本地化字符串。
+        /// </summary>
+        internal static string CommandSettingsItemContent {
+            get {
+                return ResourceManager.GetString("CommandSettingsItemContent", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   查找类似 Adb Command 的本地化字符串。
         /// </summary>
         internal static string CommandSettingsItemTitle {
             get {
                 return ResourceManager.GetString("CommandSettingsItemTitle", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   查找类似 Copy the link to toggle the &quot;Enable command line on non-rooted devices&quot; option in a browser 的本地化字符串。
+        /// </summary>
+        internal static string LinkSettingsItemContent {
+            get {
+                return ResourceManager.GetString("LinkSettingsItemContent", resourceCulture);
             }
         }
         
@@ -88,7 +106,16 @@ namespace Sheas_Cealer_Droid.Consts {
         }
         
         /// <summary>
-        ///   查找类似 Enable Search 的本地化字符串。
+        ///   查找类似 Control whether to enable the host search feature (The search icon has a difficult-to-fix color issue in light mode. You can disable this option to hide it) 的本地化字符串。
+        /// </summary>
+        internal static string SearchEnabledSettingsItemContent {
+            get {
+                return ResourceManager.GetString("SearchEnabledSettingsItemContent", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   查找类似 Host Search 的本地化字符串。
         /// </summary>
         internal static string SearchEnabledSettingsItemTitle {
             get {
@@ -129,6 +156,33 @@ namespace Sheas_Cealer_Droid.Consts {
         internal static string ThemeColorSettingsItemTitle {
             get {
                 return ResourceManager.GetString("ThemeColorSettingsItemTitle", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   查找类似 Control whether to check host for update automatically on startup 的本地化字符串。
+        /// </summary>
+        internal static string UpdateHostEnabledSettingsItemContent {
+            get {
+                return ResourceManager.GetString("UpdateHostEnabledSettingsItemContent", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   查找类似 Auto Check Host For Update 的本地化字符串。
+        /// </summary>
+        internal static string UpdateHostEnabledSettingsItemTitle {
+            get {
+                return ResourceManager.GetString("UpdateHostEnabledSettingsItemTitle", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   查找类似 Tap to toggle the auto check host for update feature on / off 的本地化字符串。
+        /// </summary>
+        internal static string UpdateHostEnabledSwitchTooltip {
+            get {
+                return ResourceManager.GetString("UpdateHostEnabledSwitchTooltip", resourceCulture);
             }
         }
         

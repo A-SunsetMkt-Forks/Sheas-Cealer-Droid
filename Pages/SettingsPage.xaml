@@ -41,14 +41,24 @@
                                 SelectedItem="{Binding ThemeColorName}" />
                     </models:SettingsItem.View>
                 </models:SettingsItem>
-                <models:SettingsItem Title="{x:Static consts:SettingsMultilangConst.SearchEnabledSettingsItemTitle}">
+                <models:SettingsItem Title="{x:Static consts:SettingsMultilangConst.UpdateHostEnabledSettingsItemTitle}"
+                                     Content="{x:Static consts:SettingsMultilangConst.UpdateHostEnabledSettingsItemContent}">
+                    <models:SettingsItem.View>
+                        <Switch BindingContext="{Binding BindingContext, Source={x:RelativeSource AncestorType={x:Type ContentPage}}, x:DataType=ContentPage}"
+                                IsToggled="{Binding IsUpdateHostEnabled}"
+                                ToolTipProperties.Text="{x:Static consts:SettingsMultilangConst.UpdateHostEnabledSwitchTooltip}" />
+                    </models:SettingsItem.View>
+                </models:SettingsItem>
+                <models:SettingsItem Title="{x:Static consts:SettingsMultilangConst.SearchEnabledSettingsItemTitle}"
+                                     Content="{x:Static consts:SettingsMultilangConst.SearchEnabledSettingsItemContent}">
                     <models:SettingsItem.View>
                         <Switch BindingContext="{Binding BindingContext, Source={x:RelativeSource AncestorType={x:Type ContentPage}}, x:DataType=ContentPage}"
                                 IsToggled="{Binding IsSearchEnabled}"
                                 ToolTipProperties.Text="{x:Static consts:SettingsMultilangConst.SearchEnabledSwitchTooltip}" />
                     </models:SettingsItem.View>
                 </models:SettingsItem>
-                <models:SettingsItem Title="{x:Static consts:SettingsMultilangConst.LinkSettingsItemTitle}">
+                <models:SettingsItem Title="{x:Static consts:SettingsMultilangConst.LinkSettingsItemTitle}"
+                                     Content="{x:Static consts:SettingsMultilangConst.LinkSettingsItemContent}">
                     <models:SettingsItem.View>
                         <Button Text="{x:Static consts:GlobalMultilangConst.LinkButtonText}"
                                 ToolTipProperties.Text="{x:Static consts:GlobalMultilangConst.LinkButtonTooltip}"
@@ -57,7 +67,8 @@
                                 Command="{x:Static pages:SettingsPage.LinkButton_ClickedCommand}" />
                     </models:SettingsItem.View>
                 </models:SettingsItem>
-                <models:SettingsItem Title="{x:Static consts:SettingsMultilangConst.CommandSettingsItemTitle}">
+                <models:SettingsItem Title="{x:Static consts:SettingsMultilangConst.CommandSettingsItemTitle}"
+                                     Content="{x:Static consts:SettingsMultilangConst.CommandSettingsItemContent}">
                     <models:SettingsItem.View>
                         <Button Text="{x:Static consts:GlobalMultilangConst.CommandButtonText}"
                                 ToolTipProperties.Text="{x:Static consts:GlobalMultilangConst.CommandButtonTooltip}"

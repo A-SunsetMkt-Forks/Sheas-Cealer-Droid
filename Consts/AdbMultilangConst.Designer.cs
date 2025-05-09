@@ -61,7 +61,7 @@ namespace Sheas_Cealer_Droid.Consts {
         }
         
         /// <summary>
-        ///   查找类似 Next, we need to create a chrome-command-line file with ADB
+        ///   查找类似 Next, we need to create a &quot;chrome-command-line&quot; file with ADB
         ///
         ///Turn on developer options → enable USB debugging, then tap the Copy Command button below and run it in your ADB terminal
         ///

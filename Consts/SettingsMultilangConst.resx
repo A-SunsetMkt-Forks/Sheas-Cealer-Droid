@@ -119,14 +119,23 @@
   <data name="BrowserSettingsItemTitle" xml:space="preserve">
     <value>Browser</value>
   </data>
+  <data name="CommandSettingsItemContent" xml:space="preserve">
+    <value>Copy the ADB command to create a "chrome-command-line" file</value>
+  </data>
   <data name="CommandSettingsItemTitle" xml:space="preserve">
     <value>Adb Command</value>
+  </data>
+  <data name="LinkSettingsItemContent" xml:space="preserve">
+    <value>Copy the link to toggle the "Enable command line on non-rooted devices" option in a browser</value>
   </data>
   <data name="LinkSettingsItemTitle" xml:space="preserve">
     <value>Flag Link</value>
   </data>
+  <data name="SearchEnabledSettingsItemContent" xml:space="preserve">
+    <value>Control whether to enable the host search feature (The search icon has a difficult-to-fix color issue in light mode. You can disable this option to hide it)</value>
+  </data>
   <data name="SearchEnabledSettingsItemTitle" xml:space="preserve">
-    <value>Enable Search</value>
+    <value>Host Search</value>
   </data>
   <data name="SearchEnabledSwitchTooltip" xml:space="preserve">
     <value>Tap to toggle the search feature on / off</value>
@@ -139,6 +148,15 @@
   </data>
   <data name="ThemeColorSettingsItemTitle" xml:space="preserve">
     <value>Flavor Color</value>
+  </data>
+  <data name="UpdateHostEnabledSettingsItemContent" xml:space="preserve">
+    <value>Control whether to check host for update automatically on startup</value>
+  </data>
+  <data name="UpdateHostEnabledSettingsItemTitle" xml:space="preserve">
+    <value>Auto Check Host For Update</value>
+  </data>
+  <data name="UpdateHostEnabledSwitchTooltip" xml:space="preserve">
+    <value>Tap to toggle the auto check host for update feature on / off</value>
   </data>
   <data name="UpstreamUrlEntryTooltip" xml:space="preserve">
     <value>Tap to edit the upstream host updating source</value>

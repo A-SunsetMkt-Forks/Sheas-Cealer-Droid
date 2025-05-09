@@ -44,7 +44,8 @@ public partial class MainPage : ContentPage
             foreach (string cealHostPath in Directory.GetFiles(CealHostWatcher.Path, CealHostWatcher.Filter))
                 CealHostWatcher_Changed(null!, new(new(), Path.GetDirectoryName(cealHostPath)!, Path.GetFileName(cealHostPath)));
 
-            UpdateToolbarItem_Clicked(null, null!);
+            if (MainPres.IsUpdateHostEnabled)
+                UpdateToolbarItem_Clicked(null, null!);
 
             MainPres.IsPageLoading = false;
         });

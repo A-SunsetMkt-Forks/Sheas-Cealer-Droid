@@ -65,6 +65,10 @@ internal abstract partial class GlobalPres : ObservableObject
     public ObservableCollection<CealHostRule> CealHostRulesCollection => cealHostRulesCollection;
 
     [ObservableProperty]
+    private static bool isUpdateHostEnabled = Preferences.Default.Get(nameof(IsUpdateHostEnabled), true);
+    partial void OnIsUpdateHostEnabledChanged(bool value) => Preferences.Default.Set(nameof(IsUpdateHostEnabled), value);
+
+    [ObservableProperty]
     private static bool isSearchEnabled = Preferences.Default.Get(nameof(IsSearchEnabled), true);
     async partial void OnIsSearchEnabledChanged(bool value)
     {
