@@ -1,10 +1,7 @@
-﻿using Microsoft.Maui.ApplicationModel;
-
-namespace Sheas_Cealer_Droid.Consts;
+﻿namespace Sheas_Cealer_Droid.Consts;
 
 internal abstract class AboutConst : AboutMultilangConst
 {
-    internal static string VersionAboutInfoContent => AppInfo.VersionString;
     internal static string RepoAboutInfoUrl => "https://github.com/SpaceTimee/Sheas-Cealer-Droid";
     internal static string DocsAboutInfoUrl => "https://github.com/SpaceTimee/Sheas-Cealer-Droid/wiki/Cealer-Docs";
     internal static string ContactAboutInfoUrl => "https://github.com/SpaceTimee/Sheas-Cealer-Droid#联系方式";

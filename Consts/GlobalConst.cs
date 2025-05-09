@@ -1,4 +1,5 @@
-﻿using Sheas_Cealer_Droid.Colors;
+﻿using Microsoft.Maui.ApplicationModel;
+using Sheas_Cealer_Droid.Colors;
 using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
@@ -21,7 +22,5 @@ internal abstract class GlobalConst : GlobalMultilangConst
     internal static string FlagUrl => "chrome://flags/#enable-command-line-on-non-rooted-devices";
     internal static string AdbCommand => @$"adb shell ""touch {GlobalConst.CommandLinePath} && chmod 666 {GlobalConst.CommandLinePath}""";
     internal static string[] SkipWarningArray => [_SkipWarning1ToastMsg, _SkipWarning2ToastMsg, _SkipWarning3ToastMsg, _SkipWarning4ToastMsg];
-
-    internal static string UpdateApiUrl => "https://api.github.com/repos/SpaceTimee/Sheas-Cealer-Droid/releases/latest";
-    internal static string UpdateApiUserAgent => "Sheas-Cealer-Droid";
+    internal static string VersionAboutInfoContent => AppInfo.VersionString;
 }

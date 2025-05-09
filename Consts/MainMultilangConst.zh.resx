@@ -149,6 +149,12 @@
   <data name="UpdateHostToolbarItemTooltip" xml:space="preserve">
     <value>点击检查规则更新</value>
   </data>
+  <data name="UpdateSoftwareToolbarItemText" xml:space="preserve">
+    <value>检查软件更新</value>
+  </data>
+  <data name="UpdateSoftwareToolbarItemTooltip" xml:space="preserve">
+    <value>点击检查软件更新</value>
+  </data>
   <data name="_ActiveStatusMessage" xml:space="preserve">
     <value>伪造参数已注入，通过所选浏览器测试</value>
   </data>

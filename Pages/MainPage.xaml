@@ -52,6 +52,10 @@
                      ToolTipProperties.Text="{x:Static consts:MainMultilangConst.UpdateHostToolbarItemTooltip}"
                      Order="Secondary"
                      Clicked="UpdateHostToolbarItem_Clicked" />
+        <ToolbarItem Text="{x:Static consts:MainMultilangConst.UpdateSoftwareToolbarItemText}"
+                     ToolTipProperties.Text="{x:Static consts:MainMultilangConst.UpdateSoftwareToolbarItemTooltip}"
+                     Order="Secondary"
+                     Clicked="UpdateSoftwareToolbarItem_Clicked" />
     </ContentPage.ToolbarItems>
 
     <Grid RowDefinitions="*,56">

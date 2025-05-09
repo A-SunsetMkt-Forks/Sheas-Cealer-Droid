@@ -212,5 +212,23 @@ namespace Sheas_Cealer_Droid.Consts {
                 return ResourceManager.GetString("UpdateHostToolbarItemTooltip", resourceCulture);
             }
         }
+        
+        /// <summary>
+        ///   查找类似 Check software for update 的本地化字符串。
+        /// </summary>
+        internal static string UpdateSoftwareToolbarItemText {
+            get {
+                return ResourceManager.GetString("UpdateSoftwareToolbarItemText", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   查找类似 Tap to check software for update 的本地化字符串。
+        /// </summary>
+        internal static string UpdateSoftwareToolbarItemTooltip {
+            get {
+                return ResourceManager.GetString("UpdateSoftwareToolbarItemTooltip", resourceCulture);
+            }
+        }
     }
 }

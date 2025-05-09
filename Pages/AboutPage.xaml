@@ -12,7 +12,7 @@
                 <models:AboutInfo Title="{x:Static consts:AboutMultilangConst.DeveloperAboutInfoTitle}"
                                   Content="{x:Static consts:AboutMultilangConst.DeveloperAboutInfoContent}" />
                 <models:AboutInfo Title="{x:Static consts:AboutMultilangConst.VersionAboutInfoTitle}"
-                                  Content="{x:Static consts:AboutConst.VersionAboutInfoContent}" />
+                                  Content="{x:Static consts:GlobalConst.VersionAboutInfoContent}" />
                 <models:AboutInfo Title="{x:Static consts:AboutMultilangConst.RepoAboutInfoTitle}"
                                   Url="{x:Static consts:AboutConst.RepoAboutInfoUrl}" />
                 <models:AboutInfo Title="{x:Static consts:AboutMultilangConst.DocsAboutInfoTitle}"

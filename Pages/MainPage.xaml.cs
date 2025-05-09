@@ -47,14 +47,8 @@ public partial class MainPage : ContentPage
             if (MainPres.IsUpdateHostEnabled)
                 UpdateHostToolbarItem_Clicked(null, null!);
 
-            try
-            {
-                if (MainPres.IsUpdateSoftwareEnabled &&
-                    await UpdateChecker.CheckUpdate(MainClient) &&
-                    await DisplayAlert(MainConst._UpdateAvailablePopupTitle, MainConst._UpdateAvailablePopupMsg, GlobalConst._PopupYesText, GlobalConst._PopupNoText))
-                    await Browser.Default.OpenAsync(MainConst.GithubReleaseUrl);
-            }
-            catch { }
+            if (MainPres.IsUpdateSoftwareEnabled)
+                UpdateSoftwareToolbarItem_Clicked(null, null!);
 
             MainPres.IsPageLoading = false;
         });
@@ -97,6 +91,43 @@ public partial class MainPage : ContentPage
                 }
 
                 MainPres.StatusProgress = 1;
+
+                return;
+            }
+            catch when (sender == null) { await Task.Delay(TimeSpan.FromSeconds(1)); }
+            catch
+            {
+                MainPres.StatusProgress = 1;
+
+                throw;
+            }
+        } while (sender == null);
+    }
+    private async void UpdateSoftwareToolbarItem_Clicked(object? sender, EventArgs e)
+    {
+        do
+        {
+            try
+            {
+                if (sender != null)
+                {
+                    await StatusProgressBar.ProgressTo(0, 0, Easing.Linear);
+                    await StatusProgressBar.ProgressTo(0.2, 100, Easing.CubicIn);
+                }
+
+                MainClient.DefaultRequestHeaders.Add("User-Agent", MainConst.UpdateApiUserAgent);
+
+                JsonElement updateInfoObject = JsonDocument.Parse(await Http.GetAsync<string>(MainConst.UpdateApiUrl, MainClient)).RootElement;
+
+                MainClient.DefaultRequestHeaders.Clear();
+
+                foreach (JsonProperty updateInfoContent in updateInfoObject.EnumerateObject())
+                    if (updateInfoContent.Name == "name" && updateInfoContent.Value.ToString() != GlobalConst.VersionAboutInfoContent)
+                        if (await DisplayAlert(MainConst._UpdateAvailablePopupTitle, MainConst._UpdateAvailablePopupMsg, GlobalConst._PopupYesText, GlobalConst._PopupNoText))
+                            await Browser.Default.OpenAsync(MainConst.GithubReleaseUrl);
+
+                if (sender != null)
+                    MainPres.StatusProgress = 1;
 
                 return;
             }
