@@ -88,6 +88,24 @@ namespace Sheas_Cealer_Droid.Consts {
         }
         
         /// <summary>
+        ///   查找类似 Copy Link 的本地化字符串。
+        /// </summary>
+        internal static string CopyImageButtonDescription {
+            get {
+                return ResourceManager.GetString("CopyImageButtonDescription", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   查找类似 Tap to copy the corresponding link 的本地化字符串。
+        /// </summary>
+        internal static string CopyImageButtonTooltip {
+            get {
+                return ResourceManager.GetString("CopyImageButtonTooltip", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   查找类似 Space Time 的本地化字符串。
         /// </summary>
         internal static string DeveloperAboutInfoContent {
@@ -120,6 +138,24 @@ namespace Sheas_Cealer_Droid.Consts {
         internal static string EulaAboutInfoTitle {
             get {
                 return ResourceManager.GetString("EulaAboutInfoTitle", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   查找类似 Open Link 的本地化字符串。
+        /// </summary>
+        internal static string GotoImageButtonDescription {
+            get {
+                return ResourceManager.GetString("GotoImageButtonDescription", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   查找类似 Tap to open the corresponding link 的本地化字符串。
+        /// </summary>
+        internal static string GotoImageButtonTooltip {
+            get {
+                return ResourceManager.GetString("GotoImageButtonTooltip", resourceCulture);
             }
         }
         

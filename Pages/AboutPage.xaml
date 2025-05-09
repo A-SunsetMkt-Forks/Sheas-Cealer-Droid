@@ -1,5 +1,6 @@
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:behaviors="clr-namespace:CommunityToolkit.Maui.Behaviors;assembly=CommunityToolkit.Maui"
              xmlns:consts="clr-namespace:Sheas_Cealer_Droid.Consts"
              xmlns:models="clr-namespace:Sheas_Cealer_Droid.Models"
              x:Class="Sheas_Cealer_Droid.Pages.AboutPage"
@@ -40,6 +41,31 @@
                                 <Label Text="{Binding Content}"
                                        IsVisible="{Binding Content, StringFormat=True, TargetNullValue=False}"
                                        Grid.Column="1" Grid.Row="0" Margin="0,4,20,4" FontSize="Subtitle" VerticalTextAlignment="Center" HorizontalTextAlignment="End" />
+                                <HorizontalStackLayout Spacing="20"
+                                                       Grid.Column="1" Grid.Row="0" HorizontalOptions="End" Margin="0,4,20,4">
+                                    <ImageButton Source="copy_icon.png"
+                                                 ToolTipProperties.Text="{x:Static consts:AboutMultilangConst.CopyImageButtonTooltip}"
+                                                 SemanticProperties.Description="{x:Static consts:AboutMultilangConst.CopyImageButtonDescription}"
+                                                 Style="{x:StaticResource SmallImageButton}"
+                                                 IsVisible="{Binding Url, StringFormat=True, TargetNullValue=False}"
+                                                 WidthRequest="28" HeightRequest="28" CornerRadius="14"
+                                                 Clicked="CopyImageButton_Clicked">
+                                        <ImageButton.Behaviors>
+                                            <behaviors:IconTintColorBehavior TintColor="{AppThemeBinding Light={StaticResource White}, Dark={StaticResource Gray900}}" />
+                                        </ImageButton.Behaviors>
+                                    </ImageButton>
+                                    <ImageButton Source="goto_icon.png"
+                                                 ToolTipProperties.Text="{x:Static consts:AboutMultilangConst.GotoImageButtonTooltip}"
+                                                 SemanticProperties.Description="{x:Static consts:AboutMultilangConst.GotoImageButtonDescription}"
+                                                 Style="{x:StaticResource SmallImageButton}"
+                                                 IsVisible="{Binding Url, StringFormat=True, TargetNullValue=False}"
+                                                 WidthRequest="28" HeightRequest="28" CornerRadius="14"
+                                                 Clicked="GotoImageButton_Clicked">
+                                        <ImageButton.Behaviors>
+                                            <behaviors:IconTintColorBehavior TintColor="{AppThemeBinding Light={StaticResource White}, Dark={StaticResource Gray900}}" />
+                                        </ImageButton.Behaviors>
+                                    </ImageButton>
+                                </HorizontalStackLayout>
                                 <Label Text="{Binding Url}"
                                        IsVisible="{Binding Url, StringFormat=True, TargetNullValue=False}"
                                        Grid.ColumnSpan="2" Grid.Row="1" Margin="20,4" FontSize="Caption" />

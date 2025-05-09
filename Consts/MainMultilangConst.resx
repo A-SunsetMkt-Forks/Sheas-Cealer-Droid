@@ -120,7 +120,7 @@
     <value>Github</value>
   </data>
   <data name="GithubToolbarItemTooltip" xml:space="preserve">
-    <value>Tap to jump to my github repo</value>
+    <value>Tap to open my github repo</value>
   </data>
   <data name="LaunchButtonActiveTooltip" xml:space="preserve">
     <value>Tap to stop cealing</value>
@@ -159,7 +159,7 @@
     <value>Partial injection complete. Use the browser to test</value>
   </data>
   <data name="_UpdateAvailablePopupMsg" xml:space="preserve">
-    <value>Do you want to jump to the download page</value>
+    <value>Do you want to open the download page</value>
   </data>
   <data name="_UpdateAvailablePopupTitle" xml:space="preserve">
     <value>Software update is available</value>

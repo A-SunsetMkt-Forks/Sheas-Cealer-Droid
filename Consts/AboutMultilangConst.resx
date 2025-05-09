@@ -125,6 +125,12 @@
   <data name="ContactAboutInfoTitle" xml:space="preserve">
     <value>Contact Me</value>
   </data>
+  <data name="CopyImageButtonDescription" xml:space="preserve">
+    <value>Copy Link</value>
+  </data>
+  <data name="CopyImageButtonTooltip" xml:space="preserve">
+    <value>Tap to copy the corresponding link</value>
+  </data>
   <data name="DeveloperAboutInfoContent" xml:space="preserve">
     <value>Space Time</value>
   </data>
@@ -136,6 +142,12 @@
   </data>
   <data name="EulaAboutInfoTitle" xml:space="preserve">
     <value>License Agreement</value>
+  </data>
+  <data name="GotoImageButtonDescription" xml:space="preserve">
+    <value>Open Link</value>
+  </data>
+  <data name="GotoImageButtonTooltip" xml:space="preserve">
+    <value>Tap to open the corresponding link</value>
   </data>
   <data name="IssueAboutInfoTitle" xml:space="preserve">
     <value>Issue Feedback</value>

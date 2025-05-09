@@ -125,6 +125,12 @@
   <data name="ContactAboutInfoTitle" xml:space="preserve">
     <value>联系方式</value>
   </data>
+  <data name="CopyImageButtonDescription" xml:space="preserve">
+    <value>复制链接</value>
+  </data>
+  <data name="CopyImageButtonTooltip" xml:space="preserve">
+    <value>点击复制对应链接</value>
+  </data>
   <data name="DeveloperAboutInfoContent" xml:space="preserve">
     <value>Space Time</value>
   </data>
@@ -136,6 +142,12 @@
   </data>
   <data name="EulaAboutInfoTitle" xml:space="preserve">
     <value>使用协议</value>
+  </data>
+  <data name="GotoImageButtonDescription" xml:space="preserve">
+    <value>跳转链接</value>
+  </data>
+  <data name="GotoImageButtonTooltip" xml:space="preserve">
+    <value>点击跳转对应链接</value>
   </data>
   <data name="IssueAboutInfoTitle" xml:space="preserve">
     <value>问题反馈</value>

@@ -88,7 +88,7 @@ namespace Sheas_Cealer_Droid.Consts {
         }
         
         /// <summary>
-        ///   查找类似 Do you want to jump to the download page 的本地化字符串。
+        ///   查找类似 Do you want to open the download page 的本地化字符串。
         /// </summary>
         internal static string _UpdateAvailablePopupMsg {
             get {
@@ -124,7 +124,7 @@ namespace Sheas_Cealer_Droid.Consts {
         }
         
         /// <summary>
-        ///   查找类似 Tap to jump to my github repo 的本地化字符串。
+        ///   查找类似 Tap to open my github repo 的本地化字符串。
         /// </summary>
         internal static string GithubToolbarItemTooltip {
             get {
