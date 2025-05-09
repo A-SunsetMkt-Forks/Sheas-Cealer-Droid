@@ -47,6 +47,13 @@ public partial class MainPage : ContentPage
             if (MainPres.IsUpdateHostEnabled)
                 UpdateToolbarItem_Clicked(null, null!);
 
+            try
+            {
+                if (await UpdateChecker.CheckUpdate(MainClient) && await DisplayAlert(MainConst._UpdateAvailablePopupTitle, MainConst._UpdateAvailablePopupMsg, GlobalConst._PopupYesText, GlobalConst._PopupNoText))
+                    await Browser.Default.OpenAsync(MainConst.GithubReleaseUrl);
+            }
+            catch { }
+
             MainPres.IsPageLoading = false;
         });
     }

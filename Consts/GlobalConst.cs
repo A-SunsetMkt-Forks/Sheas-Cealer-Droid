@@ -21,4 +21,7 @@ internal abstract class GlobalConst : GlobalMultilangConst
     internal static string FlagUrl => "chrome://flags/#enable-command-line-on-non-rooted-devices";
     internal static string AdbCommand => @$"adb shell ""touch {GlobalConst.CommandLinePath} && chmod 666 {GlobalConst.CommandLinePath}""";
     internal static string[] SkipWarningArray => [_SkipWarning1ToastMsg, _SkipWarning2ToastMsg, _SkipWarning3ToastMsg, _SkipWarning4ToastMsg];
+
+    internal static string UpdateApiUrl => "https://api.github.com/repos/SpaceTimee/Sheas-Cealer-Droid/releases/latest";
+    internal static string UpdateApiUserAgent => "Sheas-Cealer-Droid";
 }

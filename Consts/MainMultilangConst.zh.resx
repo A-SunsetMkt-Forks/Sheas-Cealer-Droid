@@ -158,6 +158,12 @@
   <data name="_PartialStatusMessage" xml:space="preserve">
     <value>部分参数已注入，通过所选浏览器测试</value>
   </data>
+  <data name="_UpdateAvailablePopupMsg" xml:space="preserve">
+    <value>是否跳转下载地址</value>
+  </data>
+  <data name="_UpdateAvailablePopupTitle" xml:space="preserve">
+    <value>有软件更新可用</value>
+  </data>
   <data name="_UpdateStatusMessage" xml:space="preserve">
     <value>规则有更新可用，点击按钮更新规则</value>
   </data>

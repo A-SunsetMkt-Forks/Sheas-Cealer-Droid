@@ -135,6 +135,24 @@ namespace Sheas_Cealer_Droid.Consts {
         }
         
         /// <summary>
+        ///   查找类似 No 的本地化字符串。
+        /// </summary>
+        internal static string _PopupNoText {
+            get {
+                return ResourceManager.GetString("_PopupNoText", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   查找类似 Yes 的本地化字符串。
+        /// </summary>
+        internal static string _PopupYesText {
+            get {
+                return ResourceManager.GetString("_PopupYesText", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   查找类似 Setting is changing, restart to apply the new config 🔄 的本地化字符串。
         /// </summary>
         internal static string _SettingsRestartToApplyToastMsg {

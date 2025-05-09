@@ -178,6 +178,12 @@
   <data name="_PopupCancelText" xml:space="preserve">
     <value>取消</value>
   </data>
+  <data name="_PopupNoText" xml:space="preserve">
+    <value>不要</value>
+  </data>
+  <data name="_PopupYesText" xml:space="preserve">
+    <value>好的</value>
+  </data>
   <data name="_SettingsRestartToApplyToastMsg" xml:space="preserve">
     <value>设置已更改，重启应用新配置 🔄</value>
   </data>

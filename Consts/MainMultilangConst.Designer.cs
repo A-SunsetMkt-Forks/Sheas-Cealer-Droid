@@ -88,6 +88,24 @@ namespace Sheas_Cealer_Droid.Consts {
         }
         
         /// <summary>
+        ///   查找类似 Do you want to jump to the download page 的本地化字符串。
+        /// </summary>
+        internal static string _UpdateAvailablePopupMsg {
+            get {
+                return ResourceManager.GetString("_UpdateAvailablePopupMsg", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   查找类似 Software update is available 的本地化字符串。
+        /// </summary>
+        internal static string _UpdateAvailablePopupTitle {
+            get {
+                return ResourceManager.GetString("_UpdateAvailablePopupTitle", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   查找类似 Host update available. Tap the button to update 的本地化字符串。
         /// </summary>
         internal static string _UpdateStatusMessage {

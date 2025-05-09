@@ -178,6 +178,12 @@
   <data name="_PopupCancelText" xml:space="preserve">
     <value>Cancel</value>
   </data>
+  <data name="_PopupNoText" xml:space="preserve">
+    <value>No</value>
+  </data>
+  <data name="_PopupYesText" xml:space="preserve">
+    <value>Yes</value>
+  </data>
   <data name="_SettingsRestartToApplyToastMsg" xml:space="preserve">
     <value>Setting is changing, restart to apply the new config 🔄</value>
   </data>
