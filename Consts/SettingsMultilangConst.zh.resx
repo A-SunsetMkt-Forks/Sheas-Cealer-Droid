@@ -158,6 +158,15 @@
   <data name="UpdateHostEnabledSwitchTooltip" xml:space="preserve">
     <value>点击切换自动检查规则更新启用状态</value>
   </data>
+  <data name="UpdateSoftwareEnabledSettingsItemContent" xml:space="preserve">
+    <value>控制软件启动时是否自动检查软件更新</value>
+  </data>
+  <data name="UpdateSoftwareEnabledSettingsItemTitle" xml:space="preserve">
+    <value>自动检查软件更新</value>
+  </data>
+  <data name="UpdateSoftwareEnabledSwitchTooltip" xml:space="preserve">
+    <value>点击切换自动检查软件更新启用状态</value>
+  </data>
   <data name="UpstreamUrlEntryTooltip" xml:space="preserve">
     <value>点击编辑上游规则更新源链接</value>
   </data>

@@ -158,6 +158,15 @@
   <data name="UpdateHostEnabledSwitchTooltip" xml:space="preserve">
     <value>Tap to toggle the auto check host for update feature on / off</value>
   </data>
+  <data name="UpdateSoftwareEnabledSettingsItemContent" xml:space="preserve">
+    <value>Control whether to check software for update automatically on startup</value>
+  </data>
+  <data name="UpdateSoftwareEnabledSettingsItemTitle" xml:space="preserve">
+    <value>Auto Check Software For Update</value>
+  </data>
+  <data name="UpdateSoftwareEnabledSwitchTooltip" xml:space="preserve">
+    <value>Tap to toggle the auto check software for update feature on / off</value>
+  </data>
   <data name="UpstreamUrlEntryTooltip" xml:space="preserve">
     <value>Tap to edit the upstream host updating source</value>
   </data>

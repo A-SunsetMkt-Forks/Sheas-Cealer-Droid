@@ -49,7 +49,9 @@ public partial class MainPage : ContentPage
 
             try
             {
-                if (await UpdateChecker.CheckUpdate(MainClient) && await DisplayAlert(MainConst._UpdateAvailablePopupTitle, MainConst._UpdateAvailablePopupMsg, GlobalConst._PopupYesText, GlobalConst._PopupNoText))
+                if (MainPres.IsUpdateSoftwareEnabled &&
+                    await UpdateChecker.CheckUpdate(MainClient) &&
+                    await DisplayAlert(MainConst._UpdateAvailablePopupTitle, MainConst._UpdateAvailablePopupMsg, GlobalConst._PopupYesText, GlobalConst._PopupNoText))
                     await Browser.Default.OpenAsync(MainConst.GithubReleaseUrl);
             }
             catch { }

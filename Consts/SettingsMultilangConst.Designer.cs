@@ -187,6 +187,33 @@ namespace Sheas_Cealer_Droid.Consts {
         }
         
         /// <summary>
+        ///   查找类似 Control whether to check software for update automatically on startup 的本地化字符串。
+        /// </summary>
+        internal static string UpdateSoftwareEnabledSettingsItemContent {
+            get {
+                return ResourceManager.GetString("UpdateSoftwareEnabledSettingsItemContent", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   查找类似 Auto Check Software For Update 的本地化字符串。
+        /// </summary>
+        internal static string UpdateSoftwareEnabledSettingsItemTitle {
+            get {
+                return ResourceManager.GetString("UpdateSoftwareEnabledSettingsItemTitle", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   查找类似 Tap to toggle the auto check software for update feature on / off 的本地化字符串。
+        /// </summary>
+        internal static string UpdateSoftwareEnabledSwitchTooltip {
+            get {
+                return ResourceManager.GetString("UpdateSoftwareEnabledSwitchTooltip", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   查找类似 Tap to edit the upstream host updating source 的本地化字符串。
         /// </summary>
         internal static string UpstreamUrlEntryTooltip {

@@ -41,6 +41,14 @@
                                 SelectedItem="{Binding ThemeColorName}" />
                     </models:SettingsItem.View>
                 </models:SettingsItem>
+                <models:SettingsItem Title="{x:Static consts:SettingsMultilangConst.UpdateSoftwareEnabledSettingsItemTitle}"
+                                     Content="{x:Static consts:SettingsMultilangConst.UpdateSoftwareEnabledSettingsItemContent}">
+                    <models:SettingsItem.View>
+                        <Switch BindingContext="{Binding BindingContext, Source={x:RelativeSource AncestorType={x:Type ContentPage}}, x:DataType=ContentPage}"
+                                IsToggled="{Binding IsUpdateSoftwareEnabled}"
+                                ToolTipProperties.Text="{x:Static consts:SettingsMultilangConst.UpdateSoftwareEnabledSwitchTooltip}" />
+                    </models:SettingsItem.View>
+                </models:SettingsItem>
                 <models:SettingsItem Title="{x:Static consts:SettingsMultilangConst.UpdateHostEnabledSettingsItemTitle}"
                                      Content="{x:Static consts:SettingsMultilangConst.UpdateHostEnabledSettingsItemContent}">
                     <models:SettingsItem.View>
