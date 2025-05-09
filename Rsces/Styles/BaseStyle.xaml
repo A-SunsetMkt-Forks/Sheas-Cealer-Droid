@@ -72,25 +72,6 @@
         </Setter>
     </Style>
 
-    <Style x:Key="FlatButton" TargetType="Button">
-        <Setter Property="BorderColor" Value="{AppThemeBinding Light={DynamicResource Gray900}, Dark={DynamicResource Gray300}}" />
-        <Setter Property="BackgroundColor" Value="Transparent" />
-        <Setter Property="TextColor" Value="{AppThemeBinding Light={DynamicResource Gray900}, Dark={DynamicResource Gray300}}" />
-        <Setter Property="Shadow" Value="{x:Null}" />
-        <Setter Property="VisualStateManager.VisualStateGroups">
-            <VisualStateGroupList>
-                <VisualStateGroup x:Name="CommonStates">
-                    <VisualState x:Name="Normal" />
-                    <VisualState x:Name="Pressed">
-                        <VisualState.Setters>
-                            <Setter Property="BorderColor" Value="{AppThemeBinding Light={DynamicResource Primary500}, Dark={DynamicResource Primary700}}" />
-                        </VisualState.Setters>
-                    </VisualState>
-                </VisualStateGroup>
-            </VisualStateGroupList>
-        </Setter>
-    </Style>
-
     <Style TargetType="ImageButton">
         <Setter Property="BackgroundColor" Value="{AppThemeBinding Light={DynamicResource Primary500}, Dark={DynamicResource Primary700}}" />
         <Setter Property="Padding" Value="16" />
@@ -116,6 +97,10 @@
                 </VisualStateGroup>
             </VisualStateGroupList>
         </Setter>
+    </Style>
+
+    <Style x:Key="SmallImageButton" TargetType="ImageButton">
+        <Setter Property="Padding" Value="6" />
     </Style>
 
     <Style TargetType="Switch">

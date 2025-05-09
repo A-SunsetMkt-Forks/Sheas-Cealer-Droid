@@ -1,5 +1,6 @@
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:behaviors="clr-namespace:CommunityToolkit.Maui.Behaviors;assembly=CommunityToolkit.Maui"
              xmlns:consts="clr-namespace:Sheas_Cealer_Droid.Consts"
              xmlns:models="clr-namespace:Sheas_Cealer_Droid.Models"
              xmlns:pages="clr-namespace:Sheas_Cealer_Droid.Pages"
@@ -68,21 +69,31 @@
                 <models:SettingsItem Title="{x:Static consts:SettingsMultilangConst.LinkSettingsItemTitle}"
                                      Content="{x:Static consts:SettingsMultilangConst.LinkSettingsItemContent}">
                     <models:SettingsItem.View>
-                        <Button Text="{x:Static consts:GlobalMultilangConst.LinkButtonText}"
-                                ToolTipProperties.Text="{x:Static consts:GlobalMultilangConst.LinkButtonTooltip}"
-                                Style="{x:StaticResource FlatButton}"
-                                HorizontalOptions="End"
-                                Command="{x:Static pages:SettingsPage.LinkButton_ClickedCommand}" />
+                        <ImageButton Source="copy_icon.png"
+                                     ToolTipProperties.Text="{x:Static consts:GlobalMultilangConst.LinkButtonTooltip}"
+                                     SemanticProperties.Description="{x:Static consts:GlobalMultilangConst.LinkButtonText}"
+                                     Style="{x:StaticResource SmallImageButton}"
+                                     HorizontalOptions="End" WidthRequest="28" HeightRequest="28" CornerRadius="14"
+                                     Command="{x:Static pages:SettingsPage.LinkImageButton_ClickedCommand}">
+                            <ImageButton.Behaviors>
+                                <behaviors:IconTintColorBehavior TintColor="{AppThemeBinding Light={StaticResource White}, Dark={StaticResource Gray900}}" />
+                            </ImageButton.Behaviors>
+                        </ImageButton>
                     </models:SettingsItem.View>
                 </models:SettingsItem>
                 <models:SettingsItem Title="{x:Static consts:SettingsMultilangConst.CommandSettingsItemTitle}"
                                      Content="{x:Static consts:SettingsMultilangConst.CommandSettingsItemContent}">
                     <models:SettingsItem.View>
-                        <Button Text="{x:Static consts:GlobalMultilangConst.CommandButtonText}"
-                                ToolTipProperties.Text="{x:Static consts:GlobalMultilangConst.CommandButtonTooltip}"
-                                Style="{x:StaticResource FlatButton}"
-                                HorizontalOptions="End"
-                                Command="{x:Static pages:SettingsPage.CommandButton_ClickedCommand}" />
+                        <ImageButton Source="copy_icon.png"
+                                     ToolTipProperties.Text="{x:Static consts:GlobalMultilangConst.CommandButtonTooltip}"
+                                     SemanticProperties.Description="{x:Static consts:GlobalMultilangConst.CommandButtonText}"
+                                     Style="{x:StaticResource SmallImageButton}"
+                                     HorizontalOptions="End" WidthRequest="28" HeightRequest="28" CornerRadius="14"
+                                     Command="{x:Static pages:SettingsPage.CommandImageButton_ClickedCommand}">
+                            <ImageButton.Behaviors>
+                                <behaviors:IconTintColorBehavior TintColor="{AppThemeBinding Light={StaticResource White}, Dark={StaticResource Gray900}}" />
+                            </ImageButton.Behaviors>
+                        </ImageButton>
                     </models:SettingsItem.View>
                 </models:SettingsItem>
             </x:Array>

@@ -29,15 +29,15 @@ public partial class SettingsPage : ContentPage
         senderEntry.Unfocus();
     }
 
-    internal static ICommand LinkButton_ClickedCommand => new Command(async () => await LinkButton_Clicked(null!, null!));
-    private static async Task LinkButton_Clicked(object sender, EventArgs e)
+    internal static ICommand LinkImageButton_ClickedCommand => new Command(async () => await LinkImageButton_Clicked(null!, null!));
+    private static async Task LinkImageButton_Clicked(object sender, EventArgs e)
     {
         await Clipboard.Default.SetTextAsync(GlobalConst.FlagUrl);
         await Toast.Make(GlobalConst._LinkCopiedToastMsg).Show();
     }
 
-    internal static ICommand CommandButton_ClickedCommand => new Command(async () => await CommandButton_Clicked(null!, null!));
-    private static async Task CommandButton_Clicked(object sender, EventArgs e)
+    internal static ICommand CommandImageButton_ClickedCommand => new Command(async () => await CommandImageButton_Clicked(null!, null!));
+    private static async Task CommandImageButton_Clicked(object sender, EventArgs e)
     {
         await Clipboard.Default.SetTextAsync(GlobalConst.AdbCommand);
         await Toast.Make(GlobalConst._CommandCopiedToastMsg).Show();
