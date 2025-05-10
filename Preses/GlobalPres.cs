@@ -61,6 +61,13 @@ internal abstract partial class GlobalPres : ObservableObject
     private static string? browserName = Preferences.Default.Get<string?>(nameof(BrowserName), null);
     async partial void OnBrowserNameChanged(string? oldValue, string? newValue)
     {
+        if (!IsFirstRunning && string.IsNullOrEmpty(newValue))
+        {
+            BrowserName = oldValue;
+
+            return;
+        }
+
         if (newValue == GlobalConst._BrowserNameCollectionCustomTitle)
         {
             string? customBrowserName = await Shell.Current.CurrentPage.DisplayPromptAsync(GlobalConst._CustomBrowserNamePopupTitle, GlobalConst._CustomBrowserNamePopupMsg, GlobalConst._PopupAcceptText, GlobalConst._PopupCancelText);

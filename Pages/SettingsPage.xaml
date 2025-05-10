@@ -7,8 +7,7 @@
              xmlns:preses="clr-namespace:Sheas_Cealer_Droid.Preses"
              x:Class="Sheas_Cealer_Droid.Pages.SettingsPage" x:DataType="preses:SettingsPres"
              Title="{x:Static consts:GlobalMultilangConst.SettingsMenuItemTitle}"
-             Shell.FlyoutBehavior="Disabled"
-             NavigatedFrom="SettingsPage_NavigatedFrom">
+             Shell.FlyoutBehavior="Disabled">
     <CollectionView>
         <CollectionView.ItemsSource>
             <x:Array Type="{x:Type models:SettingsItem}">

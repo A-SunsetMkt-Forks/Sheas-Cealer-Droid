@@ -19,7 +19,6 @@ public partial class SettingsPage : ContentPage
 
         BindingContext = SettingsPres = new();
     }
-    private void SettingsPage_NavigatedFrom(object sender, NavigatedFromEventArgs e) => BrowserPicker.BindingContext = null;
 
     internal static ICommand UpstreamUrlEntry_CompletedCommand => new Command(sender => UpstreamUrlEntry_Completed(sender, null!));
     private static void UpstreamUrlEntry_Completed(object sender, EventArgs e)
