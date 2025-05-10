@@ -156,13 +156,13 @@
     <value>Tap to check software for update</value>
   </data>
   <data name="_ActiveStatusMessage" xml:space="preserve">
-    <value>Injection complete. Use the browser to test</value>
+    <value>Injection complete. Test in browser</value>
   </data>
   <data name="_InactiveStatusMessage" xml:space="preserve">
-    <value>Injection is inactive. Tap the button to start</value>
+    <value>Injection is inactive. Tap to start</value>
   </data>
   <data name="_PartialStatusMessage" xml:space="preserve">
-    <value>Partial injection complete. Use the browser to test</value>
+    <value>Partial injection done. Test in browser</value>
   </data>
   <data name="_UpdateAvailablePopupMsg" xml:space="preserve">
     <value>Do you want to open the download page</value>
@@ -171,6 +171,6 @@
     <value>Software update is available</value>
   </data>
   <data name="_UpdateStatusMessage" xml:space="preserve">
-    <value>Host update available. Tap the button to update</value>
+    <value>Host update available. Tap to update</value>
   </data>
 </root>

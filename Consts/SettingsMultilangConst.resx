@@ -171,7 +171,7 @@
     <value>Control whether to check host for update automatically on startup</value>
   </data>
   <data name="UpdateHostEnabledSettingsItemTitle" xml:space="preserve">
-    <value>Auto Check Host For Update</value>
+    <value>Check Host For Update</value>
   </data>
   <data name="UpdateHostEnabledSwitchTooltip" xml:space="preserve">
     <value>Tap to toggle the auto check host for update feature on / off</value>
@@ -180,7 +180,7 @@
     <value>Control whether to check software for update automatically on startup</value>
   </data>
   <data name="UpdateSoftwareEnabledSettingsItemTitle" xml:space="preserve">
-    <value>Auto Check Software For Update</value>
+    <value>Check Software For Update</value>
   </data>
   <data name="UpdateSoftwareEnabledSwitchTooltip" xml:space="preserve">
     <value>Tap to toggle the auto check software for update feature on / off</value>

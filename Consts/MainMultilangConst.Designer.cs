@@ -61,7 +61,7 @@ namespace Sheas_Cealer_Droid.Consts {
         }
         
         /// <summary>
-        ///   查找类似 Injection complete. Use the browser to test 的本地化字符串。
+        ///   查找类似 Injection complete. Test in browser 的本地化字符串。
         /// </summary>
         internal static string _ActiveStatusMessage {
             get {
@@ -70,7 +70,7 @@ namespace Sheas_Cealer_Droid.Consts {
         }
         
         /// <summary>
-        ///   查找类似 Injection is inactive. Tap the button to start 的本地化字符串。
+        ///   查找类似 Injection is inactive. Tap to start 的本地化字符串。
         /// </summary>
         internal static string _InactiveStatusMessage {
             get {
@@ -79,7 +79,7 @@ namespace Sheas_Cealer_Droid.Consts {
         }
         
         /// <summary>
-        ///   查找类似 Partial injection complete. Use the browser to test 的本地化字符串。
+        ///   查找类似 Partial injection done. Test in browser 的本地化字符串。
         /// </summary>
         internal static string _PartialStatusMessage {
             get {
@@ -106,7 +106,7 @@ namespace Sheas_Cealer_Droid.Consts {
         }
         
         /// <summary>
-        ///   查找类似 Host update available. Tap the button to update 的本地化字符串。
+        ///   查找类似 Host update available. Tap to update 的本地化字符串。
         /// </summary>
         internal static string _UpdateStatusMessage {
             get {

@@ -223,7 +223,7 @@ namespace Sheas_Cealer_Droid.Consts {
         }
         
         /// <summary>
-        ///   查找类似 Auto Check Host For Update 的本地化字符串。
+        ///   查找类似 Check Host For Update 的本地化字符串。
         /// </summary>
         internal static string UpdateHostEnabledSettingsItemTitle {
             get {
@@ -250,7 +250,7 @@ namespace Sheas_Cealer_Droid.Consts {
         }
         
         /// <summary>
-        ///   查找类似 Auto Check Software For Update 的本地化字符串。
+        ///   查找类似 Check Software For Update 的本地化字符串。
         /// </summary>
         internal static string UpdateSoftwareEnabledSettingsItemTitle {
             get {
