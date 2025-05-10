@@ -169,6 +169,18 @@
   <data name="_CustomBrowserNamePopupTitle" xml:space="preserve">
     <value>Custom Browser Name</value>
   </data>
+  <data name="_LangOptionChineseName" xml:space="preserve">
+    <value>Simplified Chinese</value>
+  </data>
+  <data name="_LangOptionEnglishName" xml:space="preserve">
+    <value>American English</value>
+  </data>
+  <data name="_LangOptionRestartToApplyToastMsg" xml:space="preserve">
+    <value>Lang is changing, restart to view the new lang 🌐</value>
+  </data>
+  <data name="_LangOptionUnspecifiedName" xml:space="preserve">
+    <value>Follow System</value>
+  </data>
   <data name="_LinkCopiedToastMsg" xml:space="preserve">
     <value>Link copied ✅</value>
   </data>
@@ -216,5 +228,17 @@
   </data>
   <data name="_ThemeColorYellowName" xml:space="preserve">
     <value>Dihydrate Citric Acid</value>
+  </data>
+  <data name="_ThemeStateDarkName" xml:space="preserve">
+    <value>Dark Theme</value>
+  </data>
+  <data name="_ThemeStateLightName" xml:space="preserve">
+    <value>Light Theme</value>
+  </data>
+  <data name="_ThemeStateRestartToApplyToastMsg" xml:space="preserve">
+    <value>Theme is changing, restart to enjoy the new theme 🎨</value>
+  </data>
+  <data name="_ThemeStateUnspecifiedName" xml:space="preserve">
+    <value>Follow System</value>
   </data>
 </root>

@@ -88,6 +88,33 @@ namespace Sheas_Cealer_Droid.Consts {
         }
         
         /// <summary>
+        ///   查找类似 Select a UI l10n language 的本地化字符串。
+        /// </summary>
+        internal static string LangOptionPickerTitle {
+            get {
+                return ResourceManager.GetString("LangOptionPickerTitle", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   查找类似 Tap to open a language selection pop-up 的本地化字符串。
+        /// </summary>
+        internal static string LangOptionPickerTooltip {
+            get {
+                return ResourceManager.GetString("LangOptionPickerTooltip", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   查找类似 Lang L10n 的本地化字符串。
+        /// </summary>
+        internal static string LangOptionSettingsItemTitle {
+            get {
+                return ResourceManager.GetString("LangOptionSettingsItemTitle", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   查找类似 Copy the link to toggle the &quot;Enable command line on non-rooted devices&quot; option in a browser 的本地化字符串。
         /// </summary>
         internal static string LinkSettingsItemContent {
@@ -156,6 +183,33 @@ namespace Sheas_Cealer_Droid.Consts {
         internal static string ThemeColorSettingsItemTitle {
             get {
                 return ResourceManager.GetString("ThemeColorSettingsItemTitle", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   查找类似 Select a UI theme state 的本地化字符串。
+        /// </summary>
+        internal static string ThemeStatePickerTitle {
+            get {
+                return ResourceManager.GetString("ThemeStatePickerTitle", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   查找类似 Tap to open a theme state selection pop-up 的本地化字符串。
+        /// </summary>
+        internal static string ThemeStatePickerTooltip {
+            get {
+                return ResourceManager.GetString("ThemeStatePickerTooltip", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   查找类似 Theme State 的本地化字符串。
+        /// </summary>
+        internal static string ThemeStateSettingsItemTitle {
+            get {
+                return ResourceManager.GetString("ThemeStateSettingsItemTitle", resourceCulture);
             }
         }
         

@@ -169,6 +169,18 @@
   <data name="_CustomBrowserNamePopupTitle" xml:space="preserve">
     <value>自定义浏览器</value>
   </data>
+  <data name="_LangOptionChineseName" xml:space="preserve">
+    <value>简体中文</value>
+  </data>
+  <data name="_LangOptionEnglishName" xml:space="preserve">
+    <value>美式英语</value>
+  </data>
+  <data name="_LangOptionRestartToApplyToastMsg" xml:space="preserve">
+    <value>语言改变啦，重启查看新语言 🌐</value>
+  </data>
+  <data name="_LangOptionUnspecifiedName" xml:space="preserve">
+    <value>跟随系统</value>
+  </data>
   <data name="_LinkCopiedToastMsg" xml:space="preserve">
     <value>链接已复制 ✅</value>
   </data>
@@ -216,5 +228,17 @@
   </data>
   <data name="_ThemeColorYellowName" xml:space="preserve">
     <value>二水柠檬酸</value>
+  </data>
+  <data name="_ThemeStateDarkName" xml:space="preserve">
+    <value>暗色模式</value>
+  </data>
+  <data name="_ThemeStateLightName" xml:space="preserve">
+    <value>亮色模式</value>
+  </data>
+  <data name="_ThemeStateRestartToApplyToastMsg" xml:space="preserve">
+    <value>主题改变啦，重启体验新主题 🎨</value>
+  </data>
+  <data name="_ThemeStateUnspecifiedName" xml:space="preserve">
+    <value>跟随系统</value>
   </data>
 </root>

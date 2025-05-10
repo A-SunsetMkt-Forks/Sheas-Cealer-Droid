@@ -5,6 +5,7 @@ using Microsoft.Maui.Controls;
 using Microsoft.Maui.Storage;
 using Sheas_Cealer_Droid.Consts;
 using Sheas_Cealer_Droid.Models;
+using Sheas_Cealer_Droid.Utils;
 using System.Collections.ObjectModel;
 using System.Collections.Specialized;
 using System.Diagnostics.CodeAnalysis;
@@ -15,15 +16,45 @@ namespace Sheas_Cealer_Droid.Preses;
 
 internal abstract partial class GlobalPres : ObservableObject
 {
-    protected GlobalPres() => BrowserNameCollection.CollectionChanged += BrowserNameCollection_CollectionChanged;
+    protected GlobalPres()
+    {
+        BrowserNameCollection.CollectionChanged += BrowserNameCollection_CollectionChanged;
+
+        themeColorName = Preferences.Default.ContainsKey(nameof(ThemeColorName)) ?
+            GlobalConst.ResourceManager.GetString(Preferences.Default.Get(nameof(ThemeColorName), string.Empty))! : GlobalConst._ThemeColorRedName;
+
+        themeStateName = Preferences.Default.ContainsKey(nameof(ThemeStateName)) ?
+            GlobalConst.ResourceManager.GetString(Preferences.Default.Get(nameof(ThemeStateName), string.Empty))! : GlobalConst._ThemeStateUnspecifiedName;
+
+        langOptionName = Preferences.Default.ContainsKey(nameof(LangOptionName)) ?
+            GlobalConst.ResourceManager.GetString(Preferences.Default.Get(nameof(LangOptionName), string.Empty))! : GlobalConst._LangOptionUnspecifiedName;
+    }
 
     [ObservableProperty]
-    private static string themeColorName = Preferences.Default.Get(nameof(ThemeColorName), GlobalConst._ThemeColorRedName);
+    private static string themeColorName = string.Empty;
     async partial void OnThemeColorNameChanged(string value)
     {
-        Preferences.Default.Set(nameof(ThemeColorName), value);
+        Preferences.Default.Set(nameof(ThemeColorName), ResourceKeyFinder.FindGlobalKey(value));
 
         await Toast.Make(GlobalConst._ThemeColorRestartToApplyToastMsg).Show();
+    }
+
+    [ObservableProperty]
+    private static string themeStateName = string.Empty;
+    async partial void OnThemeStateNameChanged(string value)
+    {
+        Preferences.Default.Set(nameof(ThemeStateName), ResourceKeyFinder.FindGlobalKey(value));
+
+        await Toast.Make(GlobalConst._ThemeStateRestartToApplyToastMsg).Show();
+    }
+
+    [ObservableProperty]
+    private static string langOptionName = string.Empty;
+    async partial void OnLangOptionNameChanged(string value)
+    {
+        Preferences.Default.Set(nameof(LangOptionName), ResourceKeyFinder.FindGlobalKey(value));
+
+        await Toast.Make(GlobalConst._LangOptionRestartToApplyToastMsg).Show();
     }
 
     [ObservableProperty]

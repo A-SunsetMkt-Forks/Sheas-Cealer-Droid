@@ -125,6 +125,15 @@
   <data name="CommandSettingsItemTitle" xml:space="preserve">
     <value>Adb Command</value>
   </data>
+  <data name="LangOptionPickerTitle" xml:space="preserve">
+    <value>Select a UI l10n language</value>
+  </data>
+  <data name="LangOptionPickerTooltip" xml:space="preserve">
+    <value>Tap to open a language selection pop-up</value>
+  </data>
+  <data name="LangOptionSettingsItemTitle" xml:space="preserve">
+    <value>Lang L10n</value>
+  </data>
   <data name="LinkSettingsItemContent" xml:space="preserve">
     <value>Copy the link to toggle the "Enable command line on non-rooted devices" option in a browser</value>
   </data>
@@ -148,6 +157,15 @@
   </data>
   <data name="ThemeColorSettingsItemTitle" xml:space="preserve">
     <value>Flavor Color</value>
+  </data>
+  <data name="ThemeStatePickerTitle" xml:space="preserve">
+    <value>Select a UI theme state</value>
+  </data>
+  <data name="ThemeStatePickerTooltip" xml:space="preserve">
+    <value>Tap to open a theme state selection pop-up</value>
+  </data>
+  <data name="ThemeStateSettingsItemTitle" xml:space="preserve">
+    <value>Theme State</value>
   </data>
   <data name="UpdateHostEnabledSettingsItemContent" xml:space="preserve">
     <value>Control whether to check host for update automatically on startup</value>

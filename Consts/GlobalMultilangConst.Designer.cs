@@ -108,6 +108,42 @@ namespace Sheas_Cealer_Droid.Consts {
         }
         
         /// <summary>
+        ///   查找类似 Simplified Chinese 的本地化字符串。
+        /// </summary>
+        internal static string _LangOptionChineseName {
+            get {
+                return ResourceManager.GetString("_LangOptionChineseName", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   查找类似 American English 的本地化字符串。
+        /// </summary>
+        internal static string _LangOptionEnglishName {
+            get {
+                return ResourceManager.GetString("_LangOptionEnglishName", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   查找类似 Lang is changing, restart to view the new lang 🌐 的本地化字符串。
+        /// </summary>
+        internal static string _LangOptionRestartToApplyToastMsg {
+            get {
+                return ResourceManager.GetString("_LangOptionRestartToApplyToastMsg", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   查找类似 Follow System 的本地化字符串。
+        /// </summary>
+        internal static string _LangOptionUnspecifiedName {
+            get {
+                return ResourceManager.GetString("_LangOptionUnspecifiedName", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   查找类似 Link copied ✅ 的本地化字符串。
         /// </summary>
         internal static string _LinkCopiedToastMsg {
@@ -248,6 +284,42 @@ namespace Sheas_Cealer_Droid.Consts {
         internal static string _ThemeColorYellowName {
             get {
                 return ResourceManager.GetString("_ThemeColorYellowName", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   查找类似 Dark Theme 的本地化字符串。
+        /// </summary>
+        internal static string _ThemeStateDarkName {
+            get {
+                return ResourceManager.GetString("_ThemeStateDarkName", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   查找类似 Light Theme 的本地化字符串。
+        /// </summary>
+        internal static string _ThemeStateLightName {
+            get {
+                return ResourceManager.GetString("_ThemeStateLightName", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   查找类似 Theme is changing, restart to enjoy the new theme 🎨 的本地化字符串。
+        /// </summary>
+        internal static string _ThemeStateRestartToApplyToastMsg {
+            get {
+                return ResourceManager.GetString("_ThemeStateRestartToApplyToastMsg", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   查找类似 Follow System 的本地化字符串。
+        /// </summary>
+        internal static string _ThemeStateUnspecifiedName {
+            get {
+                return ResourceManager.GetString("_ThemeStateUnspecifiedName", resourceCulture);
             }
         }
         

@@ -2,10 +2,12 @@
 using CommunityToolkit.Maui.Alerts;
 using CommunityToolkit.Maui.Core;
 using Microsoft.Maui;
+using Microsoft.Maui.ApplicationModel;
 using Microsoft.Maui.Controls;
 using Sheas_Cealer_Droid.Consts;
 using Sheas_Cealer_Droid.Preses;
 using System;
+using System.Globalization;
 
 namespace Sheas_Cealer_Droid;
 
@@ -21,7 +23,14 @@ public partial class App : Application
 
         AndroidEnvironment.UnhandledExceptionRaiser += AppAndroidEnvironment_UnhandledExceptionRaiser;
 
-        Resources.Add((ResourceDictionary)Activator.CreateInstance(GlobalConst.ThemeColorDictionary[AppPres.ThemeColorName])!);
+        if (GlobalConst.ThemeColorDictionary.TryGetValue(AppPres.ThemeColorName, out Type? themeColorType))
+            Resources.Add((ResourceDictionary)Activator.CreateInstance(themeColorType)!);
+
+        if (GlobalConst.ThemeStateDictionary.TryGetValue(AppPres.ThemeStateName, out AppTheme themeStateTheme))
+            UserAppTheme = themeStateTheme;
+
+        if (GlobalConst.LangOptionDictionary.TryGetValue(AppPres.LangOptionName, out string? langOptionCulture))
+            CultureInfo.DefaultThreadCurrentCulture = CultureInfo.DefaultThreadCurrentUICulture = langOptionCulture == null ? null : new(langOptionCulture);
     }
     protected override Window CreateWindow(IActivationState? activationState) => new(new AppShell(AppPres));
 

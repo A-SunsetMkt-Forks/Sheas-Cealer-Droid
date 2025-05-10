@@ -42,6 +42,24 @@
                                 SelectedItem="{Binding ThemeColorName}" />
                     </models:SettingsItem.View>
                 </models:SettingsItem>
+                <models:SettingsItem Title="{x:Static consts:SettingsMultilangConst.ThemeStateSettingsItemTitle}">
+                    <models:SettingsItem.View>
+                        <Picker BindingContext="{Binding BindingContext, Source={x:RelativeSource AncestorType={x:Type ContentPage}}, x:DataType=ContentPage}"
+                                Title="{x:Static consts:SettingsMultilangConst.ThemeStatePickerTitle}"
+                                ToolTipProperties.Text="{x:Static consts:SettingsMultilangConst.ThemeStatePickerTooltip}"
+                                ItemsSource="{x:Static consts:SettingsConst.ThemeStateNameArray}"
+                                SelectedItem="{Binding ThemeStateName}" />
+                    </models:SettingsItem.View>
+                </models:SettingsItem>
+                <models:SettingsItem Title="{x:Static consts:SettingsMultilangConst.LangOptionSettingsItemTitle}">
+                    <models:SettingsItem.View>
+                        <Picker BindingContext="{Binding BindingContext, Source={x:RelativeSource AncestorType={x:Type ContentPage}}, x:DataType=ContentPage}"
+                                Title="{x:Static consts:SettingsMultilangConst.LangOptionPickerTitle}"
+                                ToolTipProperties.Text="{x:Static consts:SettingsMultilangConst.LangOptionPickerTooltip}"
+                                ItemsSource="{x:Static consts:SettingsConst.LangOptionNameArray}"
+                                SelectedItem="{Binding LangOptionName}" />
+                    </models:SettingsItem.View>
+                </models:SettingsItem>
                 <models:SettingsItem Title="{x:Static consts:SettingsMultilangConst.UpdateSoftwareEnabledSettingsItemTitle}"
                                      Content="{x:Static consts:SettingsMultilangConst.UpdateSoftwareEnabledSettingsItemContent}">
                     <models:SettingsItem.View>
