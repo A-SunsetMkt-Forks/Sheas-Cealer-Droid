@@ -68,7 +68,7 @@ internal abstract partial class GlobalPres : ObservableObject
             return;
         }
 
-        if (newValue == GlobalConst._BrowserNameCollectionCustomTitle)
+        if (newValue == BrowserNameCollection.LastOrDefault())
         {
             string? customBrowserName = await Shell.Current.CurrentPage.DisplayPromptAsync(GlobalConst._CustomBrowserNamePopupTitle, GlobalConst._CustomBrowserNamePopupMsg, GlobalConst._PopupAcceptText, GlobalConst._PopupCancelText);
 
