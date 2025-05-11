@@ -1,6 +1,7 @@
 ﻿using Microsoft.Maui;
 using Microsoft.Maui.ApplicationModel;
 using Microsoft.Maui.Controls;
+using Microsoft.Maui.Devices;
 using Ona_Core;
 using Sheas_Cealer_Droid.Consts;
 using Sheas_Cealer_Droid.Models;
@@ -56,6 +57,8 @@ public partial class MainPage : ContentPage
 
     private async void LaunchButton_Click(object sender, EventArgs e)
     {
+        HapticFeedback.Default.Perform(HapticFeedbackType.Click);
+
         if (MainPres.IsCommandLineUtd == true)
             await File.WriteAllTextAsync(GlobalConst.CommandLinePath, string.Empty);
         else if (MainPres.IsCommandLineUtd == null)
