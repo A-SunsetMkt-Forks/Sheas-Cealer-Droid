@@ -185,6 +185,15 @@
   <data name="UpdateSoftwareEnabledSwitchTooltip" xml:space="preserve">
     <value>点击切换自动检查软件更新启用状态</value>
   </data>
+  <data name="UpstreamMirrorEnabledSettingsItemContent" xml:space="preserve">
+    <value>控制无法更新规则时是否自动改用镜像更新 (仅当规则源是 Github 或 Gitlab 时可用)</value>
+  </data>
+  <data name="UpstreamMirrorEnabledSettingsItemTitle" xml:space="preserve">
+    <value>自动选择规则源镜像</value>
+  </data>
+  <data name="UpstreamMirrorEnabledSwitchTooltip" xml:space="preserve">
+    <value>点击切换自动选择规则源镜像启用状态</value>
+  </data>
   <data name="UpstreamUrlEntryTooltip" xml:space="preserve">
     <value>点击编辑上游规则更新源链接</value>
   </data>

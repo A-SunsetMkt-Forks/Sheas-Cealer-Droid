@@ -268,6 +268,33 @@ namespace Sheas_Cealer_Droid.Consts {
         }
         
         /// <summary>
+        ///   查找类似 Control whether to use mirror to update automatically if host update fails (Only available for Github or Gitlab host source) 的本地化字符串。
+        /// </summary>
+        internal static string UpstreamMirrorEnabledSettingsItemContent {
+            get {
+                return ResourceManager.GetString("UpstreamMirrorEnabledSettingsItemContent", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   查找类似 Select Host Source Mirror 的本地化字符串。
+        /// </summary>
+        internal static string UpstreamMirrorEnabledSettingsItemTitle {
+            get {
+                return ResourceManager.GetString("UpstreamMirrorEnabledSettingsItemTitle", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   查找类似 Tap to toggle the auto select host source mirror feature on / off 的本地化字符串。
+        /// </summary>
+        internal static string UpstreamMirrorEnabledSwitchTooltip {
+            get {
+                return ResourceManager.GetString("UpstreamMirrorEnabledSwitchTooltip", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   查找类似 Tap to edit the upstream host updating source 的本地化字符串。
         /// </summary>
         internal static string UpstreamUrlEntryTooltip {

@@ -107,6 +107,18 @@
     <Style TargetType="Switch">
         <Setter Property="ThumbColor" Value="{AppThemeBinding Light={DynamicResource Primary500}, Dark={DynamicResource Primary700}}" />
         <Setter Property="OnColor" Value="{AppThemeBinding Light={DynamicResource Primary300}, Dark={DynamicResource Primary900}}" />
+        <Setter Property="VisualStateManager.VisualStateGroups">
+            <VisualStateGroupList>
+                <VisualStateGroup x:Name="CommonStates">
+                    <VisualState x:Name="Normal" />
+                    <VisualState x:Name="Disabled">
+                        <VisualState.Setters>
+                            <Setter Property="ThumbColor" Value="{AppThemeBinding Light={DynamicResource Gray300}, Dark={DynamicResource Gray800}}" />
+                        </VisualState.Setters>
+                    </VisualState>
+                </VisualStateGroup>
+            </VisualStateGroupList>
+        </Setter>
     </Style>
 
     <Style TargetType="Entry">

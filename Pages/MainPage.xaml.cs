@@ -71,14 +71,25 @@ public partial class MainPage : ContentPage
     private void GithubToolbarItem_Clicked(object sender, EventArgs e) => Browser.Default.OpenAsync(MainConst.GithubRepoUrl);
     private async void UpdateHostToolbarItem_Clicked(object? sender, EventArgs e)
     {
-        do
-        {
+        string upstreamUrl = string.IsNullOrEmpty(MainPres.UpstreamUrl) ? GlobalConst.DefaultUpstreamUrl : MainPres.UpstreamUrl;
+
+        string[] latestUpstreamHostUrlArray = MainPres.IsUpstreamMirrorEnabled ?
+            upstreamUrl.Contains("github.com", StringComparison.OrdinalIgnoreCase) ?
+                [upstreamUrl, upstreamUrl.Replace("github.com", "gitlab.com", StringComparison.OrdinalIgnoreCase), MainConst.GithubMirrorUrl + upstreamUrl] :
+            upstreamUrl.Contains("gitlab.com", StringComparison.OrdinalIgnoreCase) ?
+                [upstreamUrl, upstreamUrl.Replace("gitlab.com", "github.com", StringComparison.OrdinalIgnoreCase),
+                MainConst.GithubMirrorUrl + upstreamUrl.Replace("gitlab.com", "github.com", StringComparison.OrdinalIgnoreCase)] :
+            [upstreamUrl] : [upstreamUrl];
+
+        int latestUpstreamHostUrlArrayIndex = 0;
+
+        while (true)
             try
             {
                 await StatusProgressBar.ProgressTo(0, 0, Easing.Linear);
                 await StatusProgressBar.ProgressTo(0.2, 100, Easing.CubicIn);
 
-                LatestUpstreamHostString = await Http.GetAsync<string>(string.IsNullOrEmpty(MainPres.UpstreamUrl) ? GlobalConst.DefaultUpstreamUrl : MainPres.UpstreamUrl, MainClient);
+                LatestUpstreamHostString = await Http.GetAsync<string>(latestUpstreamHostUrlArray[latestUpstreamHostUrlArrayIndex], MainClient);
                 string localUpstreamHostString = await File.ReadAllTextAsync(MainConst.UpstreamHostPath);
 
                 try { LatestUpstreamHostString = Encoding.UTF8.GetString(Convert.FromBase64String(LatestUpstreamHostString)); }
@@ -94,14 +105,24 @@ public partial class MainPage : ContentPage
 
                 return;
             }
-            catch when (sender == null) { await Task.Delay(TimeSpan.FromSeconds(1)); }
+            catch when (latestUpstreamHostUrlArrayIndex < latestUpstreamHostUrlArray.Length - 1)
+            {
+                latestUpstreamHostUrlArrayIndex++;
+
+                await Task.Delay(TimeSpan.FromSeconds(1));
+            }
+            catch when (sender == null)
+            {
+                latestUpstreamHostUrlArrayIndex = 0;
+
+                await Task.Delay(TimeSpan.FromSeconds(1));
+            }
             catch
             {
                 MainPres.StatusProgress = 1;
 
                 throw;
             }
-        } while (sender == null);
     }
     private async void UpdateSoftwareToolbarItem_Clicked(object? sender, EventArgs e)
     {

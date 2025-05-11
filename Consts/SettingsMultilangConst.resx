@@ -185,6 +185,15 @@
   <data name="UpdateSoftwareEnabledSwitchTooltip" xml:space="preserve">
     <value>Tap to toggle the auto check software for update feature on / off</value>
   </data>
+  <data name="UpstreamMirrorEnabledSettingsItemContent" xml:space="preserve">
+    <value>Control whether to use mirror to update automatically if host update fails (Only available for Github or Gitlab host source)</value>
+  </data>
+  <data name="UpstreamMirrorEnabledSettingsItemTitle" xml:space="preserve">
+    <value>Select Host Source Mirror</value>
+  </data>
+  <data name="UpstreamMirrorEnabledSwitchTooltip" xml:space="preserve">
+    <value>Tap to toggle the auto select host source mirror feature on / off</value>
+  </data>
   <data name="UpstreamUrlEntryTooltip" xml:space="preserve">
     <value>Tap to edit the upstream host updating source</value>
   </data>

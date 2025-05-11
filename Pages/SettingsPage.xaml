@@ -2,6 +2,7 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:behaviors="clr-namespace:CommunityToolkit.Maui.Behaviors;assembly=CommunityToolkit.Maui"
              xmlns:consts="clr-namespace:Sheas_Cealer_Droid.Consts"
+             xmlns:convs="clr-namespace:Sheas_Cealer_Droid.Convs"
              xmlns:models="clr-namespace:Sheas_Cealer_Droid.Models"
              xmlns:pages="clr-namespace:Sheas_Cealer_Droid.Pages"
              xmlns:preses="clr-namespace:Sheas_Cealer_Droid.Preses"
@@ -57,6 +58,15 @@
                                 ToolTipProperties.Text="{x:Static consts:SettingsMultilangConst.LangOptionPickerTooltip}"
                                 ItemsSource="{x:Static consts:SettingsConst.LangOptionNameArray}"
                                 SelectedItem="{Binding LangOptionName}" />
+                    </models:SettingsItem.View>
+                </models:SettingsItem>
+                <models:SettingsItem Title="{x:Static consts:SettingsMultilangConst.UpstreamMirrorEnabledSettingsItemTitle}"
+                                     Content="{x:Static consts:SettingsMultilangConst.UpstreamMirrorEnabledSettingsItemContent}">
+                    <models:SettingsItem.View>
+                        <Switch BindingContext="{Binding BindingContext, Source={x:RelativeSource AncestorType={x:Type ContentPage}}, x:DataType=ContentPage}"
+                                IsToggled="{Binding IsUpstreamMirrorEnabled}"
+                                IsEnabled="{Binding UpstreamUrl, Converter={x:Static convs:SettingsConv.SettingsUpstreamMirrorEnabledSwitchIsEnabledConv}}"
+                                ToolTipProperties.Text="{x:Static consts:SettingsMultilangConst.UpstreamMirrorEnabledSwitchTooltip}" />
                     </models:SettingsItem.View>
                 </models:SettingsItem>
                 <models:SettingsItem Title="{x:Static consts:SettingsMultilangConst.UpdateSoftwareEnabledSettingsItemTitle}"

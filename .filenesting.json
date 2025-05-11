@@ -31,6 +31,7 @@
                     "MainSearchDomainLabelTextConv.cs": [ "MainConv.cs" ],
                     "MainSearchHandlerSearchBoxVisibilityConv.cs": [ "MainConv.cs" ],
                     "MainStatusProgressBarIsVisibleConv.cs": [ "MainConv.cs" ],
+                    "SettingsUpstreamMirrorEnabledSwitchIsEnabledConv.cs": [ "SettingsConv.cs" ],
                     "AdbGuideLabelTextConv.cs": [ "AdbConv.cs" ],
                     "AdbIndicatorViewPositionConv.cs": [ "AdbConv.cs" ],
                     "ReadyGuideLabelTextConv.cs": [ "ReadyConv.cs" ],

@@ -6,6 +6,7 @@ using Microsoft.Maui.Storage;
 using Sheas_Cealer_Droid.Consts;
 using Sheas_Cealer_Droid.Models;
 using Sheas_Cealer_Droid.Utils;
+using System;
 using System.Collections.ObjectModel;
 using System.Collections.Specialized;
 using System.Diagnostics.CodeAnalysis;
@@ -96,11 +97,20 @@ internal abstract partial class GlobalPres : ObservableObject
 
     [ObservableProperty]
     private static string upstreamUrl = Preferences.Default.Get(nameof(UpstreamUrl), string.Empty);
-    partial void OnUpstreamUrlChanged(string value) => Preferences.Default.Set(nameof(UpstreamUrl), value);
+    partial void OnUpstreamUrlChanged(string value)
+    {
+        IsUpstreamMirrorEnabled = string.IsNullOrEmpty(value) || value.Contains("github.com", StringComparison.OrdinalIgnoreCase) || value.Contains("gitlab.com", StringComparison.OrdinalIgnoreCase);
+
+        Preferences.Default.Set(nameof(UpstreamUrl), value);
+    }
 
     private static readonly ObservableCollection<CealHostRule> cealHostRulesCollection = [];
     [SuppressMessage("Performance", "CA1822"), SuppressMessage("CodeQuality", "IDE0079")]
     public ObservableCollection<CealHostRule> CealHostRulesCollection => cealHostRulesCollection;
+
+    [ObservableProperty]
+    private static bool isUpstreamMirrorEnabled = Preferences.Default.Get(nameof(IsUpstreamMirrorEnabled), string.IsNullOrEmpty(upstreamUrl) || upstreamUrl.Contains("github.com", StringComparison.OrdinalIgnoreCase) || upstreamUrl.Contains("gitlab.com", StringComparison.OrdinalIgnoreCase));
+    partial void OnIsUpstreamMirrorEnabledChanged(bool value) => Preferences.Default.Set(nameof(IsUpstreamMirrorEnabled), value);
 
     [ObservableProperty]
     private static bool isUpdateSoftwareEnabled = Preferences.Default.Get(nameof(IsUpdateSoftwareEnabled), true);
