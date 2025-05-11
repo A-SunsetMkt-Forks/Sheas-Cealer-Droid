@@ -127,6 +127,14 @@
         <Setter Property="HorizontalTextAlignment" Value="Center" />
     </Style>
 
+    <Style x:Key="ValidEntry" TargetType="Entry">
+        <Setter Property="TextColor" Value="{AppThemeBinding Light={DynamicResource Gray900}, Dark={DynamicResource Gray300}}" />
+    </Style>
+
+    <Style x:Key="InvalidEntry" TargetType="Entry">
+        <Setter Property="TextColor" Value="{AppThemeBinding Light={DynamicResource Primary900}, Dark={DynamicResource Primary300}}" />
+    </Style>
+
     <Style TargetType="Picker">
         <Setter Property="TextColor" Value="{AppThemeBinding Light={DynamicResource Gray900}, Dark={DynamicResource Gray300}}" />
         <Setter Property="TitleColor" Value="{AppThemeBinding Light={DynamicResource Gray900}, Dark={DynamicResource Gray300}}" />

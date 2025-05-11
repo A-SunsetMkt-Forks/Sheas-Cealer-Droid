@@ -33,6 +33,10 @@
                                ReturnCommand="{x:Static pages:SettingsPage.UpstreamUrlEntry_CompletedCommand}">
                             <Entry.Behaviors>
                                 <toolkit:SelectAllTextBehavior />
+                                <toolkit:UriValidationBehavior RegexPattern="{x:Static consts:SettingsConst.UpstreamUrlRegexPattern}"
+                                                               Flags="ValidateOnValueChanged"
+                                                               ValidStyle="{x:StaticResource ValidEntry}"
+                                                               InvalidStyle="{x:StaticResource InvalidEntry}" />
                             </Entry.Behaviors>
                         </Entry>
                     </models:SettingsItem.View>
