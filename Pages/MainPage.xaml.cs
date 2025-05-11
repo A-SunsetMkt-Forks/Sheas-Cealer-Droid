@@ -109,7 +109,7 @@ public partial class MainPage : ContentPage
             {
                 latestUpstreamHostUrlArrayIndex++;
 
-                await Task.Delay(TimeSpan.FromSeconds(1));
+                await Task.Delay(TimeSpan.FromSeconds(0.1));
             }
             catch when (sender == null)
             {
