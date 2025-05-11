@@ -1,6 +1,6 @@
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             xmlns:behaviors="clr-namespace:CommunityToolkit.Maui.Behaviors;assembly=CommunityToolkit.Maui"
+             xmlns:toolkit="http://schemas.microsoft.com/dotnet/2022/maui/toolkit"
              xmlns:consts="clr-namespace:Sheas_Cealer_Droid.Consts"
              xmlns:convs="clr-namespace:Sheas_Cealer_Droid.Convs"
              xmlns:preses="clr-namespace:Sheas_Cealer_Droid.Preses"
@@ -50,7 +50,7 @@
                          Grid.Row="1" HorizontalOptions="Start" WidthRequest="56" HeightRequest="56" CornerRadius="28"
                          Clicked="PrevButton_Clicked">
                 <ImageButton.Behaviors>
-                    <behaviors:IconTintColorBehavior TintColor="{AppThemeBinding Light={StaticResource White}, Dark={StaticResource Gray900}}" />
+                    <toolkit:IconTintColorBehavior TintColor="{AppThemeBinding Light={StaticResource White}, Dark={StaticResource Gray900}}" />
                 </ImageButton.Behaviors>
             </ImageButton>
             <ImageButton x:Name="NextButton"
@@ -61,7 +61,7 @@
                          Grid.Row="1" HorizontalOptions="End" WidthRequest="56" HeightRequest="56" CornerRadius="28"
                          Clicked="NextButton_Clicked">
                 <ImageButton.Behaviors>
-                    <behaviors:IconTintColorBehavior TintColor="{AppThemeBinding Light={StaticResource White}, Dark={StaticResource Gray900}}" />
+                    <toolkit:IconTintColorBehavior TintColor="{AppThemeBinding Light={StaticResource White}, Dark={StaticResource Gray900}}" />
                 </ImageButton.Behaviors>
             </ImageButton>
             <IndicatorView Count="{Binding IsFirstRunning, Converter={x:Static convs:GlobalConv.GlobalIndicatorViewCountConv}, Mode=OneTime}"

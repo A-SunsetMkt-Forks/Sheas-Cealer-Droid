@@ -1,6 +1,6 @@
 <Shell xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
        xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-       xmlns:behaviors="clr-namespace:CommunityToolkit.Maui.Behaviors;assembly=CommunityToolkit.Maui"
+       xmlns:toolkit="http://schemas.microsoft.com/dotnet/2022/maui/toolkit"
        xmlns:consts="clr-namespace:Sheas_Cealer_Droid.Consts"
        xmlns:convs="clr-namespace:Sheas_Cealer_Droid.Convs"
        xmlns:pages="clr-namespace:Sheas_Cealer_Droid.Pages"
@@ -8,7 +8,7 @@
        x:Class="Sheas_Cealer_Droid.AppShell" x:DataType="preses:AppPres"
        FlyoutBackgroundColor="{AppThemeBinding Light={DynamicResource Gray50}, Dark={DynamicResource Gray900}}">
     <Shell.Behaviors>
-        <behaviors:StatusBarBehavior StatusBarColor="{AppThemeBinding Light={StaticResource Primary50}, Dark={StaticResource Gray850}}"
+        <toolkit:StatusBarBehavior StatusBarColor="{AppThemeBinding Light={StaticResource Primary50}, Dark={StaticResource Gray850}}"
                                      StatusBarStyle="{AppThemeBinding Light=DarkContent, Dark=LightContent}" />
     </Shell.Behaviors>
     <Shell.FlyoutHeader>
