@@ -126,6 +126,61 @@ namespace Sheas_Cealer_Droid.Consts {
         }
         
         /// <summary>
+        ///   查找类似 &quot;Wrong, you baka&quot; Yana ate your reman 🍜 的本地化字符串。
+        /// </summary>
+        internal static string _DualThemeColorPairErrorToastMsg {
+            get {
+                return ResourceManager.GetString("_DualThemeColorPairErrorToastMsg", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   查找类似 &quot;Oh, wait a second&quot;, Yana took away the reman in your hand
+        ///
+        ///&quot;How much is it worth&quot; Seeing Yana&apos;s radiant smile, you froze for a moment
+        ///
+        ///You never thought an open-source app would actually have something you had to pay for
+        ///
+        ///Suddenly, flashes of memories raced through your mind. You had seen her in some anime before. Ah, good, some memories were coming back
+        ///
+        ///Turns out, she was using the reman to pay back the debt she owed you
+        ///
+        ///&quot;Twenty... five&quot; You casually blurted out a number, feeling a little unea [字符串的其余部分被截断]&quot;; 的本地化字符串。
+        /// </summary>
+        internal static string _DualThemeColorPairPopupMsg {
+            get {
+                return ResourceManager.GetString("_DualThemeColorPairPopupMsg", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   查找类似 Yana took away your reman 的本地化字符串。
+        /// </summary>
+        internal static string _DualThemeColorPairPopupTitle {
+            get {
+                return ResourceManager.GetString("_DualThemeColorPairPopupTitle", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   查找类似 &quot;That&apos;s my code, you baka&quot; Yana ate your reman 🍜 的本地化字符串。
+        /// </summary>
+        internal static string _DualThemeColorPairRepeatToastMsg {
+            get {
+                return ResourceManager.GetString("_DualThemeColorPairRepeatToastMsg", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   查找类似 &quot;Bingo! Correct code&quot; Restart to taste narutomaki reman 🍥 的本地化字符串。
+        /// </summary>
+        internal static string _DualThemeColorPairSuccessToastMsg {
+            get {
+                return ResourceManager.GetString("_DualThemeColorPairSuccessToastMsg", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   查找类似 Simplified Chinese 的本地化字符串。
         /// </summary>
         internal static string _LangOptionChineseName {
@@ -293,6 +348,15 @@ namespace Sheas_Cealer_Droid.Consts {
         internal static string _ThemeColorOrangeName {
             get {
                 return ResourceManager.GetString("_ThemeColorOrangeName", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   查找类似 Yana Narutomaki Ramen 的本地化字符串。
+        /// </summary>
+        internal static string _ThemeColorPinkBlueName {
+            get {
+                return ResourceManager.GetString("_ThemeColorPinkBlueName", resourceCulture);
             }
         }
         

@@ -1,4 +1,5 @@
 ﻿using Microsoft.Maui.ApplicationModel;
+using Microsoft.Maui.Storage;
 using Sheas_Cealer_Droid.Colors;
 using System;
 using System.Collections.Generic;
@@ -14,7 +15,8 @@ internal abstract class GlobalConst : GlobalMultilangConst
         { _ThemeColorYellowName, typeof(YellowColor) },
         { _ThemeColorBlueName, typeof(BlueColor) },
         { _ThemeColorGreenName, typeof(GreenColor) },
-        { _ThemeColorOrangeName, typeof(OrangeColor) }
+        { _ThemeColorOrangeName, typeof(OrangeColor) },
+        { _ThemeColorPinkBlueName, typeof(PinkBlueColor) }
     };
     internal static Dictionary<string, AppTheme> ThemeStateDictionary => new()
     {
@@ -35,4 +37,5 @@ internal abstract class GlobalConst : GlobalMultilangConst
     internal static string AdbCommand => @$"adb shell ""touch {GlobalConst.CommandLinePath} && chmod 666 {GlobalConst.CommandLinePath}""";
     internal static string[] SkipWarningArray => [_SkipWarning1ToastMsg, _SkipWarning2ToastMsg, _SkipWarning3ToastMsg, _SkipWarning4ToastMsg];
     internal static string VersionAboutInfoContent => AppInfo.VersionString;
+    internal static int UserPairIdentity => Preferences.Default.Get(nameof(UserPairIdentity), new Random().Next(10));
 }

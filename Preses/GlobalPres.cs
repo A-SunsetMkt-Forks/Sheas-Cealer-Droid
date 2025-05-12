@@ -11,6 +11,8 @@ using System.Collections.ObjectModel;
 using System.Collections.Specialized;
 using System.Diagnostics.CodeAnalysis;
 using System.Linq;
+using System.Security.Cryptography;
+using System.Text;
 using System.Text.Json;
 
 namespace Sheas_Cealer_Droid.Preses;
@@ -33,11 +35,53 @@ internal abstract partial class GlobalPres : ObservableObject
 
     [ObservableProperty]
     private static string themeColorName = string.Empty;
-    async partial void OnThemeColorNameChanged(string value)
+    async partial void OnThemeColorNameChanged(string? oldValue, string newValue)
     {
-        Preferences.Default.Set(nameof(ThemeColorName), ResourceKeyFinder.FindGlobalKey(value));
+        if (newValue == GlobalConst._ThemeColorPinkBlueName)
+        {
+            string userPairCode = BitConverter.ToString(SHA256.Create().ComputeHash(Encoding.UTF8.GetBytes(DateTime.UtcNow.ToString("yyyyMMddHH") + GlobalConst.UserPairIdentity))).Replace("-", string.Empty)[..4].ToUpperInvariant();
+            string? inputPairCode = (await Shell.Current.CurrentPage.DisplayPromptAsync(GlobalConst._DualThemeColorPairPopupTitle, string.Format(GlobalConst._DualThemeColorPairPopupMsg, userPairCode), GlobalConst._PopupAcceptText, GlobalConst._PopupCancelText))?.ToUpperInvariant();
+            bool isPairCodeMatched = false;
 
-        await Toast.Make(GlobalConst._ThemeColorRestartToApplyToastMsg).Show();
+            if (string.IsNullOrWhiteSpace(inputPairCode) || inputPairCode == userPairCode)
+            {
+                ThemeColorName = oldValue!;
+
+                if (inputPairCode == userPairCode)
+                    await Toast.Make(GlobalConst._DualThemeColorPairRepeatToastMsg).Show();
+
+                return;
+            }
+
+            for (int pairIdentity = 0; pairIdentity < 10; pairIdentity++)
+            {
+                if (pairIdentity == GlobalConst.UserPairIdentity)
+                    continue;
+
+                if (BitConverter.ToString(SHA256.Create().ComputeHash(Encoding.UTF8.GetBytes(DateTime.UtcNow.ToString("yyyyMMddHH") + pairIdentity))).Replace("-", string.Empty)[..4].ToUpperInvariant() == inputPairCode)
+                {
+                    isPairCodeMatched = true;
+
+                    break;
+                }
+            }
+
+            if (!isPairCodeMatched)
+            {
+                ThemeColorName = oldValue!;
+
+                await Toast.Make(GlobalConst._DualThemeColorPairErrorToastMsg).Show();
+
+                return;
+            }
+
+            await Toast.Make(GlobalConst._DualThemeColorPairSuccessToastMsg).Show();
+        }
+
+        Preferences.Default.Set(nameof(ThemeColorName), ResourceKeyFinder.FindGlobalKey(newValue));
+
+        if (oldValue != GlobalConst._ThemeColorPinkBlueName && newValue != GlobalConst._ThemeColorPinkBlueName)
+            await Toast.Make(GlobalConst._ThemeColorRestartToApplyToastMsg).Show();
     }
 
     [ObservableProperty]
@@ -138,7 +182,11 @@ internal abstract partial class GlobalPres : ObservableObject
 
     [ObservableProperty]
     private static bool isFirstRunning = Preferences.Default.Get(nameof(IsFirstRunning), true);
-    partial void OnIsFirstRunningChanged(bool value) => Preferences.Default.Set(nameof(IsFirstRunning), value);
+    partial void OnIsFirstRunningChanged(bool value)
+    {
+        Preferences.Default.Set(nameof(GlobalConst.UserPairIdentity), GlobalConst.UserPairIdentity);
+        Preferences.Default.Set(nameof(IsFirstRunning), value);
+    }
 
     [ObservableProperty]
     private static bool isFlagCopied = Preferences.Default.Get(nameof(IsFlagCopied), false);

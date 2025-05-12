@@ -175,6 +175,29 @@
   <data name="_CustomBrowserNamePopupTitle" xml:space="preserve">
     <value>自定义浏览器</value>
   </data>
+  <data name="_DualThemeColorPairErrorToastMsg" xml:space="preserve">
+    <value>"不对啦笨蛋"，八奈吃掉了你的面 🍜</value>
+  </data>
+  <data name="_DualThemeColorPairPopupMsg" xml:space="preserve">
+    <value>"哦等等"，八奈夺走了你手里的鱼板面，"值多少钱"，看着八奈灿烂的笑容，你愣了一下，从没想过一个开源 APP 里居然有要钱才能获得的东西
+
+突然你的脑中闪过一些场景，你曾在某部番中见过她，哦很好，记忆回来了一些，原来她是在用鱼板面还之前欠你的钱
+
+"二十... 五"，你随口说了一个数，心里有点忐忑，因为不清楚她口中钱的单位是人民币还是日元
+
+八奈露出了困惑的神情，啊牙白，回答错了吗，此刻你多么希望她的头顶上能立刻冒出三个按钮啊，看来接下来必须谨言慎行了
+
+见你无动于衷，八奈贴到了你的身旁，"{0}，想起来了吗"，她口中冒出几个神秘字符，然后歪着头似乎等待着你回答什么，这是什么，你的名字吗，你冷汗直冒，但此刻也必须回答些什么了，该回答什么好呢</value>
+  </data>
+  <data name="_DualThemeColorPairPopupTitle" xml:space="preserve">
+    <value>八奈夺走了你的面</value>
+  </data>
+  <data name="_DualThemeColorPairRepeatToastMsg" xml:space="preserve">
+    <value>"那是我的暗号笨蛋"，八奈吃掉了你的面 🍜</value>
+  </data>
+  <data name="_DualThemeColorPairSuccessToastMsg" xml:space="preserve">
+    <value>"Bingo! 暗号正确"，重启品尝鱼板面 🍥</value>
+  </data>
   <data name="_LangOptionChineseName" xml:space="preserve">
     <value>简体中文</value>
   </data>
@@ -231,6 +254,9 @@
   </data>
   <data name="_ThemeColorOrangeName" xml:space="preserve">
     <value>六价橘子汁</value>
+  </data>
+  <data name="_ThemeColorPinkBlueName" xml:space="preserve">
+    <value>八奈鱼板面</value>
   </data>
   <data name="_ThemeColorRedName" xml:space="preserve">
     <value>一杯草莓乳</value>
