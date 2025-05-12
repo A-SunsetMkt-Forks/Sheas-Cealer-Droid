@@ -43,12 +43,20 @@ internal abstract partial class GlobalPres : ObservableObject
             string? inputPairCode = (await Shell.Current.CurrentPage.DisplayPromptAsync(GlobalConst._DualThemeColorPairPopupTitle, string.Format(GlobalConst._DualThemeColorPairPopupMsg, userPairCode), GlobalConst._PopupAcceptText, GlobalConst._PopupCancelText))?.ToUpperInvariant();
             bool isPairCodeMatched = false;
 
-            if (string.IsNullOrWhiteSpace(inputPairCode) || inputPairCode == userPairCode)
+            if (string.IsNullOrWhiteSpace(inputPairCode))
             {
                 ThemeColorName = oldValue!;
 
-                if (inputPairCode == userPairCode)
-                    await Toast.Make(GlobalConst._DualThemeColorPairRepeatToastMsg).Show();
+                await Toast.Make(GlobalConst._DualThemeColorPairCancelToastMsg).Show();
+
+                return;
+            }
+
+            if (inputPairCode == userPairCode)
+            {
+                ThemeColorName = oldValue!;
+
+                await Toast.Make(GlobalConst._DualThemeColorPairRepeatToastMsg).Show();
 
                 return;
             }

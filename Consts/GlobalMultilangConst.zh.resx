@@ -175,6 +175,9 @@
   <data name="_CustomBrowserNamePopupTitle" xml:space="preserve">
     <value>自定义浏览器</value>
   </data>
+  <data name="_DualThemeColorPairCancelToastMsg" xml:space="preserve">
+    <value>午后 字条 暗号，你感觉记忆很混乱，不如试试那股击穿平行时空的力量吧 🌌</value>
+  </data>
   <data name="_DualThemeColorPairErrorToastMsg" xml:space="preserve">
     <value>"不对啦笨蛋"，八奈吃掉了你的面 🍜</value>
   </data>

@@ -126,6 +126,15 @@ namespace Sheas_Cealer_Droid.Consts {
         }
         
         /// <summary>
+        ///   查找类似 &quot;Afternoon&quot; &quot;notes&quot; &quot;codes&quot;, your memories feel like a mess. Maybe it&apos;s time to try that force that breaks through parallel worlds 🌌 的本地化字符串。
+        /// </summary>
+        internal static string _DualThemeColorPairCancelToastMsg {
+            get {
+                return ResourceManager.GetString("_DualThemeColorPairCancelToastMsg", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   查找类似 &quot;Wrong, you baka&quot; Yana ate your reman 🍜 的本地化字符串。
         /// </summary>
         internal static string _DualThemeColorPairErrorToastMsg {
