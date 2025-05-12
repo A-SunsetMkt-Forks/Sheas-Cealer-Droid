@@ -137,15 +137,9 @@ namespace Sheas_Cealer_Droid.Consts {
         /// <summary>
         ///   查找类似 &quot;Oh, wait a second&quot;, Yana took away the reman in your hand
         ///
-        ///&quot;How much is it worth&quot; Seeing Yana&apos;s radiant smile, you froze for a moment
+        ///&quot;{0}&quot; Some mysterious letters came out of her mouth, then she tilted her head, as if waiting for you to answer something. Seeing Yana&apos;s radiant smile, you froze for a moment
         ///
-        ///You never thought an open-source app would actually have something you had to pay for
-        ///
-        ///Suddenly, flashes of memories raced through your mind. You had seen her in some anime before. Ah, good, some memories were coming back
-        ///
-        ///Turns out, she was using the reman to pay back the debt she owed you
-        ///
-        ///&quot;Twenty... five&quot; You casually blurted out a number, feeling a little unea [字符串的其余部分被截断]&quot;; 的本地化字符串。
+        ///What was this? Your name? Cold sweat ran down your back. But now you had no choice but to say something. What should you say 的本地化字符串。
         /// </summary>
         internal static string _DualThemeColorPairPopupMsg {
             get {
