@@ -79,6 +79,24 @@ namespace Sheas_Cealer_Droid.Consts {
         }
         
         /// <summary>
+        ///   查找类似 Choose whether to apply or delete the option 的本地化字符串。
+        /// </summary>
+        internal static string _CustomBrowserNameApplyPopupMsg {
+            get {
+                return ResourceManager.GetString("_CustomBrowserNameApplyPopupMsg", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   查找类似 Manage Custom Browser 的本地化字符串。
+        /// </summary>
+        internal static string _CustomBrowserNameApplyPopupTitle {
+            get {
+                return ResourceManager.GetString("_CustomBrowserNameApplyPopupTitle", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   查找类似 Browser name cannot be empty or contain whitespace characters 的本地化字符串。
         /// </summary>
         internal static string _CustomBrowserNameErrorToastMsg {
@@ -162,11 +180,29 @@ namespace Sheas_Cealer_Droid.Consts {
         }
         
         /// <summary>
+        ///   查找类似 Apply 的本地化字符串。
+        /// </summary>
+        internal static string _PopupApplyText {
+            get {
+                return ResourceManager.GetString("_PopupApplyText", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   查找类似 Cancel 的本地化字符串。
         /// </summary>
         internal static string _PopupCancelText {
             get {
                 return ResourceManager.GetString("_PopupCancelText", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   查找类似 Delete 的本地化字符串。
+        /// </summary>
+        internal static string _PopupDeleteText {
+            get {
+                return ResourceManager.GetString("_PopupDeleteText", resourceCulture);
             }
         }
         

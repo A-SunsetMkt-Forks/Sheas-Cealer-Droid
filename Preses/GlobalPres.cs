@@ -86,6 +86,13 @@ internal abstract partial class GlobalPres : ObservableObject
             BrowserNameCollection.Insert(BrowserNameCollection.Count - 1, customBrowserName);
             newValue = customBrowserName;
         }
+        else if (!GlobalConst.DefaultBrowserNameCollection.Contains(newValue!) && oldValue != BrowserNameCollection.LastOrDefault())
+            if (!await Shell.Current.CurrentPage.DisplayAlert(GlobalConst._CustomBrowserNameApplyPopupTitle, GlobalConst._CustomBrowserNameApplyPopupMsg, GlobalConst._PopupApplyText, GlobalConst._PopupDeleteText))
+            {
+                BrowserName = BrowserNameCollection.FirstOrDefault();
+                BrowserNameCollection.Remove(newValue!);
+                newValue = BrowserNameCollection.FirstOrDefault();
+            }
 
         Preferences.Default.Set(nameof(BrowserName), newValue);
     }

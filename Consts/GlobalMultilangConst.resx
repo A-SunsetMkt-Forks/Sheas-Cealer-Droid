@@ -158,6 +158,12 @@
   <data name="_CommandCopiedToastMsg" xml:space="preserve">
     <value>Command copied ✅</value>
   </data>
+  <data name="_CustomBrowserNameApplyPopupMsg" xml:space="preserve">
+    <value>Choose whether to apply or delete the option</value>
+  </data>
+  <data name="_CustomBrowserNameApplyPopupTitle" xml:space="preserve">
+    <value>Manage Custom Browser</value>
+  </data>
   <data name="_CustomBrowserNameErrorToastMsg" xml:space="preserve">
     <value>Browser name cannot be empty or contain whitespace characters</value>
   </data>
@@ -187,8 +193,14 @@
   <data name="_PopupAcceptText" xml:space="preserve">
     <value>Accept</value>
   </data>
+  <data name="_PopupApplyText" xml:space="preserve">
+    <value>Apply</value>
+  </data>
   <data name="_PopupCancelText" xml:space="preserve">
     <value>Cancel</value>
+  </data>
+  <data name="_PopupDeleteText" xml:space="preserve">
+    <value>Delete</value>
   </data>
   <data name="_PopupNoText" xml:space="preserve">
     <value>No</value>

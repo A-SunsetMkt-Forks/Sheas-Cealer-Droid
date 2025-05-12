@@ -158,6 +158,12 @@
   <data name="_CommandCopiedToastMsg" xml:space="preserve">
     <value>命令已复制 ✅</value>
   </data>
+  <data name="_CustomBrowserNameApplyPopupMsg" xml:space="preserve">
+    <value>选择是应用还是删除该选项</value>
+  </data>
+  <data name="_CustomBrowserNameApplyPopupTitle" xml:space="preserve">
+    <value>管理自定义浏览器</value>
+  </data>
   <data name="_CustomBrowserNameErrorToastMsg" xml:space="preserve">
     <value>浏览器名称不能为空或含有空白字符</value>
   </data>
@@ -187,8 +193,14 @@
   <data name="_PopupAcceptText" xml:space="preserve">
     <value>确定</value>
   </data>
+  <data name="_PopupApplyText" xml:space="preserve">
+    <value>应用</value>
+  </data>
   <data name="_PopupCancelText" xml:space="preserve">
     <value>取消</value>
+  </data>
+  <data name="_PopupDeleteText" xml:space="preserve">
+    <value>删除</value>
   </data>
   <data name="_PopupNoText" xml:space="preserve">
     <value>不要</value>
