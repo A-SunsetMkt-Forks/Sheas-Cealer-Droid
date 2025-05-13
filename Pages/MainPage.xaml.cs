@@ -13,6 +13,7 @@ using System.IO;
 using System.Net.Http;
 using System.Text;
 using System.Text.Json;
+using System.Threading;
 using System.Threading.Tasks;
 
 namespace Sheas_Cealer_Droid.Pages;
@@ -26,6 +27,9 @@ public partial class MainPage : ContentPage
     private readonly SortedDictionary<string, List<(List<(string includeDomain, string excludeDomain)> domainPairs, string? sni, string ip)>?> CealHostRulesDict = [];
     private string CealArgs = string.Empty;
     private string LatestUpstreamHostString = string.Empty;
+
+    private string KaomojiOriginalString = string.Empty;
+    private int KaomojiRunningNum = 0;
 
     public MainPage()
     {
@@ -165,6 +169,30 @@ public partial class MainPage : ContentPage
         } while (sender == null);
     }
 
+    private async void BottomTapGestureRecognizer_Tapped(object sender, TappedEventArgs e)
+    {
+        if (KaomojiRunningNum == 0)
+            KaomojiOriginalString = MainPres.StatusMessage;
+
+        Interlocked.Add(ref KaomojiRunningNum, 1);
+
+        int kaomojiArrayMaxIndex = MainConst.KaomojiShakeArray.Length - 1;
+        int kaomojiArrayIndex = 0;
+
+        Timer kaomojiAnimationTimer = new(_ => MainPres.StatusMessage = MainConst.KaomojiShakeArray[^(Math.Abs(kaomojiArrayIndex++ % (2 * kaomojiArrayMaxIndex) - kaomojiArrayMaxIndex) + 1)],
+            null, 0, Math.Max(100 - 2 * KaomojiRunningNum, 1));
+
+        await Task.Delay(400 * kaomojiArrayMaxIndex);
+        await kaomojiAnimationTimer.DisposeAsync();
+
+        Interlocked.Add(ref KaomojiRunningNum, -1);
+
+        if (KaomojiRunningNum == 0)
+            MainPres.StatusMessage = KaomojiOriginalString;
+    }
+
+    private void LayoutSwipeGestureRecognizer_Swiped(object sender, SwipedEventArgs e) => Shell.Current.FlyoutIsPresented = true;
+
     private async void CealHostWatcher_Changed(object sender, FileSystemEventArgs e)
     {
         string cealHostName = e.Name!.TrimStart("Cealing-Host-".ToCharArray()).TrimEnd(".json".ToCharArray());
@@ -247,6 +275,4 @@ public partial class MainPage : ContentPage
             }
         }
     }
-
-    private void LayoutSwipeGestureRecognizer_Swiped(object sender, SwipedEventArgs e) => Shell.Current.FlyoutIsPresented = true;
 }

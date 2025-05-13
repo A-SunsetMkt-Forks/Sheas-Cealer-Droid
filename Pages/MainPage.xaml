@@ -105,6 +105,10 @@
         <ActivityIndicator IsRunning="{Binding IsPageLoading}"
                            Grid.Row="0" HorizontalOptions="Center" VerticalOptions="Center" />
         <Grid Grid.Row="1">
+            <Grid.GestureRecognizers>
+                <TapGestureRecognizer Tapped="BottomTapGestureRecognizer_Tapped" />
+            </Grid.GestureRecognizers>
+
             <Border Background="{AppThemeBinding Light={DynamicResource Primary50}, Dark={DynamicResource Gray850}}">
                 <Label Text="{Binding StatusMessage}"
                        VerticalTextAlignment="Center" Margin="28,0,0,0" />
