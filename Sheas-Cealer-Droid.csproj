@@ -29,7 +29,7 @@
 		<RootNamespace>Sheas_Cealer_Droid</RootNamespace>
 		<Nullable>enable</Nullable>
 		<UseMaui>true</UseMaui>
-		<MauiVersion>9.0.60</MauiVersion>
+		<MauiVersion>9.0.61</MauiVersion>
 		<MauiEnableXamlCBindingWithSourceCompilation>true</MauiEnableXamlCBindingWithSourceCompilation>
 		<SingleProject>true</SingleProject>
 		<ImplicitUsings>disable</ImplicitUsings>
@@ -105,7 +105,7 @@
 	<ItemGroup>
 		<PackageReference Include="CommunityToolkit.Maui" Version="*" />
 		<PackageReference Include="CommunityToolkit.Mvvm" Version="*" />
-    <PackageReference Include="Microsoft.Maui.Controls" Version="*" />
+    <PackageReference Include="Microsoft.Maui.Controls" Version="9.0.61" />
 	</ItemGroup>
 
 	<ItemGroup>
