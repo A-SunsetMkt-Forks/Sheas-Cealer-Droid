@@ -63,7 +63,7 @@
 			<Generator>MSBuild:Compile</Generator>
 		</MauiXaml>
 		<MauiXaml Update="Pages\AdbPage.xaml">
-		  <Generator>MSBuild:Compile</Generator>
+			<Generator>MSBuild:Compile</Generator>
 		</MauiXaml>
 		<MauiXaml Update="Pages\ReadyPage.xaml">
 			<Generator>MSBuild:Compile</Generator>
@@ -75,7 +75,7 @@
 			<Generator>MSBuild:Compile</Generator>
 		</MauiXaml>
 		<MauiXaml Update="Rsces\Colors\PinkBlueColor.xaml">
-		  <Generator>MSBuild:Compile</Generator>
+			<Generator>MSBuild:Compile</Generator>
 		</MauiXaml>
 		<MauiXaml Update="Rsces\Colors\GreenColor.xaml">
 			<Generator>MSBuild:Compile</Generator>
@@ -124,9 +124,9 @@
 			<AutoGen>true</AutoGen>
 		</Compile>
 		<Compile Update="Consts\AdbMultilangConst.Designer.cs">
-		  <DependentUpon>AdbMultilangConst.resx</DependentUpon>
-		  <DesignTime>true</DesignTime>
-		  <AutoGen>true</AutoGen>
+			<DependentUpon>AdbMultilangConst.resx</DependentUpon>
+			<DesignTime>true</DesignTime>
+			<AutoGen>true</AutoGen>
 		</Compile>
 		<Compile Update="Consts\SettingsMultilangConst.Designer.cs">
 			<DependentUpon>SettingsMultilangConst.resx</DependentUpon>
@@ -176,12 +176,12 @@
 			<Generator></Generator>
 		</EmbeddedResource>
 		<EmbeddedResource Update="Consts\AdbMultilangConst.resx">
-		  <LastGenOutput>AdbMultilangConst.Designer.cs</LastGenOutput>
-		  <Generator>ResXFileCodeGenerator</Generator>
+			<LastGenOutput>AdbMultilangConst.Designer.cs</LastGenOutput>
+			<Generator>ResXFileCodeGenerator</Generator>
 		</EmbeddedResource>
 		<EmbeddedResource Update="Consts\AdbMultilangConst.zh.resx">
-		  <SubType>Designer</SubType>
-		  <Generator></Generator>
+			<SubType>Designer</SubType>
+			<Generator></Generator>
 		</EmbeddedResource>
 		<EmbeddedResource Update="Consts\SettingsMultilangConst.resx">
 			<SubType>Designer</SubType>
