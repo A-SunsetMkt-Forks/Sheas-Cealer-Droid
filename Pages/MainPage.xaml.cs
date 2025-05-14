@@ -179,7 +179,7 @@ public partial class MainPage : ContentPage
         int kaomojiArrayMaxIndex = MainConst.KaomojiShakeArray.Length - 1;
         int kaomojiArrayIndex = 0;
 
-        Timer kaomojiAnimationTimer = new(_ => MainPres.StatusMessage = new string(' ', 2 * KaomojiRunningNum) + MainConst.KaomojiShakeArray[^(Math.Abs(kaomojiArrayIndex++ % (2 * kaomojiArrayMaxIndex) - kaomojiArrayMaxIndex) + 1)],
+        Timer kaomojiAnimationTimer = new(_ => MainPres.StatusMessage = KaomojiRunningNum + new string(' ', 2 * KaomojiRunningNum % 60) + MainConst.KaomojiShakeArray[^(Math.Abs(kaomojiArrayIndex++ % (2 * kaomojiArrayMaxIndex) - kaomojiArrayMaxIndex) + 1)],
             null, 0, Math.Max(100 - 2 * KaomojiRunningNum, 1));
 
         await Task.Delay(400 * kaomojiArrayMaxIndex);

@@ -126,7 +126,7 @@ namespace Sheas_Cealer_Droid.Consts {
         }
         
         /// <summary>
-        ///   查找类似 Don’t know anything about the lore here yet? Don’t worry, Yana from a parallel universe may tell you the answer 🌌 的本地化字符串。
+        ///   查找类似 Yana from a parallel universe may tell you the answer 🌌 的本地化字符串。
         /// </summary>
         internal static string _DualThemeColorPairCancelToastMsg {
             get {
