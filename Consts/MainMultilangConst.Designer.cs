@@ -178,7 +178,7 @@ namespace Sheas_Cealer_Droid.Consts {
         }
         
         /// <summary>
-        ///   查找类似 Search for host 的本地化字符串。
+        ///   查找类似 Search For Host 的本地化字符串。
         /// </summary>
         internal static string MainSearchHandlerPlaceholder {
             get {
@@ -196,7 +196,7 @@ namespace Sheas_Cealer_Droid.Consts {
         }
         
         /// <summary>
-        ///   查找类似 Check host for update 的本地化字符串。
+        ///   查找类似 Check Host For Update 的本地化字符串。
         /// </summary>
         internal static string UpdateHostToolbarItemText {
             get {
@@ -214,7 +214,7 @@ namespace Sheas_Cealer_Droid.Consts {
         }
         
         /// <summary>
-        ///   查找类似 Check software for update 的本地化字符串。
+        ///   查找类似 Check Software For Update 的本地化字符串。
         /// </summary>
         internal static string UpdateSoftwareToolbarItemText {
             get {

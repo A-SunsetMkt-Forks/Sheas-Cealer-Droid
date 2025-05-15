@@ -138,19 +138,19 @@
     <value>Clear</value>
   </data>
   <data name="MainSearchHandlerPlaceholder" xml:space="preserve">
-    <value>Search for host</value>
+    <value>Search For Host</value>
   </data>
   <data name="MainSearchHandlerQueryIconName" xml:space="preserve">
     <value>Search</value>
   </data>
   <data name="UpdateHostToolbarItemText" xml:space="preserve">
-    <value>Check host for update</value>
+    <value>Check Host For Update</value>
   </data>
   <data name="UpdateHostToolbarItemTooltip" xml:space="preserve">
     <value>Tap to check host for update</value>
   </data>
   <data name="UpdateSoftwareToolbarItemText" xml:space="preserve">
-    <value>Check software for update</value>
+    <value>Check Software For Update</value>
   </data>
   <data name="UpdateSoftwareToolbarItemTooltip" xml:space="preserve">
     <value>Tap to check software for update</value>
