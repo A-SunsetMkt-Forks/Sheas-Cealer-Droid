@@ -9,7 +9,7 @@
        FlyoutBackgroundColor="{AppThemeBinding Light={DynamicResource Gray50}, Dark={DynamicResource Gray900}}">
     <Shell.Behaviors>
         <toolkit:StatusBarBehavior StatusBarColor="{AppThemeBinding Light={StaticResource Primary50}, Dark={StaticResource Gray850}}"
-                                     StatusBarStyle="{AppThemeBinding Light=DarkContent, Dark=LightContent}" />
+                                   StatusBarStyle="{AppThemeBinding Light=DarkContent, Dark=LightContent}" />
     </Shell.Behaviors>
     <Shell.FlyoutHeader>
         <Grid MinimumHeightRequest="60">
