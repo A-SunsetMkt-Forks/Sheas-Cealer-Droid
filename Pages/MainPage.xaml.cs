@@ -264,11 +264,11 @@ public partial class MainPage : ContentPage
         {
             IsAddImageButtonSlideAnimRunning = true;
 
-            new AddImageButtonSlideAnim(AddButton, AddImageButtonSlideAnim.SlideType.Out).Commit(this, nameof(AddButton) + nameof(AddImageButtonSlideAnim), 8, 500,
+            new AddImageButtonSlideAnim(AddButton, AddImageButtonSlideAnim.SlideType.Out).Commit(this, nameof(AddButton) + nameof(AddImageButtonSlideAnim), 8, 300,
                 finished: (_, _) =>
                 {
                     MainPres.IsHostCollectionAtBottom = isHostCollectionAtBottom;
-                    new AddImageButtonSlideAnim(AddButton, AddImageButtonSlideAnim.SlideType.In).Commit(this, nameof(AddButton) + nameof(AddImageButtonSlideAnim), 8, 500);
+                    new AddImageButtonSlideAnim(AddButton, AddImageButtonSlideAnim.SlideType.In).Commit(this, nameof(AddButton) + nameof(AddImageButtonSlideAnim), 8, 300);
 
                     IsAddImageButtonSlideAnimRunning = false;
                 });
