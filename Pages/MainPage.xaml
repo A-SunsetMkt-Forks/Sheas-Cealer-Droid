@@ -66,7 +66,8 @@
 
         <CollectionView x:Name="MainCollectionView"
                         ItemsSource="{Binding CealHostRulesCollection}"
-                        Grid.Row="0">
+                        Grid.Row="0"
+                        Scrolled="MainCollectionView_Scrolled">
             <CollectionView.ItemTemplate>
                 <DataTemplate x:DataType="models:CealHostRule">
                     <Grid Margin="8,2,8,2">
@@ -120,7 +121,7 @@
         </Grid>
         <AbsoluteLayout Grid.RowSpan="2">
             <Grid AbsoluteLayout.LayoutBounds="0.9,1,32,32" AbsoluteLayout.LayoutFlags="PositionProportional" TranslationX="-9.6" TranslationY="-100">
-                <ImageButton Source="add_icon.png"
+                <ImageButton Source="{Binding IsHostCollectionAtBottom, Converter={x:Static convs:MainConv.MainAddButtonSourceConv}}"
                              ToolTipProperties.Text="{x:Static consts:MainMultilangConst.AddButtonTooltip}"
                              SemanticProperties.Description="{x:Static consts:MainMultilangConst.AddButtonDescription}"
                              CornerRadius="16" Padding="8"

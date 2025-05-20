@@ -25,6 +25,7 @@
 
                     "GlobalIndicatorViewCountConv.cs": [ "GlobalConv.cs" ],
                     "AppAdbShellContentTitleConv.cs": [ "AppConv.cs" ],
+                    "MainAddButtonSourceConv.cs": [ "MainConv.cs" ],
                     "MainLaunchButtonBackgroundColorConv.cs": [ "MainConv.cs" ],
                     "MainLaunchButtonRotationConv.cs": [ "MainConv.cs" ],
                     "MainLaunchButtonTooltipConv.cs": [ "MainConv.cs" ],

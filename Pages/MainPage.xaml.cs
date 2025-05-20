@@ -81,6 +81,13 @@ public partial class MainPage : ContentPage
     [SuppressMessage("Performance", "CA1869"), SuppressMessage("CodeQuality", "IDE0079")]
     private async void AddButton_Clicked(object sender, EventArgs e)
     {
+        if (MainPres.IsHostCollectionAtBottom)
+        {
+            MainCollectionView.ScrollTo(0);
+
+            return;
+        }
+
         string? customHost = (await DisplayPromptAsync(MainConst._AddHostPopupTitle, MainConst._AddHostPopupMsg, GlobalConst._PopupAcceptText, GlobalConst._PopupCancelText))?.Trim().TrimEnd(',');
 
         if (string.IsNullOrWhiteSpace(customHost))
@@ -239,6 +246,8 @@ public partial class MainPage : ContentPage
             }
         } while (sender == null);
     }
+
+    private void MainCollectionView_Scrolled(object sender, ItemsViewScrolledEventArgs e) => MainPres.IsHostCollectionAtBottom = e.LastVisibleItemIndex == MainPres.CealHostRulesCollection.Count - 1;
 
     private async void BottomTapGestureRecognizer_Tapped(object sender, TappedEventArgs e)
     {

@@ -2,6 +2,7 @@
 
 internal static class MainConv
 {
+    internal static MainAddButtonSourceConv MainAddButtonSourceConv => new();
     internal static MainLaunchButtonBackgroundColorConv MainLaunchButtonBackgroundColorConv => new();
     internal static MainLaunchButtonRotationConv MainLaunchButtonRotationConv => new();
     internal static MainLaunchButtonTooltipConv MainLaunchButtonTooltipConv => new();

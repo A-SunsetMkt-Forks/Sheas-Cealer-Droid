@@ -18,4 +18,7 @@ internal partial class MainPres : GlobalPres
 
     [ObservableProperty]
     private double statusProgress = 1;
+
+    [ObservableProperty]
+    private bool isHostCollectionAtBottom = false;
 }
