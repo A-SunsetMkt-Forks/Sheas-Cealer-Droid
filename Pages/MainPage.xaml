@@ -121,7 +121,8 @@
         </Grid>
         <AbsoluteLayout Grid.RowSpan="2">
             <Grid AbsoluteLayout.LayoutBounds="0.9,1,32,32" AbsoluteLayout.LayoutFlags="PositionProportional" TranslationX="-9.6" TranslationY="-100">
-                <ImageButton Source="{Binding IsHostCollectionAtBottom, Converter={x:Static convs:MainConv.MainAddButtonSourceConv}}"
+                <ImageButton x:Name="AddButton"
+                             Source="{Binding IsHostCollectionAtBottom, Converter={x:Static convs:MainConv.MainAddButtonSourceConv}}"
                              ToolTipProperties.Text="{x:Static consts:MainMultilangConst.AddButtonTooltip}"
                              SemanticProperties.Description="{x:Static consts:MainMultilangConst.AddButtonDescription}"
                              CornerRadius="16" Padding="8"

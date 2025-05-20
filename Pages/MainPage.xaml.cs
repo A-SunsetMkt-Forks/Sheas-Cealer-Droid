@@ -5,6 +5,7 @@ using Microsoft.Maui.ApplicationModel;
 using Microsoft.Maui.Controls;
 using Microsoft.Maui.Devices;
 using Ona_Core;
+using Sheas_Cealer_Droid.Anims;
 using Sheas_Cealer_Droid.Consts;
 using Sheas_Cealer_Droid.Models;
 using Sheas_Cealer_Droid.Preses;
@@ -32,6 +33,8 @@ public partial class MainPage : ContentPage
     private string CealArgs = string.Empty;
     private string LatestUpstreamHostString = string.Empty;
 
+    private bool IsAddImageButtonSlideAnimRunning = false;
+
     private string KaomojiOriginalString = string.Empty;
     private int KaomojiRunningNum = 0;
 
@@ -45,6 +48,9 @@ public partial class MainPage : ContentPage
     {
         await Task.Run(async () =>
         {
+            AddButton.TranslationY = 60;
+            new AddImageButtonSlideAnim(AddButton, AddImageButtonSlideAnim.SlideType.In).Commit(this, nameof(AddButton) + nameof(AddImageButtonSlideAnim), 8, 1000);
+
             CealHostWatcher.Changed += CealHostWatcher_Changed;
 
             if (!File.Exists(MainConst.UpstreamHostPath))
@@ -144,7 +150,7 @@ public partial class MainPage : ContentPage
         JsonDocumentOptions localHostOptions = new() { AllowTrailingCommas = true, CommentHandling = JsonCommentHandling.Skip };
         JsonElement localHostArray = JsonDocument.Parse(localHost, localHostOptions).RootElement;
 
-        List<JsonElement> newHostList = [.. localHostArray.EnumerateArray(), customHostRule];
+        List<JsonElement> newHostList = [customHostRule, .. localHostArray.EnumerateArray()];
         JsonSerializerOptions newHostOptions = new();
         string newHost = JsonSerializer.Serialize(newHostList, newHostOptions);
 
@@ -247,7 +253,27 @@ public partial class MainPage : ContentPage
         } while (sender == null);
     }
 
-    private void MainCollectionView_Scrolled(object sender, ItemsViewScrolledEventArgs e) => MainPres.IsHostCollectionAtBottom = e.LastVisibleItemIndex == MainPres.CealHostRulesCollection.Count - 1;
+    private void MainCollectionView_Scrolled(object sender, ItemsViewScrolledEventArgs e)
+    {
+        if (IsAddImageButtonSlideAnimRunning)
+            return;
+
+        bool isHostCollectionAtBottom = e.LastVisibleItemIndex == MainPres.CealHostRulesCollection.Count - 1;
+
+        if (MainPres.IsHostCollectionAtBottom != isHostCollectionAtBottom)
+        {
+            IsAddImageButtonSlideAnimRunning = true;
+
+            new AddImageButtonSlideAnim(AddButton, AddImageButtonSlideAnim.SlideType.Out).Commit(this, nameof(AddButton) + nameof(AddImageButtonSlideAnim), 8, 500,
+                finished: (_, _) =>
+                {
+                    MainPres.IsHostCollectionAtBottom = isHostCollectionAtBottom;
+                    new AddImageButtonSlideAnim(AddButton, AddImageButtonSlideAnim.SlideType.In).Commit(this, nameof(AddButton) + nameof(AddImageButtonSlideAnim), 8, 500);
+
+                    IsAddImageButtonSlideAnimRunning = false;
+                });
+        }
+    }
 
     private async void BottomTapGestureRecognizer_Tapped(object sender, TappedEventArgs e)
     {
