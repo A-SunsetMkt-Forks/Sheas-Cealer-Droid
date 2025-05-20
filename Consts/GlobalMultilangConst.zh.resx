@@ -165,7 +165,7 @@
     <value>管理自定义浏览器</value>
   </data>
   <data name="_CustomBrowserNameErrorToastMsg" xml:space="preserve">
-    <value>浏览器名称不能为空或含有空白字符</value>
+    <value>浏览器名称不能为空或含有空白字符 ❌</value>
   </data>
   <data name="_CustomBrowserNamePopupMsg" xml:space="preserve">
     <value>输入一个 Chromium 内核浏览器的英文名称

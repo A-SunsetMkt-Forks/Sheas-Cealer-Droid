@@ -113,25 +113,37 @@
                 <Label Text="{Binding StatusMessage}"
                        VerticalTextAlignment="Center" Margin="28,0,0,0" />
             </Border>
-            <AbsoluteLayout>
-                <ProgressBar x:Name="StatusProgressBar"
-                             AbsoluteLayout.LayoutBounds="0.5,1,1,112" AbsoluteLayout.LayoutFlags="PositionProportional,WidthProportional"
-                             IsVisible="{Binding StatusProgress, Converter={x:Static convs:MainConv.MainStatusProgressBarIsVisibleConv}}"
-                             Progress="{Binding StatusProgress, Mode=TwoWay}" />
-                <Grid AbsoluteLayout.LayoutBounds="0.9,0,56,56" AbsoluteLayout.LayoutFlags="PositionProportional" TranslationY="-28"
-                      Rotation="{Binding IsCommandLineUtd, Converter={x:Static convs:MainConv.MainLaunchButtonRotationConv}}">
-                    <ImageButton Source="app_icon.png"
-                                 ToolTipProperties.Text="{Binding IsCommandLineUtd, Converter={x:Static convs:MainConv.MainLaunchButtonTooltipConv}}"
-                                 SemanticProperties.Description="{x:Static consts:MainMultilangConst.LaunchButtonDescription}"
-                                 CornerRadius="28"
-                                 BackgroundColor="{Binding IsCommandLineUtd, Converter={x:Static convs:MainConv.MainLaunchButtonBackgroundColorConv}}"
-                                 Clicked="LaunchButton_Click">
-                        <ImageButton.Behaviors>
-                            <toolkit:IconTintColorBehavior TintColor="{AppThemeBinding Light={StaticResource White}, Dark={StaticResource Gray900}}" />
-                        </ImageButton.Behaviors>
-                    </ImageButton>
-                </Grid>
-            </AbsoluteLayout>
+            <ProgressBar x:Name="StatusProgressBar"
+                         IsVisible="{Binding StatusProgress, Converter={x:Static convs:MainConv.MainStatusProgressBarIsVisibleConv}}"
+                         Progress="{Binding StatusProgress, Mode=TwoWay}"
+                         TranslationY="-28" />
         </Grid>
+        <AbsoluteLayout Grid.RowSpan="2">
+            <Grid AbsoluteLayout.LayoutBounds="0.9,1,32,32" AbsoluteLayout.LayoutFlags="PositionProportional" TranslationX="-9.6" TranslationY="-100">
+                <ImageButton Source="add_icon.png"
+                             ToolTipProperties.Text="{x:Static consts:MainMultilangConst.AddButtonTooltip}"
+                             SemanticProperties.Description="{x:Static consts:MainMultilangConst.AddButtonDescription}"
+                             CornerRadius="16" Padding="8"
+                             BackgroundColor="{AppThemeBinding Light={StaticResource Gray50}, Dark={StaticResource Gray900}}"
+                             Clicked="AddButton_Clicked">
+                    <ImageButton.Behaviors>
+                        <toolkit:IconTintColorBehavior TintColor="{AppThemeBinding Light={StaticResource Gray700}, Dark={StaticResource Gray400}}" />
+                    </ImageButton.Behaviors>
+                </ImageButton>
+            </Grid>
+            <Grid AbsoluteLayout.LayoutBounds="0.9,1,56,56" AbsoluteLayout.LayoutFlags="PositionProportional" TranslationY="-28"
+                  Rotation="{Binding IsCommandLineUtd, Converter={x:Static convs:MainConv.MainLaunchButtonRotationConv}}">
+                <ImageButton Source="app_icon.png"
+                             ToolTipProperties.Text="{Binding IsCommandLineUtd, Converter={x:Static convs:MainConv.MainLaunchButtonTooltipConv}}"
+                             SemanticProperties.Description="{x:Static consts:MainMultilangConst.LaunchButtonDescription}"
+                             CornerRadius="28"
+                             BackgroundColor="{Binding IsCommandLineUtd, Converter={x:Static convs:MainConv.MainLaunchButtonBackgroundColorConv}}"
+                             Clicked="LaunchButton_Click">
+                    <ImageButton.Behaviors>
+                        <toolkit:IconTintColorBehavior TintColor="{AppThemeBinding Light={StaticResource White}, Dark={StaticResource Gray900}}" />
+                    </ImageButton.Behaviors>
+                </ImageButton>
+            </Grid>
+        </AbsoluteLayout>
     </Grid>
 </ContentPage>

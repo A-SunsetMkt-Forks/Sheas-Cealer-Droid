@@ -116,6 +116,12 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="AddButtonDescription" xml:space="preserve">
+    <value>Add</value>
+  </data>
+  <data name="AddButtonTooltip" xml:space="preserve">
+    <value>Tap to add host</value>
+  </data>
   <data name="GithubToolbarItemDescription" xml:space="preserve">
     <value>Github</value>
   </data>
@@ -157,6 +163,25 @@
   </data>
   <data name="_ActiveStatusMessage" xml:space="preserve">
     <value>Injection complete. Test in browser</value>
+  </data>
+  <data name="_AddHostPopupMsg" xml:space="preserve">
+    <value>Enter a cealing host in Json format
+
+(Format requirements refer to About → Usage Docs)
+
+(Example: [["*example.com"],"","23.215.0.136"])</value>
+  </data>
+  <data name="_AddHostPopupTitle" xml:space="preserve">
+    <value>Add Host</value>
+  </data>
+  <data name="_CustomHostEmptyErrorToastMsg" xml:space="preserve">
+    <value>Empty domain filter. Host Invalid ❌</value>
+  </data>
+  <data name="_CustomHostFormatErrorToastMsg" xml:space="preserve">
+    <value>Invalid host format. Parsing failed ❌</value>
+  </data>
+  <data name="_CustomHostSyntaxErrorToastMsg" xml:space="preserve">
+    <value>Invalid json syntax. Parsing failed ❌</value>
   </data>
   <data name="_InactiveStatusMessage" xml:space="preserve">
     <value>Injection is inactive. Tap to start</value>

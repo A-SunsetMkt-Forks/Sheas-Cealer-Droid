@@ -70,6 +70,55 @@ namespace Sheas_Cealer_Droid.Consts {
         }
         
         /// <summary>
+        ///   查找类似 Enter a cealing host in Json format
+        ///
+        ///(Format requirements refer to About → Usage Docs)
+        ///
+        ///(Example: [[&quot;*example.com&quot;],&quot;&quot;,&quot;23.215.0.136&quot;]) 的本地化字符串。
+        /// </summary>
+        internal static string _AddHostPopupMsg {
+            get {
+                return ResourceManager.GetString("_AddHostPopupMsg", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   查找类似 Add Host 的本地化字符串。
+        /// </summary>
+        internal static string _AddHostPopupTitle {
+            get {
+                return ResourceManager.GetString("_AddHostPopupTitle", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   查找类似 Empty domain filter. Host Invalid ❌ 的本地化字符串。
+        /// </summary>
+        internal static string _CustomHostEmptyErrorToastMsg {
+            get {
+                return ResourceManager.GetString("_CustomHostEmptyErrorToastMsg", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   查找类似 Invalid host format. Parsing failed ❌ 的本地化字符串。
+        /// </summary>
+        internal static string _CustomHostFormatErrorToastMsg {
+            get {
+                return ResourceManager.GetString("_CustomHostFormatErrorToastMsg", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   查找类似 Invalid json syntax. Parsing failed ❌ 的本地化字符串。
+        /// </summary>
+        internal static string _CustomHostSyntaxErrorToastMsg {
+            get {
+                return ResourceManager.GetString("_CustomHostSyntaxErrorToastMsg", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   查找类似 Injection is inactive. Tap to start 的本地化字符串。
         /// </summary>
         internal static string _InactiveStatusMessage {
@@ -111,6 +160,24 @@ namespace Sheas_Cealer_Droid.Consts {
         internal static string _UpdateStatusMessage {
             get {
                 return ResourceManager.GetString("_UpdateStatusMessage", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   查找类似 Add 的本地化字符串。
+        /// </summary>
+        internal static string AddButtonDescription {
+            get {
+                return ResourceManager.GetString("AddButtonDescription", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   查找类似 Tap to add host 的本地化字符串。
+        /// </summary>
+        internal static string AddButtonTooltip {
+            get {
+                return ResourceManager.GetString("AddButtonTooltip", resourceCulture);
             }
         }
         

@@ -13,12 +13,12 @@
     <Color x:Key="Tertiary700">#616161</Color>  <!--Dark Launch Button Background-->
 
     <Color x:Key="White">White</Color>          <!--Light White Foreground-->
-    <Color x:Key="Gray50">#FAFAFA</Color>       <!--Light Base Background-->
+    <Color x:Key="Gray50">#FAFAFA</Color>       <!--Light Base Background | Light Add Button Background-->
     <Color x:Key="Gray100">#F5F5F5</Color>      <!--Light Card Background-->
     <Color x:Key="Gray300">#E0E0E0</Color>      <!--Light Disabled Background | Dark White Foreground-->
-    <Color x:Key="Gray400">#BDBDBD</Color>      <!--Light Launch Button Background-->
-    <Color x:Key="Gray700">#616161</Color>      <!--Dark Launch Button Background-->
+    <Color x:Key="Gray400">#BDBDBD</Color>      <!--Light Launch Button Background | Dark Add Button Forground-->
+    <Color x:Key="Gray700">#616161</Color>      <!--Dark Launch Button Background | Light Add Button Forground-->
     <Color x:Key="Gray800">#424242</Color>      <!--Dark Disabled Background-->
     <Color x:Key="Gray850">#292929</Color>      <!--Dark Card Background | Dark Bar Background-->
-    <Color x:Key="Gray900">#212121</Color>      <!--Dark Base Background | Dark Black Foreground | Light Black Foreground-->
+    <Color x:Key="Gray900">#212121</Color>      <!--Dark Base Background | Dark Black Foreground | Light Black Foreground | Dark Add Button Background-->
 </ResourceDictionary>

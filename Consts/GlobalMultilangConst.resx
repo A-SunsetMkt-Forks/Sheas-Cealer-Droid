@@ -165,7 +165,7 @@
     <value>Manage Custom Browser</value>
   </data>
   <data name="_CustomBrowserNameErrorToastMsg" xml:space="preserve">
-    <value>Browser name cannot be empty or contain whitespace characters</value>
+    <value>Browser name cannot be empty or contain whitespace characters ❌</value>
   </data>
   <data name="_CustomBrowserNamePopupMsg" xml:space="preserve">
     <value>Enter a Chromium-based browser name
@@ -182,7 +182,7 @@
     <value>"Wrong, you baka" Yana ate your reman 🍜</value>
   </data>
   <data name="_DualThemeColorPairPopupMsg" xml:space="preserve">
-    <value>"Oh, wait a second", Yana took away the reman in your hand
+    <value>"Oh, wait a second" Yana took away the reman in your hand
 
 "{0}" Some mysterious letters came out of her mouth, then she tilted her head, as if waiting for you to answer something. Seeing Yana's radiant smile, you froze for a moment
 
@@ -195,7 +195,7 @@ What was this? Your name? Cold sweat ran down your back. But now you had no choi
     <value>"That's my code, you baka" Yana ate your reman 🍜</value>
   </data>
   <data name="_DualThemeColorPairSuccessToastMsg" xml:space="preserve">
-    <value>"Bingo! Correct code" Restart to taste narutomaki reman 🍥</value>
+    <value>"Bingo! Correct code". Restart to taste narutomaki reman 🍥</value>
   </data>
   <data name="_LangOptionChineseName" xml:space="preserve">
     <value>Simplified Chinese</value>
@@ -204,7 +204,7 @@ What was this? Your name? Cold sweat ran down your back. But now you had no choi
     <value>American English</value>
   </data>
   <data name="_LangOptionRestartToApplyToastMsg" xml:space="preserve">
-    <value>Lang is changing, restart to view the new lang 🌐</value>
+    <value>Lang is changing. Restart to view the new lang 🌐</value>
   </data>
   <data name="_LangOptionUnspecifiedName" xml:space="preserve">
     <value>Follow System</value>
@@ -231,7 +231,7 @@ What was this? Your name? Cold sweat ran down your back. But now you had no choi
     <value>Yes</value>
   </data>
   <data name="_SettingsRestartToApplyToastMsg" xml:space="preserve">
-    <value>Setting is changing, restart to apply the new config 🔄</value>
+    <value>Setting is changing. Restart to apply the new config 🔄</value>
   </data>
   <data name="_SkipWarning1ToastMsg" xml:space="preserve">
     <value>Where are you going? Come back 😟</value>
@@ -261,7 +261,7 @@ What was this? Your name? Cold sweat ran down your back. But now you had no choi
     <value>A Strawberry Milk</value>
   </data>
   <data name="_ThemeColorRestartToApplyToastMsg" xml:space="preserve">
-    <value>Flavor is changing, restart to taste the new flavor 🍹</value>
+    <value>Flavor is changing. Restart to taste the new flavor 🍹</value>
   </data>
   <data name="_ThemeColorYellowName" xml:space="preserve">
     <value>Dihydrate Citric Acid</value>
@@ -273,7 +273,7 @@ What was this? Your name? Cold sweat ran down your back. But now you had no choi
     <value>Light Theme</value>
   </data>
   <data name="_ThemeStateRestartToApplyToastMsg" xml:space="preserve">
-    <value>Theme is changing, restart to enjoy the new theme 🎨</value>
+    <value>Theme is changing. Restart to enjoy the new theme 🎨</value>
   </data>
   <data name="_ThemeStateUnspecifiedName" xml:space="preserve">
     <value>Follow System</value>

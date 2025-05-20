@@ -116,6 +116,12 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="AddButtonDescription" xml:space="preserve">
+    <value>添加</value>
+  </data>
+  <data name="AddButtonTooltip" xml:space="preserve">
+    <value>点击添加规则</value>
+  </data>
   <data name="GithubToolbarItemDescription" xml:space="preserve">
     <value>Github</value>
   </data>
@@ -157,6 +163,25 @@
   </data>
   <data name="_ActiveStatusMessage" xml:space="preserve">
     <value>伪造参数已注入，通过所选浏览器测试</value>
+  </data>
+  <data name="_AddHostPopupMsg" xml:space="preserve">
+    <value>输入一条 Json 格式的伪造规则
+
+(格式要求参考 关于 → 使用教程)
+
+(例: [["*example.com"],"","23.215.0.136"])</value>
+  </data>
+  <data name="_AddHostPopupTitle" xml:space="preserve">
+    <value>添加规则</value>
+  </data>
+  <data name="_CustomHostEmptyErrorToastMsg" xml:space="preserve">
+    <value>域名匹配为空，无效规则 ❌</value>
+  </data>
+  <data name="_CustomHostFormatErrorToastMsg" xml:space="preserve">
+    <value>规则格式错误，无法解析 ❌</value>
+  </data>
+  <data name="_CustomHostSyntaxErrorToastMsg" xml:space="preserve">
+    <value>Json 语法错误，无法解析 ❌</value>
   </data>
   <data name="_InactiveStatusMessage" xml:space="preserve">
     <value>伪造参数未注入，点击按钮启动伪造</value>

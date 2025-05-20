@@ -97,7 +97,7 @@ namespace Sheas_Cealer_Droid.Consts {
         }
         
         /// <summary>
-        ///   查找类似 Browser name cannot be empty or contain whitespace characters 的本地化字符串。
+        ///   查找类似 Browser name cannot be empty or contain whitespace characters ❌ 的本地化字符串。
         /// </summary>
         internal static string _CustomBrowserNameErrorToastMsg {
             get {
@@ -144,7 +144,7 @@ namespace Sheas_Cealer_Droid.Consts {
         }
         
         /// <summary>
-        ///   查找类似 &quot;Oh, wait a second&quot;, Yana took away the reman in your hand
+        ///   查找类似 &quot;Oh, wait a second&quot; Yana took away the reman in your hand
         ///
         ///&quot;{0}&quot; Some mysterious letters came out of her mouth, then she tilted her head, as if waiting for you to answer something. Seeing Yana&apos;s radiant smile, you froze for a moment
         ///
@@ -175,7 +175,7 @@ namespace Sheas_Cealer_Droid.Consts {
         }
         
         /// <summary>
-        ///   查找类似 &quot;Bingo! Correct code&quot; Restart to taste narutomaki reman 🍥 的本地化字符串。
+        ///   查找类似 &quot;Bingo! Correct code&quot;. Restart to taste narutomaki reman 🍥 的本地化字符串。
         /// </summary>
         internal static string _DualThemeColorPairSuccessToastMsg {
             get {
@@ -202,7 +202,7 @@ namespace Sheas_Cealer_Droid.Consts {
         }
         
         /// <summary>
-        ///   查找类似 Lang is changing, restart to view the new lang 🌐 的本地化字符串。
+        ///   查找类似 Lang is changing. Restart to view the new lang 🌐 的本地化字符串。
         /// </summary>
         internal static string _LangOptionRestartToApplyToastMsg {
             get {
@@ -283,7 +283,7 @@ namespace Sheas_Cealer_Droid.Consts {
         }
         
         /// <summary>
-        ///   查找类似 Setting is changing, restart to apply the new config 🔄 的本地化字符串。
+        ///   查找类似 Setting is changing. Restart to apply the new config 🔄 的本地化字符串。
         /// </summary>
         internal static string _SettingsRestartToApplyToastMsg {
             get {
@@ -373,7 +373,7 @@ namespace Sheas_Cealer_Droid.Consts {
         }
         
         /// <summary>
-        ///   查找类似 Flavor is changing, restart to taste the new flavor 🍹 的本地化字符串。
+        ///   查找类似 Flavor is changing. Restart to taste the new flavor 🍹 的本地化字符串。
         /// </summary>
         internal static string _ThemeColorRestartToApplyToastMsg {
             get {
@@ -409,7 +409,7 @@ namespace Sheas_Cealer_Droid.Consts {
         }
         
         /// <summary>
-        ///   查找类似 Theme is changing, restart to enjoy the new theme 🎨 的本地化字符串。
+        ///   查找类似 Theme is changing. Restart to enjoy the new theme 🎨 的本地化字符串。
         /// </summary>
         internal static string _ThemeStateRestartToApplyToastMsg {
             get {

@@ -1,4 +1,6 @@
-﻿using Microsoft.Maui;
+﻿using CommunityToolkit.Maui.Alerts;
+using CommunityToolkit.Maui.Core;
+using Microsoft.Maui;
 using Microsoft.Maui.ApplicationModel;
 using Microsoft.Maui.Controls;
 using Microsoft.Maui.Devices;
@@ -9,7 +11,9 @@ using Sheas_Cealer_Droid.Preses;
 using Sheas_Cealer_Droid.Utils;
 using System;
 using System.Collections.Generic;
+using System.Diagnostics.CodeAnalysis;
 using System.IO;
+using System.Linq;
 using System.Net.Http;
 using System.Text;
 using System.Text.Json;
@@ -45,6 +49,8 @@ public partial class MainPage : ContentPage
 
             if (!File.Exists(MainConst.UpstreamHostPath))
                 await File.Create(MainConst.UpstreamHostPath).DisposeAsync();
+            if (!File.Exists(MainConst.LocalHostPath))
+                await File.Create(MainConst.LocalHostPath).DisposeAsync();
 
             foreach (string cealHostPath in Directory.GetFiles(CealHostWatcher.Path, CealHostWatcher.Filter))
                 CealHostWatcher_Changed(null!, new(new(), Path.GetDirectoryName(cealHostPath)!, Path.GetFileName(cealHostPath)));
@@ -71,6 +77,71 @@ public partial class MainPage : ContentPage
             await File.WriteAllTextAsync(MainConst.UpstreamHostPath, LatestUpstreamHostString);
 
         await StatusManager.RefreshCurrentStatus(MainPres, CealHostRulesDict.ContainsValue(null));
+    }
+    [SuppressMessage("Performance", "CA1869"), SuppressMessage("CodeQuality", "IDE0079")]
+    private async void AddButton_Clicked(object sender, EventArgs e)
+    {
+        string? customHost = (await DisplayPromptAsync(MainConst._AddHostPopupTitle, MainConst._AddHostPopupMsg, GlobalConst._PopupAcceptText, GlobalConst._PopupCancelText))?.Trim().TrimEnd(',');
+
+        if (string.IsNullOrWhiteSpace(customHost))
+            return;
+
+        JsonDocumentOptions customHostOptions = new() { AllowTrailingCommas = true };
+        JsonElement customHostRule;
+
+        try { customHostRule = JsonDocument.Parse(customHost, customHostOptions).RootElement; }
+        catch
+        {
+            await Toast.Make(MainConst._CustomHostSyntaxErrorToastMsg, ToastDuration.Long).Show();
+
+            return;
+        }
+
+        bool isCustomHostValid = true;
+
+        if (customHostRule.ValueKind != JsonValueKind.Array ||
+            customHostRule.EnumerateArray().Count() != 3 ||
+            customHostRule[0].ValueKind != JsonValueKind.Array ||
+            !customHostRule[0].EnumerateArray().Any() ||
+            customHostRule[1].ValueKind != JsonValueKind.String && customHostRule[1].ValueKind != JsonValueKind.Null ||
+            customHostRule[2].ValueKind != JsonValueKind.String)
+            isCustomHostValid = false;
+
+        if (isCustomHostValid)
+            foreach (JsonElement customHostDomain in customHostRule[0].EnumerateArray())
+                if (customHostDomain.ValueKind != JsonValueKind.String)
+                {
+                    isCustomHostValid = false;
+
+                    break;
+                }
+                else if (string.IsNullOrEmpty(customHostDomain.ToString().TrimStart('#').TrimStart('$')))
+                {
+                    await Toast.Make(MainConst._CustomHostEmptyErrorToastMsg, ToastDuration.Long).Show();
+
+                    return;
+                }
+
+        if (!isCustomHostValid)
+        {
+            await Toast.Make(MainConst._CustomHostFormatErrorToastMsg, ToastDuration.Long).Show();
+
+            return;
+        }
+
+        string localHost = await File.ReadAllTextAsync(MainConst.LocalHostPath);
+
+        if (string.IsNullOrWhiteSpace(localHost))
+            localHost = "[]";
+
+        JsonDocumentOptions localHostOptions = new() { AllowTrailingCommas = true, CommentHandling = JsonCommentHandling.Skip };
+        JsonElement localHostArray = JsonDocument.Parse(localHost, localHostOptions).RootElement;
+
+        List<JsonElement> newHostList = [.. localHostArray.EnumerateArray(), customHostRule];
+        JsonSerializerOptions newHostOptions = new();
+        string newHost = JsonSerializer.Serialize(newHostList, newHostOptions);
+
+        await File.WriteAllTextAsync(MainConst.LocalHostPath, newHost);
     }
 
     private void MainSearchHandler_ItemSelected(object _, CealHostRule e) => MainCollectionView.ScrollTo(e, position: ScrollToPosition.Center);
@@ -201,13 +272,13 @@ public partial class MainPage : ContentPage
         {
             CealHostRulesDict[cealHostName] = [];
 
-            await using FileStream cealHostStream = new(e.FullPath, FileMode.OpenOrCreate, FileAccess.Read, FileShare.ReadWrite | FileShare.Delete);
+            string cealHost = await File.ReadAllTextAsync(e.FullPath);
 
-            if (cealHostStream.Length == 0)
+            if (cealHost.Length == 0)
                 return;
 
             JsonDocumentOptions cealHostOptions = new() { AllowTrailingCommas = true, CommentHandling = JsonCommentHandling.Skip };
-            JsonElement cealHostArray = (await JsonDocument.ParseAsync(cealHostStream, cealHostOptions)).RootElement;
+            JsonElement cealHostArray = JsonDocument.Parse(cealHost, cealHostOptions).RootElement;
 
             foreach (JsonElement cealHostRule in cealHostArray.EnumerateArray())
             {
