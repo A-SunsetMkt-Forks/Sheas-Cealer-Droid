@@ -137,16 +137,16 @@
   <data name="LinkButtonTooltip" xml:space="preserve">
     <value>点击复制设置项跳转链接</value>
   </data>
-  <data name="NextButtonDescription" xml:space="preserve">
+  <data name="NextImageButtonDescription" xml:space="preserve">
     <value>下一步</value>
   </data>
-  <data name="NextButtonTooltip" xml:space="preserve">
+  <data name="NextImageButtonTooltip" xml:space="preserve">
     <value>点击进入下一步</value>
   </data>
-  <data name="PrevButtonDescription" xml:space="preserve">
+  <data name="PrevImageButtonDescription" xml:space="preserve">
     <value>上一步</value>
   </data>
-  <data name="PrevButtonTooltip" xml:space="preserve">
+  <data name="PrevImageButtonTooltip" xml:space="preserve">
     <value>点击返回上一步</value>
   </data>
   <data name="SettingsMenuItemTitle" xml:space="preserve">

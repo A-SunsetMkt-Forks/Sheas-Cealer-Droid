@@ -50,7 +50,7 @@ public partial class AdbPage : ContentPage
         {
             IsNextNavigating = true;
 
-            new ViewFloatAnim(NextButton, ViewFloatAnim.FloatOrientation.X, -5).Commit(this, nameof(NextButton) + nameof(ViewFloatAnim), 8, 3000, repeat: () => true);
+            new ViewFloatAnim(NextImageButton, ViewFloatAnim.FloatOrientation.X, -5).Commit(this, nameof(NextImageButton) + nameof(ViewFloatAnim), 8, 3000, repeat: () => true);
         }
 
         IsFirstLoaded = false;
@@ -88,7 +88,7 @@ public partial class AdbPage : ContentPage
         await Toast.Make(GlobalConst._CommandCopiedToastMsg).Show();
     }
 
-    private async void PrevButton_Clicked(object sender, EventArgs e)
+    private async void PrevImageButton_Clicked(object sender, EventArgs e)
     {
         if (!AdbPres.IsFirstRunning)
             return;
@@ -97,7 +97,7 @@ public partial class AdbPage : ContentPage
 
         await Shell.Current.GoToAsync($"//{nameof(FlagPage)}");
     }
-    private async void NextButton_Clicked(object sender, EventArgs e)
+    private async void NextImageButton_Clicked(object sender, EventArgs e)
     {
         IsNextNavigating = true;
 
@@ -117,7 +117,7 @@ public partial class AdbPage : ContentPage
                 AdbPres.IsCommandLineExist = true;
 
                 this.AbortAnimation(nameof(CommandButton) + nameof(ViewFloatAnim));
-                new ViewFloatAnim(NextButton, ViewFloatAnim.FloatOrientation.X, -5).Commit(this, nameof(NextButton) + nameof(ViewFloatAnim), 8, 3000, repeat: () => true);
+                new ViewFloatAnim(NextImageButton, ViewFloatAnim.FloatOrientation.X, -5).Commit(this, nameof(NextImageButton) + nameof(ViewFloatAnim), 8, 3000, repeat: () => true);
             }
         }
         else if (AdbPres.IsCommandLineExist)
@@ -125,11 +125,11 @@ public partial class AdbPage : ContentPage
             IsNextNavigating = false;
             AdbPres.IsCommandLineExist = false;
 
-            this.AbortAnimation(nameof(NextButton) + nameof(ViewFloatAnim));
+            this.AbortAnimation(nameof(NextImageButton) + nameof(ViewFloatAnim));
             new ViewFloatAnim(CommandButton, ViewFloatAnim.FloatOrientation.Y, -5).Commit(this, nameof(CommandButton) + nameof(ViewFloatAnim), 8, 3000, repeat: () => true);
         }
     }
 
-    private void PrevSwipeGestureRecognizer_Swiped(object sender, SwipedEventArgs e) => PrevButton_Clicked(null!, null!);
-    private void NextSwipeGestureRecognizer_Swiped(object sender, SwipedEventArgs e) => NextButton_Clicked(null!, null!);
+    private void PrevSwipeGestureRecognizer_Swiped(object sender, SwipedEventArgs e) => PrevImageButton_Clicked(null!, null!);
+    private void NextSwipeGestureRecognizer_Swiped(object sender, SwipedEventArgs e) => NextImageButton_Clicked(null!, null!);
 }

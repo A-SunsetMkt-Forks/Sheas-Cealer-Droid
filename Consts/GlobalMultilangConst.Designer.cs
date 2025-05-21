@@ -492,36 +492,36 @@ namespace Sheas_Cealer_Droid.Consts {
         /// <summary>
         ///   查找类似 Next 的本地化字符串。
         /// </summary>
-        internal static string NextButtonDescription {
+        internal static string NextImageButtonDescription {
             get {
-                return ResourceManager.GetString("NextButtonDescription", resourceCulture);
+                return ResourceManager.GetString("NextImageButtonDescription", resourceCulture);
             }
         }
         
         /// <summary>
         ///   查找类似 Tap to proceed to the next step 的本地化字符串。
         /// </summary>
-        internal static string NextButtonTooltip {
+        internal static string NextImageButtonTooltip {
             get {
-                return ResourceManager.GetString("NextButtonTooltip", resourceCulture);
+                return ResourceManager.GetString("NextImageButtonTooltip", resourceCulture);
             }
         }
         
         /// <summary>
         ///   查找类似 Prev 的本地化字符串。
         /// </summary>
-        internal static string PrevButtonDescription {
+        internal static string PrevImageButtonDescription {
             get {
-                return ResourceManager.GetString("PrevButtonDescription", resourceCulture);
+                return ResourceManager.GetString("PrevImageButtonDescription", resourceCulture);
             }
         }
         
         /// <summary>
         ///   查找类似 Tap to return to the previous step 的本地化字符串。
         /// </summary>
-        internal static string PrevButtonTooltip {
+        internal static string PrevImageButtonTooltip {
             get {
-                return ResourceManager.GetString("PrevButtonTooltip", resourceCulture);
+                return ResourceManager.GetString("PrevImageButtonTooltip", resourceCulture);
             }
         }
         

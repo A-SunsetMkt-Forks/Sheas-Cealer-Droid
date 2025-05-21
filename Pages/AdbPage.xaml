@@ -43,23 +43,23 @@
                 </VerticalStackLayout>
             </ScrollView>
             <ImageButton Source="left_icon.png"
-                         ToolTipProperties.Text="{x:Static consts:GlobalMultilangConst.PrevButtonTooltip}"
-                         SemanticProperties.Description="{x:Static consts:GlobalMultilangConst.PrevButtonDescription}"
+                         ToolTipProperties.Text="{x:Static consts:GlobalMultilangConst.PrevImageButtonTooltip}"
+                         SemanticProperties.Description="{x:Static consts:GlobalMultilangConst.PrevImageButtonDescription}"
                          IsEnabled="{Binding IsFlagCopied}"
                          IsVisible="{Binding IsFirstRunning}"
                          Grid.Row="1" HorizontalOptions="Start" WidthRequest="56" HeightRequest="56" CornerRadius="28"
-                         Clicked="PrevButton_Clicked">
+                         Clicked="PrevImageButton_Clicked">
                 <ImageButton.Behaviors>
                     <toolkit:IconTintColorBehavior TintColor="{AppThemeBinding Light={StaticResource White}, Dark={StaticResource Gray900}}" />
                 </ImageButton.Behaviors>
             </ImageButton>
-            <ImageButton x:Name="NextButton"
+            <ImageButton x:Name="NextImageButton"
                          Source="right_icon.png"
-                         ToolTipProperties.Text="{x:Static consts:GlobalMultilangConst.NextButtonTooltip}"
-                         SemanticProperties.Description="{x:Static consts:GlobalMultilangConst.NextButtonDescription}"
+                         ToolTipProperties.Text="{x:Static consts:GlobalMultilangConst.NextImageButtonTooltip}"
+                         SemanticProperties.Description="{x:Static consts:GlobalMultilangConst.NextImageButtonDescription}"
                          IsEnabled="{Binding IsCommandLineExist}"
                          Grid.Row="1" HorizontalOptions="End" WidthRequest="56" HeightRequest="56" CornerRadius="28"
-                         Clicked="NextButton_Clicked">
+                         Clicked="NextImageButton_Clicked">
                 <ImageButton.Behaviors>
                     <toolkit:IconTintColorBehavior TintColor="{AppThemeBinding Light={StaticResource White}, Dark={StaticResource Gray900}}" />
                 </ImageButton.Behaviors>

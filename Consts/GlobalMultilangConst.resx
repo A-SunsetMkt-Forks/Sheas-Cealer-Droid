@@ -137,16 +137,16 @@
   <data name="LinkButtonTooltip" xml:space="preserve">
     <value>Tap to copy a flag jump link</value>
   </data>
-  <data name="NextButtonDescription" xml:space="preserve">
+  <data name="NextImageButtonDescription" xml:space="preserve">
     <value>Next</value>
   </data>
-  <data name="NextButtonTooltip" xml:space="preserve">
+  <data name="NextImageButtonTooltip" xml:space="preserve">
     <value>Tap to proceed to the next step</value>
   </data>
-  <data name="PrevButtonDescription" xml:space="preserve">
+  <data name="PrevImageButtonDescription" xml:space="preserve">
     <value>Prev</value>
   </data>
-  <data name="PrevButtonTooltip" xml:space="preserve">
+  <data name="PrevImageButtonTooltip" xml:space="preserve">
     <value>Tap to return to the previous step</value>
   </data>
   <data name="SettingsMenuItemTitle" xml:space="preserve">

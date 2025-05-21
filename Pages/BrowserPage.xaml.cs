@@ -32,7 +32,7 @@ public partial class BrowserPage : ContentPage
         if (string.IsNullOrEmpty(BrowserPres.BrowserName))
             new ViewFloatAnim(BrowserPicker, ViewFloatAnim.FloatOrientation.Y, -5).Commit(this, nameof(BrowserPicker) + nameof(ViewFloatAnim), 8, 3000, repeat: () => true);
         else
-            new ViewFloatAnim(NextButton, ViewFloatAnim.FloatOrientation.X, -5).Commit(this, nameof(NextButton) + nameof(ViewFloatAnim), 8, 3000, repeat: () => true);
+            new ViewFloatAnim(NextImageButton, ViewFloatAnim.FloatOrientation.X, -5).Commit(this, nameof(NextImageButton) + nameof(ViewFloatAnim), 8, 3000, repeat: () => true);
 
         IsFirstLoaded = false;
     }
@@ -69,18 +69,18 @@ public partial class BrowserPage : ContentPage
             if (this.AnimationIsRunning(nameof(BrowserPicker) + nameof(ViewFloatAnim)))
             {
                 this.AbortAnimation(nameof(BrowserPicker) + nameof(ViewFloatAnim));
-                new ViewFloatAnim(NextButton, ViewFloatAnim.FloatOrientation.X, -5).Commit(this, nameof(NextButton) + nameof(ViewFloatAnim), 8, 3000, repeat: () => true);
+                new ViewFloatAnim(NextImageButton, ViewFloatAnim.FloatOrientation.X, -5).Commit(this, nameof(NextImageButton) + nameof(ViewFloatAnim), 8, 3000, repeat: () => true);
             }
         }
-        else if (this.AnimationIsRunning(nameof(NextButton) + nameof(ViewFloatAnim)))
+        else if (this.AnimationIsRunning(nameof(NextImageButton) + nameof(ViewFloatAnim)))
         {
-            this.AbortAnimation(nameof(NextButton) + nameof(ViewFloatAnim));
+            this.AbortAnimation(nameof(NextImageButton) + nameof(ViewFloatAnim));
             new ViewFloatAnim(BrowserPicker, ViewFloatAnim.FloatOrientation.Y, -5).Commit(this, nameof(BrowserPicker) + nameof(ViewFloatAnim), 8, 3000, repeat: () => true);
         }
     }
 
-    private async void NextButton_Clicked(object sender, EventArgs e) => await Shell.Current.GoToAsync($"//{nameof(FlagPage)}");
+    private async void NextImageButton_Clicked(object sender, EventArgs e) => await Shell.Current.GoToAsync($"//{nameof(FlagPage)}");
 
     private async void PrevSwipeGestureRecognizer_Swiped(object sender, SwipedEventArgs e) => await Toast.Make(BrowserConst._EasterEggMsg).Show();
-    private void NextSwipeGestureRecognizer_Swiped(object sender, SwipedEventArgs e) => NextButton_Clicked(null!, null!);
+    private void NextSwipeGestureRecognizer_Swiped(object sender, SwipedEventArgs e) => NextImageButton_Clicked(null!, null!);
 }

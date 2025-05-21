@@ -36,7 +36,7 @@ public partial class FlagPage : ContentPage
         {
             IsNextNavigating = true;
 
-            new ViewFloatAnim(NextButton, ViewFloatAnim.FloatOrientation.X, -5).Commit(this, nameof(NextButton) + nameof(ViewFloatAnim), 8, 3000, repeat: () => true);
+            new ViewFloatAnim(NextImageButton, ViewFloatAnim.FloatOrientation.X, -5).Commit(this, nameof(NextImageButton) + nameof(ViewFloatAnim), 8, 3000, repeat: () => true);
         }
 
         IsFirstLoaded = false;
@@ -83,22 +83,22 @@ public partial class FlagPage : ContentPage
         FlagPres.IsFlagCopied = true;
 
         this.AbortAnimation(nameof(LinkButton) + nameof(ViewFloatAnim));
-        new ViewFloatAnim(NextButton, ViewFloatAnim.FloatOrientation.X, -5).Commit(this, nameof(NextButton) + nameof(ViewFloatAnim), 8, 3000, repeat: () => true);
+        new ViewFloatAnim(NextImageButton, ViewFloatAnim.FloatOrientation.X, -5).Commit(this, nameof(NextImageButton) + nameof(ViewFloatAnim), 8, 3000, repeat: () => true);
     }
 
-    private async void PrevButton_Clicked(object sender, EventArgs e)
+    private async void PrevImageButton_Clicked(object sender, EventArgs e)
     {
         IsNextNavigating = false;
 
         await Shell.Current.GoToAsync($"//{nameof(BrowserPage)}");
     }
-    private async void NextButton_Clicked(object sender, EventArgs e)
+    private async void NextImageButton_Clicked(object sender, EventArgs e)
     {
         IsNextNavigating = true;
 
         await Shell.Current.GoToAsync($"//{nameof(AdbPage)}");
     }
 
-    private void PrevSwipeGestureRecognizer_Swiped(object sender, SwipedEventArgs e) => PrevButton_Clicked(null!, null!);
-    private void NextSwipeGestureRecognizer_Swiped(object sender, SwipedEventArgs e) => NextButton_Clicked(null!, null!);
+    private void PrevSwipeGestureRecognizer_Swiped(object sender, SwipedEventArgs e) => PrevImageButton_Clicked(null!, null!);
+    private void NextSwipeGestureRecognizer_Swiped(object sender, SwipedEventArgs e) => NextImageButton_Clicked(null!, null!);
 }

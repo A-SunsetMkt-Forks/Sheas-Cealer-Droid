@@ -39,11 +39,11 @@
                 </VerticalStackLayout>
             </ScrollView>
             <ImageButton Source="left_icon.png"
-                         ToolTipProperties.Text="{x:Static consts:GlobalMultilangConst.PrevButtonTooltip}"
-                         SemanticProperties.Description="{x:Static consts:GlobalMultilangConst.PrevButtonDescription}"
+                         ToolTipProperties.Text="{x:Static consts:GlobalMultilangConst.PrevImageButtonTooltip}"
+                         SemanticProperties.Description="{x:Static consts:GlobalMultilangConst.PrevImageButtonDescription}"
                          IsEnabled="{Binding IsCommandLineExist}"
                          Grid.Row="1" HorizontalOptions="Start" WidthRequest="56" HeightRequest="56" CornerRadius="28"
-                         Clicked="PrevButton_Clicked">
+                         Clicked="PrevImageButton_Clicked">
                 <ImageButton.Behaviors>
                     <toolkit:IconTintColorBehavior TintColor="{AppThemeBinding Light={StaticResource White}, Dark={StaticResource Gray900}}" />
                 </ImageButton.Behaviors>

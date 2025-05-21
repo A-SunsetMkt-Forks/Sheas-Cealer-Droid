@@ -52,13 +52,13 @@ public partial class ReadyPage : ContentPage
         ReadyPres.IsFirstRunning = false;
     }
 
-    private async void PrevButton_Clicked(object sender, EventArgs e)
+    private async void PrevImageButton_Clicked(object sender, EventArgs e)
     {
         IsNextNavigating = false;
 
         await Shell.Current.GoToAsync($"//{nameof(AdbPage)}");
     }
 
-    private void PrevSwipeGestureRecognizer_Swiped(object sender, SwipedEventArgs e) => PrevButton_Clicked(null!, null!);
+    private void PrevSwipeGestureRecognizer_Swiped(object sender, SwipedEventArgs e) => PrevImageButton_Clicked(null!, null!);
     private async void NextSwipeGestureRecognizer_Swiped(object sender, SwipedEventArgs e) => await Toast.Make(ReadyConst._EasterEggMsg).Show();
 }
