@@ -73,25 +73,46 @@
                     <Grid Margin="8,2,8,2">
                         <Border BackgroundColor="{AppThemeBinding Light={DynamicResource Gray100}, Dark={DynamicResource Gray850}}"
                                 StrokeShape="RoundRectangle 8" Margin="4">
-                            <Grid Margin="8">
-                                <VerticalStackLayout>
-                                    <Label Margin="20,4" FontSize="Subtitle">
-                                        <Label.Text>
-                                            <MultiBinding StringFormat="{}{0} ({1})">
-                                                <Binding Path="Domain" />
-                                                <Binding Path="Sni" />
-                                            </MultiBinding>
-                                        </Label.Text>
-                                    </Label>
-                                    <Label Text="{Binding Ip}"
-                                           Margin="20,4" FontSize="Caption" />
-                                </VerticalStackLayout>
+                            <Grid Margin="8,8,0,8">
+                                <Grid ColumnDefinitions="*,Auto" ColumnSpacing="20">
+                                    <VerticalStackLayout Grid.Column="0">
+                                        <Label Margin="20,4" FontSize="Subtitle">
+                                            <Label.Text>
+                                                <MultiBinding StringFormat="{}{0} ({1})">
+                                                    <Binding Path="Domain" />
+                                                    <Binding Path="Sni" />
+                                                </MultiBinding>
+                                            </Label.Text>
+                                        </Label>
+                                        <Label Text="{Binding Ip}"
+                                               Margin="20,4" FontSize="Caption" />
+                                    </VerticalStackLayout>
+                                    <ImageButton Source="remove_icon.png"
+                                                 ToolTipProperties.Text="{x:Static consts:MainMultilangConst.RemoveImageButtonTooltip}"
+                                                 SemanticProperties.Description="{x:Static consts:MainMultilangConst.RemoveImageButtonDescription}"
+                                                 Style="{x:StaticResource SmallImageButton}"
+                                                 IsVisible="{Binding Name, Converter={x:Static convs:MainConv.MainLocalViewIsVisibleConv}}"
+                                                 Grid.Column="1" Margin="0,4,20,4" WidthRequest="28" HeightRequest="28" CornerRadius="8"
+                                                 Clicked="RemoveImageButton_Clicked">
+                                        <ImageButton.Behaviors>
+                                            <toolkit:IconTintColorBehavior TintColor="{AppThemeBinding Light={StaticResource White}, Dark={StaticResource Gray900}}" />
+                                        </ImageButton.Behaviors>
+                                    </ImageButton>
+                                </Grid>
                                 <AbsoluteLayout>
                                     <Border AbsoluteLayout.LayoutBounds="0,0.5,4,1" AbsoluteLayout.LayoutFlags="PositionProportional,HeightProportional"
                                             BackgroundColor="{AppThemeBinding Light={DynamicResource Primary500}, Dark={DynamicResource Primary700}}"
                                             StrokeShape="RoundRectangle 8" />
                                 </AbsoluteLayout>
                             </Grid>
+                        </Border>
+                        <Border IsVisible="{Binding Name, Converter={x:Static convs:MainConv.MainLocalViewIsVisibleConv}}"
+                                HorizontalOptions="End" VerticalOptions="Start" Margin="4"
+                                BackgroundColor="{AppThemeBinding Light={DynamicResource Primary500}, Dark={DynamicResource Primary700}}"
+                                StrokeShape="RoundRectangle 0,8,8,0" Shadow="{x:Null}">
+                            <Label Text="{Binding Name}" FontSize="8" FontAttributes="Bold"
+                                   TextColor="{AppThemeBinding Light={DynamicResource White}, Dark={DynamicResource Gray900}}"
+                                   Padding="6,0" />
                         </Border>
                     </Grid>
                 </DataTemplate>
@@ -121,26 +142,26 @@
         </Grid>
         <AbsoluteLayout Grid.RowSpan="2">
             <Grid AbsoluteLayout.LayoutBounds="0.9,1,32,32" AbsoluteLayout.LayoutFlags="PositionProportional" TranslationX="-9.6" TranslationY="-100">
-                <ImageButton x:Name="AddButton"
-                             Source="{Binding IsHostCollectionAtBottom, Converter={x:Static convs:MainConv.MainAddButtonSourceConv}}"
-                             ToolTipProperties.Text="{x:Static consts:MainMultilangConst.AddButtonTooltip}"
-                             SemanticProperties.Description="{x:Static consts:MainMultilangConst.AddButtonDescription}"
+                <ImageButton x:Name="AddImageButton"
+                             Source="{Binding IsHostCollectionAtBottom, Converter={x:Static convs:MainConv.MainAddImageButtonSourceConv}}"
+                             ToolTipProperties.Text="{x:Static consts:MainMultilangConst.AddImageButtonTooltip}"
+                             SemanticProperties.Description="{x:Static consts:MainMultilangConst.AddImageButtonDescription}"
                              CornerRadius="16" Padding="8"
                              BackgroundColor="{AppThemeBinding Light={StaticResource Gray50}, Dark={StaticResource Gray900}}"
-                             Clicked="AddButton_Clicked">
+                             Clicked="AddImageButton_Clicked">
                     <ImageButton.Behaviors>
                         <toolkit:IconTintColorBehavior TintColor="{AppThemeBinding Light={StaticResource Gray700}, Dark={StaticResource Gray400}}" />
                     </ImageButton.Behaviors>
                 </ImageButton>
             </Grid>
             <Grid AbsoluteLayout.LayoutBounds="0.9,1,56,56" AbsoluteLayout.LayoutFlags="PositionProportional" TranslationY="-28"
-                  Rotation="{Binding IsCommandLineUtd, Converter={x:Static convs:MainConv.MainLaunchButtonRotationConv}}">
+                  Rotation="{Binding IsCommandLineUtd, Converter={x:Static convs:MainConv.MainLaunchImageButtonRotationConv}}">
                 <ImageButton Source="app_icon.png"
-                             ToolTipProperties.Text="{Binding IsCommandLineUtd, Converter={x:Static convs:MainConv.MainLaunchButtonTooltipConv}}"
-                             SemanticProperties.Description="{x:Static consts:MainMultilangConst.LaunchButtonDescription}"
+                             ToolTipProperties.Text="{Binding IsCommandLineUtd, Converter={x:Static convs:MainConv.MainLaunchImageButtonTooltipConv}}"
+                             SemanticProperties.Description="{x:Static consts:MainMultilangConst.LaunchImageButtonDescription}"
                              CornerRadius="28"
-                             BackgroundColor="{Binding IsCommandLineUtd, Converter={x:Static convs:MainConv.MainLaunchButtonBackgroundColorConv}}"
-                             Clicked="LaunchButton_Click">
+                             BackgroundColor="{Binding IsCommandLineUtd, Converter={x:Static convs:MainConv.MainLaunchImageButtonBackgroundColorConv}}"
+                             Clicked="LaunchImageButton_Click">
                     <ImageButton.Behaviors>
                         <toolkit:IconTintColorBehavior TintColor="{AppThemeBinding Light={StaticResource White}, Dark={StaticResource Gray900}}" />
                     </ImageButton.Behaviors>

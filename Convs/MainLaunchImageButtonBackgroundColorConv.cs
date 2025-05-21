@@ -6,7 +6,7 @@ using System.Globalization;
 
 namespace Sheas_Cealer_Droid.Convs;
 
-internal class MainLaunchButtonBackgroundColorConv : IValueConverter
+internal class MainLaunchImageButtonBackgroundColorConv : IValueConverter
 {
     public object Convert(object? value, Type targetType, object? parameter, CultureInfo culture)
     {

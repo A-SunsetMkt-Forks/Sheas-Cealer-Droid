@@ -166,18 +166,18 @@ namespace Sheas_Cealer_Droid.Consts {
         /// <summary>
         ///   查找类似 Add 的本地化字符串。
         /// </summary>
-        internal static string AddButtonDescription {
+        internal static string AddImageButtonDescription {
             get {
-                return ResourceManager.GetString("AddButtonDescription", resourceCulture);
+                return ResourceManager.GetString("AddImageButtonDescription", resourceCulture);
             }
         }
         
         /// <summary>
-        ///   查找类似 Tap to add host 的本地化字符串。
+        ///   查找类似 Tap to add a host 的本地化字符串。
         /// </summary>
-        internal static string AddButtonTooltip {
+        internal static string AddImageButtonTooltip {
             get {
-                return ResourceManager.GetString("AddButtonTooltip", resourceCulture);
+                return ResourceManager.GetString("AddImageButtonTooltip", resourceCulture);
             }
         }
         
@@ -202,36 +202,36 @@ namespace Sheas_Cealer_Droid.Consts {
         /// <summary>
         ///   查找类似 Tap to stop cealing 的本地化字符串。
         /// </summary>
-        internal static string LaunchButtonActiveTooltip {
+        internal static string LaunchImageButtonActiveTooltip {
             get {
-                return ResourceManager.GetString("LaunchButtonActiveTooltip", resourceCulture);
+                return ResourceManager.GetString("LaunchImageButtonActiveTooltip", resourceCulture);
             }
         }
         
         /// <summary>
         ///   查找类似 Launch 的本地化字符串。
         /// </summary>
-        internal static string LaunchButtonDescription {
+        internal static string LaunchImageButtonDescription {
             get {
-                return ResourceManager.GetString("LaunchButtonDescription", resourceCulture);
+                return ResourceManager.GetString("LaunchImageButtonDescription", resourceCulture);
             }
         }
         
         /// <summary>
         ///   查找类似 Tap to start cealing 的本地化字符串。
         /// </summary>
-        internal static string LaunchButtonInactiveTooltip {
+        internal static string LaunchImageButtonInactiveTooltip {
             get {
-                return ResourceManager.GetString("LaunchButtonInactiveTooltip", resourceCulture);
+                return ResourceManager.GetString("LaunchImageButtonInactiveTooltip", resourceCulture);
             }
         }
         
         /// <summary>
         ///   查找类似 Tap to update host 的本地化字符串。
         /// </summary>
-        internal static string LaunchButtonUpdateTooltip {
+        internal static string LaunchImageButtonUpdateTooltip {
             get {
-                return ResourceManager.GetString("LaunchButtonUpdateTooltip", resourceCulture);
+                return ResourceManager.GetString("LaunchImageButtonUpdateTooltip", resourceCulture);
             }
         }
         
@@ -259,6 +259,24 @@ namespace Sheas_Cealer_Droid.Consts {
         internal static string MainSearchHandlerQueryIconName {
             get {
                 return ResourceManager.GetString("MainSearchHandlerQueryIconName", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   查找类似 Delete 的本地化字符串。
+        /// </summary>
+        internal static string RemoveImageButtonDescription {
+            get {
+                return ResourceManager.GetString("RemoveImageButtonDescription", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   查找类似 Tap to delete the host 的本地化字符串。
+        /// </summary>
+        internal static string RemoveImageButtonTooltip {
+            get {
+                return ResourceManager.GetString("RemoveImageButtonTooltip", resourceCulture);
             }
         }
         

@@ -4,13 +4,13 @@ using System.Globalization;
 
 namespace Sheas_Cealer_Droid.Convs;
 
-internal class MainLaunchButtonRotationConv : IValueConverter
+internal class MainAddImageButtonSourceConv : IValueConverter
 {
     public object Convert(object? value, Type targetType, object? parameter, CultureInfo culture)
     {
-        bool? isCommandLineUtd = value as bool?;
+        bool isHostCollectionAtBottom = (bool)value!;
 
-        return isCommandLineUtd.HasValue ? isCommandLineUtd.Value ? 0 : 90 : 180;
+        return isHostCollectionAtBottom ? "up_icon.png" : "add_icon.png";
     }
 
     public object ConvertBack(object? value, Type targetType, object? parameter, CultureInfo culture) => throw new NotImplementedException();

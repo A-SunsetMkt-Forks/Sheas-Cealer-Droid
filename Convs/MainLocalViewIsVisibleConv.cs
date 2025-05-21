@@ -4,13 +4,13 @@ using System.Globalization;
 
 namespace Sheas_Cealer_Droid.Convs;
 
-internal class MainAddButtonSourceConv : IValueConverter
+internal class MainLocalViewIsVisibleConv : IValueConverter
 {
     public object Convert(object? value, Type targetType, object? parameter, CultureInfo culture)
     {
-        bool isHostCollectionAtBottom = (bool)value!;
+        string name = (string)value!;
 
-        return isHostCollectionAtBottom ? "up_icon.png" : "add_icon.png";
+        return name != "U";
     }
 
     public object ConvertBack(object? value, Type targetType, object? parameter, CultureInfo culture) => throw new NotImplementedException();

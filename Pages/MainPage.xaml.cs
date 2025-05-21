@@ -12,7 +12,6 @@ using Sheas_Cealer_Droid.Preses;
 using Sheas_Cealer_Droid.Utils;
 using System;
 using System.Collections.Generic;
-using System.Diagnostics.CodeAnalysis;
 using System.IO;
 using System.Linq;
 using System.Net.Http;
@@ -48,8 +47,8 @@ public partial class MainPage : ContentPage
     {
         await Task.Run(async () =>
         {
-            AddButton.TranslationY = 60;
-            new AddImageButtonSlideAnim(AddButton, AddImageButtonSlideAnim.SlideType.In).Commit(this, nameof(AddButton) + nameof(AddImageButtonSlideAnim), 8, 1000);
+            AddImageButton.TranslationY = 60;
+            new AddImageButtonSlideAnim(AddImageButton, AddImageButtonSlideAnim.SlideType.In).Commit(this, nameof(AddImageButton) + nameof(AddImageButtonSlideAnim), 8, 1000);
 
             CealHostWatcher.Changed += CealHostWatcher_Changed;
 
@@ -71,7 +70,7 @@ public partial class MainPage : ContentPage
         });
     }
 
-    private async void LaunchButton_Click(object sender, EventArgs e)
+    private async void LaunchImageButton_Click(object sender, EventArgs e)
     {
         HapticFeedback.Default.Perform(HapticFeedbackType.Click);
 
@@ -84,8 +83,7 @@ public partial class MainPage : ContentPage
 
         await StatusManager.RefreshCurrentStatus(MainPres, CealHostRulesDict.ContainsValue(null));
     }
-    [SuppressMessage("Performance", "CA1869"), SuppressMessage("CodeQuality", "IDE0079")]
-    private async void AddButton_Clicked(object sender, EventArgs e)
+    private async void AddImageButton_Clicked(object sender, EventArgs e)
     {
         if (MainPres.IsHostCollectionAtBottom)
         {
@@ -128,7 +126,7 @@ public partial class MainPage : ContentPage
 
                     break;
                 }
-                else if (string.IsNullOrEmpty(customHostDomain.ToString().TrimStart('#').TrimStart('$')))
+                else if (string.IsNullOrEmpty(customHostDomain.GetString()?.TrimStart('#').TrimStart('$')))
                 {
                     await Toast.Make(MainConst._CustomHostEmptyErrorToastMsg, ToastDuration.Long).Show();
 
@@ -151,8 +149,30 @@ public partial class MainPage : ContentPage
         JsonElement localHostArray = JsonDocument.Parse(localHost, localHostOptions).RootElement;
 
         List<JsonElement> newHostList = [customHostRule, .. localHostArray.EnumerateArray()];
-        JsonSerializerOptions newHostOptions = new();
-        string newHost = JsonSerializer.Serialize(newHostList, newHostOptions);
+        string newHost = JsonSerializer.Serialize(newHostList);
+
+        await File.WriteAllTextAsync(MainConst.LocalHostPath, newHost);
+    }
+
+    private async void RemoveImageButton_Clicked(object sender, EventArgs e)
+    {
+        ImageButton senderImageButton = (ImageButton)sender;
+        CealHostRule customHostRule = (CealHostRule)senderImageButton.BindingContext;
+        JsonDocumentOptions localHostOptions = new() { AllowTrailingCommas = true, CommentHandling = JsonCommentHandling.Skip };
+        JsonElement localHostArray = JsonDocument.Parse(await File.ReadAllTextAsync(MainConst.CealHostPath.Replace("*", customHostRule.Name)), localHostOptions).RootElement;
+        List<JsonElement> newHostList = [.. localHostArray.EnumerateArray()];
+
+        foreach (JsonElement localHostRule in localHostArray.EnumerateArray())
+            if (localHostRule[0].ToString().TrimStart('[').TrimEnd(']').Replace("\"", string.Empty) == customHostRule.Domain &&
+                (string.IsNullOrWhiteSpace(localHostRule[1].GetString()) ? "--" : localHostRule[1].GetString()) == customHostRule.Sni &&
+                localHostRule[2].GetString() == customHostRule.Ip)
+            {
+                newHostList.Remove(localHostRule);
+
+                break;
+            }
+
+        string newHost = JsonSerializer.Serialize(newHostList);
 
         await File.WriteAllTextAsync(MainConst.LocalHostPath, newHost);
     }
@@ -234,7 +254,7 @@ public partial class MainPage : ContentPage
                 MainClient.DefaultRequestHeaders.Clear();
 
                 foreach (JsonProperty updateInfoContent in updateInfoObject.EnumerateObject())
-                    if (updateInfoContent.Name == "name" && updateInfoContent.Value.ToString() != GlobalConst.VersionAboutInfoContent)
+                    if (updateInfoContent.Name == "name" && updateInfoContent.Value.GetString() != GlobalConst.VersionAboutInfoContent)
                         if (await DisplayAlert(MainConst._UpdateAvailablePopupTitle, MainConst._UpdateAvailablePopupMsg, GlobalConst._PopupYesText, GlobalConst._PopupNoText))
                             await Browser.Default.OpenAsync(MainConst.GithubReleaseUrl);
 
@@ -264,11 +284,11 @@ public partial class MainPage : ContentPage
         {
             IsAddImageButtonSlideAnimRunning = true;
 
-            new AddImageButtonSlideAnim(AddButton, AddImageButtonSlideAnim.SlideType.Out).Commit(this, nameof(AddButton) + nameof(AddImageButtonSlideAnim), 8, 300,
+            new AddImageButtonSlideAnim(AddImageButton, AddImageButtonSlideAnim.SlideType.Out).Commit(this, nameof(AddImageButton) + nameof(AddImageButtonSlideAnim), 8, 300,
                 finished: (_, _) =>
                 {
                     MainPres.IsHostCollectionAtBottom = isHostCollectionAtBottom;
-                    new AddImageButtonSlideAnim(AddButton, AddImageButtonSlideAnim.SlideType.In).Commit(this, nameof(AddButton) + nameof(AddImageButtonSlideAnim), 8, 300);
+                    new AddImageButtonSlideAnim(AddImageButton, AddImageButtonSlideAnim.SlideType.In).Commit(this, nameof(AddImageButton) + nameof(AddImageButtonSlideAnim), 8, 300);
 
                     IsAddImageButtonSlideAnimRunning = false;
                 });
@@ -319,12 +339,12 @@ public partial class MainPage : ContentPage
             {
                 List<(string includeDomain, string excludeDomain)> cealHostDomainPairs = [];
                 string? cealHostSni = cealHostRule[1].ValueKind == JsonValueKind.Null ? null :
-                    string.IsNullOrWhiteSpace(cealHostRule[1].ToString()) ? $"{cealHostName}{CealHostRulesDict[cealHostName]!.Count}" : cealHostRule[1].ToString().Trim();
-                string cealHostIp = string.IsNullOrWhiteSpace(cealHostRule[2].ToString()) ? "127.0.0.1" : cealHostRule[2].ToString().Trim();
+                    string.IsNullOrWhiteSpace(cealHostRule[1].GetString()) ? $"{cealHostName}{CealHostRulesDict[cealHostName]!.Count}" : cealHostRule[1].GetString()!.Trim();
+                string cealHostIp = string.IsNullOrWhiteSpace(cealHostRule[2].GetString()) ? "127.0.0.1" : cealHostRule[2].GetString()!.Trim();
 
                 foreach (JsonElement cealHostDomain in cealHostRule[0].EnumerateArray())
                 {
-                    string[] cealHostDomainPair = cealHostDomain.ToString().Split('^', 2, StringSplitOptions.TrimEntries);
+                    string[] cealHostDomainPair = (cealHostDomain.GetString() ?? string.Empty).Split('^', 2, StringSplitOptions.TrimEntries);
 
                     if (string.IsNullOrEmpty(cealHostDomainPair[0].TrimStart('#').TrimStart('$')))
                         continue;
@@ -339,7 +359,7 @@ public partial class MainPage : ContentPage
                     {
                         Name = cealHostName,
                         Domain = cealHostRule[0].ToString().TrimStart('[').TrimEnd(']').Replace("\"", string.Empty),
-                        Sni = string.IsNullOrWhiteSpace(cealHostRule[1].ToString()) ? "--" : cealHostRule[1].ToString(),
+                        Sni = string.IsNullOrWhiteSpace(cealHostRule[1].GetString()) ? "--" : cealHostRule[1].GetString(),
                         Ip = cealHostIp
                     });
                 }

@@ -116,10 +116,10 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <data name="AddButtonDescription" xml:space="preserve">
+  <data name="AddImageButtonDescription" xml:space="preserve">
     <value>添加</value>
   </data>
-  <data name="AddButtonTooltip" xml:space="preserve">
+  <data name="AddImageButtonTooltip" xml:space="preserve">
     <value>点击添加规则</value>
   </data>
   <data name="GithubToolbarItemDescription" xml:space="preserve">
@@ -128,16 +128,16 @@
   <data name="GithubToolbarItemTooltip" xml:space="preserve">
     <value>点击跳转开源地址</value>
   </data>
-  <data name="LaunchButtonActiveTooltip" xml:space="preserve">
+  <data name="LaunchImageButtonActiveTooltip" xml:space="preserve">
     <value>点击停止伪造</value>
   </data>
-  <data name="LaunchButtonDescription" xml:space="preserve">
+  <data name="LaunchImageButtonDescription" xml:space="preserve">
     <value>启动</value>
   </data>
-  <data name="LaunchButtonInactiveTooltip" xml:space="preserve">
+  <data name="LaunchImageButtonInactiveTooltip" xml:space="preserve">
     <value>点击启动伪造</value>
   </data>
-  <data name="LaunchButtonUpdateTooltip" xml:space="preserve">
+  <data name="LaunchImageButtonUpdateTooltip" xml:space="preserve">
     <value>点击更新规则</value>
   </data>
   <data name="MainSearchHandlerClearIconName" xml:space="preserve">
@@ -148,6 +148,12 @@
   </data>
   <data name="MainSearchHandlerQueryIconName" xml:space="preserve">
     <value>搜索</value>
+  </data>
+  <data name="RemoveImageButtonDescription" xml:space="preserve">
+    <value>删除</value>
+  </data>
+  <data name="RemoveImageButtonTooltip" xml:space="preserve">
+    <value>点击删除该条规则</value>
   </data>
   <data name="UpdateHostToolbarItemText" xml:space="preserve">
     <value>检查规则更新</value>

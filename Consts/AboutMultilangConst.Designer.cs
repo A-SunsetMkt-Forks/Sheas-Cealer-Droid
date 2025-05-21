@@ -88,7 +88,7 @@ namespace Sheas_Cealer_Droid.Consts {
         }
         
         /// <summary>
-        ///   查找类似 Copy Link 的本地化字符串。
+        ///   查找类似 Copy 的本地化字符串。
         /// </summary>
         internal static string CopyImageButtonDescription {
             get {
@@ -142,7 +142,7 @@ namespace Sheas_Cealer_Droid.Consts {
         }
         
         /// <summary>
-        ///   查找类似 Open Link 的本地化字符串。
+        ///   查找类似 Open 的本地化字符串。
         /// </summary>
         internal static string GotoImageButtonDescription {
             get {

@@ -108,7 +108,7 @@
                                      ToolTipProperties.Text="{x:Static consts:GlobalMultilangConst.LinkButtonTooltip}"
                                      SemanticProperties.Description="{x:Static consts:GlobalMultilangConst.LinkButtonText}"
                                      Style="{x:StaticResource SmallImageButton}"
-                                     HorizontalOptions="End" WidthRequest="28" HeightRequest="28" CornerRadius="14"
+                                     HorizontalOptions="End" WidthRequest="28" HeightRequest="28" CornerRadius="8"
                                      Command="{x:Static pages:SettingsPage.LinkImageButton_ClickedCommand}">
                             <ImageButton.Behaviors>
                                 <toolkit:IconTintColorBehavior TintColor="{AppThemeBinding Light={StaticResource White}, Dark={StaticResource Gray900}}" />
@@ -123,7 +123,7 @@
                                      ToolTipProperties.Text="{x:Static consts:GlobalMultilangConst.CommandButtonTooltip}"
                                      SemanticProperties.Description="{x:Static consts:GlobalMultilangConst.CommandButtonText}"
                                      Style="{x:StaticResource SmallImageButton}"
-                                     HorizontalOptions="End" WidthRequest="28" HeightRequest="28" CornerRadius="14"
+                                     HorizontalOptions="End" WidthRequest="28" HeightRequest="28" CornerRadius="8"
                                      Command="{x:Static pages:SettingsPage.CommandImageButton_ClickedCommand}">
                             <ImageButton.Behaviors>
                                 <toolkit:IconTintColorBehavior TintColor="{AppThemeBinding Light={StaticResource White}, Dark={StaticResource Gray900}}" />
@@ -138,7 +138,7 @@
                 <Grid Margin="8,2,8,2">
                     <Border BackgroundColor="{AppThemeBinding Light={DynamicResource Gray100}, Dark={DynamicResource Gray850}}"
                             StrokeShape="RoundRectangle 8" Margin="4">
-                        <Grid Margin="8">
+                        <Grid Margin="8,8,0,8">
                             <Grid ColumnDefinitions="Auto,*" RowDefinitions="Auto,Auto" ColumnSpacing="20">
                                 <Label Text="{Binding Title}"
                                        Grid.Column="0" Grid.Row="0" Margin="20,4,0,4" FontSize="Subtitle" VerticalTextAlignment="Center" />

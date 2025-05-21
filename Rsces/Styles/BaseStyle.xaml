@@ -101,7 +101,6 @@
 
     <Style x:Key="SmallImageButton" TargetType="ImageButton">
         <Setter Property="Padding" Value="6" />
-        <Setter Property="Shadow" Value="{x:Null}" />
     </Style>
 
     <Style TargetType="Switch">

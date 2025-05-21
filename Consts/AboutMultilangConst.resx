@@ -126,7 +126,7 @@
     <value>Contact Me</value>
   </data>
   <data name="CopyImageButtonDescription" xml:space="preserve">
-    <value>Copy Link</value>
+    <value>Copy</value>
   </data>
   <data name="CopyImageButtonTooltip" xml:space="preserve">
     <value>Tap to copy the corresponding link</value>
@@ -144,7 +144,7 @@
     <value>License Agreement</value>
   </data>
   <data name="GotoImageButtonDescription" xml:space="preserve">
-    <value>Open Link</value>
+    <value>Open</value>
   </data>
   <data name="GotoImageButtonTooltip" xml:space="preserve">
     <value>Tap to open the corresponding link</value>
