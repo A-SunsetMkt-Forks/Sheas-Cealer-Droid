@@ -145,6 +145,16 @@ public partial class MainPage : ContentPage
         string customHostIp = string.IsNullOrWhiteSpace(customHostRule[2].GetString()) ? "127.0.0.1" : customHostRule[2].GetString()!.Trim();
         string localHostName = Path.GetFileNameWithoutExtension(MainConst.LocalHostPath).TrimStart("Cealing-Host-".ToCharArray());
 
+        MainPres.CealHostRulesCollection.Insert(0, new
+        (
+            localHostName,
+            string.Join(',', JsonSerializer.Deserialize<string[]>(customHostDomains)!),
+            string.IsNullOrEmpty(customHostSni) ? "--" : customHostSni,
+            customHostIp
+        ));
+
+        await Task.Delay(1000);
+
         if (!CealHostRulesDict.ContainsKey(localHostName))
             CealHostRulesDict[localHostName] = [];
 
@@ -167,6 +177,10 @@ public partial class MainPage : ContentPage
         ImageButton senderImageButton = (ImageButton)sender;
         CealHostRule customHostRule = (CealHostRule)senderImageButton.BindingContext;
         int customHostIndex = MainPres.CealHostRulesCollection.IndexOf(customHostRule);
+
+        MainPres.CealHostRulesCollection.RemoveAt(customHostIndex);
+
+        await Task.Delay(1000);
 
         foreach (KeyValuePair<string, List<CealHostRule>?> cealHostRulesPair in CealHostRulesDict)
             if (cealHostRulesPair.Key != customHostRule.Name)
