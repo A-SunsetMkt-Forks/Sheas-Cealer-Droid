@@ -28,10 +28,11 @@ public partial class MainPage : ContentPage
     private readonly HttpClient MainClient = new(new HttpClientHandler { ServerCertificateCustomValidationCallback = HttpClientHandler.DangerousAcceptAnyServerCertificateValidator });
     private readonly FileSystemWatcher CealHostWatcher = new(Path.GetDirectoryName(MainConst.CealHostPath)!, Path.GetFileName(MainConst.CealHostPath)) { EnableRaisingEvents = true, NotifyFilter = NotifyFilters.LastWrite };
 
-    private readonly SortedDictionary<string, List<(List<(string includeDomain, string excludeDomain)> domainPairs, string? sni, string ip)>?> CealHostRulesDict = [];
+    private readonly SortedDictionary<string, List<CealHostRule>?> CealHostRulesDict = [];
     private string CealArgs = string.Empty;
     private string LatestUpstreamHostString = string.Empty;
 
+    private readonly SemaphoreSlim IsCealHostChangingSemaphore = new(1);
     private bool IsAddImageButtonSlideAnimRunning = false;
 
     private string KaomojiOriginalString = string.Empty;
@@ -97,10 +98,9 @@ public partial class MainPage : ContentPage
         if (string.IsNullOrWhiteSpace(customHost))
             return;
 
-        JsonDocumentOptions customHostOptions = new() { AllowTrailingCommas = true };
         JsonElement customHostRule;
 
-        try { customHostRule = JsonDocument.Parse(customHost, customHostOptions).RootElement; }
+        try { customHostRule = JsonDocument.Parse(customHost).RootElement; }
         catch
         {
             await Toast.Make(MainConst._CustomHostSyntaxErrorToastMsg, ToastDuration.Long).Show();
@@ -126,7 +126,7 @@ public partial class MainPage : ContentPage
 
                     break;
                 }
-                else if (string.IsNullOrEmpty(customHostDomain.GetString()?.TrimStart('#').TrimStart('$')))
+                else if (string.IsNullOrEmpty(customHostDomain.GetString()?.Trim().TrimStart('#').TrimStart('$')))
                 {
                     await Toast.Make(MainConst._CustomHostEmptyErrorToastMsg, ToastDuration.Long).Show();
 
@@ -140,41 +140,52 @@ public partial class MainPage : ContentPage
             return;
         }
 
-        string localHost = await File.ReadAllTextAsync(MainConst.LocalHostPath);
+        string customHostDomains = customHostRule[0].ToString();
+        string? customHostSni = customHostRule[1].GetString()?.Trim();
+        string customHostIp = string.IsNullOrWhiteSpace(customHostRule[2].GetString()) ? "127.0.0.1" : customHostRule[2].GetString()!.Trim();
+        string localHostName = Path.GetFileNameWithoutExtension(MainConst.LocalHostPath).TrimStart("Cealing-Host-".ToCharArray());
 
-        if (string.IsNullOrWhiteSpace(localHost))
-            localHost = "[]";
+        if (!CealHostRulesDict.ContainsKey(localHostName))
+            CealHostRulesDict[localHostName] = [];
 
-        JsonDocumentOptions localHostOptions = new() { AllowTrailingCommas = true, CommentHandling = JsonCommentHandling.Skip };
-        JsonElement localHostArray = JsonDocument.Parse(localHost, localHostOptions).RootElement;
+        CealHostRulesDict[localHostName]!.Insert(0, new(customHostDomains, customHostSni, customHostIp));
 
-        List<JsonElement> newHostList = [customHostRule, .. localHostArray.EnumerateArray()];
-        string newHost = JsonSerializer.Serialize(newHostList);
+        List<object?[]> newHostRuleArray = [];
 
-        await File.WriteAllTextAsync(MainConst.LocalHostPath, newHost);
+        foreach (CealHostRule localHostRule in CealHostRulesDict[localHostName]!)
+        {
+            string[] localHostDomainArray = JsonSerializer.Deserialize<string[]>(localHostRule.Domains)!;
+
+            newHostRuleArray.Add([localHostDomainArray, localHostRule.Sni, localHostRule.Ip]);
+        }
+
+        await File.WriteAllTextAsync(MainConst.LocalHostPath, JsonSerializer.Serialize(newHostRuleArray));
     }
 
     private async void RemoveImageButton_Clicked(object sender, EventArgs e)
     {
         ImageButton senderImageButton = (ImageButton)sender;
         CealHostRule customHostRule = (CealHostRule)senderImageButton.BindingContext;
-        JsonDocumentOptions localHostOptions = new() { AllowTrailingCommas = true, CommentHandling = JsonCommentHandling.Skip };
-        JsonElement localHostArray = JsonDocument.Parse(await File.ReadAllTextAsync(MainConst.CealHostPath.Replace("*", customHostRule.Name)), localHostOptions).RootElement;
-        List<JsonElement> newHostList = [.. localHostArray.EnumerateArray()];
+        int customHostIndex = MainPres.CealHostRulesCollection.IndexOf(customHostRule);
 
-        foreach (JsonElement localHostRule in localHostArray.EnumerateArray())
-            if (localHostRule[0].ToString().TrimStart('[').TrimEnd(']').Replace("\"", string.Empty) == customHostRule.Domain &&
-                (string.IsNullOrWhiteSpace(localHostRule[1].GetString()) ? "--" : localHostRule[1].GetString()) == customHostRule.Sni &&
-                localHostRule[2].GetString() == customHostRule.Ip)
-            {
-                newHostList.Remove(localHostRule);
-
+        foreach (KeyValuePair<string, List<CealHostRule>?> cealHostRulesPair in CealHostRulesDict)
+            if (cealHostRulesPair.Key != customHostRule.Name)
+                customHostIndex -= cealHostRulesPair.Value?.Count ?? 0;
+            else
                 break;
-            }
 
-        string newHost = JsonSerializer.Serialize(newHostList);
+        CealHostRulesDict[customHostRule.Name!]!.RemoveAt(customHostIndex);
 
-        await File.WriteAllTextAsync(MainConst.LocalHostPath, newHost);
+        List<object?[]> newHostRuleArray = [];
+
+        foreach (CealHostRule cealHostRule in CealHostRulesDict[customHostRule.Name!]!)
+        {
+            string[] localHostDomainArray = JsonSerializer.Deserialize<string[]>(cealHostRule.Domains)!;
+
+            newHostRuleArray.Add([localHostDomainArray, cealHostRule.Sni, cealHostRule.Ip]);
+        }
+
+        await File.WriteAllTextAsync(MainConst.CealHostPath.Replace("*", customHostRule.Name), JsonSerializer.Serialize(newHostRuleArray));
     }
 
     private void MainSearchHandler_ItemSelected(object _, CealHostRule e) => MainCollectionView.ScrollTo(e, position: ScrollToPosition.Center);
@@ -321,10 +332,12 @@ public partial class MainPage : ContentPage
 
     private async void CealHostWatcher_Changed(object sender, FileSystemEventArgs e)
     {
-        string cealHostName = e.Name!.TrimStart("Cealing-Host-".ToCharArray()).TrimEnd(".json".ToCharArray());
+        string cealHostName = Path.GetFileNameWithoutExtension(e.Name!).TrimStart("Cealing-Host-".ToCharArray());
 
         try
         {
+            await IsCealHostChangingSemaphore.WaitAsync();
+
             CealHostRulesDict[cealHostName] = [];
 
             string cealHost = await File.ReadAllTextAsync(e.FullPath);
@@ -337,59 +350,53 @@ public partial class MainPage : ContentPage
 
             foreach (JsonElement cealHostRule in cealHostArray.EnumerateArray())
             {
-                List<(string includeDomain, string excludeDomain)> cealHostDomainPairs = [];
-                string? cealHostSni = cealHostRule[1].ValueKind == JsonValueKind.Null ? null :
-                    string.IsNullOrWhiteSpace(cealHostRule[1].GetString()) ? $"{cealHostName}{CealHostRulesDict[cealHostName]!.Count}" : cealHostRule[1].GetString()!.Trim();
-                string cealHostIp = string.IsNullOrWhiteSpace(cealHostRule[2].GetString()) ? "127.0.0.1" : cealHostRule[2].GetString()!.Trim();
-
                 foreach (JsonElement cealHostDomain in cealHostRule[0].EnumerateArray())
-                {
-                    string[] cealHostDomainPair = (cealHostDomain.GetString() ?? string.Empty).Split('^', 2, StringSplitOptions.TrimEntries);
-
-                    if (string.IsNullOrEmpty(cealHostDomainPair[0].TrimStart('#').TrimStart('$')))
+                    if (string.IsNullOrEmpty(cealHostDomain.GetString()?.Trim().TrimStart('#').TrimStart('$')))
                         continue;
 
-                    cealHostDomainPairs.Add((cealHostDomainPair[0], cealHostDomainPair.Length == 2 ? cealHostDomainPair[1] : string.Empty));
-                }
+                string cealHostDomains = cealHostRule[0].ToString();
+                string? cealHostSni = cealHostRule[1].GetString()?.Trim();
+                string cealHostIp = string.IsNullOrWhiteSpace(cealHostRule[2].GetString()) ? "127.0.0.1" : cealHostRule[2].GetString()!.Trim();
 
-                if (cealHostDomainPairs.Count != 0)
-                {
-                    CealHostRulesDict[cealHostName]!.Add((cealHostDomainPairs, cealHostSni, cealHostIp));
-                    MainPres.CealHostRulesCollection.Add(new()
-                    {
-                        Name = cealHostName,
-                        Domain = cealHostRule[0].ToString().TrimStart('[').TrimEnd(']').Replace("\"", string.Empty),
-                        Sni = string.IsNullOrWhiteSpace(cealHostRule[1].GetString()) ? "--" : cealHostRule[1].GetString(),
-                        Ip = cealHostIp
-                    });
-                }
+                CealHostRulesDict[cealHostName]!.Add(new(cealHostDomains, cealHostSni, cealHostIp));
             }
         }
         catch { CealHostRulesDict[cealHostName] = null; }
         finally
         {
+            List<CealHostRule> cealHostRulesList = [];
             string hostRules = string.Empty;
             string hostResolverRules = string.Empty;
-            int nullSniNum = 0;
+            int EmptySniIndex = 0;
 
-            foreach (KeyValuePair<string, List<(List<(string includeDomain, string excludeDomain)> domainPairs, string? sni, string ip)>?> cealHostRulesPair in CealHostRulesDict)
-                foreach ((List<(string includeDomain, string excludeDomain)> cealHostDomainPairs, string? cealHostSni, string cealHostIp) in cealHostRulesPair.Value ?? [])
+            foreach (KeyValuePair<string, List<CealHostRule>?> cealHostRulesPair in CealHostRulesDict)
+                foreach (CealHostRule cealHostRule in cealHostRulesPair.Value ?? [])
                 {
-                    string cealHostSniWithoutNull = cealHostSni ?? $"{cealHostRulesPair.Key}{(cealHostRulesPair.Value ?? []).Count + ++nullSniNum}";
-                    bool isValidCealHostDomainExist = false;
+                    string[] cealHostDomainArray = JsonSerializer.Deserialize<string[]>(cealHostRule.Domains)!;
+                    string cealHostDomains = string.Empty;
+                    string cealHostSniWithoutEmpty = string.IsNullOrEmpty(cealHostRule.Sni) ? $"{cealHostRulesPair.Key}{EmptySniIndex++}" : cealHostRule.Sni;
 
-                    foreach ((string cealHostIncludeDomain, string cealHostExcludeDomain) in cealHostDomainPairs)
+                    foreach (string cealHostDomain in cealHostDomainArray)
                     {
-                        if (cealHostIncludeDomain.StartsWith('$'))
+                        cealHostDomains += cealHostDomain + ',';
+
+                        if (cealHostDomain.StartsWith('$'))
                             continue;
 
-                        hostRules += $"MAP {cealHostIncludeDomain.TrimStart('#')} {cealHostSniWithoutNull}," + (!string.IsNullOrWhiteSpace(cealHostExcludeDomain) ? $"EXCLUDE {cealHostExcludeDomain}," : string.Empty);
-                        isValidCealHostDomainExist = true;
+                        string[] cealHostDomainPair = cealHostDomain.Split('^', 2, StringSplitOptions.TrimEntries);
+
+                        hostRules += $"MAP {cealHostDomainPair[0].TrimStart('#')} {cealHostSniWithoutEmpty}," + (!string.IsNullOrEmpty(cealHostDomainPair.ElementAtOrDefault(1)) ? $"EXCLUDE {cealHostDomainPair[1]}," : string.Empty);
                     }
 
-                    if (isValidCealHostDomainExist)
-                        hostResolverRules += $"MAP {cealHostSniWithoutNull} {cealHostIp},";
+                    cealHostRulesList.Add(new(cealHostRulesPair.Key, cealHostDomains.TrimEnd(','), string.IsNullOrEmpty(cealHostRule.Sni) ? "--" : cealHostRule.Sni, cealHostRule.Ip));
+
+                    if (!string.IsNullOrEmpty(hostResolverRules))
+                        hostResolverRules += $"MAP {cealHostSniWithoutEmpty} {cealHostRule.Ip},";
                 }
+
+            IsCealHostChangingSemaphore.Release();
+
+            MainPres.CealHostRulesCollection = new(cealHostRulesList);
 
             CealArgs = @$"--host-rules=""{hostRules.TrimEnd(',')}"" --host-resolver-rules=""{hostResolverRules.TrimEnd(',')}"" --test-type --ignore-certificate-errors";
 

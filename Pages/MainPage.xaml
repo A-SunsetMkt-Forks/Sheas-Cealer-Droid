@@ -26,7 +26,7 @@
                                 StrokeShape="RoundRectangle 8" Margin="4">
                             <Grid Margin="8">
                                 <VerticalStackLayout>
-                                    <Label Text="{Binding Domain, Converter={x:Static convs:MainConv.MainSearchDomainLabelTextConv}}"
+                                    <Label Text="{Binding Domains, Converter={x:Static convs:MainConv.MainSearchDomainLabelTextConv}}"
                                            Margin="20,4" FontSize="Subtitle" />
                                     <Label Text="{Binding Ip}"
                                            Margin="20,4" FontSize="Caption" />
@@ -79,7 +79,7 @@
                                         <Label Margin="20,4" FontSize="Subtitle">
                                             <Label.Text>
                                                 <MultiBinding StringFormat="{}{0} ({1})">
-                                                    <Binding Path="Domain" />
+                                                    <Binding Path="Domains" />
                                                     <Binding Path="Sni" />
                                                 </MultiBinding>
                                             </Label.Text>

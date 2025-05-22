@@ -121,7 +121,7 @@ internal abstract partial class GlobalPres : ObservableObject
             return;
         }
 
-        if (newValue == BrowserNameCollection.LastOrDefault())
+        if (newValue == BrowserNameCollection[^1])
         {
             string? customBrowserName = await Shell.Current.CurrentPage.DisplayPromptAsync(GlobalConst._CustomBrowserNamePopupTitle, GlobalConst._CustomBrowserNamePopupMsg, GlobalConst._PopupAcceptText, GlobalConst._PopupCancelText);
 
@@ -138,12 +138,12 @@ internal abstract partial class GlobalPres : ObservableObject
             BrowserNameCollection.Insert(BrowserNameCollection.Count - 1, customBrowserName);
             newValue = customBrowserName;
         }
-        else if (!GlobalConst.DefaultBrowserNameCollection.Contains(newValue!) && oldValue != BrowserNameCollection.LastOrDefault())
+        else if (!GlobalConst.DefaultBrowserNameCollection.Contains(newValue!) && oldValue != BrowserNameCollection[^1])
             if (!await Shell.Current.CurrentPage.DisplayAlert(GlobalConst._CustomBrowserNameApplyPopupTitle, GlobalConst._CustomBrowserNameApplyPopupMsg, GlobalConst._PopupApplyText, GlobalConst._PopupDeleteText))
             {
-                BrowserName = BrowserNameCollection.FirstOrDefault();
+                BrowserName = BrowserNameCollection[0];
                 BrowserNameCollection.Remove(newValue!);
-                newValue = BrowserNameCollection.FirstOrDefault();
+                newValue = BrowserNameCollection[0];
             }
 
         Preferences.Default.Set(nameof(BrowserName), newValue);
@@ -163,9 +163,8 @@ internal abstract partial class GlobalPres : ObservableObject
         Preferences.Default.Set(nameof(UpstreamUrl), value);
     }
 
-    private static readonly ObservableCollection<CealHostRule> cealHostRulesCollection = [];
-    [SuppressMessage("Performance", "CA1822"), SuppressMessage("CodeQuality", "IDE0079")]
-    public ObservableCollection<CealHostRule> CealHostRulesCollection => cealHostRulesCollection;
+    [ObservableProperty]
+    private static ObservableCollection<CealHostRule> cealHostRulesCollection = [];
 
     [ObservableProperty]
     private static bool isUpstreamMirrorEnabled = Preferences.Default.Get(nameof(IsUpstreamMirrorEnabled), string.IsNullOrEmpty(upstreamUrl) || upstreamUrl.Contains("github.com", StringComparison.OrdinalIgnoreCase) || upstreamUrl.Contains("gitlab.com", StringComparison.OrdinalIgnoreCase));

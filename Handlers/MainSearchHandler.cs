@@ -21,7 +21,7 @@ internal class MainSearchHandler : SearchHandler
     {
         base.OnQueryChanged(oldValue, newValue);
 
-        ItemsSource = SearchCollection.Where(cealHostRule => cealHostRule.Domain.Contains(newValue) || (cealHostRule.Sni?.Contains(newValue) ?? false) || cealHostRule.Ip.Contains(newValue));
+        ItemsSource = SearchCollection.Where(cealHostRule => cealHostRule.Domains.Contains(newValue) || (cealHostRule.Sni?.Contains(newValue) ?? false) || cealHostRule.Ip.Contains(newValue));
     }
 
     protected override void OnItemSelected(object item) => ItemSelected?.Invoke(this, (CealHostRule)item);
