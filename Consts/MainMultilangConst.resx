@@ -122,6 +122,12 @@
   <data name="AddImageButtonTooltip" xml:space="preserve">
     <value>Tap to add a host</value>
   </data>
+  <data name="CopyImageButtonDescription" xml:space="preserve">
+    <value>Copy</value>
+  </data>
+  <data name="CopyImageButtonTooltip" xml:space="preserve">
+    <value>Tap to copy the host</value>
+  </data>
   <data name="GithubToolbarItemDescription" xml:space="preserve">
     <value>Github</value>
   </data>

@@ -182,6 +182,24 @@ namespace Sheas_Cealer_Droid.Consts {
         }
         
         /// <summary>
+        ///   查找类似 Copy 的本地化字符串。
+        /// </summary>
+        internal static string CopyImageButtonDescription {
+            get {
+                return ResourceManager.GetString("CopyImageButtonDescription", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   查找类似 Tap to copy the host 的本地化字符串。
+        /// </summary>
+        internal static string CopyImageButtonTooltip {
+            get {
+                return ResourceManager.GetString("CopyImageButtonTooltip", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   查找类似 Github 的本地化字符串。
         /// </summary>
         internal static string GithubToolbarItemDescription {

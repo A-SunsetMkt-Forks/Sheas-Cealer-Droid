@@ -122,6 +122,12 @@
   <data name="AddImageButtonTooltip" xml:space="preserve">
     <value>点击添加规则</value>
   </data>
+  <data name="CopyImageButtonDescription" xml:space="preserve">
+    <value>复制</value>
+  </data>
+  <data name="CopyImageButtonTooltip" xml:space="preserve">
+    <value>点击复制对应规则</value>
+  </data>
   <data name="GithubToolbarItemDescription" xml:space="preserve">
     <value>Github</value>
   </data>

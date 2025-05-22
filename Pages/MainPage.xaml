@@ -87,17 +87,30 @@
                                         <Label Text="{Binding Ip}"
                                                Margin="20,4" FontSize="Caption" />
                                     </VerticalStackLayout>
-                                    <ImageButton Source="remove_icon.png"
-                                                 ToolTipProperties.Text="{x:Static consts:MainMultilangConst.RemoveImageButtonTooltip}"
-                                                 SemanticProperties.Description="{x:Static consts:MainMultilangConst.RemoveImageButtonDescription}"
-                                                 Style="{x:StaticResource SmallImageButton}"
-                                                 IsVisible="{Binding Name, Converter={x:Static convs:MainConv.MainLocalViewIsVisibleConv}}"
-                                                 Grid.Column="1" Margin="0,4,20,4" WidthRequest="28" HeightRequest="28" CornerRadius="8"
-                                                 Clicked="RemoveImageButton_Clicked">
-                                        <ImageButton.Behaviors>
-                                            <toolkit:IconTintColorBehavior TintColor="{AppThemeBinding Light={StaticResource White}, Dark={StaticResource Gray900}}" />
-                                        </ImageButton.Behaviors>
-                                    </ImageButton>
+                                    <HorizontalStackLayout Spacing="20"
+                                                           Grid.Column="1" Margin="0,4,20,4">
+                                        <ImageButton Source="remove_icon.png"
+                                                     ToolTipProperties.Text="{x:Static consts:MainMultilangConst.RemoveImageButtonTooltip}"
+                                                     SemanticProperties.Description="{x:Static consts:MainMultilangConst.RemoveImageButtonDescription}"
+                                                     Style="{x:StaticResource SmallImageButton}"
+                                                     IsVisible="{Binding Name, Converter={x:Static convs:MainConv.MainLocalViewIsVisibleConv}}"
+                                                     WidthRequest="28" HeightRequest="28" CornerRadius="8"
+                                                     Clicked="RemoveImageButton_Clicked">
+                                            <ImageButton.Behaviors>
+                                                <toolkit:IconTintColorBehavior TintColor="{AppThemeBinding Light={StaticResource White}, Dark={StaticResource Gray900}}" />
+                                            </ImageButton.Behaviors>
+                                        </ImageButton>
+                                        <ImageButton Source="copy_icon.png"
+                                                     ToolTipProperties.Text="{x:Static consts:MainMultilangConst.CopyImageButtonTooltip}"
+                                                     SemanticProperties.Description="{x:Static consts:MainMultilangConst.CopyImageButtonDescription}"
+                                                     Style="{x:StaticResource SmallImageButton}"
+                                                     WidthRequest="28" HeightRequest="28" CornerRadius="8"
+                                                     Clicked="CopyImageButton_Clicked">
+                                            <ImageButton.Behaviors>
+                                                <toolkit:IconTintColorBehavior TintColor="{AppThemeBinding Light={StaticResource White}, Dark={StaticResource Gray900}}" />
+                                            </ImageButton.Behaviors>
+                                        </ImageButton>
+                                    </HorizontalStackLayout>
                                 </Grid>
                                 <AbsoluteLayout>
                                     <Border AbsoluteLayout.LayoutBounds="0,0.5,4,1" AbsoluteLayout.LayoutFlags="PositionProportional,HeightProportional"

@@ -2,6 +2,7 @@
 using CommunityToolkit.Maui.Core;
 using Microsoft.Maui;
 using Microsoft.Maui.ApplicationModel;
+using Microsoft.Maui.ApplicationModel.DataTransfer;
 using Microsoft.Maui.Controls;
 using Microsoft.Maui.Devices;
 using Ona_Core;
@@ -175,31 +176,44 @@ public partial class MainPage : ContentPage
     private async void RemoveImageButton_Clicked(object sender, EventArgs e)
     {
         ImageButton senderImageButton = (ImageButton)sender;
-        CealHostRule customHostRule = (CealHostRule)senderImageButton.BindingContext;
-        int customHostIndex = MainPres.CealHostRulesCollection.IndexOf(customHostRule);
+        CealHostRule selectedHostRule = (CealHostRule)senderImageButton.BindingContext;
+        int selectedHostIndex = MainPres.CealHostRulesCollection.IndexOf(selectedHostRule);
 
-        MainPres.CealHostRulesCollection.RemoveAt(customHostIndex);
+        MainPres.CealHostRulesCollection.RemoveAt(selectedHostIndex);
 
         await Task.Delay(1000);
 
         foreach (KeyValuePair<string, List<CealHostRule>?> cealHostRulesPair in CealHostRulesDict)
-            if (cealHostRulesPair.Key != customHostRule.Name)
-                customHostIndex -= cealHostRulesPair.Value?.Count ?? 0;
+            if (cealHostRulesPair.Key != selectedHostRule.Name)
+                selectedHostIndex -= cealHostRulesPair.Value?.Count ?? 0;
             else
                 break;
 
-        CealHostRulesDict[customHostRule.Name!]!.RemoveAt(customHostIndex);
+        CealHostRulesDict[selectedHostRule.Name!]!.RemoveAt(selectedHostIndex);
 
-        List<object?[]> newHostRuleArray = [];
+        List<object?[]> newHostRuleList = [];
 
-        foreach (CealHostRule cealHostRule in CealHostRulesDict[customHostRule.Name!]!)
-        {
-            string[] localHostDomainArray = JsonSerializer.Deserialize<string[]>(cealHostRule.Domains)!;
+        foreach (CealHostRule cealHostRule in CealHostRulesDict[selectedHostRule.Name!]!)
+            newHostRuleList.Add([JsonSerializer.Deserialize<string[]>(cealHostRule.Domains)!, cealHostRule.Sni, cealHostRule.Ip]);
 
-            newHostRuleArray.Add([localHostDomainArray, cealHostRule.Sni, cealHostRule.Ip]);
-        }
+        await File.WriteAllTextAsync(MainConst.CealHostPath.Replace("*", selectedHostRule.Name), JsonSerializer.Serialize(newHostRuleList));
+    }
+    private async void CopyImageButton_Clicked(object sender, EventArgs e)
+    {
+        ImageButton senderImageButton = (ImageButton)sender;
+        CealHostRule selectedHostRule = (CealHostRule)senderImageButton.BindingContext;
+        int selectedHostIndex = MainPres.CealHostRulesCollection.IndexOf(selectedHostRule);
 
-        await File.WriteAllTextAsync(MainConst.CealHostPath.Replace("*", customHostRule.Name), JsonSerializer.Serialize(newHostRuleArray));
+        foreach (KeyValuePair<string, List<CealHostRule>?> cealHostRulesPair in CealHostRulesDict)
+            if (cealHostRulesPair.Key != selectedHostRule.Name)
+                selectedHostIndex -= cealHostRulesPair.Value?.Count ?? 0;
+            else
+                break;
+
+        CealHostRule cealHostRule = CealHostRulesDict[selectedHostRule.Name!]![selectedHostIndex];
+
+        await Clipboard.Default.SetTextAsync(JsonSerializer.Serialize<object?[]>([JsonSerializer.Deserialize<string[]>(cealHostRule.Domains)!, cealHostRule.Sni, cealHostRule.Ip]));
+        await Toast.Make(GlobalConst._LinkCopiedToastMsg).Show();
     }
 
     private void MainSearchHandler_ItemSelected(object _, CealHostRule e) => MainCollectionView.ScrollTo(e, position: ScrollToPosition.Center);
