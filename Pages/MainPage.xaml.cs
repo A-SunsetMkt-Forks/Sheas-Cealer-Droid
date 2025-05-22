@@ -36,7 +36,7 @@ public partial class MainPage : ContentPage
     private bool IsAddImageButtonSlideAnimRunning = false;
 
     private string KaomojiOriginalString = string.Empty;
-    private int KaomojiRunningNum = 0;
+    private int KaomojiRunningCount = 0;
 
     public MainPage()
     {
@@ -322,23 +322,23 @@ public partial class MainPage : ContentPage
 
     private async void BottomTapGestureRecognizer_Tapped(object sender, TappedEventArgs e)
     {
-        if (KaomojiRunningNum == 0)
+        if (KaomojiRunningCount == 0)
             KaomojiOriginalString = MainPres.StatusMessage;
 
-        Interlocked.Add(ref KaomojiRunningNum, 1);
+        Interlocked.Add(ref KaomojiRunningCount, 1);
 
         int kaomojiArrayMaxIndex = MainConst.KaomojiShakeArray.Length - 1;
         int kaomojiArrayIndex = 0;
 
-        Timer kaomojiAnimationTimer = new(_ => MainPres.StatusMessage = KaomojiRunningNum + new string(' ', 2 * KaomojiRunningNum % 60) + MainConst.KaomojiShakeArray[^(Math.Abs(kaomojiArrayIndex++ % (2 * kaomojiArrayMaxIndex) - kaomojiArrayMaxIndex) + 1)],
-            null, 0, Math.Max(100 - 2 * KaomojiRunningNum, 1));
+        Timer kaomojiAnimationTimer = new(_ => MainPres.StatusMessage = KaomojiRunningCount + new string(' ', 2 * KaomojiRunningCount % 60) + MainConst.KaomojiShakeArray[^(Math.Abs(kaomojiArrayIndex++ % (2 * kaomojiArrayMaxIndex) - kaomojiArrayMaxIndex) + 1)],
+            null, 0, Math.Max(100 - 2 * KaomojiRunningCount, 1));
 
         await Task.Delay(400 * kaomojiArrayMaxIndex);
         await kaomojiAnimationTimer.DisposeAsync();
 
-        Interlocked.Add(ref KaomojiRunningNum, -1);
+        Interlocked.Add(ref KaomojiRunningCount, -1);
 
-        if (KaomojiRunningNum == 0)
+        if (KaomojiRunningCount == 0)
             MainPres.StatusMessage = KaomojiOriginalString;
     }
 
