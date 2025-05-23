@@ -61,7 +61,43 @@ namespace Sheas_Cealer_Droid.Consts {
         }
         
         /// <summary>
-        ///   查找类似 Connection failed, the current network does not support IPv6 ❌ 的本地化字符串。
+        ///   查找类似 Enter a domain name to be resolved 的本地化字符串。
+        /// </summary>
+        internal static string _DohDomainNamePopupMsg {
+            get {
+                return ResourceManager.GetString("_DohDomainNamePopupMsg", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   查找类似 Domain Name 的本地化字符串。
+        /// </summary>
+        internal static string _DohDomainNamePopupTitle {
+            get {
+                return ResourceManager.GetString("_DohDomainNamePopupTitle", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   查找类似 Resolution failed. Very sorry nya ❌ 的本地化字符串。
+        /// </summary>
+        internal static string _DohResolveErrorToastMsg {
+            get {
+                return ResourceManager.GetString("_DohResolveErrorToastMsg", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   查找类似 Resolution successful. IP copied ✅ 的本地化字符串。
+        /// </summary>
+        internal static string _DohResolveSuccessToastMsg {
+            get {
+                return ResourceManager.GetString("_DohResolveSuccessToastMsg", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   查找类似 Connection failed. The current network does not support IPv6 ❌ 的本地化字符串。
         /// </summary>
         internal static string _Ipv6TestErrorToastMsg {
             get {
@@ -70,11 +106,47 @@ namespace Sheas_Cealer_Droid.Consts {
         }
         
         /// <summary>
-        ///   查找类似 Connection successful, local network supports IPv6 ✅ 的本地化字符串。
+        ///   查找类似 Connection successful. Local network supports IPv6 ✅ 的本地化字符串。
         /// </summary>
         internal static string _Ipv6TestSuccessToastMsg {
             get {
                 return ResourceManager.GetString("_Ipv6TestSuccessToastMsg", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   查找类似 Resolve 的本地化字符串。
+        /// </summary>
+        internal static string DohImageButtonDescription {
+            get {
+                return ResourceManager.GetString("DohImageButtonDescription", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   查找类似 Tap to open a DoH resolution pop-up 的本地化字符串。
+        /// </summary>
+        internal static string DohImageButtonTooltip {
+            get {
+                return ResourceManager.GetString("DohImageButtonTooltip", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   查找类似 Resolve any domain via DoH 的本地化字符串。
+        /// </summary>
+        internal static string DohToolItemContent {
+            get {
+                return ResourceManager.GetString("DohToolItemContent", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   查找类似 DoH Resolution 的本地化字符串。
+        /// </summary>
+        internal static string DohToolItemTitle {
+            get {
+                return ResourceManager.GetString("DohToolItemTitle", resourceCulture);
             }
         }
         

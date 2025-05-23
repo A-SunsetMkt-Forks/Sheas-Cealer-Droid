@@ -116,6 +116,18 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="DohImageButtonDescription" xml:space="preserve">
+    <value>Resolve</value>
+  </data>
+  <data name="DohImageButtonTooltip" xml:space="preserve">
+    <value>Tap to open a DoH resolution pop-up</value>
+  </data>
+  <data name="DohToolItemContent" xml:space="preserve">
+    <value>Resolve any domain via DoH</value>
+  </data>
+  <data name="DohToolItemTitle" xml:space="preserve">
+    <value>DoH Resolution</value>
+  </data>
   <data name="Ipv6ImageButtonDescription" xml:space="preserve">
     <value>Test</value>
   </data>
@@ -128,10 +140,22 @@
   <data name="Ipv6ToolItemTitle" xml:space="preserve">
     <value>IPv6 Test</value>
   </data>
+  <data name="_DohDomainNamePopupMsg" xml:space="preserve">
+    <value>Enter a domain name to be resolved</value>
+  </data>
+  <data name="_DohDomainNamePopupTitle" xml:space="preserve">
+    <value>Domain Name</value>
+  </data>
+  <data name="_DohResolveErrorToastMsg" xml:space="preserve">
+    <value>Resolution failed. Very sorry nya ❌</value>
+  </data>
+  <data name="_DohResolveSuccessToastMsg" xml:space="preserve">
+    <value>Resolution successful. IP copied ✅</value>
+  </data>
   <data name="_Ipv6TestErrorToastMsg" xml:space="preserve">
-    <value>Connection failed, the current network does not support IPv6 ❌</value>
+    <value>Connection failed. The current network does not support IPv6 ❌</value>
   </data>
   <data name="_Ipv6TestSuccessToastMsg" xml:space="preserve">
-    <value>Connection successful, local network supports IPv6 ✅</value>
+    <value>Connection successful. Local network supports IPv6 ✅</value>
   </data>
 </root>

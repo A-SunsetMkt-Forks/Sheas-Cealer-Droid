@@ -116,6 +116,18 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="DohImageButtonDescription" xml:space="preserve">
+    <value>解析</value>
+  </data>
+  <data name="DohImageButtonTooltip" xml:space="preserve">
+    <value>点击打开 DoH 解析弹窗</value>
+  </data>
+  <data name="DohToolItemContent" xml:space="preserve">
+    <value>加密解析任意域名的纯净 IP</value>
+  </data>
+  <data name="DohToolItemTitle" xml:space="preserve">
+    <value>DoH 解析</value>
+  </data>
   <data name="Ipv6ImageButtonDescription" xml:space="preserve">
     <value>测试</value>
   </data>
@@ -127,6 +139,18 @@
   </data>
   <data name="Ipv6ToolItemTitle" xml:space="preserve">
     <value>IPv6 测试</value>
+  </data>
+  <data name="_DohDomainNamePopupMsg" xml:space="preserve">
+    <value>输入一个需要加密解析的域名</value>
+  </data>
+  <data name="_DohDomainNamePopupTitle" xml:space="preserve">
+    <value>待解析域名</value>
+  </data>
+  <data name="_DohResolveErrorToastMsg" xml:space="preserve">
+    <value>解析失败，肥肠包芡喵 ❌</value>
+  </data>
+  <data name="_DohResolveSuccessToastMsg" xml:space="preserve">
+    <value>解析成功，IP 已复制 ✅</value>
   </data>
   <data name="_Ipv6TestErrorToastMsg" xml:space="preserve">
     <value>连接失败，当前网络不可访问 IPv6 ❌</value>

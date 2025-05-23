@@ -8,11 +8,14 @@ using Sheas_Cealer_Droid.Consts;
 using Sheas_Cealer_Droid.Preses;
 using System;
 using System.Globalization;
+using System.Net.Http;
 
 namespace Sheas_Cealer_Droid;
 
 public partial class App : Application
 {
+    internal static readonly HttpClient AppClient = new(new HttpClientHandler { ServerCertificateCustomValidationCallback = HttpClientHandler.DangerousAcceptAnyServerCertificateValidator });
+
     private readonly AppPres AppPres;
 
     public App()

@@ -13,12 +13,27 @@
                 <models:ToolItem Title="{x:Static consts:ToolMultilangConst.Ipv6ToolItemTitle}"
                                  Content="{x:Static consts:ToolMultilangConst.Ipv6ToolItemContent}">
                     <models:ToolItem.Button>
-                        <ImageButton Source="copy_icon.png"
+                        <ImageButton Source="goto_icon.png"
                                      ToolTipProperties.Text="{x:Static consts:ToolMultilangConst.Ipv6ImageButtonTooltip}"
                                      SemanticProperties.Description="{x:Static consts:ToolMultilangConst.Ipv6ImageButtonDescription}"
                                      Style="{x:StaticResource SmallImageButton}"
                                      WidthRequest="28" HeightRequest="28" CornerRadius="8"
                                      Command="{x:Static pages:ToolPage.Ipv6ImageButton_ClickedCommand}">
+                            <ImageButton.Behaviors>
+                                <toolkit:IconTintColorBehavior TintColor="{AppThemeBinding Light={StaticResource White}, Dark={StaticResource Gray900}}" />
+                            </ImageButton.Behaviors>
+                        </ImageButton>
+                    </models:ToolItem.Button>
+                </models:ToolItem>
+                <models:ToolItem Title="{x:Static consts:ToolMultilangConst.DohToolItemTitle}"
+                                 Content="{x:Static consts:ToolMultilangConst.DohToolItemContent}">
+                    <models:ToolItem.Button>
+                        <ImageButton Source="goto_icon.png"
+                                     ToolTipProperties.Text="{x:Static consts:ToolMultilangConst.DohImageButtonTooltip}"
+                                     SemanticProperties.Description="{x:Static consts:ToolMultilangConst.DohImageButtonDescription}"
+                                     Style="{x:StaticResource SmallImageButton}"
+                                     WidthRequest="28" HeightRequest="28" CornerRadius="8"
+                                     Command="{x:Static pages:ToolPage.DohImageButton_ClickedCommand}">
                             <ImageButton.Behaviors>
                                 <toolkit:IconTintColorBehavior TintColor="{AppThemeBinding Light={StaticResource White}, Dark={StaticResource Gray900}}" />
                             </ImageButton.Behaviors>
