@@ -71,6 +71,9 @@
 		<MauiXaml Update="Pages\FlagPage.xaml">
 			<Generator>MSBuild:Compile</Generator>
 		</MauiXaml>
+		<MauiXaml Update="Pages\ToolPage.xaml">
+		  <Generator>MSBuild:Compile</Generator>
+		</MauiXaml>
 		<MauiXaml Update="Pages\SettingsPage.xaml">
 			<Generator>MSBuild:Compile</Generator>
 		</MauiXaml>
@@ -128,6 +131,11 @@
 			<DesignTime>true</DesignTime>
 			<AutoGen>true</AutoGen>
 		</Compile>
+		<Compile Update="Consts\ToolMultilangConst.Designer.cs">
+		  <DependentUpon>ToolMultilangConst.resx</DependentUpon>
+		  <DesignTime>true</DesignTime>
+		  <AutoGen>true</AutoGen>
+		</Compile>
 		<Compile Update="Consts\SettingsMultilangConst.Designer.cs">
 			<DependentUpon>SettingsMultilangConst.resx</DependentUpon>
 			<DesignTime>true</DesignTime>
@@ -182,6 +190,15 @@
 		<EmbeddedResource Update="Consts\AdbMultilangConst.zh.resx">
 			<SubType>Designer</SubType>
 			<Generator></Generator>
+		</EmbeddedResource>
+		<EmbeddedResource Update="Consts\ToolMultilangConst.resx">
+		  <SubType>Designer</SubType>
+		  <LastGenOutput>ToolMultilangConst.Designer.cs</LastGenOutput>
+		  <Generator>ResXFileCodeGenerator</Generator>
+		</EmbeddedResource>
+		<EmbeddedResource Update="Consts\ToolMultilangConst.zh.resx">
+		  <SubType>Designer</SubType>
+		  <Generator></Generator>
 		</EmbeddedResource>
 		<EmbeddedResource Update="Consts\SettingsMultilangConst.resx">
 			<SubType>Designer</SubType>

@@ -152,6 +152,9 @@
   <data name="SettingsMenuItemTitle" xml:space="preserve">
     <value>设置</value>
   </data>
+  <data name="ToolMenuItemTitle" xml:space="preserve">
+    <value>工具</value>
+  </data>
   <data name="_BrowserNameCollectionCustomTitle" xml:space="preserve">
     <value>其他 (自定义)</value>
   </data>

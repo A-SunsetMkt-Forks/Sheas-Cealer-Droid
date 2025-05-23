@@ -45,6 +45,10 @@
               IconImageSource="{AppThemeBinding Light=settings_icon.png, Dark=settings_dark_icon.png}"
               CommandParameter="{x:Type pages:SettingsPage}"
               Clicked="DetailMenuItem_Clicked" />
+    <MenuItem Text="{x:Static consts:GlobalMultilangConst.ToolMenuItemTitle}"
+              IconImageSource="{AppThemeBinding Light=tool_icon.png, Dark=tool_dark_icon.png}"
+              CommandParameter="{x:Type pages:ToolPage}"
+              Clicked="DetailMenuItem_Clicked" />
     <MenuItem Text="{x:Static consts:GlobalMultilangConst.AboutMenuItemTitle}"
               IconImageSource="{AppThemeBinding Light=about_icon.png, Dark=about_dark_icon.png}"
               CommandParameter="{x:Type pages:AboutPage}"

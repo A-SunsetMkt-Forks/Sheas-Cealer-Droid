@@ -533,5 +533,14 @@ namespace Sheas_Cealer_Droid.Consts {
                 return ResourceManager.GetString("SettingsMenuItemTitle", resourceCulture);
             }
         }
+        
+        /// <summary>
+        ///   查找类似 Tool 的本地化字符串。
+        /// </summary>
+        internal static string ToolMenuItemTitle {
+            get {
+                return ResourceManager.GetString("ToolMenuItemTitle", resourceCulture);
+            }
+        }
     }
 }

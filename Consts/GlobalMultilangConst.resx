@@ -152,6 +152,9 @@
   <data name="SettingsMenuItemTitle" xml:space="preserve">
     <value>Settings</value>
   </data>
+  <data name="ToolMenuItemTitle" xml:space="preserve">
+    <value>Tool</value>
+  </data>
   <data name="_BrowserNameCollectionCustomTitle" xml:space="preserve">
     <value>Other (Custom)</value>
   </data>

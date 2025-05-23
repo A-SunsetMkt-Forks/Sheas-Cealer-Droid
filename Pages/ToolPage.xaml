@@ -1,0 +1,62 @@
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:toolkit="http://schemas.microsoft.com/dotnet/2022/maui/toolkit"
+             xmlns:consts="clr-namespace:Sheas_Cealer_Droid.Consts"
+             xmlns:models="clr-namespace:Sheas_Cealer_Droid.Models"
+             xmlns:pages="clr-namespace:Sheas_Cealer_Droid.Pages"
+             x:Class="Sheas_Cealer_Droid.Pages.ToolPage"
+             Title="{x:Static consts:GlobalMultilangConst.ToolMenuItemTitle}"
+             Shell.FlyoutBehavior="Disabled">
+    <CollectionView>
+        <CollectionView.ItemsSource>
+            <x:Array Type="{x:Type models:ToolItem}">
+                <models:ToolItem Title="{x:Static consts:ToolMultilangConst.Ipv6ToolItemTitle}"
+                                 Content="{x:Static consts:ToolMultilangConst.Ipv6ToolItemContent}">
+                    <models:ToolItem.Button>
+                        <ImageButton Source="copy_icon.png"
+                                     ToolTipProperties.Text="{x:Static consts:ToolMultilangConst.Ipv6ImageButtonTooltip}"
+                                     SemanticProperties.Description="{x:Static consts:ToolMultilangConst.Ipv6ImageButtonDescription}"
+                                     Style="{x:StaticResource SmallImageButton}"
+                                     WidthRequest="28" HeightRequest="28" CornerRadius="8"
+                                     Command="{x:Static pages:ToolPage.Ipv6ImageButton_ClickedCommand}">
+                            <ImageButton.Behaviors>
+                                <toolkit:IconTintColorBehavior TintColor="{AppThemeBinding Light={StaticResource White}, Dark={StaticResource Gray900}}" />
+                            </ImageButton.Behaviors>
+                        </ImageButton>
+                    </models:ToolItem.Button>
+                </models:ToolItem>
+            </x:Array>
+        </CollectionView.ItemsSource>
+        <CollectionView.ItemTemplate>
+            <DataTemplate x:DataType="models:ToolItem">
+                <Grid Margin="8,2,8,2">
+                    <Border BackgroundColor="{AppThemeBinding Light={DynamicResource Gray100}, Dark={DynamicResource Gray850}}"
+                            StrokeShape="RoundRectangle 8" Margin="4">
+                        <Grid Margin="8,8,0,8">
+                            <Grid ColumnDefinitions="*,Auto" RowDefinitions="Auto,Auto" ColumnSpacing="20">
+                                <Label Text="{Binding Title}"
+                                       Grid.Column="0" Grid.Row="0" Margin="20,4,0,4" FontSize="Subtitle" VerticalTextAlignment="Center" />
+                                <ContentView Content="{Binding Button}"
+                                             Grid.Column="1" Grid.Row="0" Margin="0,4,20,4" />
+                                <Label Text="{Binding Content}"
+                                       IsVisible="{Binding Content, StringFormat=True, TargetNullValue=False}"
+                                       Grid.ColumnSpan="2" Grid.Row="1" Margin="20,4" FontSize="Caption" />
+                            </Grid>
+                            <AbsoluteLayout>
+                                <Border AbsoluteLayout.LayoutBounds="0,0.5,4,1" AbsoluteLayout.LayoutFlags="PositionProportional,HeightProportional"
+                                        BackgroundColor="{AppThemeBinding Light={DynamicResource Primary500}, Dark={DynamicResource Primary700}}"
+                                        StrokeShape="RoundRectangle 8" />
+                            </AbsoluteLayout>
+                        </Grid>
+                    </Border>
+                </Grid>
+            </DataTemplate>
+        </CollectionView.ItemTemplate>
+        <CollectionView.Header>
+            <ContentView Margin="0,6,0,0" />
+        </CollectionView.Header>
+        <CollectionView.Footer>
+            <ContentView Margin="0,0,0,6" />
+        </CollectionView.Footer>
+    </CollectionView>
+</ContentPage>
