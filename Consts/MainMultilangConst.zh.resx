@@ -179,9 +179,9 @@
   <data name="_AddHostPopupMsg" xml:space="preserve">
     <value>输入一条 Json 格式的伪造规则
 
-(格式要求参考 关于 → 使用教程)
+例如: [["*example.com"],"","23.215.0.136"]
 
-(例: [["*example.com"],"","23.215.0.136"])</value>
+(详细格式要求参考 关于 → 使用教程)</value>
   </data>
   <data name="_AddHostPopupTitle" xml:space="preserve">
     <value>添加规则</value>

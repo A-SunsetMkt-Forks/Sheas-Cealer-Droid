@@ -179,9 +179,9 @@
   <data name="_AddHostPopupMsg" xml:space="preserve">
     <value>Enter a cealing host in Json format
 
-(Format requirements refer to About → Usage Docs)
+Example: [["*example.com"],"","23.215.0.136"]
 
-(Example: [["*example.com"],"","23.215.0.136"])</value>
+(Detailed format requirements refer to About → Usage Docs)</value>
   </data>
   <data name="_AddHostPopupTitle" xml:space="preserve">
     <value>Add Host</value>

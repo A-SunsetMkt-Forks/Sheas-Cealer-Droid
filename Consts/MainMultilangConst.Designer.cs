@@ -72,9 +72,9 @@ namespace Sheas_Cealer_Droid.Consts {
         /// <summary>
         ///   查找类似 Enter a cealing host in Json format
         ///
-        ///(Format requirements refer to About → Usage Docs)
+        ///Example: [[&quot;*example.com&quot;],&quot;&quot;,&quot;23.215.0.136&quot;]
         ///
-        ///(Example: [[&quot;*example.com&quot;],&quot;&quot;,&quot;23.215.0.136&quot;]) 的本地化字符串。
+        ///(Detailed format requirements refer to About → Usage Docs) 的本地化字符串。
         /// </summary>
         internal static string _AddHostPopupMsg {
             get {
