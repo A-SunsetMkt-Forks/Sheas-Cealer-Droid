@@ -11,7 +11,7 @@
 * 适用平台: Android (其他平台请参考[相关项目](https://github.com/SpaceTimee/Sheas-Cealer-Droid#相关项目))
 
 ## 词汇解释
-[正式版解除封印]
+**[Cealer Dict](https://github.com/SpaceTimee/Sheas-Cealer-Droid/wiki/Cealer-Dict)**
 
 ## 注意事项
 1. 内置伪造规则在 [Cealing Host 存储库](https://github.com/SpaceTimee/Cealing-Host) 持续更新
@@ -25,13 +25,16 @@
 3. 群文件 (参与内测): 参考[联系方式](https://github.com/SpaceTimee/Sheas-Cealer-Droid#联系方式)
 
 ## 食用文档
-[正式版解除封印]
+**[Cealer Docs](https://github.com/SpaceTimee/Sheas-Cealer-Droid/wiki/Cealer-Docs)**
 
 ## 项目构建
-[正式版解除封印]
+[Cealer Build](https://github.com/SpaceTimee/Sheas-Cealer-Droid/wiki/Cealer-Build)
 
 ## 未来路线
-正式版计划添加自定义伪造规则、上游链接和额外参数的功能以及优化英语本地化体验
+1. 添加 注入额外参数功能
+2. 添加 仅注入额外参数功能
+3. 添加 伪造规则 IP 测速功能
+4. 添加 本地规则拖动排序功能
 
 ## 项目原理
 利用 Chromium 内核的启动参数特性伪造 SNI 拓展标记，详细原理可参考[这篇文章](https://nicebowl.fun/24_8)

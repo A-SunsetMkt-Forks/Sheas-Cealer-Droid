@@ -8,10 +8,10 @@
 ## About
 **Cealer (Sheas Cealer Droid)**: A SNI concealing tool based on **MAUI(.Net9)**
 
-* Applicable platform: Android (For other system, please refer to [Projects](https://github.com/SpaceTimee/Sheas-Cealer-Droid?tab=readme-ov-file#Projects))
+* Applicable platform: Android (For other system, please refer to [Projects](https://github.com/SpaceTimee/Sheas-Cealer-Droid#Projects))
 
 ## Vocabulary
-[Unsealed in official version]
+**[Cealer Dict](https://github.com/SpaceTimee/Sheas-Cealer-Droid/wiki/Cealer-Dict)**
 
 ## Notes
 1. The Built-in Cealing Host is continuously updated in the [Cealing Host repository](https://github.com/SpaceTimee/Cealing-Host)
@@ -25,13 +25,16 @@
 3. Group File (participate in internal testing): Please refer to [Contacts](https://github.com/SpaceTimee/Sheas-Cealer-Droid#Contacts)
 
 ## Docs
-[Unsealed in official version]
+**[Cealer Docs](https://github.com/SpaceTimee/Sheas-Cealer-Droid/wiki/Cealer-Docs)**
 
 ## Build
-[Unsealed in official version]
+[Cealer Build](https://github.com/SpaceTimee/Sheas-Cealer-Droid/wiki/Cealer-Build)
 
 ## Roadmap
-The official release is planned to support the custom of Cealing Host, Upstream Url, and Extra Args, as well as improvements to the English localization experience
+1. Add injecting extra args function
+2. Add injecting only extra args function
+2. Add Cealing Host IP speed test function
+3. Add Local Host drag and sort function
 
 ## Principles
 Using the startup parameter feature of the Chromium kernel to conceal SNI. For more detailes, please refer to [this article](https://nicebowl.fun/24_8)
