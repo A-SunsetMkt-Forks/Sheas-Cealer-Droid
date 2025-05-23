@@ -195,6 +195,9 @@
   <data name="_CustomHostSyntaxErrorToastMsg" xml:space="preserve">
     <value>Json 语法错误，无法解析 ❌</value>
   </data>
+  <data name="_HostCopiedToastMsg" xml:space="preserve">
+    <value>规则已复制 ✅</value>
+  </data>
   <data name="_InactiveStatusMessage" xml:space="preserve">
     <value>伪造参数未注入，点击按钮启动伪造</value>
   </data>

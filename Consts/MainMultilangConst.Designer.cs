@@ -119,6 +119,15 @@ namespace Sheas_Cealer_Droid.Consts {
         }
         
         /// <summary>
+        ///   查找类似 Host copied ✅ 的本地化字符串。
+        /// </summary>
+        internal static string _HostCopiedToastMsg {
+            get {
+                return ResourceManager.GetString("_HostCopiedToastMsg", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   查找类似 Injection is inactive. Tap to start 的本地化字符串。
         /// </summary>
         internal static string _InactiveStatusMessage {

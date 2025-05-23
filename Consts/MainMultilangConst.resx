@@ -195,6 +195,9 @@ Example: [["*example.com"],"","23.215.0.136"]
   <data name="_CustomHostSyntaxErrorToastMsg" xml:space="preserve">
     <value>Invalid json syntax. Parsing failed ❌</value>
   </data>
+  <data name="_HostCopiedToastMsg" xml:space="preserve">
+    <value>Host copied ✅</value>
+  </data>
   <data name="_InactiveStatusMessage" xml:space="preserve">
     <value>Injection is inactive. Tap to start</value>
   </data>

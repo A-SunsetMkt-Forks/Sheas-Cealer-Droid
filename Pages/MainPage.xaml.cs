@@ -213,7 +213,7 @@ public partial class MainPage : ContentPage
         CealHostRule cealHostRule = CealHostRulesDict[selectedHostRule.Name!]![selectedHostIndex];
 
         await Clipboard.Default.SetTextAsync(JsonSerializer.Serialize<object?[]>([JsonSerializer.Deserialize<string[]>(cealHostRule.Domains)!, cealHostRule.Sni, cealHostRule.Ip]));
-        await Toast.Make(GlobalConst._LinkCopiedToastMsg).Show();
+        await Toast.Make(MainConst._HostCopiedToastMsg).Show();
     }
 
     private void MainSearchHandler_ItemSelected(object _, CealHostRule e) => MainCollectionView.ScrollTo(e, position: ScrollToPosition.Center);
