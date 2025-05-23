@@ -72,7 +72,7 @@
 			<Generator>MSBuild:Compile</Generator>
 		</MauiXaml>
 		<MauiXaml Update="Pages\ToolPage.xaml">
-		  <Generator>MSBuild:Compile</Generator>
+			<Generator>MSBuild:Compile</Generator>
 		</MauiXaml>
 		<MauiXaml Update="Pages\SettingsPage.xaml">
 			<Generator>MSBuild:Compile</Generator>
@@ -132,9 +132,9 @@
 			<AutoGen>true</AutoGen>
 		</Compile>
 		<Compile Update="Consts\ToolMultilangConst.Designer.cs">
-		  <DependentUpon>ToolMultilangConst.resx</DependentUpon>
-		  <DesignTime>true</DesignTime>
-		  <AutoGen>true</AutoGen>
+			<DependentUpon>ToolMultilangConst.resx</DependentUpon>
+			<DesignTime>true</DesignTime>
+			<AutoGen>true</AutoGen>
 		</Compile>
 		<Compile Update="Consts\SettingsMultilangConst.Designer.cs">
 			<DependentUpon>SettingsMultilangConst.resx</DependentUpon>
@@ -167,94 +167,52 @@
 			<AutoGen>true</AutoGen>
 		</Compile>
 		<Compile Update="Consts\GlobalMultilangConst.Designer.cs">
+			<DependentUpon>GlobalMultilangConst.resx</DependentUpon>
 			<DesignTime>true</DesignTime>
 			<AutoGen>true</AutoGen>
-			<DependentUpon>GlobalMultilangConst.resx</DependentUpon>
 		</Compile>
 	</ItemGroup>
 
 	<ItemGroup>
 		<EmbeddedResource Update="Consts\AboutMultilangConst.resx">
-			<SubType>Designer</SubType>
 			<LastGenOutput>AboutMultilangConst.Designer.cs</LastGenOutput>
 			<Generator>ResXFileCodeGenerator</Generator>
-		</EmbeddedResource>
-		<EmbeddedResource Update="Consts\AboutMultilangConst.zh.resx">
-			<SubType>Designer</SubType>
-			<Generator></Generator>
 		</EmbeddedResource>
 		<EmbeddedResource Update="Consts\AdbMultilangConst.resx">
 			<LastGenOutput>AdbMultilangConst.Designer.cs</LastGenOutput>
 			<Generator>ResXFileCodeGenerator</Generator>
 		</EmbeddedResource>
-		<EmbeddedResource Update="Consts\AdbMultilangConst.zh.resx">
-			<SubType>Designer</SubType>
-			<Generator></Generator>
-		</EmbeddedResource>
 		<EmbeddedResource Update="Consts\ToolMultilangConst.resx">
-		  <SubType>Designer</SubType>
-		  <LastGenOutput>ToolMultilangConst.Designer.cs</LastGenOutput>
-		  <Generator>ResXFileCodeGenerator</Generator>
-		</EmbeddedResource>
-		<EmbeddedResource Update="Consts\ToolMultilangConst.zh.resx">
-		  <SubType>Designer</SubType>
-		  <Generator></Generator>
-		</EmbeddedResource>
-		<EmbeddedResource Update="Consts\SettingsMultilangConst.resx">
-			<SubType>Designer</SubType>
-			<LastGenOutput>SettingsMultilangConst.Designer.cs</LastGenOutput>
+			<LastGenOutput>ToolMultilangConst.Designer.cs</LastGenOutput>
 			<Generator>ResXFileCodeGenerator</Generator>
 		</EmbeddedResource>
-		<EmbeddedResource Update="Consts\SettingsMultilangConst.zh.resx">
-			<SubType>Designer</SubType>
-			<Generator></Generator>
+		<EmbeddedResource Update="Consts\SettingsMultilangConst.resx">
+			<LastGenOutput>SettingsMultilangConst.Designer.cs</LastGenOutput>
+			<Generator>ResXFileCodeGenerator</Generator>
 		</EmbeddedResource>
 		<EmbeddedResource Update="Consts\BrowserMultilangConst.resx">
 			<LastGenOutput>BrowserMultilangConst.Designer.cs</LastGenOutput>
 			<Generator>ResXFileCodeGenerator</Generator>
 		</EmbeddedResource>
-		<EmbeddedResource Update="Consts\BrowserMultilangConst.zh.resx">
-			<SubType>Designer</SubType>
-			<Generator></Generator>
-		</EmbeddedResource>
 		<EmbeddedResource Update="Consts\FlagMultilangConst.resx">
 			<LastGenOutput>FlagMultilangConst.Designer.cs</LastGenOutput>
 			<Generator>ResXFileCodeGenerator</Generator>
-		</EmbeddedResource>
-		<EmbeddedResource Update="Consts\FlagMultilangConst.zh.resx">
-			<SubType>Designer</SubType>
-			<Generator></Generator>
 		</EmbeddedResource>
 		<EmbeddedResource Update="Consts\AppMultilangConst.resx">
 			<LastGenOutput>AppMultilangConst.Designer.cs</LastGenOutput>
 			<Generator>ResXFileCodeGenerator</Generator>
 		</EmbeddedResource>
-		<EmbeddedResource Update="Consts\AppMultilangConst.zh.resx">
-			<SubType>Designer</SubType>
-			<Generator></Generator>
-		</EmbeddedResource>
 		<EmbeddedResource Update="Consts\ReadyMultilangConst.resx">
 			<LastGenOutput>ReadyMultilangConst.Designer.cs</LastGenOutput>
 			<Generator>ResXFileCodeGenerator</Generator>
-		</EmbeddedResource>
-		<EmbeddedResource Update="Consts\GlobalMultilangConst.zh.resx">
-			<SubType>Designer</SubType>
-			<Generator></Generator>
 		</EmbeddedResource>
 		<EmbeddedResource Update="Consts\MainMultilangConst.resx">
 			<LastGenOutput>MainMultilangConst.Designer.cs</LastGenOutput>
 			<Generator>ResXFileCodeGenerator</Generator>
 		</EmbeddedResource>
-		<EmbeddedResource Update="Consts\MainMultilangConst.zh.resx">
-			<SubType>Designer</SubType>
-			<Generator></Generator>
-		</EmbeddedResource>
 		<EmbeddedResource Update="Consts\GlobalMultilangConst.resx">
-			<Generator>ResXFileCodeGenerator</Generator>
 			<LastGenOutput>GlobalMultilangConst.Designer.cs</LastGenOutput>
-		</EmbeddedResource>
-		<EmbeddedResource Update="Consts\ReadyMultilangConst.zh.resx">
-			<Generator></Generator>
+			<Generator>ResXFileCodeGenerator</Generator>
 		</EmbeddedResource>
 	</ItemGroup>
 
