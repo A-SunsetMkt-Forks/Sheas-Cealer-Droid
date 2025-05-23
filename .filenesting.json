@@ -12,6 +12,8 @@
                     "MainMultilangConst.zh.resx": [ "MainConst.cs" ],
                     "SettingsMultilangConst.resx": [ "SettingsConst.cs" ],
                     "SettingsMultilangConst.zh.resx": [ "SettingsConst.cs" ],
+                    "ToolMultilangConst.resx": [ "ToolConst.cs" ],
+                    "ToolMultilangConst.zh.resx": [ "ToolConst.cs" ],
                     "AboutMultilangConst.resx": [ "AboutConst.cs" ],
                     "AboutMultilangConst.zh.resx": [ "AboutConst.cs" ],
                     "BrowserMultilangConst.resx": [ "BrowserConst.cs" ],
