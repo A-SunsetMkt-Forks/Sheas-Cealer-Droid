@@ -422,7 +422,8 @@ public partial class MainPage : ContentPage
 
                         string[] cealHostDomainPair = cealHostDomain.Split('^', 2, StringSplitOptions.TrimEntries);
 
-                        hostRules += $"MAP {cealHostDomainPair[0].TrimStart('#')} {cealHostSniWithoutEmpty}," + (!string.IsNullOrEmpty(cealHostDomainPair.ElementAtOrDefault(1)) ? $"EXCLUDE {cealHostDomainPair[1]}," : string.Empty);
+                        hostRules += $"MAP {cealHostDomainPair[0].TrimStart('#')} {cealHostSniWithoutEmpty}," +
+                            (!string.IsNullOrEmpty(cealHostDomainPair.ElementAtOrDefault(1)) ? $"EXCLUDE {cealHostDomainPair[1]}," : string.Empty);
                     }
 
                     cealHostRulesList.Add(new(cealHostRulesPair.Key, cealHostDomains.TrimEnd(','), string.IsNullOrEmpty(cealHostRule.Sni) ? "--" : cealHostRule.Sni, cealHostRule.Ip));
