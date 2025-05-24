@@ -34,6 +34,66 @@ internal abstract partial class GlobalPres : ObservableObject
     }
 
     [ObservableProperty]
+    private static ObservableCollection<CealHostRule> cealHostRulesCollection = [];
+
+    private static readonly ObservableCollection<string> browserNameCollection = (Preferences.Default.ContainsKey(nameof(BrowserNameCollection)) ? JsonSerializer.Deserialize<ObservableCollection<string>>(Preferences.Default.Get(nameof(BrowserNameCollection), string.Empty)) : GlobalConst.DefaultBrowserNameCollection)!;
+    [SuppressMessage("Performance", "CA1822"), SuppressMessage("CodeQuality", "IDE0079")]
+    public ObservableCollection<string> BrowserNameCollection => browserNameCollection;
+    private void BrowserNameCollection_CollectionChanged(object? sender, NotifyCollectionChangedEventArgs e) => Preferences.Default.Set(nameof(BrowserNameCollection), JsonSerializer.Serialize(BrowserNameCollection));
+
+    [ObservableProperty]
+    private static string? browserName = Preferences.Default.Get<string?>(nameof(BrowserName), null);
+    async partial void OnBrowserNameChanged(string? oldValue, string? newValue)
+    {
+        if (!IsFirstRunning && string.IsNullOrEmpty(newValue))
+        {
+            BrowserName = oldValue;
+
+            return;
+        }
+
+        if (newValue == BrowserNameCollection[^1])
+        {
+            string? customBrowserName = await Shell.Current.CurrentPage.DisplayPromptAsync(GlobalConst._CustomBrowserNamePopupTitle, GlobalConst._CustomBrowserNamePopupMsg, GlobalConst._PopupAcceptText, GlobalConst._PopupCancelText);
+
+            if (string.IsNullOrEmpty(customBrowserName) || customBrowserName.Any(c => char.IsControl(c) || char.IsWhiteSpace(c)))
+            {
+                if (customBrowserName != null)
+                    await Toast.Make(GlobalConst._CustomBrowserNameErrorToastMsg, ToastDuration.Long).Show();
+
+                BrowserName = oldValue;
+
+                return;
+            }
+
+            BrowserNameCollection.Insert(BrowserNameCollection.Count - 1, customBrowserName);
+            newValue = customBrowserName;
+        }
+        else if (!GlobalConst.DefaultBrowserNameCollection.Contains(newValue!) && oldValue != BrowserNameCollection[^1])
+            if (!await Shell.Current.CurrentPage.DisplayAlert(GlobalConst._CustomBrowserNameApplyPopupTitle, GlobalConst._CustomBrowserNameApplyPopupMsg, GlobalConst._PopupApplyText, GlobalConst._PopupDeleteText))
+            {
+                BrowserName = BrowserNameCollection[0];
+                BrowserNameCollection.Remove(newValue!);
+                newValue = BrowserNameCollection[0];
+            }
+
+        Preferences.Default.Set(nameof(BrowserName), newValue);
+    }
+
+    [ObservableProperty]
+    private static string upstreamUrl = Preferences.Default.Get(nameof(UpstreamUrl), string.Empty);
+    partial void OnUpstreamUrlChanged(string value)
+    {
+        IsUpstreamMirrorEnabled = string.IsNullOrEmpty(value) || value.Contains("github.com", StringComparison.OrdinalIgnoreCase) || value.Contains("gitlab.com", StringComparison.OrdinalIgnoreCase);
+
+        Preferences.Default.Set(nameof(UpstreamUrl), value);
+    }
+
+    [ObservableProperty]
+    private static string extraArgs = Preferences.Default.Get(nameof(ExtraArgs), string.Empty);
+    partial void OnExtraArgsChanged(string value) => Preferences.Default.Set(nameof(ExtraArgs), value);
+
+    [ObservableProperty]
     private static string themeColorName = string.Empty;
     async partial void OnThemeColorNameChanged(string? oldValue, string newValue)
     {
@@ -111,62 +171,6 @@ internal abstract partial class GlobalPres : ObservableObject
     }
 
     [ObservableProperty]
-    private static string? browserName = Preferences.Default.Get<string?>(nameof(BrowserName), null);
-    async partial void OnBrowserNameChanged(string? oldValue, string? newValue)
-    {
-        if (!IsFirstRunning && string.IsNullOrEmpty(newValue))
-        {
-            BrowserName = oldValue;
-
-            return;
-        }
-
-        if (newValue == BrowserNameCollection[^1])
-        {
-            string? customBrowserName = await Shell.Current.CurrentPage.DisplayPromptAsync(GlobalConst._CustomBrowserNamePopupTitle, GlobalConst._CustomBrowserNamePopupMsg, GlobalConst._PopupAcceptText, GlobalConst._PopupCancelText);
-
-            if (string.IsNullOrEmpty(customBrowserName) || customBrowserName.Any(c => char.IsControl(c) || char.IsWhiteSpace(c)))
-            {
-                if (customBrowserName != null)
-                    await Toast.Make(GlobalConst._CustomBrowserNameErrorToastMsg, ToastDuration.Long).Show();
-
-                BrowserName = oldValue;
-
-                return;
-            }
-
-            BrowserNameCollection.Insert(BrowserNameCollection.Count - 1, customBrowserName);
-            newValue = customBrowserName;
-        }
-        else if (!GlobalConst.DefaultBrowserNameCollection.Contains(newValue!) && oldValue != BrowserNameCollection[^1])
-            if (!await Shell.Current.CurrentPage.DisplayAlert(GlobalConst._CustomBrowserNameApplyPopupTitle, GlobalConst._CustomBrowserNameApplyPopupMsg, GlobalConst._PopupApplyText, GlobalConst._PopupDeleteText))
-            {
-                BrowserName = BrowserNameCollection[0];
-                BrowserNameCollection.Remove(newValue!);
-                newValue = BrowserNameCollection[0];
-            }
-
-        Preferences.Default.Set(nameof(BrowserName), newValue);
-    }
-
-    private static readonly ObservableCollection<string> browserNameCollection = (Preferences.Default.ContainsKey(nameof(BrowserNameCollection)) ? JsonSerializer.Deserialize<ObservableCollection<string>>(Preferences.Default.Get(nameof(BrowserNameCollection), string.Empty)) : GlobalConst.DefaultBrowserNameCollection)!;
-    [SuppressMessage("Performance", "CA1822"), SuppressMessage("CodeQuality", "IDE0079")]
-    public ObservableCollection<string> BrowserNameCollection => browserNameCollection;
-    private void BrowserNameCollection_CollectionChanged(object? sender, NotifyCollectionChangedEventArgs e) => Preferences.Default.Set(nameof(BrowserNameCollection), JsonSerializer.Serialize(BrowserNameCollection));
-
-    [ObservableProperty]
-    private static string upstreamUrl = Preferences.Default.Get(nameof(UpstreamUrl), string.Empty);
-    partial void OnUpstreamUrlChanged(string value)
-    {
-        IsUpstreamMirrorEnabled = string.IsNullOrEmpty(value) || value.Contains("github.com", StringComparison.OrdinalIgnoreCase) || value.Contains("gitlab.com", StringComparison.OrdinalIgnoreCase);
-
-        Preferences.Default.Set(nameof(UpstreamUrl), value);
-    }
-
-    [ObservableProperty]
-    private static ObservableCollection<CealHostRule> cealHostRulesCollection = [];
-
-    [ObservableProperty]
     private static bool isUpstreamMirrorEnabled = Preferences.Default.Get(nameof(IsUpstreamMirrorEnabled), string.IsNullOrEmpty(upstreamUrl) || upstreamUrl.Contains("github.com", StringComparison.OrdinalIgnoreCase) || upstreamUrl.Contains("gitlab.com", StringComparison.OrdinalIgnoreCase));
     partial void OnIsUpstreamMirrorEnabledChanged(bool value) => Preferences.Default.Set(nameof(IsUpstreamMirrorEnabled), value);
 
@@ -188,18 +192,18 @@ internal abstract partial class GlobalPres : ObservableObject
     }
 
     [ObservableProperty]
-    private static bool isFirstRunning = Preferences.Default.Get(nameof(IsFirstRunning), true);
-    partial void OnIsFirstRunningChanged(bool value)
-    {
-        Preferences.Default.Set(nameof(GlobalConst.UserPairIdentity), GlobalConst.UserPairIdentity);
-        Preferences.Default.Set(nameof(IsFirstRunning), value);
-    }
-
-    [ObservableProperty]
     private static bool isFlagCopied = Preferences.Default.Get(nameof(IsFlagCopied), false);
     partial void OnIsFlagCopiedChanged(bool value) => Preferences.Default.Set(nameof(IsFlagCopied), value);
 
     [ObservableProperty]
     private static bool isCommandLineExist = Preferences.Default.Get(nameof(IsCommandLineExist), false);
     partial void OnIsCommandLineExistChanged(bool value) => Preferences.Default.Set(nameof(IsCommandLineExist), value);
+
+    [ObservableProperty]
+    private static bool isFirstRunning = Preferences.Default.Get(nameof(IsFirstRunning), true);
+    partial void OnIsFirstRunningChanged(bool value)
+    {
+        Preferences.Default.Set(nameof(GlobalConst.UserPairIdentity), GlobalConst.UserPairIdentity);
+        Preferences.Default.Set(nameof(IsFirstRunning), value);
+    }
 }

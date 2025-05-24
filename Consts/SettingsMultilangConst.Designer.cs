@@ -88,6 +88,33 @@ namespace Sheas_Cealer_Droid.Consts {
         }
         
         /// <summary>
+        ///   查找类似 Additional injected startup args, empty by default 的本地化字符串。
+        /// </summary>
+        internal static string ExtraArgsEntryPlaceholder {
+            get {
+                return ResourceManager.GetString("ExtraArgsEntryPlaceholder", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   查找类似 Tap to edit the Additional injected startup args 的本地化字符串。
+        /// </summary>
+        internal static string ExtraArgsEntryTooltip {
+            get {
+                return ResourceManager.GetString("ExtraArgsEntryTooltip", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   查找类似 Extra Args 的本地化字符串。
+        /// </summary>
+        internal static string ExtraArgsSettingsItemTitle {
+            get {
+                return ResourceManager.GetString("ExtraArgsSettingsItemTitle", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   查找类似 Select a UI l10n language 的本地化字符串。
         /// </summary>
         internal static string LangOptionPickerTitle {

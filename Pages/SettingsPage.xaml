@@ -28,15 +28,34 @@
                                Text="{Binding UpstreamUrl}"
                                Placeholder="{x:Static consts:GlobalConst.DefaultUpstreamUrl}"
                                ToolTipProperties.Text="{x:Static consts:SettingsMultilangConst.UpstreamUrlEntryTooltip}"
-                               Keyboard="Url" ReturnType="Default" IsSpellCheckEnabled="False" IsTextPredictionEnabled="False"
+                               Keyboard="Url" ReturnType="Done" IsSpellCheckEnabled="False" IsTextPredictionEnabled="False"
                                ReturnCommandParameter="{Binding Source={x:RelativeSource Self}, x:DataType=Entry}"
-                               ReturnCommand="{x:Static pages:SettingsPage.UpstreamUrlEntry_CompletedCommand}">
+                               ReturnCommand="{x:Static pages:SettingsPage.DoneEntry_CompletedCommand}">
                             <Entry.Behaviors>
                                 <toolkit:SelectAllTextBehavior />
                                 <toolkit:UriValidationBehavior RegexPattern="{x:Static consts:SettingsConst.UpstreamUrlRegexPattern}"
                                                                Flags="ValidateOnValueChanged"
                                                                ValidStyle="{x:StaticResource ValidEntry}"
                                                                InvalidStyle="{x:StaticResource InvalidEntry}" />
+                            </Entry.Behaviors>
+                        </Entry>
+                    </models:SettingsItem.View>
+                </models:SettingsItem>
+                <models:SettingsItem Title="{x:Static consts:SettingsMultilangConst.ExtraArgsSettingsItemTitle}">
+                    <models:SettingsItem.View>
+                        <Entry BindingContext="{Binding BindingContext, Source={x:RelativeSource AncestorType={x:Type ContentPage}}, x:DataType=ContentPage}"
+                               Text="{Binding ExtraArgs}"
+                               Placeholder="{x:Static consts:SettingsMultilangConst.ExtraArgsEntryPlaceholder}"
+                               ToolTipProperties.Text="{x:Static consts:SettingsMultilangConst.ExtraArgsEntryTooltip}"
+                               ReturnType="Done" IsSpellCheckEnabled="False" IsTextPredictionEnabled="False"
+                               ReturnCommandParameter="{Binding Source={x:RelativeSource Self}, x:DataType=Entry}"
+                               ReturnCommand="{x:Static pages:SettingsPage.DoneEntry_CompletedCommand}">
+                            <Entry.Behaviors>
+                                <toolkit:SelectAllTextBehavior />
+                                <toolkit:TextValidationBehavior RegexPattern="{x:Static consts:SettingsConst.ExtraArgsRegexPattern}"
+                                                                Flags="ValidateOnValueChanged"
+                                                                ValidStyle="{x:StaticResource ValidEntry}"
+                                                                InvalidStyle="{x:StaticResource InvalidEntry}" />
                             </Entry.Behaviors>
                         </Entry>
                     </models:SettingsItem.View>

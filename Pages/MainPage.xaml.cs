@@ -79,7 +79,7 @@ public partial class MainPage : ContentPage
         if (MainPres.IsCommandLineUtd == true)
             await File.WriteAllTextAsync(GlobalConst.CommandLinePath, string.Empty);
         else if (MainPres.IsCommandLineUtd == null)
-            await File.WriteAllTextAsync(GlobalConst.CommandLinePath, $"{MainPres.BrowserName!.ToLowerInvariant()} {CealArgs}");
+            await File.WriteAllTextAsync(GlobalConst.CommandLinePath, $"{MainPres.BrowserName!.ToLowerInvariant()} {CealArgs} {MainPres.ExtraArgs.TrimStart()}".TrimEnd());
         else
             await File.WriteAllTextAsync(MainConst.UpstreamHostPath, LatestUpstreamHostString);
 

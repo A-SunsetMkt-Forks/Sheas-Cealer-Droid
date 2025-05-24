@@ -7,4 +7,5 @@ internal abstract class SettingsConst : SettingsMultilangConst
     internal static string[] LangOptionNameArray => [.. GlobalConst.LangOptionDictionary.Keys];
 
     internal static string UpstreamUrlRegexPattern => "^(https?:\\/\\/)?[a-zA-Z0-9](-*[a-zA-Z0-9])*(\\.[a-zA-Z0-9](-*[a-zA-Z0-9])*)*(:\\d{1,5})?(\\/[a-zA-Z0-9.\\-_\\~\\!\\$\\&\\'\\(\\)\\*\\+\\,\\;\\=\\:\\@\\%]*)*$";
+    internal static string ExtraArgsRegexPattern => "^(--[a-z](-?[a-z])*(=((\".*\")|\\S+))?( --[a-z](-?[a-z])*(=((\".*\")|\\S+))?)*)?$";
 }

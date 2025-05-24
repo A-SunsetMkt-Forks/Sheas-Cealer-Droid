@@ -125,6 +125,15 @@
   <data name="CommandSettingsItemTitle" xml:space="preserve">
     <value>Adb 命令</value>
   </data>
+  <data name="ExtraArgsEntryPlaceholder" xml:space="preserve">
+    <value>额外注入的启动参数，默认为空</value>
+  </data>
+  <data name="ExtraArgsEntryTooltip" xml:space="preserve">
+    <value>点击编辑额外注入的启动参数</value>
+  </data>
+  <data name="ExtraArgsSettingsItemTitle" xml:space="preserve">
+    <value>额外参</value>
+  </data>
   <data name="LangOptionPickerTitle" xml:space="preserve">
     <value>选择一种 UI 本地化语言</value>
   </data>

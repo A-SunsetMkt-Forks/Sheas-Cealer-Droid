@@ -125,6 +125,15 @@
   <data name="CommandSettingsItemTitle" xml:space="preserve">
     <value>Adb Command</value>
   </data>
+  <data name="ExtraArgsEntryPlaceholder" xml:space="preserve">
+    <value>Additional injected startup args, empty by default</value>
+  </data>
+  <data name="ExtraArgsEntryTooltip" xml:space="preserve">
+    <value>Tap to edit the Additional injected startup args</value>
+  </data>
+  <data name="ExtraArgsSettingsItemTitle" xml:space="preserve">
+    <value>Extra Args</value>
+  </data>
   <data name="LangOptionPickerTitle" xml:space="preserve">
     <value>Select a UI l10n language</value>
   </data>

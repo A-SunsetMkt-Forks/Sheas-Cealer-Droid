@@ -20,8 +20,8 @@ public partial class SettingsPage : ContentPage
         BindingContext = SettingsPres = new();
     }
 
-    internal static ICommand UpstreamUrlEntry_CompletedCommand => new Command(sender => UpstreamUrlEntry_Completed(sender, null!));
-    private static void UpstreamUrlEntry_Completed(object sender, EventArgs e)
+    internal static ICommand DoneEntry_CompletedCommand => new Command(sender => DoneEntry_Completed(sender, null!));
+    private static void DoneEntry_Completed(object sender, EventArgs e)
     {
         Entry senderEntry = (Entry)sender;
 
