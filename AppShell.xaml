@@ -5,7 +5,7 @@
        xmlns:convs="clr-namespace:Sheas_Cealer_Droid.Convs"
        xmlns:pages="clr-namespace:Sheas_Cealer_Droid.Pages"
        xmlns:preses="clr-namespace:Sheas_Cealer_Droid.Preses"
-       x:Class="Sheas_Cealer_Droid.AppShell" x:DataType="preses:AppPres"
+       x:Class="Sheas_Cealer_Droid.AppShell" x:ClassModifier="Internal" x:DataType="preses:AppPres"
        FlyoutBackgroundColor="{AppThemeBinding Light={DynamicResource Gray50}, Dark={DynamicResource Gray900}}">
     <Shell.Behaviors>
         <toolkit:StatusBarBehavior StatusBarColor="{AppThemeBinding Light={StaticResource Primary50}, Dark={StaticResource Gray850}}"

@@ -7,7 +7,7 @@ using System.IO;
 
 namespace Sheas_Cealer_Droid;
 
-public partial class AppShell : Shell
+internal partial class AppShell : Shell
 {
     private readonly AppPres AppPres;
     private readonly List<Type> DetailPageTypeArray = [];
