@@ -11,7 +11,7 @@ internal partial class MainPres : GlobalPres
     private bool isPageLoading = true;
 
     [ObservableProperty]
-    private bool? isCommandLineUtd;
+    private bool? isCommandLineUtd = null;
 
     [ObservableProperty]
     private string statusMessage = string.Empty;

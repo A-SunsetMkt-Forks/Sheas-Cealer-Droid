@@ -31,10 +31,8 @@
 [Cealer Build](https://github.com/SpaceTimee/Sheas-Cealer-Droid/wiki/Cealer-Build)
 
 ## 未来路线
-1. 添加 注入额外参数功能
-2. 添加 仅注入额外参数功能
-3. 添加 伪造规则 IP 测速功能
-4. 添加 本地规则拖动排序功能
+1. 添加 伪造规则 IP 测速功能
+2. 添加 本地规则拖动排序功能
 
 ## 项目原理
 利用 Chromium 内核的启动参数特性伪造 SNI 拓展标记，详细原理可参考[这篇文章](https://nicebowl.fun/24_8)

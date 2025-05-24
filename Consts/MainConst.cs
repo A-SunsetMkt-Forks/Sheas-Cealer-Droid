@@ -13,5 +13,6 @@ internal abstract class MainConst : MainMultilangConst
     internal static string GithubMirrorUrl => "https://ghfast.top/";
     internal static string UpdateApiUrl => "https://api.github.com/repos/SpaceTimee/Sheas-Cealer-Droid/releases/latest";
     internal static string UpdateApiUserAgent => "Sheas-Cealer-Droid";
+    internal static string DisableCealArg => "--disable-cealing";
     internal static string[] KaomojiShakeArray => ["(＞ ﹏ ＜ *  )", "( ＞ ﹏ ＜ * )", "(* ＞ ﹏ ＜ *)", "( * ＞ ﹏ ＜ )", "(  * ＞ ﹏ ＜)"];
 }

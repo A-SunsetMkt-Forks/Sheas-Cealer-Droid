@@ -79,7 +79,11 @@ public partial class MainPage : ContentPage
         if (MainPres.IsCommandLineUtd == true)
             await File.WriteAllTextAsync(GlobalConst.CommandLinePath, string.Empty);
         else if (MainPres.IsCommandLineUtd == null)
-            await File.WriteAllTextAsync(GlobalConst.CommandLinePath, $"{MainPres.BrowserName!.ToLowerInvariant()} {CealArgs} {MainPres.ExtraArgs.TrimStart()}".TrimEnd());
+        {
+            string cealArgs = MainPres.ExtraArgs.Split(' ', StringSplitOptions.RemoveEmptyEntries | StringSplitOptions.TrimEntries).Contains(MainConst.DisableCealArg) ? string.Empty : CealArgs + " ";
+
+            await File.WriteAllTextAsync(GlobalConst.CommandLinePath, $"{MainPres.BrowserName!.ToLowerInvariant()} {cealArgs}{MainPres.ExtraArgs.TrimStart()}".TrimEnd());
+        }
         else
             await File.WriteAllTextAsync(MainConst.UpstreamHostPath, LatestUpstreamHostString);
 
@@ -344,8 +348,13 @@ public partial class MainPage : ContentPage
         int kaomojiArrayMaxIndex = MainConst.KaomojiShakeArray.Length - 1;
         int kaomojiArrayIndex = 0;
 
-        Timer kaomojiAnimationTimer = new(_ => MainPres.StatusMessage = KaomojiRunningCount + new string(' ', 2 * KaomojiRunningCount % 60) + MainConst.KaomojiShakeArray[^(Math.Abs(kaomojiArrayIndex++ % (2 * kaomojiArrayMaxIndex) - kaomojiArrayMaxIndex) + 1)],
-            null, 0, Math.Max(100 - 2 * KaomojiRunningCount, 1));
+        Timer kaomojiAnimationTimer = new
+        (
+            _ => MainPres.StatusMessage = KaomojiRunningCount +
+                new string(' ', 2 * KaomojiRunningCount % 60) +
+                MainConst.KaomojiShakeArray[^(Math.Abs(kaomojiArrayIndex++ % (2 * kaomojiArrayMaxIndex) - kaomojiArrayMaxIndex) + 1)],
+            null, 0, Math.Max(100 - 2 * KaomojiRunningCount, 1)
+        );
 
         await Task.Delay(400 * kaomojiArrayMaxIndex);
         await kaomojiAnimationTimer.DisposeAsync();
