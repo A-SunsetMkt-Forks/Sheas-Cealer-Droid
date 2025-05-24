@@ -11,13 +11,13 @@ internal class ViewFadeAnim : Animation
     {
         if (fadeType == FadeType.In)
         {
-            Add(0, 1, new Animation(v => fadeView.Opacity = v, 0, 1, Easing.CubicInOut));
-            Add(0, 1, new Animation(v => fadeView.Scale = v, 0.9, 1, Easing.CubicInOut));
+            Add(0, 1, new(v => fadeView.Opacity = v, 0, 1, Easing.CubicInOut));
+            Add(0, 1, new(v => fadeView.Scale = v, 0.9, 1, Easing.CubicInOut));
         }
         else
         {
-            Add(0, 1, new Animation(v => fadeView.Opacity = v, 1, 0, Easing.CubicInOut));
-            Add(0, 1, new Animation(v => fadeView.Scale = v, 1, 0.9, Easing.CubicInOut));
+            Add(0, 1, new(v => fadeView.Opacity = v, 1, 0, Easing.CubicInOut));
+            Add(0, 1, new(v => fadeView.Scale = v, 1, 0.9, Easing.CubicInOut));
         }
     }
 }

@@ -11,13 +11,13 @@ internal class AddImageButtonSlideAnim : Animation
     {
         if (slideType == SlideType.In)
         {
-            Add(0, 1, new Animation(v => addImageButton.TranslationY = v, 60, 0, Easing.CubicOut));
-            Add(0, 1, new Animation(v => addImageButton.Rotation = v, -45, 0, Easing.CubicOut));
+            Add(0, 1, new(v => addImageButton.TranslationY = v, 60, 0, Easing.CubicOut));
+            Add(0, 1, new(v => addImageButton.Rotation = v, -45, 0, Easing.CubicOut));
         }
         else
         {
-            Add(0, 1, new Animation(v => addImageButton.TranslationY = v, 0, 60, Easing.CubicIn));
-            Add(0, 1, new Animation(v => addImageButton.Rotation = v, 0, 45, Easing.CubicIn));
+            Add(0, 1, new(v => addImageButton.TranslationY = v, 0, 60, Easing.CubicIn));
+            Add(0, 1, new(v => addImageButton.Rotation = v, 0, 45, Easing.CubicIn));
         }
     }
 }
