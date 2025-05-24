@@ -40,8 +40,8 @@
 		<AppDesignerFolder>Props</AppDesignerFolder>
 		<NeutralLanguage>en</NeutralLanguage>
 		<EnableLLVM>true</EnableLLVM>
-    <RunAOTCompilation>false</RunAOTCompilation>
-    <AndroidEnableMarshalMethods>true</AndroidEnableMarshalMethods>
+		<RunAOTCompilation>false</RunAOTCompilation>
+		<AndroidEnableMarshalMethods>false</AndroidEnableMarshalMethods>
 		<AndroidKeyStore>false</AndroidKeyStore>
 	</PropertyGroup>
 
