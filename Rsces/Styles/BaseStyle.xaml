@@ -4,7 +4,7 @@
         <Setter Property="BackgroundColor" Value="{AppThemeBinding Light={DynamicResource Gray50}, Dark={DynamicResource Gray900}}" />
     </Style>
 
-    <Style TargetType="ContentPage">
+    <Style TargetType="ContentPage" ApplyToDerivedTypes="True">
         <Setter Property="HideSoftInputOnTapped" Value="True" />
     </Style>
 
