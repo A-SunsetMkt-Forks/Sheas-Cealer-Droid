@@ -25,7 +25,7 @@ public partial class AppShell : Shell
     private async void DetailMenuItem_Clicked(object sender, EventArgs e)
     {
         MenuItem senderMenuItem = (MenuItem)sender;
-        Type targetDetailPageType = (Type)senderMenuItem.CommandParameter;
+        Type targetDetailPageType = (Type)senderMenuItem.CommandParameter!;
 
         if (!DetailPageTypeArray.Contains(targetDetailPageType))
         {

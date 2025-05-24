@@ -66,11 +66,11 @@ public partial class BrowserPage : ContentPage
     {
         if (!string.IsNullOrEmpty(BrowserPres.BrowserName))
         {
-            if (this.AnimationIsRunning(nameof(BrowserPicker) + nameof(ViewFloatAnim)))
-            {
-                this.AbortAnimation(nameof(BrowserPicker) + nameof(ViewFloatAnim));
-                new ViewFloatAnim(NextImageButton, ViewFloatAnim.FloatOrientation.X, -5).Commit(this, nameof(NextImageButton) + nameof(ViewFloatAnim), 8, 3000, repeat: () => true);
-            }
+            if (!this.AnimationIsRunning(nameof(BrowserPicker) + nameof(ViewFloatAnim)))
+                return;
+
+            this.AbortAnimation(nameof(BrowserPicker) + nameof(ViewFloatAnim));
+            new ViewFloatAnim(NextImageButton, ViewFloatAnim.FloatOrientation.X, -5).Commit(this, nameof(NextImageButton) + nameof(ViewFloatAnim), 8, 3000, repeat: () => true);
         }
         else if (this.AnimationIsRunning(nameof(NextImageButton) + nameof(ViewFloatAnim)))
         {

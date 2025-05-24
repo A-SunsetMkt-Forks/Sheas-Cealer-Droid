@@ -64,17 +64,17 @@ public partial class AdbPage : ContentPage
     {
         Page nextPage = (Page)typeof(NavigatedFromEventArgs).GetProperty("DestinationPage", BindingFlags.NonPublic | BindingFlags.Instance)!.GetValue(e)!;
 
-        if (!AdbPres.IsCommandLineExist && nextPage.GetType() == typeof(ReadyPage))
-        {
-            await Toast.Make(GlobalConst.SkipWarningArray[new Random().Next(4)]).Show();
-            await Task.Delay(300);
-            await Shell.Current.GoToAsync($"//{nameof(AdbPage)}");
-        }
+        if (AdbPres.IsCommandLineExist || nextPage.GetType() != typeof(ReadyPage))
+            return;
+
+        await Toast.Make(GlobalConst.SkipWarningArray[new Random().Next(4)]).Show();
+        await Task.Delay(300);
+        await Shell.Current.GoToAsync($"//{nameof(AdbPage)}");
     }
     private void AdbPage_NavigatingFrom(object sender, NavigatingFromEventArgs e) => new PageSwitchAnim(this, IsNextNavigating ? PageSwitchAnim.SwitchDirection.Left : PageSwitchAnim.SwitchDirection.Right, PageSwitchAnim.SwitchType.Out).Commit(this, nameof(AdbPage) + nameof(PageSwitchAnim), 8, 100);
     private void AdbPage_NavigatedTo(object sender, NavigatedToEventArgs e)
     {
-        Page? previousPage = (Page)typeof(NavigatedToEventArgs).GetProperty("PreviousPage", BindingFlags.NonPublic | BindingFlags.Instance)?.GetValue(e)!;
+        Page? previousPage = typeof(NavigatedToEventArgs).GetProperty("PreviousPage", BindingFlags.NonPublic | BindingFlags.Instance)?.GetValue(e) as Page;
 
         if (previousPage == null)
             return;
@@ -111,14 +111,14 @@ public partial class AdbPage : ContentPage
 
         if (File.Exists(GlobalConst.CommandLinePath))
         {
-            if (!AdbPres.IsCommandLineExist)
-            {
-                IsNextNavigating = true;
-                AdbPres.IsCommandLineExist = true;
+            if (AdbPres.IsCommandLineExist)
+                return;
 
-                this.AbortAnimation(nameof(CommandButton) + nameof(ViewFloatAnim));
-                new ViewFloatAnim(NextImageButton, ViewFloatAnim.FloatOrientation.X, -5).Commit(this, nameof(NextImageButton) + nameof(ViewFloatAnim), 8, 3000, repeat: () => true);
-            }
+            IsNextNavigating = true;
+            AdbPres.IsCommandLineExist = true;
+
+            this.AbortAnimation(nameof(CommandButton) + nameof(ViewFloatAnim));
+            new ViewFloatAnim(NextImageButton, ViewFloatAnim.FloatOrientation.X, -5).Commit(this, nameof(NextImageButton) + nameof(ViewFloatAnim), 8, 3000, repeat: () => true);
         }
         else if (AdbPres.IsCommandLineExist)
         {

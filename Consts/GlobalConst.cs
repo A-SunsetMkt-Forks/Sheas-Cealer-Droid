@@ -34,7 +34,7 @@ internal abstract class GlobalConst : GlobalMultilangConst
     internal static string CommandLinePath => "/data/local/tmp/chrome-command-line";
     internal static string DefaultUpstreamUrl => "https://gitlab.com/SpaceTimee/Cealing-Host/raw/main/Cealing-Host.json";
     internal static string FlagUrl => "chrome://flags/#enable-command-line-on-non-rooted-devices";
-    internal static string AdbCommand => @$"adb shell ""touch {GlobalConst.CommandLinePath} && chmod 666 {GlobalConst.CommandLinePath}""";
+    internal static string AdbCommand => @$"adb shell ""touch {CommandLinePath} && chmod 666 {CommandLinePath}""";
     internal static string[] SkipWarningArray => [_SkipWarning1ToastMsg, _SkipWarning2ToastMsg, _SkipWarning3ToastMsg, _SkipWarning4ToastMsg];
     internal static string VersionAboutInfoContent => AppInfo.VersionString;
     internal static int UserPairIdentity => Preferences.Default.Get(nameof(UserPairIdentity), new Random().Next(10));

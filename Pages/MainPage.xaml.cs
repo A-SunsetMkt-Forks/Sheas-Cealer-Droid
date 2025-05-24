@@ -113,15 +113,13 @@ public partial class MainPage : ContentPage
             return;
         }
 
-        bool isCustomHostValid = true;
-
-        if (customHostRule.ValueKind != JsonValueKind.Array ||
+        bool isCustomHostValid = !(customHostRule.ValueKind != JsonValueKind.Array ||
             customHostRule.EnumerateArray().Count() != 3 ||
             customHostRule[0].ValueKind != JsonValueKind.Array ||
             !customHostRule[0].EnumerateArray().Any() ||
-            customHostRule[1].ValueKind != JsonValueKind.String && customHostRule[1].ValueKind != JsonValueKind.Null ||
-            customHostRule[2].ValueKind != JsonValueKind.String)
-            isCustomHostValid = false;
+            customHostRule[1].ValueKind != JsonValueKind.String &&
+            customHostRule[1].ValueKind != JsonValueKind.Null ||
+            customHostRule[2].ValueKind != JsonValueKind.String);
 
         if (isCustomHostValid)
             foreach (JsonElement customHostDomain in customHostRule[0].EnumerateArray())
@@ -323,19 +321,19 @@ public partial class MainPage : ContentPage
 
         bool isHostCollectionAtBottom = e.LastVisibleItemIndex == MainPres.CealHostRulesCollection.Count - 1;
 
-        if (MainPres.IsHostCollectionAtBottom != isHostCollectionAtBottom)
-        {
-            IsAddImageButtonSlideAnimRunning = true;
+        if (MainPres.IsHostCollectionAtBottom == isHostCollectionAtBottom)
+            return;
 
-            new AddImageButtonSlideAnim(AddImageButton, AddImageButtonSlideAnim.SlideType.Out).Commit(this, nameof(AddImageButton) + nameof(AddImageButtonSlideAnim), 8, 300,
-                finished: (_, _) =>
-                {
-                    MainPres.IsHostCollectionAtBottom = isHostCollectionAtBottom;
-                    new AddImageButtonSlideAnim(AddImageButton, AddImageButtonSlideAnim.SlideType.In).Commit(this, nameof(AddImageButton) + nameof(AddImageButtonSlideAnim), 8, 300);
+        IsAddImageButtonSlideAnimRunning = true;
 
-                    IsAddImageButtonSlideAnimRunning = false;
-                });
-        }
+        new AddImageButtonSlideAnim(AddImageButton, AddImageButtonSlideAnim.SlideType.Out).Commit(this, nameof(AddImageButton) + nameof(AddImageButtonSlideAnim), 8, 300,
+            finished: (_, _) =>
+            {
+                MainPres.IsHostCollectionAtBottom = isHostCollectionAtBottom;
+                new AddImageButtonSlideAnim(AddImageButton, AddImageButtonSlideAnim.SlideType.In).Commit(this, nameof(AddImageButton) + nameof(AddImageButtonSlideAnim), 8, 300);
+
+                IsAddImageButtonSlideAnimRunning = false;
+            });
     }
 
     private async void BottomTapGestureRecognizer_Tapped(object sender, TappedEventArgs e)
@@ -387,9 +385,8 @@ public partial class MainPage : ContentPage
 
             foreach (JsonElement cealHostRule in cealHostArray.EnumerateArray())
             {
-                foreach (JsonElement cealHostDomain in cealHostRule[0].EnumerateArray())
-                    if (string.IsNullOrEmpty(cealHostDomain.GetString()?.Trim().TrimStart('#').TrimStart('$')))
-                        continue;
+                if (cealHostRule[0].EnumerateArray().Any(cealHostDomain => string.IsNullOrEmpty(cealHostDomain.GetString()?.Trim().TrimStart('#').TrimStart('$'))))
+                    continue;
 
                 string cealHostDomains = cealHostRule[0].ToString();
                 string? cealHostSni = cealHostRule[1].GetString()?.Trim();
@@ -404,14 +401,14 @@ public partial class MainPage : ContentPage
             List<CealHostRule> cealHostRulesList = [];
             string hostRules = string.Empty;
             string hostResolverRules = string.Empty;
-            int EmptySniIndex = 0;
+            int emptySniIndex = 0;
 
             foreach (KeyValuePair<string, List<CealHostRule>?> cealHostRulesPair in CealHostRulesDict)
                 foreach (CealHostRule cealHostRule in cealHostRulesPair.Value ?? [])
                 {
                     string[] cealHostDomainArray = JsonSerializer.Deserialize<string[]>(cealHostRule.Domains)!;
                     string cealHostDomains = string.Empty;
-                    string cealHostSniWithoutEmpty = string.IsNullOrEmpty(cealHostRule.Sni) ? $"{cealHostRulesPair.Key}{EmptySniIndex++}" : cealHostRule.Sni;
+                    string cealHostSniWithoutEmpty = string.IsNullOrEmpty(cealHostRule.Sni) ? $"{cealHostRulesPair.Key}{emptySniIndex++}" : cealHostRule.Sni;
 
                     foreach (string cealHostDomain in cealHostDomainArray)
                     {

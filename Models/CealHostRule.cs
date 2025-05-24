@@ -12,8 +12,8 @@ internal class CealHostRule
 
     internal CealHostRule(string domains, string? sni, string ip) : this(null, domains, sni, ip) { }
 
-    public string? Name { get; internal set; } = string.Empty;
-    public string Domains { get; internal set; } = string.Empty;
-    public string? Sni { get; internal set; } = string.Empty;
-    public string Ip { get; internal set; } = string.Empty;
+    public string? Name { get; internal set; }
+    public string Domains { get; internal set; }
+    public string? Sni { get; internal set; }
+    public string Ip { get; internal set; }
 }
