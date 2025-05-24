@@ -41,6 +41,7 @@
 		<NeutralLanguage>en</NeutralLanguage>
 		<EnableLLVM>true</EnableLLVM>
     <RunAOTCompilation>false</RunAOTCompilation>
+    <AndroidEnableMarshalMethods>true</AndroidEnableMarshalMethods>
 		<AndroidKeyStore>false</AndroidKeyStore>
 	</PropertyGroup>
 
