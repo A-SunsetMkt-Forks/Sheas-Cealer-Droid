@@ -279,7 +279,6 @@ public partial class MainPage : ContentPage
     private async void UpdateSoftwareToolbarItem_Clicked(object? sender, EventArgs e)
     {
         do
-        {
             try
             {
                 if (sender != null)
@@ -311,7 +310,7 @@ public partial class MainPage : ContentPage
 
                 throw;
             }
-        } while (sender == null);
+        while (sender == null);
     }
 
     private void MainCollectionView_Scrolled(object sender, ItemsViewScrolledEventArgs e)
