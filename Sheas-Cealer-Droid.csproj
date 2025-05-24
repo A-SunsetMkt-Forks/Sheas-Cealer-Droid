@@ -24,7 +24,7 @@
 		<RepositoryType>git</RepositoryType>
 		<Copyright>Copyright © 2077</Copyright>
 		<OutputType>Exe</OutputType>
-		<TargetFrameworks>net9.0-android35.0</TargetFrameworks>
+		<TargetFrameworks>net9.0-android</TargetFrameworks>
 		<SupportedOSPlatformVersion>21.0</SupportedOSPlatformVersion>
 		<RootNamespace>Sheas_Cealer_Droid</RootNamespace>
 		<Nullable>enable</Nullable>
