@@ -6,6 +6,7 @@ using Sheas_Cealer_Droid.Anims;
 using Sheas_Cealer_Droid.Consts;
 using Sheas_Cealer_Droid.Preses;
 using System;
+using System.Diagnostics.CodeAnalysis;
 using System.IO;
 using System.Reflection;
 using System.Threading.Tasks;
@@ -72,6 +73,7 @@ public partial class AdbPage : ContentPage
         await Shell.Current.GoToAsync($"//{nameof(AdbPage)}");
     }
     private void AdbPage_NavigatingFrom(object sender, NavigatingFromEventArgs e) => new PageSwitchAnim(this, IsNextNavigating ? PageSwitchAnim.SwitchDirection.Left : PageSwitchAnim.SwitchDirection.Right, PageSwitchAnim.SwitchType.Out).Commit(this, nameof(AdbPage) + nameof(PageSwitchAnim), 8, 100);
+    [SuppressMessage("Style", "IDE0019")]
     private void AdbPage_NavigatedTo(object sender, NavigatedToEventArgs e)
     {
         Page? previousPage = typeof(NavigatedToEventArgs).GetProperty("PreviousPage", BindingFlags.NonPublic | BindingFlags.Instance)?.GetValue(e) as Page;
