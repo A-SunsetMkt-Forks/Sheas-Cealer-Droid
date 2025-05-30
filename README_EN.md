@@ -34,6 +34,7 @@
 ## Roadmap
 1. Add Cealing Host IP speed test function
 2. Add Local Host drag and sort function
+3. Add import Local Host file function
 
 ## Principles
 Using the startup parameter feature of the Chromium kernel to conceal SNI. For more detailes, please refer to [this article](https://nicebowl.fun/24_8)
