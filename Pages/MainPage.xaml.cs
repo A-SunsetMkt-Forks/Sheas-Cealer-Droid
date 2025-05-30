@@ -36,7 +36,7 @@ public partial class MainPage : ContentPage
     private readonly SemaphoreSlim IsCealHostChangingSemaphore = new(1);
     private bool IsAddImageButtonSlideAnimRunning = false;
 
-    private string KaomojiOriginalString = string.Empty;
+    private string KaomojiOriginalMessage = string.Empty;
     private int KaomojiRunningCount = 0;
 
     public MainPage()
@@ -87,7 +87,12 @@ public partial class MainPage : ContentPage
         else
             await File.WriteAllTextAsync(MainConst.UpstreamHostPath, LatestUpstreamHostString);
 
-        await StatusManager.RefreshCurrentStatus(MainPres, CealHostRulesDict.ContainsValue(null));
+        (MainPres.IsCommandLineUtd, string newStatusMessage) = await StatusManager.RefreshCurrentStatus(CealHostRulesDict.ContainsValue(null));
+
+        if (KaomojiRunningCount == 0)
+            MainPres.StatusMessage = newStatusMessage;
+        else
+            KaomojiOriginalMessage = newStatusMessage;
     }
     private async void AddImageButton_Clicked(object sender, EventArgs e)
     {
@@ -250,7 +255,11 @@ public partial class MainPage : ContentPage
                 if (localUpstreamHostString != LatestUpstreamHostString && localUpstreamHostString.ReplaceLineEndings() != LatestUpstreamHostString.ReplaceLineEndings())
                 {
                     MainPres.IsCommandLineUtd = false;
-                    MainPres.StatusMessage = MainConst._UpdateStatusMessage;
+
+                    if (KaomojiRunningCount == 0)
+                        MainPres.StatusMessage = MainConst._UpdateStatusMessage;
+                    else
+                        KaomojiOriginalMessage = MainConst._UpdateStatusMessage;
                 }
 
                 MainPres.StatusProgress = 1;
@@ -338,7 +347,7 @@ public partial class MainPage : ContentPage
     private async void BottomTapGestureRecognizer_Tapped(object sender, TappedEventArgs e)
     {
         if (KaomojiRunningCount == 0)
-            KaomojiOriginalString = MainPres.StatusMessage;
+            KaomojiOriginalMessage = MainPres.StatusMessage;
 
         Interlocked.Add(ref KaomojiRunningCount, 1);
 
@@ -359,7 +368,7 @@ public partial class MainPage : ContentPage
         Interlocked.Add(ref KaomojiRunningCount, -1);
 
         if (KaomojiRunningCount == 0)
-            MainPres.StatusMessage = KaomojiOriginalString;
+            MainPres.StatusMessage = KaomojiOriginalMessage;
     }
 
     private void LayoutSwipeGestureRecognizer_Swiped(object sender, SwipedEventArgs e) => Shell.Current.FlyoutIsPresented = true;
@@ -438,7 +447,12 @@ public partial class MainPage : ContentPage
             {
                 await File.WriteAllTextAsync(GlobalConst.CommandLinePath, $"{MainPres.BrowserName!.ToLowerInvariant()} {CealArgs}");
 
-                await StatusManager.RefreshCurrentStatus(MainPres, CealHostRulesDict.ContainsValue(null));
+                (MainPres.IsCommandLineUtd, string newStatusMessage) = await StatusManager.RefreshCurrentStatus(CealHostRulesDict.ContainsValue(null));
+
+                if (KaomojiRunningCount == 0)
+                    MainPres.StatusMessage = newStatusMessage;
+                else
+                    KaomojiOriginalMessage = newStatusMessage;
             }
         }
     }

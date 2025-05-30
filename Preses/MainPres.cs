@@ -5,7 +5,7 @@ namespace Sheas_Cealer_Droid.Preses;
 
 internal partial class MainPres : GlobalPres
 {
-    internal MainPres() => _ = StatusManager.RefreshCurrentStatus(this);
+    internal MainPres() => (IsCommandLineUtd, StatusMessage) = StatusManager.RefreshCurrentStatus().GetAwaiter().GetResult();
 
     [ObservableProperty]
     private bool isPageLoading = true;
