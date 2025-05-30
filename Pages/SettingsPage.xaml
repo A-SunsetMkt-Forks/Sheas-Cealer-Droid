@@ -9,179 +9,181 @@
              x:Class="Sheas_Cealer_Droid.Pages.SettingsPage" x:DataType="preses:SettingsPres"
              Title="{x:Static consts:GlobalMultilangConst.SettingsMenuItemTitle}"
              Shell.FlyoutBehavior="Disabled">
-    <CollectionView>
-        <CollectionView.ItemsSource>
-            <x:Array Type="{x:Type models:SettingsItem}">
-                <models:SettingsItem Title="{x:Static consts:SettingsMultilangConst.BrowserSettingsItemTitle}">
-                    <models:SettingsItem.View>
-                        <Picker x:Name="BrowserPicker"
-                                BindingContext="{Binding BindingContext, Source={x:RelativeSource AncestorType={x:Type ContentPage}}, x:DataType=ContentPage}"
-                                Title="{x:Static consts:GlobalMultilangConst.BrowserPickerTitle}"
-                                ToolTipProperties.Text="{x:Static consts:GlobalMultilangConst.BrowserPickerTooltip}"
-                                ItemsSource="{Binding BrowserNameCollection}"
-                                SelectedItem="{Binding BrowserName}" />
-                    </models:SettingsItem.View>
-                </models:SettingsItem>
-                <models:SettingsItem Title="{x:Static consts:SettingsMultilangConst.UpstreamUrlSettingsItemTitle}">
-                    <models:SettingsItem.View>
-                        <Entry BindingContext="{Binding BindingContext, Source={x:RelativeSource AncestorType={x:Type ContentPage}}, x:DataType=ContentPage}"
-                               Text="{Binding UpstreamUrl}"
-                               Placeholder="{x:Static consts:GlobalConst.DefaultUpstreamUrl}"
-                               ToolTipProperties.Text="{x:Static consts:SettingsMultilangConst.UpstreamUrlEntryTooltip}"
-                               Keyboard="Url" ReturnType="Done" IsSpellCheckEnabled="False" IsTextPredictionEnabled="False"
-                               ReturnCommandParameter="{Binding Source={x:RelativeSource Self}, x:DataType=Entry}"
-                               ReturnCommand="{x:Static pages:SettingsPage.DoneEntry_CompletedCommand}">
-                            <Entry.Behaviors>
-                                <toolkit:SelectAllTextBehavior />
-                                <toolkit:UriValidationBehavior RegexPattern="{x:Static consts:SettingsConst.UpstreamUrlRegexPattern}"
-                                                               Flags="ValidateOnValueChanged"
-                                                               ValidStyle="{x:StaticResource ValidEntry}"
-                                                               InvalidStyle="{x:StaticResource InvalidEntry}" />
-                            </Entry.Behaviors>
-                        </Entry>
-                    </models:SettingsItem.View>
-                </models:SettingsItem>
-                <models:SettingsItem Title="{x:Static consts:SettingsMultilangConst.ExtraArgsSettingsItemTitle}">
-                    <models:SettingsItem.View>
-                        <Entry BindingContext="{Binding BindingContext, Source={x:RelativeSource AncestorType={x:Type ContentPage}}, x:DataType=ContentPage}"
-                               Text="{Binding ExtraArgs}"
-                               Placeholder="{x:Static consts:SettingsMultilangConst.ExtraArgsEntryPlaceholder}"
-                               ToolTipProperties.Text="{x:Static consts:SettingsMultilangConst.ExtraArgsEntryTooltip}"
-                               ReturnType="Done" IsSpellCheckEnabled="False" IsTextPredictionEnabled="False"
-                               ReturnCommandParameter="{Binding Source={x:RelativeSource Self}, x:DataType=Entry}"
-                               ReturnCommand="{x:Static pages:SettingsPage.DoneEntry_CompletedCommand}">
-                            <Entry.Behaviors>
-                                <toolkit:SelectAllTextBehavior />
-                                <toolkit:TextValidationBehavior RegexPattern="{x:Static consts:SettingsConst.ExtraArgsRegexPattern}"
-                                                                Flags="ValidateOnValueChanged"
-                                                                ValidStyle="{x:StaticResource ValidEntry}"
-                                                                InvalidStyle="{x:StaticResource InvalidEntry}" />
-                            </Entry.Behaviors>
-                        </Entry>
-                    </models:SettingsItem.View>
-                </models:SettingsItem>
-                <models:SettingsItem Title="{x:Static consts:SettingsMultilangConst.ThemeColorSettingsItemTitle}">
-                    <models:SettingsItem.View>
-                        <Picker BindingContext="{Binding BindingContext, Source={x:RelativeSource AncestorType={x:Type ContentPage}}, x:DataType=ContentPage}"
-                                Title="{x:Static consts:SettingsMultilangConst.ThemeColorPickerTitle}"
-                                ToolTipProperties.Text="{x:Static consts:SettingsMultilangConst.ThemeColorPickerTooltip}"
-                                ItemsSource="{x:Static consts:SettingsConst.ThemeColorNameArray}"
-                                SelectedItem="{Binding ThemeColorName}" />
-                    </models:SettingsItem.View>
-                </models:SettingsItem>
-                <models:SettingsItem Title="{x:Static consts:SettingsMultilangConst.ThemeStateSettingsItemTitle}">
-                    <models:SettingsItem.View>
-                        <Picker BindingContext="{Binding BindingContext, Source={x:RelativeSource AncestorType={x:Type ContentPage}}, x:DataType=ContentPage}"
-                                Title="{x:Static consts:SettingsMultilangConst.ThemeStatePickerTitle}"
-                                ToolTipProperties.Text="{x:Static consts:SettingsMultilangConst.ThemeStatePickerTooltip}"
-                                ItemsSource="{x:Static consts:SettingsConst.ThemeStateNameArray}"
-                                SelectedItem="{Binding ThemeStateName}" />
-                    </models:SettingsItem.View>
-                </models:SettingsItem>
-                <models:SettingsItem Title="{x:Static consts:SettingsMultilangConst.LangOptionSettingsItemTitle}">
-                    <models:SettingsItem.View>
-                        <Picker BindingContext="{Binding BindingContext, Source={x:RelativeSource AncestorType={x:Type ContentPage}}, x:DataType=ContentPage}"
-                                Title="{x:Static consts:SettingsMultilangConst.LangOptionPickerTitle}"
-                                ToolTipProperties.Text="{x:Static consts:SettingsMultilangConst.LangOptionPickerTooltip}"
-                                ItemsSource="{x:Static consts:SettingsConst.LangOptionNameArray}"
-                                SelectedItem="{Binding LangOptionName}" />
-                    </models:SettingsItem.View>
-                </models:SettingsItem>
-                <models:SettingsItem Title="{x:Static consts:SettingsMultilangConst.UpstreamMirrorEnabledSettingsItemTitle}"
-                                     Content="{x:Static consts:SettingsMultilangConst.UpstreamMirrorEnabledSettingsItemContent}">
-                    <models:SettingsItem.View>
-                        <Switch BindingContext="{Binding BindingContext, Source={x:RelativeSource AncestorType={x:Type ContentPage}}, x:DataType=ContentPage}"
-                                IsToggled="{Binding IsUpstreamMirrorEnabled}"
-                                IsEnabled="{Binding UpstreamUrl, Converter={x:Static convs:SettingsConv.SettingsUpstreamMirrorEnabledSwitchIsEnabledConv}}"
-                                ToolTipProperties.Text="{x:Static consts:SettingsMultilangConst.UpstreamMirrorEnabledSwitchTooltip}" />
-                    </models:SettingsItem.View>
-                </models:SettingsItem>
-                <models:SettingsItem Title="{x:Static consts:SettingsMultilangConst.UpdateSoftwareEnabledSettingsItemTitle}"
-                                     Content="{x:Static consts:SettingsMultilangConst.UpdateSoftwareEnabledSettingsItemContent}">
-                    <models:SettingsItem.View>
-                        <Switch BindingContext="{Binding BindingContext, Source={x:RelativeSource AncestorType={x:Type ContentPage}}, x:DataType=ContentPage}"
-                                IsToggled="{Binding IsUpdateSoftwareEnabled}"
-                                ToolTipProperties.Text="{x:Static consts:SettingsMultilangConst.UpdateSoftwareEnabledSwitchTooltip}" />
-                    </models:SettingsItem.View>
-                </models:SettingsItem>
-                <models:SettingsItem Title="{x:Static consts:SettingsMultilangConst.UpdateHostEnabledSettingsItemTitle}"
-                                     Content="{x:Static consts:SettingsMultilangConst.UpdateHostEnabledSettingsItemContent}">
-                    <models:SettingsItem.View>
-                        <Switch BindingContext="{Binding BindingContext, Source={x:RelativeSource AncestorType={x:Type ContentPage}}, x:DataType=ContentPage}"
-                                IsToggled="{Binding IsUpdateHostEnabled}"
-                                ToolTipProperties.Text="{x:Static consts:SettingsMultilangConst.UpdateHostEnabledSwitchTooltip}" />
-                    </models:SettingsItem.View>
-                </models:SettingsItem>
-                <models:SettingsItem Title="{x:Static consts:SettingsMultilangConst.SearchEnabledSettingsItemTitle}"
-                                     Content="{x:Static consts:SettingsMultilangConst.SearchEnabledSettingsItemContent}">
-                    <models:SettingsItem.View>
-                        <Switch BindingContext="{Binding BindingContext, Source={x:RelativeSource AncestorType={x:Type ContentPage}}, x:DataType=ContentPage}"
-                                IsToggled="{Binding IsSearchEnabled}"
-                                ToolTipProperties.Text="{x:Static consts:SettingsMultilangConst.SearchEnabledSwitchTooltip}" />
-                    </models:SettingsItem.View>
-                </models:SettingsItem>
-                <models:SettingsItem Title="{x:Static consts:SettingsMultilangConst.LinkSettingsItemTitle}"
-                                     Content="{x:Static consts:SettingsMultilangConst.LinkSettingsItemContent}">
-                    <models:SettingsItem.View>
-                        <ImageButton Source="copy_icon.png"
-                                     ToolTipProperties.Text="{x:Static consts:GlobalMultilangConst.LinkButtonTooltip}"
-                                     SemanticProperties.Description="{x:Static consts:GlobalMultilangConst.LinkButtonText}"
-                                     Style="{x:StaticResource SmallImageButton}"
-                                     HorizontalOptions="End" WidthRequest="28" HeightRequest="28" CornerRadius="8"
-                                     Command="{x:Static pages:SettingsPage.LinkImageButton_ClickedCommand}">
-                            <ImageButton.Behaviors>
-                                <toolkit:IconTintColorBehavior TintColor="{AppThemeBinding Light={StaticResource White}, Dark={StaticResource Gray900}}" />
-                            </ImageButton.Behaviors>
-                        </ImageButton>
-                    </models:SettingsItem.View>
-                </models:SettingsItem>
-                <models:SettingsItem Title="{x:Static consts:SettingsMultilangConst.CommandSettingsItemTitle}"
-                                     Content="{x:Static consts:SettingsMultilangConst.CommandSettingsItemContent}">
-                    <models:SettingsItem.View>
-                        <ImageButton Source="copy_icon.png"
-                                     ToolTipProperties.Text="{x:Static consts:GlobalMultilangConst.CommandButtonTooltip}"
-                                     SemanticProperties.Description="{x:Static consts:GlobalMultilangConst.CommandButtonText}"
-                                     Style="{x:StaticResource SmallImageButton}"
-                                     HorizontalOptions="End" WidthRequest="28" HeightRequest="28" CornerRadius="8"
-                                     Command="{x:Static pages:SettingsPage.CommandImageButton_ClickedCommand}">
-                            <ImageButton.Behaviors>
-                                <toolkit:IconTintColorBehavior TintColor="{AppThemeBinding Light={StaticResource White}, Dark={StaticResource Gray900}}" />
-                            </ImageButton.Behaviors>
-                        </ImageButton>
-                    </models:SettingsItem.View>
-                </models:SettingsItem>
-            </x:Array>
-        </CollectionView.ItemsSource>
-        <CollectionView.ItemTemplate>
-            <DataTemplate x:DataType="models:SettingsItem">
-                <Grid Margin="8,2,8,2">
-                    <Border BackgroundColor="{AppThemeBinding Light={DynamicResource Gray100}, Dark={DynamicResource Gray850}}"
-                            StrokeShape="RoundRectangle 8" Margin="4">
-                        <Grid Margin="8,8,0,8">
-                            <Grid ColumnDefinitions="Auto,*" RowDefinitions="Auto,Auto" ColumnSpacing="20">
-                                <Label Text="{Binding Title}"
-                                       Grid.Column="0" Grid.Row="0" Margin="20,4,0,4" FontSize="Subtitle" VerticalTextAlignment="Center" />
-                                <ContentView Content="{Binding View}"
-                                             Grid.Column="1" Grid.Row="0" Margin="0,4,20,4" />
-                                <Label Text="{Binding Content}"
-                                       IsVisible="{Binding Content, StringFormat=True, TargetNullValue=False}"
-                                       Grid.ColumnSpan="2" Grid.Row="1" Margin="20,4" FontSize="Caption" />
+    <ScrollView VerticalScrollBarVisibility="Default">
+        <CollectionView>
+            <CollectionView.ItemsSource>
+                <x:Array Type="{x:Type models:SettingsItem}">
+                    <models:SettingsItem Title="{x:Static consts:SettingsMultilangConst.BrowserSettingsItemTitle}">
+                        <models:SettingsItem.View>
+                            <Picker x:Name="BrowserPicker"
+                                    BindingContext="{Binding BindingContext, Source={x:RelativeSource AncestorType={x:Type ContentPage}}, x:DataType=ContentPage}"
+                                    Title="{x:Static consts:GlobalMultilangConst.BrowserPickerTitle}"
+                                    ToolTipProperties.Text="{x:Static consts:GlobalMultilangConst.BrowserPickerTooltip}"
+                                    ItemsSource="{Binding BrowserNameCollection}"
+                                    SelectedItem="{Binding BrowserName}" />
+                        </models:SettingsItem.View>
+                    </models:SettingsItem>
+                    <models:SettingsItem Title="{x:Static consts:SettingsMultilangConst.UpstreamUrlSettingsItemTitle}">
+                        <models:SettingsItem.View>
+                            <Entry BindingContext="{Binding BindingContext, Source={x:RelativeSource AncestorType={x:Type ContentPage}}, x:DataType=ContentPage}"
+                                   Text="{Binding UpstreamUrl}"
+                                   Placeholder="{x:Static consts:GlobalConst.DefaultUpstreamUrl}"
+                                   ToolTipProperties.Text="{x:Static consts:SettingsMultilangConst.UpstreamUrlEntryTooltip}"
+                                   Keyboard="Url" ReturnType="Done" IsSpellCheckEnabled="False" IsTextPredictionEnabled="False"
+                                   ReturnCommandParameter="{Binding Source={x:RelativeSource Self}, x:DataType=Entry}"
+                                   ReturnCommand="{x:Static pages:SettingsPage.DoneEntry_CompletedCommand}">
+                                <Entry.Behaviors>
+                                    <toolkit:SelectAllTextBehavior />
+                                    <toolkit:UriValidationBehavior RegexPattern="{x:Static consts:SettingsConst.UpstreamUrlRegexPattern}"
+                                                                   Flags="ValidateOnValueChanged"
+                                                                   ValidStyle="{x:StaticResource ValidEntry}"
+                                                                   InvalidStyle="{x:StaticResource InvalidEntry}" />
+                                </Entry.Behaviors>
+                            </Entry>
+                        </models:SettingsItem.View>
+                    </models:SettingsItem>
+                    <models:SettingsItem Title="{x:Static consts:SettingsMultilangConst.ExtraArgsSettingsItemTitle}">
+                        <models:SettingsItem.View>
+                            <Entry BindingContext="{Binding BindingContext, Source={x:RelativeSource AncestorType={x:Type ContentPage}}, x:DataType=ContentPage}"
+                                   Text="{Binding ExtraArgs}"
+                                   Placeholder="{x:Static consts:SettingsMultilangConst.ExtraArgsEntryPlaceholder}"
+                                   ToolTipProperties.Text="{x:Static consts:SettingsMultilangConst.ExtraArgsEntryTooltip}"
+                                   ReturnType="Done" IsSpellCheckEnabled="False" IsTextPredictionEnabled="False"
+                                   ReturnCommandParameter="{Binding Source={x:RelativeSource Self}, x:DataType=Entry}"
+                                   ReturnCommand="{x:Static pages:SettingsPage.DoneEntry_CompletedCommand}">
+                                <Entry.Behaviors>
+                                    <toolkit:SelectAllTextBehavior />
+                                    <toolkit:TextValidationBehavior RegexPattern="{x:Static consts:SettingsConst.ExtraArgsRegexPattern}"
+                                                                    Flags="ValidateOnValueChanged"
+                                                                    ValidStyle="{x:StaticResource ValidEntry}"
+                                                                    InvalidStyle="{x:StaticResource InvalidEntry}" />
+                                </Entry.Behaviors>
+                            </Entry>
+                        </models:SettingsItem.View>
+                    </models:SettingsItem>
+                    <models:SettingsItem Title="{x:Static consts:SettingsMultilangConst.ThemeColorSettingsItemTitle}">
+                        <models:SettingsItem.View>
+                            <Picker BindingContext="{Binding BindingContext, Source={x:RelativeSource AncestorType={x:Type ContentPage}}, x:DataType=ContentPage}"
+                                    Title="{x:Static consts:SettingsMultilangConst.ThemeColorPickerTitle}"
+                                    ToolTipProperties.Text="{x:Static consts:SettingsMultilangConst.ThemeColorPickerTooltip}"
+                                    ItemsSource="{x:Static consts:SettingsConst.ThemeColorNameArray}"
+                                    SelectedItem="{Binding ThemeColorName}" />
+                        </models:SettingsItem.View>
+                    </models:SettingsItem>
+                    <models:SettingsItem Title="{x:Static consts:SettingsMultilangConst.ThemeStateSettingsItemTitle}">
+                        <models:SettingsItem.View>
+                            <Picker BindingContext="{Binding BindingContext, Source={x:RelativeSource AncestorType={x:Type ContentPage}}, x:DataType=ContentPage}"
+                                    Title="{x:Static consts:SettingsMultilangConst.ThemeStatePickerTitle}"
+                                    ToolTipProperties.Text="{x:Static consts:SettingsMultilangConst.ThemeStatePickerTooltip}"
+                                    ItemsSource="{x:Static consts:SettingsConst.ThemeStateNameArray}"
+                                    SelectedItem="{Binding ThemeStateName}" />
+                        </models:SettingsItem.View>
+                    </models:SettingsItem>
+                    <models:SettingsItem Title="{x:Static consts:SettingsMultilangConst.LangOptionSettingsItemTitle}">
+                        <models:SettingsItem.View>
+                            <Picker BindingContext="{Binding BindingContext, Source={x:RelativeSource AncestorType={x:Type ContentPage}}, x:DataType=ContentPage}"
+                                    Title="{x:Static consts:SettingsMultilangConst.LangOptionPickerTitle}"
+                                    ToolTipProperties.Text="{x:Static consts:SettingsMultilangConst.LangOptionPickerTooltip}"
+                                    ItemsSource="{x:Static consts:SettingsConst.LangOptionNameArray}"
+                                    SelectedItem="{Binding LangOptionName}" />
+                        </models:SettingsItem.View>
+                    </models:SettingsItem>
+                    <models:SettingsItem Title="{x:Static consts:SettingsMultilangConst.UpstreamMirrorEnabledSettingsItemTitle}"
+                                         Content="{x:Static consts:SettingsMultilangConst.UpstreamMirrorEnabledSettingsItemContent}">
+                        <models:SettingsItem.View>
+                            <Switch BindingContext="{Binding BindingContext, Source={x:RelativeSource AncestorType={x:Type ContentPage}}, x:DataType=ContentPage}"
+                                    IsToggled="{Binding IsUpstreamMirrorEnabled}"
+                                    IsEnabled="{Binding UpstreamUrl, Converter={x:Static convs:SettingsConv.SettingsUpstreamMirrorEnabledSwitchIsEnabledConv}}"
+                                    ToolTipProperties.Text="{x:Static consts:SettingsMultilangConst.UpstreamMirrorEnabledSwitchTooltip}" />
+                        </models:SettingsItem.View>
+                    </models:SettingsItem>
+                    <models:SettingsItem Title="{x:Static consts:SettingsMultilangConst.UpdateSoftwareEnabledSettingsItemTitle}"
+                                         Content="{x:Static consts:SettingsMultilangConst.UpdateSoftwareEnabledSettingsItemContent}">
+                        <models:SettingsItem.View>
+                            <Switch BindingContext="{Binding BindingContext, Source={x:RelativeSource AncestorType={x:Type ContentPage}}, x:DataType=ContentPage}"
+                                    IsToggled="{Binding IsUpdateSoftwareEnabled}"
+                                    ToolTipProperties.Text="{x:Static consts:SettingsMultilangConst.UpdateSoftwareEnabledSwitchTooltip}" />
+                        </models:SettingsItem.View>
+                    </models:SettingsItem>
+                    <models:SettingsItem Title="{x:Static consts:SettingsMultilangConst.UpdateHostEnabledSettingsItemTitle}"
+                                         Content="{x:Static consts:SettingsMultilangConst.UpdateHostEnabledSettingsItemContent}">
+                        <models:SettingsItem.View>
+                            <Switch BindingContext="{Binding BindingContext, Source={x:RelativeSource AncestorType={x:Type ContentPage}}, x:DataType=ContentPage}"
+                                    IsToggled="{Binding IsUpdateHostEnabled}"
+                                    ToolTipProperties.Text="{x:Static consts:SettingsMultilangConst.UpdateHostEnabledSwitchTooltip}" />
+                        </models:SettingsItem.View>
+                    </models:SettingsItem>
+                    <models:SettingsItem Title="{x:Static consts:SettingsMultilangConst.SearchEnabledSettingsItemTitle}"
+                                         Content="{x:Static consts:SettingsMultilangConst.SearchEnabledSettingsItemContent}">
+                        <models:SettingsItem.View>
+                            <Switch BindingContext="{Binding BindingContext, Source={x:RelativeSource AncestorType={x:Type ContentPage}}, x:DataType=ContentPage}"
+                                    IsToggled="{Binding IsSearchEnabled}"
+                                    ToolTipProperties.Text="{x:Static consts:SettingsMultilangConst.SearchEnabledSwitchTooltip}" />
+                        </models:SettingsItem.View>
+                    </models:SettingsItem>
+                    <models:SettingsItem Title="{x:Static consts:SettingsMultilangConst.LinkSettingsItemTitle}"
+                                         Content="{x:Static consts:SettingsMultilangConst.LinkSettingsItemContent}">
+                        <models:SettingsItem.View>
+                            <ImageButton Source="copy_icon.png"
+                                         ToolTipProperties.Text="{x:Static consts:GlobalMultilangConst.LinkButtonTooltip}"
+                                         SemanticProperties.Description="{x:Static consts:GlobalMultilangConst.LinkButtonText}"
+                                         Style="{x:StaticResource SmallImageButton}"
+                                         HorizontalOptions="End" WidthRequest="28" HeightRequest="28" CornerRadius="8"
+                                         Command="{x:Static pages:SettingsPage.LinkImageButton_ClickedCommand}">
+                                <ImageButton.Behaviors>
+                                    <toolkit:IconTintColorBehavior TintColor="{AppThemeBinding Light={StaticResource White}, Dark={StaticResource Gray900}}" />
+                                </ImageButton.Behaviors>
+                            </ImageButton>
+                        </models:SettingsItem.View>
+                    </models:SettingsItem>
+                    <models:SettingsItem Title="{x:Static consts:SettingsMultilangConst.CommandSettingsItemTitle}"
+                                         Content="{x:Static consts:SettingsMultilangConst.CommandSettingsItemContent}">
+                        <models:SettingsItem.View>
+                            <ImageButton Source="copy_icon.png"
+                                         ToolTipProperties.Text="{x:Static consts:GlobalMultilangConst.CommandButtonTooltip}"
+                                         SemanticProperties.Description="{x:Static consts:GlobalMultilangConst.CommandButtonText}"
+                                         Style="{x:StaticResource SmallImageButton}"
+                                         HorizontalOptions="End" WidthRequest="28" HeightRequest="28" CornerRadius="8"
+                                         Command="{x:Static pages:SettingsPage.CommandImageButton_ClickedCommand}">
+                                <ImageButton.Behaviors>
+                                    <toolkit:IconTintColorBehavior TintColor="{AppThemeBinding Light={StaticResource White}, Dark={StaticResource Gray900}}" />
+                                </ImageButton.Behaviors>
+                            </ImageButton>
+                        </models:SettingsItem.View>
+                    </models:SettingsItem>
+                </x:Array>
+            </CollectionView.ItemsSource>
+            <CollectionView.ItemTemplate>
+                <DataTemplate x:DataType="models:SettingsItem">
+                    <Grid Margin="8,2,8,2">
+                        <Border BackgroundColor="{AppThemeBinding Light={DynamicResource Gray100}, Dark={DynamicResource Gray850}}"
+                                StrokeShape="RoundRectangle 8" Margin="4">
+                            <Grid Margin="8,8,0,8">
+                                <Grid ColumnDefinitions="Auto,*" RowDefinitions="Auto,Auto" ColumnSpacing="20">
+                                    <Label Text="{Binding Title}"
+                                           Grid.Column="0" Grid.Row="0" Margin="20,4,0,4" FontSize="Subtitle" VerticalTextAlignment="Center" />
+                                    <ContentView Content="{Binding View}"
+                                                 Grid.Column="1" Grid.Row="0" Margin="0,4,20,4" />
+                                    <Label Text="{Binding Content}"
+                                           IsVisible="{Binding Content, StringFormat=True, TargetNullValue=False}"
+                                           Grid.ColumnSpan="2" Grid.Row="1" Margin="20,4" FontSize="Caption" />
+                                </Grid>
+                                <AbsoluteLayout>
+                                    <Border AbsoluteLayout.LayoutBounds="0,0.5,4,1" AbsoluteLayout.LayoutFlags="PositionProportional,HeightProportional"
+                                            BackgroundColor="{AppThemeBinding Light={DynamicResource Primary500}, Dark={DynamicResource Primary700}}"
+                                            StrokeShape="RoundRectangle 8" />
+                                </AbsoluteLayout>
                             </Grid>
-                            <AbsoluteLayout>
-                                <Border AbsoluteLayout.LayoutBounds="0,0.5,4,1" AbsoluteLayout.LayoutFlags="PositionProportional,HeightProportional"
-                                        BackgroundColor="{AppThemeBinding Light={DynamicResource Primary500}, Dark={DynamicResource Primary700}}"
-                                        StrokeShape="RoundRectangle 8" />
-                            </AbsoluteLayout>
-                        </Grid>
-                    </Border>
-                </Grid>
-            </DataTemplate>
-        </CollectionView.ItemTemplate>
-        <CollectionView.Header>
-            <ContentView Margin="0,6,0,0" />
-        </CollectionView.Header>
-        <CollectionView.Footer>
-            <ContentView Margin="0,0,0,6" />
-        </CollectionView.Footer>
-    </CollectionView>
+                        </Border>
+                    </Grid>
+                </DataTemplate>
+            </CollectionView.ItemTemplate>
+            <CollectionView.Header>
+                <ContentView Margin="0,6,0,0" />
+            </CollectionView.Header>
+            <CollectionView.Footer>
+                <ContentView Margin="0,0,0,6" />
+            </CollectionView.Footer>
+        </CollectionView>
+    </ScrollView>
 </ContentPage>
