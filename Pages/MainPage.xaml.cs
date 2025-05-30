@@ -424,7 +424,7 @@ public partial class MainPage : ContentPage
 
                     cealHostRulesList.Add(new(cealHostRulesPair.Key, cealHostDomains.TrimEnd(','), string.IsNullOrEmpty(cealHostRule.Sni) ? "--" : cealHostRule.Sni, cealHostRule.Ip));
 
-                    if (!string.IsNullOrEmpty(hostResolverRules))
+                    if (!string.IsNullOrEmpty(hostRules))
                         hostResolverRules += $"MAP {cealHostSniWithoutEmpty} {cealHostRule.Ip},";
                 }
 
