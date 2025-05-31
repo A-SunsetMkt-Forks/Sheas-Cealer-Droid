@@ -140,6 +140,18 @@
   <data name="Ipv6ToolItemTitle" xml:space="preserve">
     <value>IPv6 测试</value>
   </data>
+  <data name="PingImageButtonDescription" xml:space="preserve">
+    <value>Ping</value>
+  </data>
+  <data name="PingImageButtonTooltip" xml:space="preserve">
+    <value>点击执行 ping 连通性测试</value>
+  </data>
+  <data name="PingToolItemContent" xml:space="preserve">
+    <value>测试本地网络能否 ping 通指定地址</value>
+  </data>
+  <data name="PingToolItemTitle" xml:space="preserve">
+    <value>Ping 测试</value>
+  </data>
   <data name="_DohDomainNamePopupMsg" xml:space="preserve">
     <value>输入一个需要加密解析的域名</value>
   </data>
@@ -149,6 +161,9 @@
   <data name="_DohResolveErrorToastMsg" xml:space="preserve">
     <value>解析失败，肥肠包芡喵 ❌</value>
   </data>
+  <data name="_DohResolveInvalidToastMsg" xml:space="preserve">
+    <value>域名格式错误，无法识别 ❌</value>
+  </data>
   <data name="_DohResolveSuccessToastMsg" xml:space="preserve">
     <value>解析成功，IP 已复制 ✅</value>
   </data>
@@ -157,5 +172,23 @@
   </data>
   <data name="_Ipv6TestSuccessToastMsg" xml:space="preserve">
     <value>连接成功，本地网络可访问 IPv6 ✅</value>
+  </data>
+  <data name="_PingHostNamePopupMsg" xml:space="preserve">
+    <value>输入一个需要测试 ping 连通性的地址</value>
+  </data>
+  <data name="_PingHostNamePopupTitle" xml:space="preserve">
+    <value>待 ping 地址</value>
+  </data>
+  <data name="_PingTestErrorToastMsg" xml:space="preserve">
+    <value>连接失败，当前地址 ping 不通 ❌</value>
+  </data>
+  <data name="_PingTestInvalidToastMsg" xml:space="preserve">
+    <value>地址格式错误，无法识别 ❌</value>
+  </data>
+  <data name="_PingTestReversedToastMsg" xml:space="preserve">
+    <value>连接取消，DNS 返回了保留 IP ❌</value>
+  </data>
+  <data name="_PingTestSuccessToastMsg" xml:space="preserve">
+    <value>连接成功，当前地址可 ping 通 ✅</value>
   </data>
 </root>

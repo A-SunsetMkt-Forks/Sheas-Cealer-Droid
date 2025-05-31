@@ -88,6 +88,15 @@ namespace Sheas_Cealer_Droid.Consts {
         }
         
         /// <summary>
+        ///   查找类似 Invalid domain format. Recognition failed ❌ 的本地化字符串。
+        /// </summary>
+        internal static string _DohResolveInvalidToastMsg {
+            get {
+                return ResourceManager.GetString("_DohResolveInvalidToastMsg", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   查找类似 Resolution successful. IP copied ✅ 的本地化字符串。
         /// </summary>
         internal static string _DohResolveSuccessToastMsg {
@@ -97,7 +106,7 @@ namespace Sheas_Cealer_Droid.Consts {
         }
         
         /// <summary>
-        ///   查找类似 Connection failed. The current network does not support IPv6 ❌ 的本地化字符串。
+        ///   查找类似 Connection failed. Current network does not support IPv6 ❌ 的本地化字符串。
         /// </summary>
         internal static string _Ipv6TestErrorToastMsg {
             get {
@@ -111,6 +120,60 @@ namespace Sheas_Cealer_Droid.Consts {
         internal static string _Ipv6TestSuccessToastMsg {
             get {
                 return ResourceManager.GetString("_Ipv6TestSuccessToastMsg", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   查找类似 Enter an address to test ping connectivity 的本地化字符串。
+        /// </summary>
+        internal static string _PingHostNamePopupMsg {
+            get {
+                return ResourceManager.GetString("_PingHostNamePopupMsg", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   查找类似 Address 的本地化字符串。
+        /// </summary>
+        internal static string _PingHostNamePopupTitle {
+            get {
+                return ResourceManager.GetString("_PingHostNamePopupTitle", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   查找类似 Connection failed. Current address can not be pinged ❌ 的本地化字符串。
+        /// </summary>
+        internal static string _PingTestErrorToastMsg {
+            get {
+                return ResourceManager.GetString("_PingTestErrorToastMsg", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   查找类似 Invalid address format. Recognition failed ❌ 的本地化字符串。
+        /// </summary>
+        internal static string _PingTestInvalidToastMsg {
+            get {
+                return ResourceManager.GetString("_PingTestInvalidToastMsg", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   查找类似 Connection cancelled. DNS returned a reserved IP ❌ 的本地化字符串。
+        /// </summary>
+        internal static string _PingTestReversedToastMsg {
+            get {
+                return ResourceManager.GetString("_PingTestReversedToastMsg", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   查找类似 Connection successful. Current address can be pinged ✅ 的本地化字符串。
+        /// </summary>
+        internal static string _PingTestSuccessToastMsg {
+            get {
+                return ResourceManager.GetString("_PingTestSuccessToastMsg", resourceCulture);
             }
         }
         
@@ -183,6 +246,42 @@ namespace Sheas_Cealer_Droid.Consts {
         internal static string Ipv6ToolItemTitle {
             get {
                 return ResourceManager.GetString("Ipv6ToolItemTitle", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   查找类似 Ping 的本地化字符串。
+        /// </summary>
+        internal static string PingImageButtonDescription {
+            get {
+                return ResourceManager.GetString("PingImageButtonDescription", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   查找类似 Tap to start a ping connectivity test 的本地化字符串。
+        /// </summary>
+        internal static string PingImageButtonTooltip {
+            get {
+                return ResourceManager.GetString("PingImageButtonTooltip", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   查找类似 Test whether the local network can ping specified address 的本地化字符串。
+        /// </summary>
+        internal static string PingToolItemContent {
+            get {
+                return ResourceManager.GetString("PingToolItemContent", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   查找类似 Ping Test 的本地化字符串。
+        /// </summary>
+        internal static string PingToolItemTitle {
+            get {
+                return ResourceManager.GetString("PingToolItemTitle", resourceCulture);
             }
         }
     }

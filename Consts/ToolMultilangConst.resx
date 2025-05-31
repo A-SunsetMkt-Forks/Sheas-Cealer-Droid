@@ -140,6 +140,18 @@
   <data name="Ipv6ToolItemTitle" xml:space="preserve">
     <value>IPv6 Test</value>
   </data>
+  <data name="PingImageButtonDescription" xml:space="preserve">
+    <value>Ping</value>
+  </data>
+  <data name="PingImageButtonTooltip" xml:space="preserve">
+    <value>Tap to start a ping connectivity test</value>
+  </data>
+  <data name="PingToolItemContent" xml:space="preserve">
+    <value>Test whether the local network can ping specified address</value>
+  </data>
+  <data name="PingToolItemTitle" xml:space="preserve">
+    <value>Ping Test</value>
+  </data>
   <data name="_DohDomainNamePopupMsg" xml:space="preserve">
     <value>Enter a domain name to be resolved</value>
   </data>
@@ -149,13 +161,34 @@
   <data name="_DohResolveErrorToastMsg" xml:space="preserve">
     <value>Resolution failed. Very sorry nya ❌</value>
   </data>
+  <data name="_DohResolveInvalidToastMsg" xml:space="preserve">
+    <value>Invalid domain format. Recognition failed ❌</value>
+  </data>
   <data name="_DohResolveSuccessToastMsg" xml:space="preserve">
     <value>Resolution successful. IP copied ✅</value>
   </data>
   <data name="_Ipv6TestErrorToastMsg" xml:space="preserve">
-    <value>Connection failed. The current network does not support IPv6 ❌</value>
+    <value>Connection failed. Current network does not support IPv6 ❌</value>
   </data>
   <data name="_Ipv6TestSuccessToastMsg" xml:space="preserve">
     <value>Connection successful. Local network supports IPv6 ✅</value>
+  </data>
+  <data name="_PingHostNamePopupMsg" xml:space="preserve">
+    <value>Enter an address to test ping connectivity</value>
+  </data>
+  <data name="_PingHostNamePopupTitle" xml:space="preserve">
+    <value>Address</value>
+  </data>
+  <data name="_PingTestErrorToastMsg" xml:space="preserve">
+    <value>Connection failed. Current address can not be pinged ❌</value>
+  </data>
+  <data name="_PingTestInvalidToastMsg" xml:space="preserve">
+    <value>Invalid address format. Recognition failed ❌</value>
+  </data>
+  <data name="_PingTestReversedToastMsg" xml:space="preserve">
+    <value>Connection cancelled. DNS returned a reserved IP ❌</value>
+  </data>
+  <data name="_PingTestSuccessToastMsg" xml:space="preserve">
+    <value>Connection successful. Current address can be pinged ✅</value>
   </data>
 </root>

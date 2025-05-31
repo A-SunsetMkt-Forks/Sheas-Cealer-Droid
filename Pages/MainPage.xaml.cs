@@ -146,7 +146,7 @@ public partial class MainPage : ContentPage
         string customHostDomains = customHostRule[0].ToString();
         string? customHostSni = customHostRule[1].GetString()?.Trim();
         string customHostIp = string.IsNullOrWhiteSpace(customHostRule[2].GetString()) ? "127.0.0.1" : customHostRule[2].GetString()!.Trim();
-        string localHostName = Path.GetFileNameWithoutExtension(MainConst.LocalHostPath).TrimStart("Cealing-Host-".ToCharArray());
+        string localHostName = MainConst.CealHostPrefixRegex().Replace(Path.GetFileNameWithoutExtension(MainConst.LocalHostPath), string.Empty);
 
         MainPres.CealHostRulesCollection.Insert(0, new
         (
@@ -370,7 +370,7 @@ public partial class MainPage : ContentPage
 
     private async void CealHostWatcher_Changed(object sender, FileSystemEventArgs e)
     {
-        string cealHostName = Path.GetFileNameWithoutExtension(e.Name!).TrimStart("Cealing-Host-".ToCharArray());
+        string cealHostName = MainConst.CealHostPrefixRegex().Replace(Path.GetFileNameWithoutExtension(e.Name!), string.Empty);
 
         try
         {

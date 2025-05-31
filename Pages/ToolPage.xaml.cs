@@ -3,8 +3,9 @@ using Microsoft.Maui.ApplicationModel.DataTransfer;
 using Microsoft.Maui.Controls;
 using Ona_Core;
 using Sheas_Cealer_Droid.Consts;
+using Sheas_Cealer_Droid.Utils;
 using System;
-using System.Linq;
+using System.Net;
 using System.Net.NetworkInformation;
 using System.Text.Json;
 using System.Threading.Tasks;
@@ -33,23 +34,21 @@ public partial class ToolPage : ContentPage
     internal static ICommand DohImageButton_ClickedCommand => new Command(async () => await DohImageButton_Clicked(null!, null!));
     private static async Task DohImageButton_Clicked(object sender, EventArgs e)
     {
-        string? dohDomainName = (await Shell.Current.CurrentPage.DisplayPromptAsync(ToolConst._DohDomainNamePopupTitle, ToolConst._DohDomainNamePopupMsg, GlobalConst._PopupAcceptText, GlobalConst._PopupCancelText))?.
-            ToLowerInvariant().Trim().TrimStart("http://".ToCharArray()).TrimStart("https://".ToCharArray());
-
-        int portStartIndex = dohDomainName?.IndexOf(':') ?? -1;
-
-        if (portStartIndex != -1)
-            dohDomainName = dohDomainName![..portStartIndex];
-
-        int pathStartIndex = dohDomainName?.IndexOf('/') ?? -1;
-
-        if (pathStartIndex != -1)
-            dohDomainName = dohDomainName![..pathStartIndex];
+        string? dohDomainName = await Shell.Current.CurrentPage.DisplayPromptAsync(ToolConst._DohDomainNamePopupTitle, ToolConst._DohDomainNamePopupMsg, GlobalConst._PopupAcceptText, GlobalConst._PopupCancelText);
 
         if (string.IsNullOrWhiteSpace(dohDomainName))
             return;
 
-        dohDomainName = new([.. dohDomainName.Where(c => !char.IsWhiteSpace(c))]);
+        if (!dohDomainName.StartsWith("https://") && !dohDomainName.StartsWith("http://"))
+            dohDomainName = "https://" + dohDomainName;
+
+        try { dohDomainName = new Uri(dohDomainName).DnsSafeHost; }
+        catch
+        {
+            await Toast.Make(ToolConst._DohResolveInvalidToastMsg).Show();
+
+            return;
+        }
 
         if (JsonDocument.Parse(await Http.GetAsync<string>($"{ToolConst.DohUrl}{dohDomainName}", App.AppClient)).RootElement.TryGetProperty("Answer", out JsonElement dohAnswers))
         {
@@ -58,5 +57,53 @@ public partial class ToolPage : ContentPage
         }
         else
             await Toast.Make(ToolConst._DohResolveErrorToastMsg).Show();
+    }
+
+    internal static ICommand PingImageButton_ClickedCommand => new Command(async () => await PingImageButton_Clicked(null!, null!));
+    private static async Task PingImageButton_Clicked(object sender, EventArgs e)
+    {
+        string? pingHostName = await Shell.Current.CurrentPage.DisplayPromptAsync(ToolConst._PingHostNamePopupTitle, ToolConst._PingHostNamePopupMsg, GlobalConst._PopupAcceptText, GlobalConst._PopupCancelText);
+
+        if (string.IsNullOrWhiteSpace(pingHostName))
+            return;
+
+        if (!pingHostName.StartsWith("https://") && !pingHostName.StartsWith("http://"))
+            pingHostName = "https://" + pingHostName;
+
+        try { pingHostName = new Uri(pingHostName).DnsSafeHost; }
+        catch
+        {
+            await Toast.Make(ToolConst._PingTestInvalidToastMsg).Show();
+
+            return;
+        }
+
+        if (!IPAddress.TryParse(pingHostName, out IPAddress? pingIp))
+        {
+            try { pingIp = (await Dns.GetHostAddressesAsync(pingHostName))[0]; }
+            catch
+            {
+                await Toast.Make(ToolConst._PingTestErrorToastMsg).Show();
+
+                return;
+            }
+
+            if (ReservedIpChecker.IsReversedIp(pingIp))
+            {
+                await Toast.Make(ToolConst._PingTestReversedToastMsg).Show();
+
+                return;
+            }
+        }
+
+        IPStatus pingTestStatus;
+
+        try { pingTestStatus = (await new Ping().SendPingAsync(pingIp)).Status; }
+        catch { pingTestStatus = IPStatus.Unknown; }
+
+        if (pingTestStatus == IPStatus.Success)
+            await Toast.Make(ToolConst._PingTestSuccessToastMsg).Show();
+        else
+            await Toast.Make(ToolConst._PingTestErrorToastMsg).Show();
     }
 }

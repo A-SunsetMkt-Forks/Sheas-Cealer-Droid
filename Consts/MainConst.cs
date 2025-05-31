@@ -1,9 +1,10 @@
 ﻿using Microsoft.Maui.Storage;
 using System.IO;
+using System.Text.RegularExpressions;
 
 namespace Sheas_Cealer_Droid.Consts;
 
-internal abstract class MainConst : MainMultilangConst
+internal abstract partial class MainConst : MainMultilangConst
 {
     internal static string CealHostPath => Path.Combine(FileSystem.AppDataDirectory, "Cealing-Host-*.json");
     internal static string UpstreamHostPath => Path.Combine(FileSystem.AppDataDirectory, "Cealing-Host-U.json");
@@ -15,4 +16,7 @@ internal abstract class MainConst : MainMultilangConst
     internal static string UpdateApiUserAgent => "Sheas-Cealer-Droid";
     internal static string DisableCealArg => "--disable-cealing";
     internal static string[] KaomojiShakeArray => ["(＞ ﹏ ＜ *  )", "( ＞ ﹏ ＜ * )", "(* ＞ ﹏ ＜ *)", "( * ＞ ﹏ ＜ )", "(  * ＞ ﹏ ＜)"];
+
+    [GeneratedRegex("^Cealing-Host-")]
+    internal static partial Regex CealHostPrefixRegex();
 }
