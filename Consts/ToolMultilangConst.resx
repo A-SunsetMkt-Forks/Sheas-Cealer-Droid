@@ -132,7 +132,7 @@
     <value>Test</value>
   </data>
   <data name="Ipv6ImageButtonTooltip" xml:space="preserve">
-    <value>Tap to start an IPv6 test</value>
+    <value>Tap to start an IPv6 accessibility test</value>
   </data>
   <data name="Ipv6ToolItemContent" xml:space="preserve">
     <value>Test whether the local network environment can access IPv6</value>
@@ -144,7 +144,7 @@
     <value>Ping</value>
   </data>
   <data name="PingImageButtonTooltip" xml:space="preserve">
-    <value>Tap to start a ping connectivity test</value>
+    <value>Tap to open a ping connectivity test pop-up</value>
   </data>
   <data name="PingToolItemContent" xml:space="preserve">
     <value>Test whether the local network can ping specified address</value>
@@ -156,7 +156,7 @@
     <value>Check</value>
   </data>
   <data name="ReserveImageButtonTooltip" xml:space="preserve">
-    <value>Tap to start a reserved IP check</value>
+    <value>Tap to open a reserved IP check pop-up</value>
   </data>
   <data name="ReserveToolItemContent" xml:space="preserve">
     <value>Check whether the specified IP is a reserved IP</value>

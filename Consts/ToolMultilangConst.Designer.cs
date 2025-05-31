@@ -268,7 +268,7 @@ namespace Sheas_Cealer_Droid.Consts {
         }
         
         /// <summary>
-        ///   查找类似 Tap to start an IPv6 test 的本地化字符串。
+        ///   查找类似 Tap to start an IPv6 accessibility test 的本地化字符串。
         /// </summary>
         internal static string Ipv6ImageButtonTooltip {
             get {
@@ -304,7 +304,7 @@ namespace Sheas_Cealer_Droid.Consts {
         }
         
         /// <summary>
-        ///   查找类似 Tap to start a ping connectivity test 的本地化字符串。
+        ///   查找类似 Tap to open a ping connectivity test pop-up 的本地化字符串。
         /// </summary>
         internal static string PingImageButtonTooltip {
             get {
@@ -340,7 +340,7 @@ namespace Sheas_Cealer_Droid.Consts {
         }
         
         /// <summary>
-        ///   查找类似 Tap to start a reserved IP check 的本地化字符串。
+        ///   查找类似 Tap to open a reserved IP check pop-up 的本地化字符串。
         /// </summary>
         internal static string ReserveImageButtonTooltip {
             get {

@@ -132,7 +132,7 @@
     <value>测试</value>
   </data>
   <data name="Ipv6ImageButtonTooltip" xml:space="preserve">
-    <value>点击执行 IPv6 测试</value>
+    <value>点击执行 IPv6 可访问性测试</value>
   </data>
   <data name="Ipv6ToolItemContent" xml:space="preserve">
     <value>测试本地网络环境能否访问 IPv6</value>
@@ -144,7 +144,7 @@
     <value>Ping</value>
   </data>
   <data name="PingImageButtonTooltip" xml:space="preserve">
-    <value>点击执行 ping 连通性测试</value>
+    <value>点击打开 ping 连通性测试弹窗</value>
   </data>
   <data name="PingToolItemContent" xml:space="preserve">
     <value>测试本地网络能否 ping 通指定地址</value>
@@ -156,7 +156,7 @@
     <value>判断</value>
   </data>
   <data name="ReserveImageButtonTooltip" xml:space="preserve">
-    <value>点击执行保留 IP 判断</value>
+    <value>点击打开保留 IP 判断弹窗</value>
   </data>
   <data name="ReserveToolItemContent" xml:space="preserve">
     <value>判断指定 IP 是否为保留 IP</value>
