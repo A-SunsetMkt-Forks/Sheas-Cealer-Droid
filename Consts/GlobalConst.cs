@@ -30,7 +30,7 @@ internal abstract class GlobalConst : GlobalMultilangConst
         { _LangOptionEnglishName, "en" },
         { _LangOptionChineseName, "zh" }
     };
-    internal static ObservableCollection<string> DefaultBrowserNameCollection => ["Chrome", "Edge", "Brave", "Opera", "Yandex", "Vivaldi", "Kiwi", "Whale", "Bromite", "Twinkstar", "Lemur", _BrowserNameCollectionCustomTitle];
+    internal static ObservableCollection<string> DefaultBrowserNameCollection => ["Chrome", "Edge", "Brave", "Vivaldi", "Kiwi", "Bromite", "Twinkstar", "Lemur", _BrowserNameCollectionCustomTitle];
     internal static string CommandLinePath => "/data/local/tmp/chrome-command-line";
     internal static string DefaultUpstreamUrl => "https://gitlab.com/SpaceTimee/Cealing-Host/raw/main/Cealing-Host.json";
     internal static string FlagUrl => "chrome://flags/#enable-command-line-on-non-rooted-devices";
