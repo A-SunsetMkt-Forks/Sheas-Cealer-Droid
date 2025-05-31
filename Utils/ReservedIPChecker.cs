@@ -31,7 +31,7 @@ internal static class ReservedIpChecker
 
         ip.AddressFamily == AddressFamily.InterNetworkV6 && (
             IPAddress.IsLoopback(ip) ||
-            ip == IPAddress.IPv6None ||
+            ip.Equals(IPAddress.IPv6None) ||
             ip.IsIPv4MappedToIPv6 ||
             ip.IsIPv6LinkLocal ||
             ip.IsIPv6Multicast ||

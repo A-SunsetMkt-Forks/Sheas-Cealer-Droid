@@ -152,6 +152,18 @@
   <data name="PingToolItemTitle" xml:space="preserve">
     <value>Ping Test</value>
   </data>
+  <data name="ReserveImageButtonDescription" xml:space="preserve">
+    <value>Check</value>
+  </data>
+  <data name="ReserveImageButtonTooltip" xml:space="preserve">
+    <value>Tap to start a reserved IP check</value>
+  </data>
+  <data name="ReserveToolItemContent" xml:space="preserve">
+    <value>Check whether the specified IP is a reserved IP</value>
+  </data>
+  <data name="ReserveToolItemTitle" xml:space="preserve">
+    <value>Reserved IP Check</value>
+  </data>
   <data name="_DohDomainNamePopupMsg" xml:space="preserve">
     <value>Enter a domain name to be resolved</value>
   </data>
@@ -190,5 +202,20 @@
   </data>
   <data name="_PingTestSuccessToastMsg" xml:space="preserve">
     <value>Connection successful. Current address can be pinged ✅</value>
+  </data>
+  <data name="_ReserveCheckHostPopupMsg" xml:space="preserve">
+    <value>Enter an IP to be checked</value>
+  </data>
+  <data name="_ReserveCheckHostPopupTitle" xml:space="preserve">
+    <value>IP</value>
+  </data>
+  <data name="_ReserveCheckInvalidToastMsg" xml:space="preserve">
+    <value>Invalid IP format. Recognition failed ❌</value>
+  </data>
+  <data name="_ReserveCheckNonreversedToastMsg" xml:space="preserve">
+    <value>Match successful. Current IP is not a reserved IP ✅</value>
+  </data>
+  <data name="_ReserveCheckReversedToastMsg" xml:space="preserve">
+    <value>Match successful. Current IP is a reserved IP ✅</value>
   </data>
 </root>

@@ -55,6 +55,21 @@
                         </ImageButton>
                     </models:ToolItem.Button>
                 </models:ToolItem>
+                <models:ToolItem Title="{x:Static consts:ToolMultilangConst.ReserveToolItemTitle}"
+                                 Content="{x:Static consts:ToolMultilangConst.ReserveToolItemContent}">
+                    <models:ToolItem.Button>
+                        <ImageButton Source="goto_icon.png"
+                                     ToolTipProperties.Text="{x:Static consts:ToolMultilangConst.ReserveImageButtonTooltip}"
+                                     SemanticProperties.Description="{x:Static consts:ToolMultilangConst.ReserveImageButtonDescription}"
+                                     Style="{x:StaticResource SmallImageButton}"
+                                     WidthRequest="28" HeightRequest="28" CornerRadius="8"
+                                     Command="{x:Static pages:ToolPage.ReserveImageButton_ClickedCommand}">
+                            <ImageButton.Behaviors>
+                                <toolkit:IconTintColorBehavior TintColor="{AppThemeBinding Light={StaticResource White}, Dark={StaticResource Gray900}}" />
+                            </ImageButton.Behaviors>
+                        </ImageButton>
+                    </models:ToolItem.Button>
+                </models:ToolItem>
             </x:Array>
         </CollectionView.ItemsSource>
         <CollectionView.ItemTemplate>

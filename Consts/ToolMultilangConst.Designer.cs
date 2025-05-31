@@ -178,6 +178,51 @@ namespace Sheas_Cealer_Droid.Consts {
         }
         
         /// <summary>
+        ///   查找类似 Enter an IP to be checked 的本地化字符串。
+        /// </summary>
+        internal static string _ReserveCheckHostPopupMsg {
+            get {
+                return ResourceManager.GetString("_ReserveCheckHostPopupMsg", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   查找类似 IP 的本地化字符串。
+        /// </summary>
+        internal static string _ReserveCheckHostPopupTitle {
+            get {
+                return ResourceManager.GetString("_ReserveCheckHostPopupTitle", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   查找类似 Invalid IP format. Recognition failed ❌ 的本地化字符串。
+        /// </summary>
+        internal static string _ReserveCheckInvalidToastMsg {
+            get {
+                return ResourceManager.GetString("_ReserveCheckInvalidToastMsg", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   查找类似 Match successful. Current IP is not a reserved IP ✅ 的本地化字符串。
+        /// </summary>
+        internal static string _ReserveCheckNonreversedToastMsg {
+            get {
+                return ResourceManager.GetString("_ReserveCheckNonreversedToastMsg", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   查找类似 Match successful. Current IP is a reserved IP ✅ 的本地化字符串。
+        /// </summary>
+        internal static string _ReserveCheckReversedToastMsg {
+            get {
+                return ResourceManager.GetString("_ReserveCheckReversedToastMsg", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   查找类似 Resolve 的本地化字符串。
         /// </summary>
         internal static string DohImageButtonDescription {
@@ -282,6 +327,42 @@ namespace Sheas_Cealer_Droid.Consts {
         internal static string PingToolItemTitle {
             get {
                 return ResourceManager.GetString("PingToolItemTitle", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   查找类似 Check 的本地化字符串。
+        /// </summary>
+        internal static string ReserveImageButtonDescription {
+            get {
+                return ResourceManager.GetString("ReserveImageButtonDescription", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   查找类似 Tap to start a reserved IP check 的本地化字符串。
+        /// </summary>
+        internal static string ReserveImageButtonTooltip {
+            get {
+                return ResourceManager.GetString("ReserveImageButtonTooltip", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   查找类似 Check whether the specified IP is a reserved IP 的本地化字符串。
+        /// </summary>
+        internal static string ReserveToolItemContent {
+            get {
+                return ResourceManager.GetString("ReserveToolItemContent", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   查找类似 Reserved IP Check 的本地化字符串。
+        /// </summary>
+        internal static string ReserveToolItemTitle {
+            get {
+                return ResourceManager.GetString("ReserveToolItemTitle", resourceCulture);
             }
         }
     }

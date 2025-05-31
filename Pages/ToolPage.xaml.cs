@@ -78,9 +78,9 @@ public partial class ToolPage : ContentPage
             return;
         }
 
-        if (!IPAddress.TryParse(pingHostName, out IPAddress? pingIp))
+        if (!IPAddress.TryParse(pingHostName, out IPAddress? pingTestIp))
         {
-            try { pingIp = (await Dns.GetHostAddressesAsync(pingHostName))[0]; }
+            try { pingTestIp = (await Dns.GetHostAddressesAsync(pingHostName))[0]; }
             catch
             {
                 await Toast.Make(ToolConst._PingTestErrorToastMsg).Show();
@@ -88,7 +88,7 @@ public partial class ToolPage : ContentPage
                 return;
             }
 
-            if (ReservedIpChecker.IsReversedIp(pingIp))
+            if (ReservedIpChecker.IsReversedIp(pingTestIp))
             {
                 await Toast.Make(ToolConst._PingTestReversedToastMsg).Show();
 
@@ -98,12 +98,28 @@ public partial class ToolPage : ContentPage
 
         IPStatus pingTestStatus;
 
-        try { pingTestStatus = (await new Ping().SendPingAsync(pingIp)).Status; }
+        try { pingTestStatus = (await new Ping().SendPingAsync(pingTestIp)).Status; }
         catch { pingTestStatus = IPStatus.Unknown; }
 
         if (pingTestStatus == IPStatus.Success)
             await Toast.Make(ToolConst._PingTestSuccessToastMsg).Show();
         else
             await Toast.Make(ToolConst._PingTestErrorToastMsg).Show();
+    }
+
+    internal static ICommand ReserveImageButton_ClickedCommand => new Command(async () => await ReserveImageButton_Clicked(null!, null!));
+    private static async Task ReserveImageButton_Clicked(object sender, EventArgs e)
+    {
+        string? reserveCheckHost = await Shell.Current.CurrentPage.DisplayPromptAsync(ToolConst._ReserveCheckHostPopupTitle, ToolConst._ReserveCheckHostPopupMsg, GlobalConst._PopupAcceptText, GlobalConst._PopupCancelText);
+
+        if (string.IsNullOrWhiteSpace(reserveCheckHost))
+            return;
+
+        if (!IPAddress.TryParse(reserveCheckHost, out IPAddress? reserveCheckIp))
+            await Toast.Make(ToolConst._ReserveCheckInvalidToastMsg).Show();
+        else if (ReservedIpChecker.IsReversedIp(reserveCheckIp))
+            await Toast.Make(ToolConst._ReserveCheckReversedToastMsg).Show();
+        else
+            await Toast.Make(ToolConst._ReserveCheckNonreversedToastMsg).Show();
     }
 }
