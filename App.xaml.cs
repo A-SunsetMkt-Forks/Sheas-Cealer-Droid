@@ -16,6 +16,8 @@ public partial class App : Application
 {
     internal static readonly HttpClient AppClient = new(new HttpClientHandler { ServerCertificateCustomValidationCallback = HttpClientHandler.DangerousAcceptAnyServerCertificateValidator });
 
+    internal static string CealArgs = string.Empty;
+
     private readonly AppPres AppPres;
 
     public App()

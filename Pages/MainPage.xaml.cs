@@ -30,7 +30,6 @@ public partial class MainPage : ContentPage
     private readonly FileSystemWatcher CealHostWatcher = new(Path.GetDirectoryName(MainConst.CealHostPath)!, Path.GetFileName(MainConst.CealHostPath)) { EnableRaisingEvents = true, NotifyFilter = NotifyFilters.LastWrite };
 
     private readonly SortedDictionary<string, List<CealHostRule>?> CealHostRulesDict = [];
-    private string CealArgs = string.Empty;
     private string LatestUpstreamHostString = string.Empty;
 
     private readonly SemaphoreSlim IsCealHostChangingSemaphore = new(1);
@@ -77,13 +76,9 @@ public partial class MainPage : ContentPage
         HapticFeedback.Default.Perform(HapticFeedbackType.Click);
 
         if (MainPres.IsCommandLineUtd == true)
-            await File.WriteAllTextAsync(GlobalConst.CommandLinePath, string.Empty);
+            await CommandLineWriter.Clear();
         else if (MainPres.IsCommandLineUtd == null)
-        {
-            string cealArgs = MainPres.ExtraArgs.Split(' ', StringSplitOptions.RemoveEmptyEntries | StringSplitOptions.TrimEntries).Contains(MainConst.DisableCealArg) ? string.Empty : CealArgs + " ";
-
-            await File.WriteAllTextAsync(GlobalConst.CommandLinePath, $"{MainPres.BrowserName!.ToLowerInvariant()} {cealArgs}{MainPres.ExtraArgs.TrimStart()}".TrimEnd());
-        }
+            await CommandLineWriter.Write(MainPres.BrowserName!, App.CealArgs, MainPres.ExtraArgs.Trim());
         else
             await File.WriteAllTextAsync(MainConst.UpstreamHostPath, LatestUpstreamHostString);
 
@@ -441,11 +436,11 @@ public partial class MainPage : ContentPage
 
             MainPres.CealHostRulesCollection = new(cealHostRulesList);
 
-            CealArgs = @$"--host-rules=""{hostRules.TrimEnd(',')}"" --host-resolver-rules=""{hostResolverRules.TrimEnd(',')}"" --test-type --ignore-certificate-errors";
+            App.CealArgs = @$"--host-rules=""{hostRules.TrimEnd(',')}"" --host-resolver-rules=""{hostResolverRules.TrimEnd(',')}"" --test-type --ignore-certificate-errors";
 
             if (!string.IsNullOrWhiteSpace(await File.ReadAllTextAsync(GlobalConst.CommandLinePath)))
             {
-                await File.WriteAllTextAsync(GlobalConst.CommandLinePath, $"{MainPres.BrowserName!.ToLowerInvariant()} {CealArgs}");
+                await CommandLineWriter.Write(MainPres.BrowserName!, App.CealArgs, MainPres.ExtraArgs.Trim());
 
                 (MainPres.IsCommandLineUtd, string newStatusMessage) = await StatusManager.RefreshCurrentStatus(CealHostRulesDict.ContainsValue(null));
 

@@ -77,6 +77,9 @@ internal abstract partial class GlobalPres : ObservableObject
                 newValue = BrowserNameCollection[0];
             }
 
+        if (IsCommandLineUtd == true)
+            await CommandLineWriter.Write(BrowserName!, App.CealArgs, ExtraArgs.Trim());
+
         Preferences.Default.Set(nameof(BrowserName), newValue);
     }
 
@@ -91,7 +94,13 @@ internal abstract partial class GlobalPres : ObservableObject
 
     [ObservableProperty]
     private static string extraArgs = Preferences.Default.Get(nameof(ExtraArgs), string.Empty);
-    partial void OnExtraArgsChanged(string value) => Preferences.Default.Set(nameof(ExtraArgs), value);
+    async partial void OnExtraArgsChanged(string value)
+    {
+        if (IsCommandLineUtd == true)
+            await CommandLineWriter.Write(BrowserName!, App.CealArgs, ExtraArgs.Trim());
+
+        Preferences.Default.Set(nameof(ExtraArgs), value);
+    }
 
     [ObservableProperty]
     private static string themeColorName = string.Empty;
@@ -198,6 +207,9 @@ internal abstract partial class GlobalPres : ObservableObject
     [ObservableProperty]
     private static bool isCommandLineExist = Preferences.Default.Get(nameof(IsCommandLineExist), false);
     partial void OnIsCommandLineExistChanged(bool value) => Preferences.Default.Set(nameof(IsCommandLineExist), value);
+
+    [ObservableProperty]
+    private static bool? isCommandLineUtd = null;
 
     [ObservableProperty]
     private static bool isFirstRunning = Preferences.Default.Get(nameof(IsFirstRunning), true);
