@@ -21,7 +21,7 @@
                                     ItemSelected="MainSearchHandler_ItemSelected">
             <handlers:MainSearchHandler.ItemTemplate>
                 <DataTemplate x:DataType="models:CealHostRule">
-                    <Grid Margin="8,2,8,2">
+                    <Grid Margin="8,2">
                         <Border BackgroundColor="{AppThemeBinding Light={DynamicResource Gray100}, Dark={DynamicResource Gray850}}"
                                 StrokeShape="RoundRectangle 8" Margin="4">
                             <Grid Margin="8">
@@ -70,7 +70,7 @@
                         Scrolled="MainCollectionView_Scrolled">
             <CollectionView.ItemTemplate>
                 <DataTemplate x:DataType="models:CealHostRule">
-                    <Grid Margin="8,2,8,2">
+                    <Grid Margin="8,2">
                         <Border BackgroundColor="{AppThemeBinding Light={DynamicResource Gray100}, Dark={DynamicResource Gray850}}"
                                 StrokeShape="RoundRectangle 8" Margin="4">
                             <Grid Margin="8,8,0,8">
