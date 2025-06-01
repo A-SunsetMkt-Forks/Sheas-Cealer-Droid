@@ -140,6 +140,18 @@
   <data name="Ipv6ToolItemTitle" xml:space="preserve">
     <value>IPv6 Test</value>
   </data>
+  <data name="MetaImageButtonDescription" xml:space="preserve">
+    <value>Retrieve</value>
+  </data>
+  <data name="MetaImageButtonTooltip" xml:space="preserve">
+    <value>Tap to retrieve the public IP info</value>
+  </data>
+  <data name="MetaToolItemContent" xml:space="preserve">
+    <value>Retrieve the public IP info of the current network environment</value>
+  </data>
+  <data name="MetaToolItemTitle" xml:space="preserve">
+    <value>Public IP Info</value>
+  </data>
   <data name="PingImageButtonDescription" xml:space="preserve">
     <value>Ping</value>
   </data>
@@ -184,6 +196,12 @@
   </data>
   <data name="_Ipv6TestSuccessToastMsg" xml:space="preserve">
     <value>Connection successful. Local network supports IPv6 ✅</value>
+  </data>
+  <data name="_MetaDataErrorToastMsg" xml:space="preserve">
+    <value>Retrieval failed. Very sorry nya ❌</value>
+  </data>
+  <data name="_MetaDataSuccessToastMsg" xml:space="preserve">
+    <value>Retrieval successful. {0} ({1}) ✅</value>
   </data>
   <data name="_PingHostNamePopupMsg" xml:space="preserve">
     <value>Enter an address to test ping connectivity</value>

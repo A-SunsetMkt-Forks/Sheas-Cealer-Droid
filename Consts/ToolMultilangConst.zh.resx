@@ -140,6 +140,18 @@
   <data name="Ipv6ToolItemTitle" xml:space="preserve">
     <value>IPv6 测试</value>
   </data>
+  <data name="MetaImageButtonDescription" xml:space="preserve">
+    <value>获取</value>
+  </data>
+  <data name="MetaImageButtonTooltip" xml:space="preserve">
+    <value>点击获取公网 IP 信息</value>
+  </data>
+  <data name="MetaToolItemContent" xml:space="preserve">
+    <value>获取当前网络环境的公网 IP 信息</value>
+  </data>
+  <data name="MetaToolItemTitle" xml:space="preserve">
+    <value>公网 IP 信息</value>
+  </data>
   <data name="PingImageButtonDescription" xml:space="preserve">
     <value>Ping</value>
   </data>
@@ -184,6 +196,12 @@
   </data>
   <data name="_Ipv6TestSuccessToastMsg" xml:space="preserve">
     <value>连接成功，本地网络可访问 IPv6 ✅</value>
+  </data>
+  <data name="_MetaDataErrorToastMsg" xml:space="preserve">
+    <value>获取失败，肥肠包芡喵 ❌</value>
+  </data>
+  <data name="_MetaDataSuccessToastMsg" xml:space="preserve">
+    <value>获取成功，{0} ({1}) ✅</value>
   </data>
   <data name="_PingHostNamePopupMsg" xml:space="preserve">
     <value>输入一个需要测试 ping 连通性的地址</value>

@@ -124,6 +124,24 @@ namespace Sheas_Cealer_Droid.Consts {
         }
         
         /// <summary>
+        ///   查找类似 Retrieval failed. Very sorry nya ❌ 的本地化字符串。
+        /// </summary>
+        internal static string _MetaDataErrorToastMsg {
+            get {
+                return ResourceManager.GetString("_MetaDataErrorToastMsg", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   查找类似 Retrieval successful. {0} ({1}) ✅ 的本地化字符串。
+        /// </summary>
+        internal static string _MetaDataSuccessToastMsg {
+            get {
+                return ResourceManager.GetString("_MetaDataSuccessToastMsg", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   查找类似 Enter an address to test ping connectivity 的本地化字符串。
         /// </summary>
         internal static string _PingHostNamePopupMsg {
@@ -291,6 +309,42 @@ namespace Sheas_Cealer_Droid.Consts {
         internal static string Ipv6ToolItemTitle {
             get {
                 return ResourceManager.GetString("Ipv6ToolItemTitle", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   查找类似 Retrieve 的本地化字符串。
+        /// </summary>
+        internal static string MetaImageButtonDescription {
+            get {
+                return ResourceManager.GetString("MetaImageButtonDescription", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   查找类似 Tap to retrieve the public IP info 的本地化字符串。
+        /// </summary>
+        internal static string MetaImageButtonTooltip {
+            get {
+                return ResourceManager.GetString("MetaImageButtonTooltip", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   查找类似 Retrieve the public IP info of the current network environment 的本地化字符串。
+        /// </summary>
+        internal static string MetaToolItemContent {
+            get {
+                return ResourceManager.GetString("MetaToolItemContent", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   查找类似 Public IP Info 的本地化字符串。
+        /// </summary>
+        internal static string MetaToolItemTitle {
+            get {
+                return ResourceManager.GetString("MetaToolItemTitle", resourceCulture);
             }
         }
         

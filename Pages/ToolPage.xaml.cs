@@ -122,4 +122,15 @@ public partial class ToolPage : ContentPage
         else
             await Toast.Make(ToolConst._ReserveCheckNonreversedToastMsg).Show();
     }
+
+    internal static ICommand MetaImageButton_ClickedCommand => new Command(async () => await MetaImageButton_Clicked(null!, null!));
+    private static async Task MetaImageButton_Clicked(object sender, EventArgs e)
+    {
+        JsonElement metaData = JsonDocument.Parse(await Http.GetAsync<string>(ToolConst.MetaUrl, App.AppClient)).RootElement;
+
+        if (metaData.TryGetProperty("clientIp", out JsonElement metaIp) && metaData.TryGetProperty("country", out JsonElement metaCountry))
+            await Toast.Make(string.Format(ToolConst._MetaDataSuccessToastMsg, metaIp.GetString(), metaCountry.GetString())).Show();
+        else
+            await Toast.Make(ToolConst._MetaDataErrorToastMsg).Show();
+    }
 }
