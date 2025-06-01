@@ -184,11 +184,7 @@
                                            IsVisible="{Binding Content, StringFormat=True, TargetNullValue=False}"
                                            Grid.ColumnSpan="2" Grid.Row="1" Margin="20,4" FontSize="Caption" />
                                 </Grid>
-                                <AbsoluteLayout>
-                                    <Border AbsoluteLayout.LayoutBounds="0,0.5,4,1" AbsoluteLayout.LayoutFlags="PositionProportional,HeightProportional"
-                                            BackgroundColor="{AppThemeBinding Light={DynamicResource Primary500}, Dark={DynamicResource Primary700}}"
-                                            StrokeShape="RoundRectangle 8" />
-                                </AbsoluteLayout>
+                                <ContentView ControlTemplate="{StaticResource CardGrip}" />
                             </Grid>
                         </Border>
                     </Grid>

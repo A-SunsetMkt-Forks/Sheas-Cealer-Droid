@@ -6,6 +6,7 @@
             <ResourceDictionary.MergedDictionaries>
                 <ResourceDictionary Source="Rsces/Colors/BaseColor.xaml" />
                 <ResourceDictionary Source="Rsces/Styles/BaseStyle.xaml" />
+                <ResourceDictionary Source="Rsces/Tmpls/BaseTmpl.xaml" />
             </ResourceDictionary.MergedDictionaries>
         </ResourceDictionary>
     </Application.Resources>

@@ -31,11 +31,7 @@
                                     <Label Text="{Binding Ip}"
                                            Margin="20,4" FontSize="Caption" />
                                 </VerticalStackLayout>
-                                <AbsoluteLayout>
-                                    <Border AbsoluteLayout.LayoutBounds="0,0.5,4,1" AbsoluteLayout.LayoutFlags="PositionProportional,HeightProportional"
-                                            BackgroundColor="{AppThemeBinding Light={DynamicResource Primary500}, Dark={DynamicResource Primary700}}"
-                                            StrokeShape="RoundRectangle 8" />
-                                </AbsoluteLayout>
+                                <ContentView ControlTemplate="{StaticResource CardGrip}" />
                             </Grid>
                         </Border>
                     </Grid>
@@ -124,11 +120,7 @@
                                         </ImageButton>
                                     </HorizontalStackLayout>
                                 </Grid>
-                                <AbsoluteLayout>
-                                    <Border AbsoluteLayout.LayoutBounds="0,0.5,4,1" AbsoluteLayout.LayoutFlags="PositionProportional,HeightProportional"
-                                            BackgroundColor="{AppThemeBinding Light={DynamicResource Primary500}, Dark={DynamicResource Primary700}}"
-                                            StrokeShape="RoundRectangle 8" />
-                                </AbsoluteLayout>
+                                <ContentView ControlTemplate="{StaticResource CardGrip}" />
                             </Grid>
                         </Border>
                         <Border IsVisible="{Binding Name, Converter={x:Static convs:MainConv.MainLocalViewIsVisibleConv}}"
