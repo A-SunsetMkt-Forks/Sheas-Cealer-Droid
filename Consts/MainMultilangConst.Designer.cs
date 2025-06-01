@@ -119,6 +119,33 @@ namespace Sheas_Cealer_Droid.Consts {
         }
         
         /// <summary>
+        ///   查找类似 Connection failed. Ping unreachable ❌ 的本地化字符串。
+        /// </summary>
+        internal static string _DelayTestErrorToastMsg {
+            get {
+                return ResourceManager.GetString("_DelayTestErrorToastMsg", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   查找类似 Invalid IP format. Recognition failed ❌ 的本地化字符串。
+        /// </summary>
+        internal static string _DelayTestInvalidToastMsg {
+            get {
+                return ResourceManager.GetString("_DelayTestInvalidToastMsg", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   查找类似 Connection successful. Delay {0} ms ✅ 的本地化字符串。
+        /// </summary>
+        internal static string _DelayTestSuccessToastMsg {
+            get {
+                return ResourceManager.GetString("_DelayTestSuccessToastMsg", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   查找类似 Host copied ✅ 的本地化字符串。
         /// </summary>
         internal static string _HostCopiedToastMsg {
@@ -205,6 +232,24 @@ namespace Sheas_Cealer_Droid.Consts {
         internal static string CopyImageButtonTooltip {
             get {
                 return ResourceManager.GetString("CopyImageButtonTooltip", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   查找类似 Delay 的本地化字符串。
+        /// </summary>
+        internal static string DelayImageButtonDescription {
+            get {
+                return ResourceManager.GetString("DelayImageButtonDescription", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   查找类似 Tap to test the delay of the host 的本地化字符串。
+        /// </summary>
+        internal static string DelayImageButtonTooltip {
+            get {
+                return ResourceManager.GetString("DelayImageButtonTooltip", resourceCulture);
             }
         }
         

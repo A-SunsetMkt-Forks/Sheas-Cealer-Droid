@@ -210,7 +210,7 @@
     <value>待 ping 地址</value>
   </data>
   <data name="_PingTestErrorToastMsg" xml:space="preserve">
-    <value>连接失败，当前地址 ping 不通 ❌</value>
+    <value>连接失败，无法 ping 通 ❌</value>
   </data>
   <data name="_PingTestInvalidToastMsg" xml:space="preserve">
     <value>地址格式错误，无法识别 ❌</value>
@@ -219,7 +219,7 @@
     <value>连接取消，DNS 返回了保留 IP ❌</value>
   </data>
   <data name="_PingTestSuccessToastMsg" xml:space="preserve">
-    <value>连接成功，当前地址可 ping 通 ✅</value>
+    <value>连接成功，可 ping 通 ✅</value>
   </data>
   <data name="_PingTestSuccessWithDelayToastMsg" xml:space="preserve">
     <value>连接成功，可 ping 通 ({0} ms) ✅</value>

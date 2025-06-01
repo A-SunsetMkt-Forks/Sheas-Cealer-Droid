@@ -210,7 +210,7 @@
     <value>Address</value>
   </data>
   <data name="_PingTestErrorToastMsg" xml:space="preserve">
-    <value>Connection failed. Current address can not be pinged ❌</value>
+    <value>Connection failed. Ping unreachable ❌</value>
   </data>
   <data name="_PingTestInvalidToastMsg" xml:space="preserve">
     <value>Invalid address format. Recognition failed ❌</value>
@@ -219,7 +219,7 @@
     <value>Connection cancelled. DNS returned a reserved IP ❌</value>
   </data>
   <data name="_PingTestSuccessToastMsg" xml:space="preserve">
-    <value>Connection successful. Current address can be pinged ✅</value>
+    <value>Connection successful. Ping reachable ✅</value>
   </data>
   <data name="_PingTestSuccessWithDelayToastMsg" xml:space="preserve">
     <value>Connection successful. Ping reachable ({0} ms) ✅</value>

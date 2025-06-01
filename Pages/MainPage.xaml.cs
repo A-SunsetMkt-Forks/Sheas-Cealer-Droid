@@ -15,7 +15,9 @@ using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
+using System.Net;
 using System.Net.Http;
+using System.Net.NetworkInformation;
 using System.Text;
 using System.Text.Json;
 using System.Threading;
@@ -216,6 +218,33 @@ public partial class MainPage : ContentPage
 
         await Clipboard.Default.SetTextAsync(JsonSerializer.Serialize<object?[]>([JsonSerializer.Deserialize<string[]>(cealHostRule.Domains)!, cealHostRule.Sni, cealHostRule.Ip]));
         await Toast.Make(MainConst._HostCopiedToastMsg).Show();
+    }
+    private async void DelayImageButton_Clicked(object sender, EventArgs e)
+    {
+        ImageButton senderImageButton = (ImageButton)sender;
+        CealHostRule selectedHostRule = (CealHostRule)senderImageButton.BindingContext;
+
+        if (!IPAddress.TryParse(selectedHostRule.Ip, out IPAddress? delayTestIp))
+        {
+            await Toast.Make(MainConst._DelayTestInvalidToastMsg).Show();
+
+            return;
+        }
+
+        PingReply delayTestReply;
+
+        try { delayTestReply = await new Ping().SendPingAsync(delayTestIp!); }
+        catch
+        {
+            await Toast.Make(MainConst._DelayTestErrorToastMsg).Show();
+
+            return;
+        }
+
+        if (delayTestReply.Status == IPStatus.Success)
+            await Toast.Make(string.Format(MainConst._DelayTestSuccessToastMsg, delayTestReply.RoundtripTime)).Show();
+        else
+            await Toast.Make(MainConst._DelayTestErrorToastMsg).Show();
     }
 
     private void MainSearchHandler_ItemSelected(object _, CealHostRule e) => MainCollectionView.ScrollTo(e, position: ScrollToPosition.Center);

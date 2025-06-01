@@ -128,6 +128,12 @@
   <data name="CopyImageButtonTooltip" xml:space="preserve">
     <value>Tap to copy the host</value>
   </data>
+  <data name="DelayImageButtonDescription" xml:space="preserve">
+    <value>Delay</value>
+  </data>
+  <data name="DelayImageButtonTooltip" xml:space="preserve">
+    <value>Tap to test the delay of the host</value>
+  </data>
   <data name="GithubToolbarItemDescription" xml:space="preserve">
     <value>Github</value>
   </data>
@@ -194,6 +200,15 @@ Example: [["*example.com"],"","23.215.0.136"]
   </data>
   <data name="_CustomHostSyntaxErrorToastMsg" xml:space="preserve">
     <value>Invalid json syntax. Parsing failed ❌</value>
+  </data>
+  <data name="_DelayTestErrorToastMsg" xml:space="preserve">
+    <value>Connection failed. Ping unreachable ❌</value>
+  </data>
+  <data name="_DelayTestInvalidToastMsg" xml:space="preserve">
+    <value>Invalid IP format. Recognition failed ❌</value>
+  </data>
+  <data name="_DelayTestSuccessToastMsg" xml:space="preserve">
+    <value>Connection successful. Delay {0} ms ✅</value>
   </data>
   <data name="_HostCopiedToastMsg" xml:space="preserve">
     <value>Host copied ✅</value>

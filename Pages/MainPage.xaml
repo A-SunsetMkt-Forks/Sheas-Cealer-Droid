@@ -110,6 +110,16 @@
                                                 <toolkit:IconTintColorBehavior TintColor="{AppThemeBinding Light={StaticResource White}, Dark={StaticResource Gray900}}" />
                                             </ImageButton.Behaviors>
                                         </ImageButton>
+                                        <ImageButton Source="timer_icon.png"
+                                                     ToolTipProperties.Text="{x:Static consts:MainMultilangConst.DelayImageButtonTooltip}"
+                                                     SemanticProperties.Description="{x:Static consts:MainMultilangConst.DelayImageButtonDescription}"
+                                                     Style="{x:StaticResource SmallImageButton}"
+                                                     WidthRequest="28" HeightRequest="28" CornerRadius="8"
+                                                     Clicked="DelayImageButton_Clicked">
+                                            <ImageButton.Behaviors>
+                                                <toolkit:IconTintColorBehavior TintColor="{AppThemeBinding Light={StaticResource White}, Dark={StaticResource Gray900}}" />
+                                            </ImageButton.Behaviors>
+                                        </ImageButton>
                                     </HorizontalStackLayout>
                                 </Grid>
                                 <AbsoluteLayout>

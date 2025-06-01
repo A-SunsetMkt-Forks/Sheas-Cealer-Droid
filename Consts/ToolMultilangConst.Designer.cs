@@ -160,7 +160,7 @@ namespace Sheas_Cealer_Droid.Consts {
         }
         
         /// <summary>
-        ///   查找类似 Connection failed. Current address can not be pinged ❌ 的本地化字符串。
+        ///   查找类似 Connection failed. Ping unreachable ❌ 的本地化字符串。
         /// </summary>
         internal static string _PingTestErrorToastMsg {
             get {
@@ -187,7 +187,7 @@ namespace Sheas_Cealer_Droid.Consts {
         }
         
         /// <summary>
-        ///   查找类似 Connection successful. Current address can be pinged ✅ 的本地化字符串。
+        ///   查找类似 Connection successful. Ping reachable ✅ 的本地化字符串。
         /// </summary>
         internal static string _PingTestSuccessToastMsg {
             get {
