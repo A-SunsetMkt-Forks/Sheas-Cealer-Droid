@@ -96,15 +96,31 @@ public partial class ToolPage : ContentPage
             }
         }
 
-        IPStatus pingTestStatus;
+        PingReply pingTestReply;
 
-        try { pingTestStatus = (await new Ping().SendPingAsync(pingTestIp)).Status; }
-        catch { pingTestStatus = IPStatus.Unknown; }
+        try { pingTestReply = await new Ping().SendPingAsync(pingTestIp); }
+        catch
+        {
+            await Toast.Make(ToolConst._PingTestErrorToastMsg).Show();
 
-        if (pingTestStatus == IPStatus.Success)
-            await Toast.Make(ToolConst._PingTestSuccessToastMsg).Show();
+            return;
+        }
+
+        if (pingTestReply.Status == IPStatus.Success)
+            await Toast.Make(pingTestReply.RoundtripTime >= 3 ? string.Format(ToolConst._PingTestSuccessWithDelayToastMsg, pingTestReply.RoundtripTime) : ToolConst._PingTestSuccessToastMsg).Show();
         else
             await Toast.Make(ToolConst._PingTestErrorToastMsg).Show();
+    }
+
+    internal static ICommand MetaImageButton_ClickedCommand => new Command(async () => await MetaImageButton_Clicked(null!, null!));
+    private static async Task MetaImageButton_Clicked(object sender, EventArgs e)
+    {
+        JsonElement metaData = JsonDocument.Parse(await Http.GetAsync<string>(ToolConst.MetaUrl, App.AppClient)).RootElement;
+
+        if (metaData.TryGetProperty("clientIp", out JsonElement metaIp) && metaData.TryGetProperty("country", out JsonElement metaCountry))
+            await Toast.Make(string.Format(ToolConst._MetaDataSuccessToastMsg, metaIp.GetString(), metaCountry.GetString())).Show();
+        else
+            await Toast.Make(ToolConst._MetaDataErrorToastMsg).Show();
     }
 
     internal static ICommand ReserveImageButton_ClickedCommand => new Command(async () => await ReserveImageButton_Clicked(null!, null!));
@@ -121,16 +137,5 @@ public partial class ToolPage : ContentPage
             await Toast.Make(ToolConst._ReserveCheckReversedToastMsg).Show();
         else
             await Toast.Make(ToolConst._ReserveCheckNonreversedToastMsg).Show();
-    }
-
-    internal static ICommand MetaImageButton_ClickedCommand => new Command(async () => await MetaImageButton_Clicked(null!, null!));
-    private static async Task MetaImageButton_Clicked(object sender, EventArgs e)
-    {
-        JsonElement metaData = JsonDocument.Parse(await Http.GetAsync<string>(ToolConst.MetaUrl, App.AppClient)).RootElement;
-
-        if (metaData.TryGetProperty("clientIp", out JsonElement metaIp) && metaData.TryGetProperty("country", out JsonElement metaCountry))
-            await Toast.Make(string.Format(ToolConst._MetaDataSuccessToastMsg, metaIp.GetString(), metaCountry.GetString())).Show();
-        else
-            await Toast.Make(ToolConst._MetaDataErrorToastMsg).Show();
     }
 }

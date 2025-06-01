@@ -221,6 +221,9 @@
   <data name="_PingTestSuccessToastMsg" xml:space="preserve">
     <value>连接成功，当前地址可 ping 通 ✅</value>
   </data>
+  <data name="_PingTestSuccessWithDelayToastMsg" xml:space="preserve">
+    <value>连接成功，可 ping 通 ({0} ms) ✅</value>
+  </data>
   <data name="_ReserveCheckHostPopupMsg" xml:space="preserve">
     <value>输入一个需要判断是否为保留 IP 的 IP</value>
   </data>

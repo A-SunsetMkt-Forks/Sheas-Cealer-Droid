@@ -221,6 +221,9 @@
   <data name="_PingTestSuccessToastMsg" xml:space="preserve">
     <value>Connection successful. Current address can be pinged ✅</value>
   </data>
+  <data name="_PingTestSuccessWithDelayToastMsg" xml:space="preserve">
+    <value>Connection successful. Ping reachable ({0} ms) ✅</value>
+  </data>
   <data name="_ReserveCheckHostPopupMsg" xml:space="preserve">
     <value>Enter an IP to be checked</value>
   </data>

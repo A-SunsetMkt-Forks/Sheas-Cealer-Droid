@@ -196,6 +196,15 @@ namespace Sheas_Cealer_Droid.Consts {
         }
         
         /// <summary>
+        ///   查找类似 Connection successful. Ping reachable ({0} ms) ✅ 的本地化字符串。
+        /// </summary>
+        internal static string _PingTestSuccessWithDelayToastMsg {
+            get {
+                return ResourceManager.GetString("_PingTestSuccessWithDelayToastMsg", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   查找类似 Enter an IP to be checked 的本地化字符串。
         /// </summary>
         internal static string _ReserveCheckHostPopupMsg {
