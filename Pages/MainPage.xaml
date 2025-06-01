@@ -104,6 +104,7 @@
                                                      ToolTipProperties.Text="{x:Static consts:MainMultilangConst.CopyImageButtonTooltip}"
                                                      SemanticProperties.Description="{x:Static consts:MainMultilangConst.CopyImageButtonDescription}"
                                                      Style="{x:StaticResource SmallImageButton}"
+                                                     IsVisible="{Binding BindingContext.IsCopyEnabled, Source={x:RelativeSource AncestorType={x:Type ContentPage}}, x:DataType=ContentPage}"
                                                      WidthRequest="28" HeightRequest="28" CornerRadius="8"
                                                      Clicked="CopyImageButton_Clicked">
                                             <ImageButton.Behaviors>
@@ -114,6 +115,7 @@
                                                      ToolTipProperties.Text="{x:Static consts:MainMultilangConst.DelayImageButtonTooltip}"
                                                      SemanticProperties.Description="{x:Static consts:MainMultilangConst.DelayImageButtonDescription}"
                                                      Style="{x:StaticResource SmallImageButton}"
+                                                     IsVisible="{Binding BindingContext.IsDelayEnabled, Source={x:RelativeSource AncestorType={x:Type ContentPage}}, x:DataType=ContentPage}"
                                                      WidthRequest="28" HeightRequest="28" CornerRadius="8"
                                                      Clicked="DelayImageButton_Clicked">
                                             <ImageButton.Behaviors>

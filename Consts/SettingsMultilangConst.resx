@@ -125,6 +125,24 @@
   <data name="CommandSettingsItemTitle" xml:space="preserve">
     <value>Adb Command</value>
   </data>
+  <data name="CopyEnabledSettingsItemContent" xml:space="preserve">
+    <value>Control whether to enable the host copy feature (You can disable this option to hide host copy button)</value>
+  </data>
+  <data name="CopyEnabledSettingsItemTitle" xml:space="preserve">
+    <value>Host Copy</value>
+  </data>
+  <data name="CopyEnabledSwitchTooltip" xml:space="preserve">
+    <value>Tap to toggle the host copy feature on / off</value>
+  </data>
+  <data name="DelayEnabledSettingsItemContent" xml:space="preserve">
+    <value>Control whether to enable the delay test feature (You can disable this option to hide delay test button)</value>
+  </data>
+  <data name="DelayEnabledSettingsItemTitle" xml:space="preserve">
+    <value>Host Delay</value>
+  </data>
+  <data name="DelayEnabledSwitchTooltip" xml:space="preserve">
+    <value>Tap to toggle the delay test feature on / off</value>
+  </data>
   <data name="ExtraArgsEntryPlaceholder" xml:space="preserve">
     <value>Additional injected startup args, empty by default</value>
   </data>
@@ -156,7 +174,7 @@
     <value>Host Search</value>
   </data>
   <data name="SearchEnabledSwitchTooltip" xml:space="preserve">
-    <value>Tap to toggle the search feature on / off</value>
+    <value>Tap to toggle the host search feature on / off</value>
   </data>
   <data name="ThemeColorPickerTitle" xml:space="preserve">
     <value>Select a UI color flavor</value>

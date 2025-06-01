@@ -88,6 +88,60 @@ namespace Sheas_Cealer_Droid.Consts {
         }
         
         /// <summary>
+        ///   查找类似 Control whether to enable the host copy feature (You can disable this option to hide host copy button) 的本地化字符串。
+        /// </summary>
+        internal static string CopyEnabledSettingsItemContent {
+            get {
+                return ResourceManager.GetString("CopyEnabledSettingsItemContent", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   查找类似 Host Copy 的本地化字符串。
+        /// </summary>
+        internal static string CopyEnabledSettingsItemTitle {
+            get {
+                return ResourceManager.GetString("CopyEnabledSettingsItemTitle", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   查找类似 Tap to toggle the host copy feature on / off 的本地化字符串。
+        /// </summary>
+        internal static string CopyEnabledSwitchTooltip {
+            get {
+                return ResourceManager.GetString("CopyEnabledSwitchTooltip", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   查找类似 Control whether to enable the delay test feature (You can disable this option to hide delay test button) 的本地化字符串。
+        /// </summary>
+        internal static string DelayEnabledSettingsItemContent {
+            get {
+                return ResourceManager.GetString("DelayEnabledSettingsItemContent", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   查找类似 Host Delay 的本地化字符串。
+        /// </summary>
+        internal static string DelayEnabledSettingsItemTitle {
+            get {
+                return ResourceManager.GetString("DelayEnabledSettingsItemTitle", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   查找类似 Tap to toggle the delay test feature on / off 的本地化字符串。
+        /// </summary>
+        internal static string DelayEnabledSwitchTooltip {
+            get {
+                return ResourceManager.GetString("DelayEnabledSwitchTooltip", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   查找类似 Additional injected startup args, empty by default 的本地化字符串。
         /// </summary>
         internal static string ExtraArgsEntryPlaceholder {
@@ -178,7 +232,7 @@ namespace Sheas_Cealer_Droid.Consts {
         }
         
         /// <summary>
-        ///   查找类似 Tap to toggle the search feature on / off 的本地化字符串。
+        ///   查找类似 Tap to toggle the host search feature on / off 的本地化字符串。
         /// </summary>
         internal static string SearchEnabledSwitchTooltip {
             get {

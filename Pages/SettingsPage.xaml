@@ -113,6 +113,22 @@
                                     ToolTipProperties.Text="{x:Static consts:SettingsMultilangConst.UpdateHostEnabledSwitchTooltip}" />
                         </models:SettingsItem.View>
                     </models:SettingsItem>
+                    <models:SettingsItem Title="{x:Static consts:SettingsMultilangConst.CopyEnabledSettingsItemTitle}"
+                                         Content="{x:Static consts:SettingsMultilangConst.CopyEnabledSettingsItemContent}">
+                        <models:SettingsItem.View>
+                            <Switch BindingContext="{Binding BindingContext, Source={x:RelativeSource AncestorType={x:Type ContentPage}}, x:DataType=ContentPage}"
+                                    IsToggled="{Binding IsCopyEnabled}"
+                                    ToolTipProperties.Text="{x:Static consts:SettingsMultilangConst.CopyEnabledSwitchTooltip}" />
+                        </models:SettingsItem.View>
+                    </models:SettingsItem>
+                    <models:SettingsItem Title="{x:Static consts:SettingsMultilangConst.DelayEnabledSettingsItemTitle}"
+                                         Content="{x:Static consts:SettingsMultilangConst.DelayEnabledSettingsItemContent}">
+                        <models:SettingsItem.View>
+                            <Switch BindingContext="{Binding BindingContext, Source={x:RelativeSource AncestorType={x:Type ContentPage}}, x:DataType=ContentPage}"
+                                    IsToggled="{Binding IsDelayEnabled}"
+                                    ToolTipProperties.Text="{x:Static consts:SettingsMultilangConst.DelayEnabledSwitchTooltip}" />
+                        </models:SettingsItem.View>
+                    </models:SettingsItem>
                     <models:SettingsItem Title="{x:Static consts:SettingsMultilangConst.SearchEnabledSettingsItemTitle}"
                                          Content="{x:Static consts:SettingsMultilangConst.SearchEnabledSettingsItemContent}">
                         <models:SettingsItem.View>

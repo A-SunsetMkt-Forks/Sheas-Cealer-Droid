@@ -125,6 +125,24 @@
   <data name="CommandSettingsItemTitle" xml:space="preserve">
     <value>Adb 命令</value>
   </data>
+  <data name="CopyEnabledSettingsItemContent" xml:space="preserve">
+    <value>控制是否启用规则复制功能 (如果想隐藏规则复制按钮可以关闭这个选项)</value>
+  </data>
+  <data name="CopyEnabledSettingsItemTitle" xml:space="preserve">
+    <value>规则复制</value>
+  </data>
+  <data name="CopyEnabledSwitchTooltip" xml:space="preserve">
+    <value>点击切换规则复制功能启用状态</value>
+  </data>
+  <data name="DelayEnabledSettingsItemContent" xml:space="preserve">
+    <value>控制是否启用延迟测试功能 (如果想隐藏延迟测试按钮可以关闭这个选项)</value>
+  </data>
+  <data name="DelayEnabledSettingsItemTitle" xml:space="preserve">
+    <value>规则测试</value>
+  </data>
+  <data name="DelayEnabledSwitchTooltip" xml:space="preserve">
+    <value>点击切换延迟测试功能启用状态</value>
+  </data>
   <data name="ExtraArgsEntryPlaceholder" xml:space="preserve">
     <value>额外注入的启动参数，默认为空</value>
   </data>
@@ -156,7 +174,7 @@
     <value>规则搜索</value>
   </data>
   <data name="SearchEnabledSwitchTooltip" xml:space="preserve">
-    <value>点击切换搜索功能启用状态</value>
+    <value>点击切换规则搜索功能启用状态</value>
   </data>
   <data name="ThemeColorPickerTitle" xml:space="preserve">
     <value>选择一种 UI 颜色风味</value>

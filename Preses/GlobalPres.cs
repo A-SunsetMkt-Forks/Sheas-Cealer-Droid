@@ -192,6 +192,24 @@ internal abstract partial class GlobalPres : ObservableObject
     partial void OnIsUpdateHostEnabledChanged(bool value) => Preferences.Default.Set(nameof(IsUpdateHostEnabled), value);
 
     [ObservableProperty]
+    private static bool isCopyEnabled = Preferences.Default.Get(nameof(IsCopyEnabled), true);
+    async partial void OnIsCopyEnabledChanged(bool value)
+    {
+        Preferences.Default.Set(nameof(IsCopyEnabled), value);
+
+        await Toast.Make(GlobalConst._SettingsRestartToApplyToastMsg).Show();
+    }
+
+    [ObservableProperty]
+    private static bool isDelayEnabled = Preferences.Default.Get(nameof(IsDelayEnabled), true);
+    async partial void OnIsDelayEnabledChanged(bool value)
+    {
+        Preferences.Default.Set(nameof(IsDelayEnabled), value);
+
+        await Toast.Make(GlobalConst._SettingsRestartToApplyToastMsg).Show();
+    }
+
+    [ObservableProperty]
     private static bool isSearchEnabled = Preferences.Default.Get(nameof(IsSearchEnabled), true);
     async partial void OnIsSearchEnabledChanged(bool value)
     {
