@@ -233,7 +233,7 @@ public partial class MainPage : ContentPage
 
         PingReply delayTestReply;
 
-        try { delayTestReply = await new Ping().SendPingAsync(delayTestIp!); }
+        try { delayTestReply = await new Ping().SendPingAsync(delayTestIp); }
         catch
         {
             await Toast.Make(MainConst._DelayTestErrorToastMsg).Show();

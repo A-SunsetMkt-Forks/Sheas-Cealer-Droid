@@ -26,7 +26,7 @@ internal static class ReservedIpChecker
             ipByteArray[0] == 203 && ipByteArray[1] == 0 && ipByteArray[2] == 113 ||
             ipByteArray[0] >= 224 && ipByteArray[0] <= 239 ||
             ipByteArray[0] == 233 && ipByteArray[1] == 252 && ipByteArray[2] == 0 ||
-            ipByteArray[0] >= 240 && ipByteArray[0] <= 255
+            ipByteArray[0] >= 240
         ) ||
 
         ip.AddressFamily == AddressFamily.InterNetworkV6 && (
