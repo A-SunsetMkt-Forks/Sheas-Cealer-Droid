@@ -222,7 +222,7 @@
     <value>Connection successful. Ping reachable ✅</value>
   </data>
   <data name="_PingTestSuccessWithDelayToastMsg" xml:space="preserve">
-    <value>Connection successful. Ping reachable ({0} ms) ✅</value>
+    <value>Connection successful. Delay {0} ms ✅</value>
   </data>
   <data name="_ReserveCheckHostPopupMsg" xml:space="preserve">
     <value>Enter an IP to be checked</value>
