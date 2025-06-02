@@ -106,6 +106,9 @@ public partial class AdbPage : ContentPage
         await Shell.Current.GoToAsync($"//{nameof(ReadyPage)}");
     }
 
+    private void PrevSwipeGestureRecognizer_Swiped(object sender, SwipedEventArgs e) => PrevImageButton_Clicked(null!, null!);
+    private void NextSwipeGestureRecognizer_Swiped(object sender, SwipedEventArgs e) => NextImageButton_Clicked(null!, null!);
+
     private void CommandLineTimer_Tick(object? sender, EventArgs e)
     {
         if (!AdbPres.IsFlagCopied)
@@ -131,7 +134,4 @@ public partial class AdbPage : ContentPage
             new ViewFloatAnim(CommandButton, ViewFloatAnim.FloatOrientation.Y, -5).Commit(this, nameof(CommandButton) + nameof(ViewFloatAnim), 8, 3000, repeat: () => true);
         }
     }
-
-    private void PrevSwipeGestureRecognizer_Swiped(object sender, SwipedEventArgs e) => PrevImageButton_Clicked(null!, null!);
-    private void NextSwipeGestureRecognizer_Swiped(object sender, SwipedEventArgs e) => NextImageButton_Clicked(null!, null!);
 }
