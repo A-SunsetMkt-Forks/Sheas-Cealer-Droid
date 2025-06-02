@@ -126,7 +126,7 @@
     <value>Adb Command</value>
   </data>
   <data name="CopyEnabledSettingsItemContent" xml:space="preserve">
-    <value>Control whether to enable the host copy feature (You can disable this option to hide host copy button)</value>
+    <value>Control whether to enable the host copy feature (You can disable this option to hide host copy buttons)</value>
   </data>
   <data name="CopyEnabledSettingsItemTitle" xml:space="preserve">
     <value>Host Copy</value>
@@ -135,7 +135,7 @@
     <value>Tap to toggle the host copy feature on / off</value>
   </data>
   <data name="DelayEnabledSettingsItemContent" xml:space="preserve">
-    <value>Control whether to enable the delay test feature (You can disable this option to hide delay test button)</value>
+    <value>Control whether to enable the delay test feature (You can disable this option to hide delay test buttons)</value>
   </data>
   <data name="DelayEnabledSettingsItemTitle" xml:space="preserve">
     <value>Host Delay</value>
@@ -168,7 +168,7 @@
     <value>Flag Link</value>
   </data>
   <data name="SearchEnabledSettingsItemContent" xml:space="preserve">
-    <value>Control whether to enable the host search feature (The search icon has a difficult-to-fix color issue in light mode. You can disable this option to hide it)</value>
+    <value>Control whether to enable the host search feature (You can disable this option to hide host search button)</value>
   </data>
   <data name="SearchEnabledSettingsItemTitle" xml:space="preserve">
     <value>Host Search</value>

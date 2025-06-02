@@ -88,7 +88,7 @@ namespace Sheas_Cealer_Droid.Consts {
         }
         
         /// <summary>
-        ///   查找类似 Control whether to enable the host copy feature (You can disable this option to hide host copy button) 的本地化字符串。
+        ///   查找类似 Control whether to enable the host copy feature (You can disable this option to hide host copy buttons) 的本地化字符串。
         /// </summary>
         internal static string CopyEnabledSettingsItemContent {
             get {
@@ -115,7 +115,7 @@ namespace Sheas_Cealer_Droid.Consts {
         }
         
         /// <summary>
-        ///   查找类似 Control whether to enable the delay test feature (You can disable this option to hide delay test button) 的本地化字符串。
+        ///   查找类似 Control whether to enable the delay test feature (You can disable this option to hide delay test buttons) 的本地化字符串。
         /// </summary>
         internal static string DelayEnabledSettingsItemContent {
             get {
@@ -214,7 +214,7 @@ namespace Sheas_Cealer_Droid.Consts {
         }
         
         /// <summary>
-        ///   查找类似 Control whether to enable the host search feature (The search icon has a difficult-to-fix color issue in light mode. You can disable this option to hide it) 的本地化字符串。
+        ///   查找类似 Control whether to enable the host search feature (You can disable this option to hide host search button) 的本地化字符串。
         /// </summary>
         internal static string SearchEnabledSettingsItemContent {
             get {

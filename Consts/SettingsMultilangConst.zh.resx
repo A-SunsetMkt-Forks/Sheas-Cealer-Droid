@@ -168,7 +168,7 @@
     <value>Flag 链接</value>
   </data>
   <data name="SearchEnabledSettingsItemContent" xml:space="preserve">
-    <value>控制是否启用规则搜索功能 (搜索图标在亮色模式下存在难以修复的颜色问题，如果想隐藏它可以关闭这个选项)</value>
+    <value>控制是否启用规则搜索功能 (如果想隐藏规则搜索按钮可以关闭这个选项)</value>
   </data>
   <data name="SearchEnabledSettingsItemTitle" xml:space="preserve">
     <value>规则搜索</value>
