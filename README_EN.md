@@ -32,12 +32,11 @@
 [Cealer Build](https://github.com/SpaceTimee/Sheas-Cealer-Droid/wiki/Cealer-Build)
 
 ## Roadmap
-1. Add Cealing Host IP speed test function
+1. Add batch import export copy and test Local Host file function
 2. Add Local Host drag and sort function
-3. Add import Local Host file function
 
 ## Principles
-Using the startup parameter feature of the Chromium kernel to conceal SNI. For more detailes, please refer to [this article](https://nicebowl.fun/24_8)
+Using the startup parameter feature of the Chromium kernel to conceal SNI. For more details, please refer to [this article](https://nicebowl.fun/24_8)
 
 ## Credits
 * **kit: Provides all the principle foundations for this project**
