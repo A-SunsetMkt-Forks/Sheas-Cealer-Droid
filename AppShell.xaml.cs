@@ -36,4 +36,6 @@ internal partial class AppShell : Shell
 
         await GoToAsync(targetDetailPageType.Name);
     }
+
+    private void HeaderTapGestureRecognizer_Tapped(object sender, TappedEventArgs e) => FlyoutIsPresented = false;
 }
