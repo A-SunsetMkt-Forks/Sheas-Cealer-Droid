@@ -142,7 +142,7 @@ namespace Sheas_Cealer_Droid.Consts {
         }
         
         /// <summary>
-        ///   查找类似 Additional injected startup args, empty by default 的本地化字符串。
+        ///   查找类似 Extra startup args (Optional) 的本地化字符串。
         /// </summary>
         internal static string ExtraArgsEntryPlaceholder {
             get {

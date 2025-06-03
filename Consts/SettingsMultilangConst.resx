@@ -144,7 +144,7 @@
     <value>Tap to toggle the delay test feature on / off</value>
   </data>
   <data name="ExtraArgsEntryPlaceholder" xml:space="preserve">
-    <value>Additional injected startup args, empty by default</value>
+    <value>Extra startup args (Optional)</value>
   </data>
   <data name="ExtraArgsEntryTooltip" xml:space="preserve">
     <value>Tap to edit the Additional injected startup args</value>
