@@ -69,58 +69,58 @@
                     <Grid Margin="8,2">
                         <Border BackgroundColor="{AppThemeBinding Light={DynamicResource Gray100}, Dark={DynamicResource Gray850}}"
                                 StrokeShape="RoundRectangle 8" Margin="4">
-                            <Grid Margin="8,8,0,8">
-                                <Grid ColumnDefinitions="*,Auto" ColumnSpacing="20">
-                                    <VerticalStackLayout Grid.Column="0">
-                                        <Label Margin="20,4" FontSize="Subtitle">
-                                            <Label.Text>
-                                                <MultiBinding StringFormat="{}{0} ({1})">
-                                                    <Binding Path="Domains" />
-                                                    <Binding Path="Sni" />
-                                                </MultiBinding>
-                                            </Label.Text>
-                                        </Label>
-                                        <Label Text="{Binding Ip}"
-                                               Margin="20,4" FontSize="Caption" />
-                                    </VerticalStackLayout>
-                                    <HorizontalStackLayout Spacing="20"
-                                                           Grid.Column="1" Margin="0,4,20,4">
-                                        <ImageButton Source="remove_icon.png"
-                                                     ToolTipProperties.Text="{x:Static consts:MainMultilangConst.RemoveImageButtonTooltip}"
-                                                     SemanticProperties.Description="{x:Static consts:MainMultilangConst.RemoveImageButtonDescription}"
-                                                     Style="{x:StaticResource SmallImageButton}"
-                                                     IsVisible="{Binding Name, Converter={x:Static convs:MainConv.MainLocalViewIsVisibleConv}}"
-                                                     WidthRequest="28" HeightRequest="28" CornerRadius="8"
-                                                     Clicked="RemoveImageButton_Clicked">
-                                            <ImageButton.Behaviors>
-                                                <toolkit:IconTintColorBehavior TintColor="{AppThemeBinding Light={StaticResource White}, Dark={StaticResource Gray900}}" />
-                                            </ImageButton.Behaviors>
-                                        </ImageButton>
-                                        <ImageButton Source="copy_icon.png"
-                                                     ToolTipProperties.Text="{x:Static consts:MainMultilangConst.CopyImageButtonTooltip}"
-                                                     SemanticProperties.Description="{x:Static consts:MainMultilangConst.CopyImageButtonDescription}"
-                                                     Style="{x:StaticResource SmallImageButton}"
-                                                     IsVisible="{Binding BindingContext.IsCopyEnabled, Source={x:RelativeSource AncestorType={x:Type ContentPage}}, x:DataType=ContentPage}"
-                                                     WidthRequest="28" HeightRequest="28" CornerRadius="8"
-                                                     Clicked="CopyImageButton_Clicked">
-                                            <ImageButton.Behaviors>
-                                                <toolkit:IconTintColorBehavior TintColor="{AppThemeBinding Light={StaticResource White}, Dark={StaticResource Gray900}}" />
-                                            </ImageButton.Behaviors>
-                                        </ImageButton>
-                                        <ImageButton Source="timer_icon.png"
-                                                     ToolTipProperties.Text="{x:Static consts:MainMultilangConst.DelayImageButtonTooltip}"
-                                                     SemanticProperties.Description="{x:Static consts:MainMultilangConst.DelayImageButtonDescription}"
-                                                     Style="{x:StaticResource SmallImageButton}"
-                                                     IsVisible="{Binding BindingContext.IsDelayEnabled, Source={x:RelativeSource AncestorType={x:Type ContentPage}}, x:DataType=ContentPage}"
-                                                     WidthRequest="28" HeightRequest="28" CornerRadius="8"
-                                                     Clicked="DelayImageButton_Clicked">
-                                            <ImageButton.Behaviors>
-                                                <toolkit:IconTintColorBehavior TintColor="{AppThemeBinding Light={StaticResource White}, Dark={StaticResource Gray900}}" />
-                                            </ImageButton.Behaviors>
-                                        </ImageButton>
-                                    </HorizontalStackLayout>
-                                </Grid>
-                                <ContentView ControlTemplate="{StaticResource CardGrip}" />
+                            <Grid ColumnDefinitions="*,Auto" ColumnSpacing="20"
+                                  Margin="8,8,0,8">
+                                <VerticalStackLayout Grid.Column="0">
+                                    <Label Margin="20,4" FontSize="Subtitle">
+                                        <Label.Text>
+                                            <MultiBinding StringFormat="{}{0} ({1})">
+                                                <Binding Path="Domains" />
+                                                <Binding Path="Sni" />
+                                            </MultiBinding>
+                                        </Label.Text>
+                                    </Label>
+                                    <Label Text="{Binding Ip}"
+                                           Margin="20,4" FontSize="Caption" />
+                                </VerticalStackLayout>
+                                <HorizontalStackLayout Spacing="20"
+                                                       Grid.Column="1" Margin="0,4,20,4">
+                                    <ImageButton Source="remove_icon.png"
+                                                 ToolTipProperties.Text="{x:Static consts:MainMultilangConst.RemoveImageButtonTooltip}"
+                                                 SemanticProperties.Description="{x:Static consts:MainMultilangConst.RemoveImageButtonDescription}"
+                                                 Style="{x:StaticResource SmallImageButton}"
+                                                 IsVisible="{Binding Name, Converter={x:Static convs:MainConv.MainLocalViewIsVisibleConv}}"
+                                                 WidthRequest="28" HeightRequest="28" CornerRadius="8"
+                                                 Clicked="RemoveImageButton_Clicked">
+                                        <ImageButton.Behaviors>
+                                            <toolkit:IconTintColorBehavior TintColor="{AppThemeBinding Light={StaticResource White}, Dark={StaticResource Gray900}}" />
+                                        </ImageButton.Behaviors>
+                                    </ImageButton>
+                                    <ImageButton Source="copy_icon.png"
+                                                 ToolTipProperties.Text="{x:Static consts:MainMultilangConst.CopyImageButtonTooltip}"
+                                                 SemanticProperties.Description="{x:Static consts:MainMultilangConst.CopyImageButtonDescription}"
+                                                 Style="{x:StaticResource SmallImageButton}"
+                                                 IsVisible="{Binding BindingContext.IsCopyEnabled, Source={x:RelativeSource AncestorType={x:Type ContentPage}}, x:DataType=ContentPage}"
+                                                 WidthRequest="28" HeightRequest="28" CornerRadius="8"
+                                                 Clicked="CopyImageButton_Clicked">
+                                        <ImageButton.Behaviors>
+                                            <toolkit:IconTintColorBehavior TintColor="{AppThemeBinding Light={StaticResource White}, Dark={StaticResource Gray900}}" />
+                                        </ImageButton.Behaviors>
+                                    </ImageButton>
+                                    <ImageButton Source="timer_icon.png"
+                                                 ToolTipProperties.Text="{x:Static consts:MainMultilangConst.DelayImageButtonTooltip}"
+                                                 SemanticProperties.Description="{x:Static consts:MainMultilangConst.DelayImageButtonDescription}"
+                                                 Style="{x:StaticResource SmallImageButton}"
+                                                 IsVisible="{Binding BindingContext.IsDelayEnabled, Source={x:RelativeSource AncestorType={x:Type ContentPage}}, x:DataType=ContentPage}"
+                                                 WidthRequest="28" HeightRequest="28" CornerRadius="8"
+                                                 Clicked="DelayImageButton_Clicked">
+                                        <ImageButton.Behaviors>
+                                            <toolkit:IconTintColorBehavior TintColor="{AppThemeBinding Light={StaticResource White}, Dark={StaticResource Gray900}}" />
+                                        </ImageButton.Behaviors>
+                                    </ImageButton>
+                                </HorizontalStackLayout>
+                                <ContentView ControlTemplate="{StaticResource CardGrip}"
+                                             Grid.Column="0" />
                             </Grid>
                         </Border>
                         <Border IsVisible="{Binding Name, Converter={x:Static convs:MainConv.MainLocalViewIsVisibleConv}}"

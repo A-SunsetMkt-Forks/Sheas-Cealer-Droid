@@ -1,10 +1,8 @@
 ﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
                     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml">
     <ControlTemplate x:Key="CardGrip">
-        <AbsoluteLayout>
-            <Border AbsoluteLayout.LayoutBounds="0,0.5,4,1" AbsoluteLayout.LayoutFlags="PositionProportional,HeightProportional"
-                    BackgroundColor="{AppThemeBinding Light={DynamicResource Primary500}, Dark={DynamicResource Primary700}}"
-                    StrokeShape="RoundRectangle 8" />
-        </AbsoluteLayout>
+        <Border HorizontalOptions="Start" WidthRequest="4"
+                BackgroundColor="{AppThemeBinding Light={DynamicResource Primary500}, Dark={DynamicResource Primary700}}"
+                StrokeShape="RoundRectangle 8" />
     </ControlTemplate>
 </ResourceDictionary>
