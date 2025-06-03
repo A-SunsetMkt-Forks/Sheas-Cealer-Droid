@@ -1,6 +1,7 @@
 ﻿using Android.Net;
 using Microsoft.Maui.Controls;
 using Microsoft.Maui.Dispatching;
+using Microsoft.Maui.Storage;
 using Sheas_Cealer_Droid.Consts;
 using Sheas_Cealer_Droid.Preses;
 using System;
@@ -30,7 +31,9 @@ internal partial class AppShell : Shell
     {
         TrafficSpeedTimer.Interval = TimeSpan.FromSeconds(1);
         TrafficSpeedTimer.Tick += TrafficSpeedTimer_Tick;
-        TrafficSpeedTimer.Start();
+
+        if (Preferences.Default.Get("IsTrafficSpeedTimerRunning", true))
+            TrafficSpeedTimer.Start();
     }
 
     private async void DetailMenuItem_Clicked(object sender, EventArgs e)
@@ -49,6 +52,25 @@ internal partial class AppShell : Shell
     }
 
     private void HeaderTapGestureRecognizer_Tapped(object sender, TappedEventArgs e) => FlyoutIsPresented = false;
+    private void FooterTapGestureRecognizer_Tapped(object sender, TappedEventArgs e)
+    {
+        if (TrafficSpeedTimer.IsRunning)
+        {
+            TrafficSpeedTimer.Stop();
+
+            AppPres.DownloadSpeed = AppConst.DefaultOffDownloadSpeed;
+            AppPres.UploadSpeed = AppConst.DefaultOffUploadSpeed;
+        }
+        else
+        {
+            TrafficSpeedTimer.Start();
+
+            AppPres.DownloadSpeed = AppConst.DefaultOnDownloadSpeed;
+            AppPres.UploadSpeed = AppConst.DefaultOnUploadSpeed;
+        }
+
+        Preferences.Default.Set("IsTrafficSpeedTimerRunning", TrafficSpeedTimer.IsRunning);
+    }
 
     private void TrafficSpeedTimer_Tick(object? sender, EventArgs e)
     {

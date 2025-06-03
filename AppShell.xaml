@@ -41,6 +41,10 @@
     </Shell.FlyoutHeader>
     <Shell.FlyoutFooter>
         <Grid HeightRequest="60">
+            <Grid.GestureRecognizers>
+                <TapGestureRecognizer Tapped="FooterTapGestureRecognizer_Tapped" />
+            </Grid.GestureRecognizers>
+
             <Border Margin="0,4,0,0">
                 <Grid ColumnDefinitions="*,*" ColumnSpacing="16"
                       Padding="8"
