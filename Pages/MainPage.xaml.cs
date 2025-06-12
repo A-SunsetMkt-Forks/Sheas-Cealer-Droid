@@ -31,7 +31,7 @@ public partial class MainPage : ContentPage
     private readonly HttpClient MainClient = new(new HttpClientHandler { ServerCertificateCustomValidationCallback = HttpClientHandler.DangerousAcceptAnyServerCertificateValidator });
     private readonly FileSystemWatcher CealHostWatcher = new(Path.GetDirectoryName(MainConst.CealHostPath)!, Path.GetFileName(MainConst.CealHostPath)) { EnableRaisingEvents = true, NotifyFilter = NotifyFilters.LastWrite };
 
-    private readonly SortedDictionary<string, List<CealHostRule>?> CealHostRulesDict = [];
+    private readonly SortedDictionary<string, List<CealHostRule?>?> CealHostRulesDict = [];
     private string LatestUpstreamHostString = string.Empty;
 
     private readonly SemaphoreSlim IsCealHostChangingSemaphore = new(1);
@@ -84,7 +84,7 @@ public partial class MainPage : ContentPage
         else
             await File.WriteAllTextAsync(MainConst.UpstreamHostPath, LatestUpstreamHostString);
 
-        (MainPres.IsCommandLineUtd, string newStatusMessage) = await StatusManager.RefreshCurrentStatus(CealHostRulesDict.ContainsValue(null));
+        (MainPres.IsCommandLineUtd, string newStatusMessage) = await StatusManager.RefreshCurrentStatus(CealHostRulesDict.Values.Any(cealHostRules => cealHostRules == null || cealHostRules.Any(cealHostRule => cealHostRule == null)));
 
         if (KaomojiRunningCount == 0)
             MainPres.StatusMessage = newStatusMessage;
@@ -110,37 +110,14 @@ public partial class MainPage : ContentPage
         try { customHostRule = JsonDocument.Parse(customHost).RootElement; }
         catch
         {
-            await Toast.Make(MainConst._CustomHostSyntaxErrorToastMsg, ToastDuration.Long).Show();
+            await Toast.Make(MainConst._CustomHostInvalidToastMsg, ToastDuration.Long).Show();
 
             return;
         }
 
-        bool isCustomHostValid = !(customHostRule.ValueKind != JsonValueKind.Array ||
-            customHostRule.EnumerateArray().Count() != 3 ||
-            customHostRule[0].ValueKind != JsonValueKind.Array ||
-            !customHostRule[0].EnumerateArray().Any() ||
-            customHostRule[1].ValueKind != JsonValueKind.String &&
-            customHostRule[1].ValueKind != JsonValueKind.Null ||
-            customHostRule[2].ValueKind != JsonValueKind.String);
-
-        if (isCustomHostValid)
-            foreach (JsonElement customHostDomain in customHostRule[0].EnumerateArray())
-                if (customHostDomain.ValueKind != JsonValueKind.String)
-                {
-                    isCustomHostValid = false;
-
-                    break;
-                }
-                else if (string.IsNullOrEmpty(customHostDomain.GetString()?.Trim().TrimStart('#').TrimStart('$')))
-                {
-                    await Toast.Make(MainConst._CustomHostEmptyErrorToastMsg, ToastDuration.Long).Show();
-
-                    return;
-                }
-
-        if (!isCustomHostValid)
+        if (!CealHostRuleValidator.IsValid(customHostRule))
         {
-            await Toast.Make(MainConst._CustomHostFormatErrorToastMsg, ToastDuration.Long).Show();
+            await Toast.Make(MainConst._CustomHostErrorToastMsg, ToastDuration.Long).Show();
 
             return;
         }
@@ -187,7 +164,7 @@ public partial class MainPage : ContentPage
 
         await Task.Delay(1000);
 
-        foreach (KeyValuePair<string, List<CealHostRule>?> cealHostRulesPair in CealHostRulesDict)
+        foreach (KeyValuePair<string, List<CealHostRule?>?> cealHostRulesPair in CealHostRulesDict)
             if (cealHostRulesPair.Key != selectedHostRule.Name)
                 selectedHostIndex -= cealHostRulesPair.Value?.Count ?? 0;
             else
@@ -208,13 +185,13 @@ public partial class MainPage : ContentPage
         CealHostRule selectedHostRule = (CealHostRule)senderImageButton.BindingContext;
         int selectedHostIndex = MainPres.CealHostRulesCollection.IndexOf(selectedHostRule);
 
-        foreach (KeyValuePair<string, List<CealHostRule>?> cealHostRulesPair in CealHostRulesDict)
+        foreach (KeyValuePair<string, List<CealHostRule?>?> cealHostRulesPair in CealHostRulesDict)
             if (cealHostRulesPair.Key != selectedHostRule.Name)
                 selectedHostIndex -= cealHostRulesPair.Value?.Count ?? 0;
             else
                 break;
 
-        CealHostRule cealHostRule = CealHostRulesDict[selectedHostRule.Name!]![selectedHostIndex];
+        CealHostRule cealHostRule = CealHostRulesDict[selectedHostRule.Name!]![selectedHostIndex]!;
 
         await Clipboard.Default.SetTextAsync(JsonSerializer.Serialize<object?[]>([JsonSerializer.Deserialize<string[]>(cealHostRule.Domains)!, cealHostRule.Sni, cealHostRule.Ip]));
         await Toast.Make(MainConst._HostCopiedToastMsg).Show();
@@ -417,8 +394,12 @@ public partial class MainPage : ContentPage
 
             foreach (JsonElement cealHostRule in cealHostArray.EnumerateArray())
             {
-                if (cealHostRule[0].EnumerateArray().Any(cealHostDomain => string.IsNullOrEmpty(cealHostDomain.GetString()?.Trim().TrimStart('#').TrimStart('$'))))
+                if (!CealHostRuleValidator.IsValid(cealHostRule))
+                {
+                    CealHostRulesDict[cealHostName]!.Add(null);
+
                     continue;
+                }
 
                 string cealHostDomains = cealHostRule[0].ToString();
                 string? cealHostSni = cealHostRule[1].GetString()?.Trim();
@@ -430,24 +411,34 @@ public partial class MainPage : ContentPage
         catch { CealHostRulesDict[cealHostName] = null; }
         finally
         {
-            List<CealHostRule> cealHostRulesList = [];
+            List<CealHostRule?> cealHostRulesList = [];
             string hostRules = string.Empty;
             string hostResolverRules = string.Empty;
             int emptySniIndex = 0;
 
-            foreach (KeyValuePair<string, List<CealHostRule>?> cealHostRulesPair in CealHostRulesDict)
-                foreach (CealHostRule cealHostRule in cealHostRulesPair.Value ?? [])
+            foreach (KeyValuePair<string, List<CealHostRule?>?> cealHostRulesPair in CealHostRulesDict)
+                foreach (CealHostRule? cealHostRule in cealHostRulesPair.Value ?? [])
                 {
+                    if (cealHostRule == null)
+                    {
+                        cealHostRulesList.Add(null);
+
+                        continue;
+                    }
+
                     string[] cealHostDomainArray = JsonSerializer.Deserialize<string[]>(cealHostRule.Domains)!;
                     string cealHostDomains = string.Empty;
                     string cealHostSniWithoutEmpty = string.IsNullOrEmpty(cealHostRule.Sni) ? $"{cealHostRulesPair.Key}{emptySniIndex++}" : cealHostRule.Sni;
+                    bool isCealHostDomainArrayContainsValidDomain = false;
 
                     foreach (string cealHostDomain in cealHostDomainArray)
                     {
                         cealHostDomains += cealHostDomain + ',';
 
-                        if (cealHostDomain.StartsWith('$'))
+                        if (cealHostDomain.StartsWith('$') || cealHostDomain.StartsWith('^'))
                             continue;
+
+                        isCealHostDomainArrayContainsValidDomain = true;
 
                         string[] cealHostDomainPair = cealHostDomain.Split('^', 2, StringSplitOptions.TrimEntries);
 
@@ -457,7 +448,7 @@ public partial class MainPage : ContentPage
 
                     cealHostRulesList.Add(new(cealHostRulesPair.Key, cealHostDomains.TrimEnd(','), string.IsNullOrEmpty(cealHostRule.Sni) ? "--" : cealHostRule.Sni, cealHostRule.Ip));
 
-                    if (!string.IsNullOrEmpty(hostRules))
+                    if (isCealHostDomainArrayContainsValidDomain)
                         hostResolverRules += $"MAP {cealHostSniWithoutEmpty} {cealHostRule.Ip},";
                 }
 
@@ -471,7 +462,7 @@ public partial class MainPage : ContentPage
             {
                 await CommandLineWriter.Write(MainPres.BrowserName!, App.CealArgs, MainPres.ExtraArgs.Trim());
 
-                (MainPres.IsCommandLineUtd, string newStatusMessage) = await StatusManager.RefreshCurrentStatus(CealHostRulesDict.ContainsValue(null));
+                (MainPres.IsCommandLineUtd, string newStatusMessage) = await StatusManager.RefreshCurrentStatus(CealHostRulesDict.Values.Any(cealHostRules => cealHostRules == null || cealHostRules.Any(cealHostRule => cealHostRule == null)));
 
                 if (KaomojiRunningCount == 0)
                     MainPres.StatusMessage = newStatusMessage;

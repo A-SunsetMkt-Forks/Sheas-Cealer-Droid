@@ -140,6 +140,9 @@
   <data name="GithubToolbarItemTooltip" xml:space="preserve">
     <value>点击跳转开源地址</value>
   </data>
+  <data name="HostErrorLabelText" xml:space="preserve">
+    <value>无法解析的规则</value>
+  </data>
   <data name="LaunchImageButtonActiveTooltip" xml:space="preserve">
     <value>点击停止伪造</value>
   </data>
@@ -192,13 +195,10 @@
   <data name="_AddHostPopupTitle" xml:space="preserve">
     <value>添加规则</value>
   </data>
-  <data name="_CustomHostEmptyErrorToastMsg" xml:space="preserve">
-    <value>域名匹配为空，无效规则 ❌</value>
-  </data>
-  <data name="_CustomHostFormatErrorToastMsg" xml:space="preserve">
+  <data name="_CustomHostErrorToastMsg" xml:space="preserve">
     <value>规则格式错误，无法解析 ❌</value>
   </data>
-  <data name="_CustomHostSyntaxErrorToastMsg" xml:space="preserve">
+  <data name="_CustomHostInvalidToastMsg" xml:space="preserve">
     <value>Json 语法错误，无法解析 ❌</value>
   </data>
   <data name="_DelayTestErrorToastMsg" xml:space="preserve">

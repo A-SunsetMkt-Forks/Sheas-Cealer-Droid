@@ -88,7 +88,7 @@ public partial class ToolPage : ContentPage
                 return;
             }
 
-            if (ReservedIpChecker.IsReversedIp(pingTestIp))
+            if (ReservedIpChecker.IsReversed(pingTestIp))
             {
                 await Toast.Make(ToolConst._PingTestReversedToastMsg).Show();
 
@@ -133,7 +133,7 @@ public partial class ToolPage : ContentPage
 
         if (!IPAddress.TryParse(reserveCheckHost, out IPAddress? reserveCheckIp))
             await Toast.Make(ToolConst._ReserveCheckInvalidToastMsg).Show();
-        else if (ReservedIpChecker.IsReversedIp(reserveCheckIp))
+        else if (ReservedIpChecker.IsReversed(reserveCheckIp))
             await Toast.Make(ToolConst._ReserveCheckReversedToastMsg).Show();
         else
             await Toast.Make(ToolConst._ReserveCheckNonreversedToastMsg).Show();

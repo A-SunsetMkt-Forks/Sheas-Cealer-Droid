@@ -8,5 +8,5 @@ internal static class StatusManager
 {
     internal static async Task<(bool? isCommandLineUtd, string statusMessage)> RefreshCurrentStatus(bool cealHostRulesDictContainNull = false) =>
         string.IsNullOrWhiteSpace(await File.ReadAllTextAsync(GlobalConst.CommandLinePath).ConfigureAwait(false)) ?
-                (null, MainConst._InactiveStatusMessage) : (true, cealHostRulesDictContainNull ? MainConst._PartialStatusMessage : MainConst._ActiveStatusMessage);
+            (null, MainConst._InactiveStatusMessage) : (true, cealHostRulesDictContainNull ? MainConst._PartialStatusMessage : MainConst._ActiveStatusMessage);
 }

@@ -92,29 +92,20 @@ namespace Sheas_Cealer_Droid.Consts {
         }
         
         /// <summary>
-        ///   查找类似 Empty domain filter. Host Invalid ❌ 的本地化字符串。
-        /// </summary>
-        internal static string _CustomHostEmptyErrorToastMsg {
-            get {
-                return ResourceManager.GetString("_CustomHostEmptyErrorToastMsg", resourceCulture);
-            }
-        }
-        
-        /// <summary>
         ///   查找类似 Invalid host format. Parsing failed ❌ 的本地化字符串。
         /// </summary>
-        internal static string _CustomHostFormatErrorToastMsg {
+        internal static string _CustomHostErrorToastMsg {
             get {
-                return ResourceManager.GetString("_CustomHostFormatErrorToastMsg", resourceCulture);
+                return ResourceManager.GetString("_CustomHostErrorToastMsg", resourceCulture);
             }
         }
         
         /// <summary>
         ///   查找类似 Invalid json syntax. Parsing failed ❌ 的本地化字符串。
         /// </summary>
-        internal static string _CustomHostSyntaxErrorToastMsg {
+        internal static string _CustomHostInvalidToastMsg {
             get {
-                return ResourceManager.GetString("_CustomHostSyntaxErrorToastMsg", resourceCulture);
+                return ResourceManager.GetString("_CustomHostInvalidToastMsg", resourceCulture);
             }
         }
         
@@ -268,6 +259,15 @@ namespace Sheas_Cealer_Droid.Consts {
         internal static string GithubToolbarItemTooltip {
             get {
                 return ResourceManager.GetString("GithubToolbarItemTooltip", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   查找类似 Unparsable Host 的本地化字符串。
+        /// </summary>
+        internal static string HostErrorLabelText {
+            get {
+                return ResourceManager.GetString("HostErrorLabelText", resourceCulture);
             }
         }
         

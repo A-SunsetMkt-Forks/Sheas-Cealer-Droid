@@ -140,6 +140,9 @@
   <data name="GithubToolbarItemTooltip" xml:space="preserve">
     <value>Tap to open my github repo</value>
   </data>
+  <data name="HostErrorLabelText" xml:space="preserve">
+    <value>Unparsable Host</value>
+  </data>
   <data name="LaunchImageButtonActiveTooltip" xml:space="preserve">
     <value>Tap to stop cealing</value>
   </data>
@@ -192,13 +195,10 @@ Example: [["*example.com"],"","23.215.0.136"]
   <data name="_AddHostPopupTitle" xml:space="preserve">
     <value>Add Host</value>
   </data>
-  <data name="_CustomHostEmptyErrorToastMsg" xml:space="preserve">
-    <value>Empty domain filter. Host Invalid ❌</value>
-  </data>
-  <data name="_CustomHostFormatErrorToastMsg" xml:space="preserve">
+  <data name="_CustomHostErrorToastMsg" xml:space="preserve">
     <value>Invalid host format. Parsing failed ❌</value>
   </data>
-  <data name="_CustomHostSyntaxErrorToastMsg" xml:space="preserve">
+  <data name="_CustomHostInvalidToastMsg" xml:space="preserve">
     <value>Invalid json syntax. Parsing failed ❌</value>
   </data>
   <data name="_DelayTestErrorToastMsg" xml:space="preserve">

@@ -34,7 +34,7 @@ internal abstract partial class GlobalPres : ObservableObject
     }
 
     [ObservableProperty]
-    private static ObservableCollection<CealHostRule> cealHostRulesCollection = [];
+    private static ObservableCollection<CealHostRule?> cealHostRulesCollection = [];
 
     private static readonly ObservableCollection<string> browserNameCollection = (Preferences.Default.ContainsKey(nameof(BrowserNameCollection)) ? JsonSerializer.Deserialize<ObservableCollection<string>>(Preferences.Default.Get(nameof(BrowserNameCollection), string.Empty)) : GlobalConst.DefaultBrowserNameCollection)!;
     [SuppressMessage("Performance", "CA1822"), SuppressMessage("CodeQuality", "IDE0079")]

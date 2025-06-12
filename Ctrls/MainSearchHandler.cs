@@ -4,7 +4,7 @@ using System;
 using System.Collections.ObjectModel;
 using System.Linq;
 
-namespace Sheas_Cealer_Droid.Handlers;
+namespace Sheas_Cealer_Droid.Ctrls;
 
 internal class MainSearchHandler : SearchHandler
 {

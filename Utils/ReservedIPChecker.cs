@@ -5,7 +5,7 @@ namespace Sheas_Cealer_Droid.Utils;
 
 internal static class ReservedIpChecker
 {
-    internal static bool IsReversedIp(IPAddress ip)
+    internal static bool IsReversed(IPAddress ip)
     {
         byte[] ipByteArray = ip.GetAddressBytes();
 
