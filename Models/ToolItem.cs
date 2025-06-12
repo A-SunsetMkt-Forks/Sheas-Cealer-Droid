@@ -5,6 +5,6 @@ namespace Sheas_Cealer_Droid.Models;
 internal class ToolItem
 {
     public string Title { get; init; } = string.Empty;
-    public ImageButton? Button { get; init; }
+    public ImageButton Button { get; init; } = null!;
     public string? Content { get; init; } = null;
 }
