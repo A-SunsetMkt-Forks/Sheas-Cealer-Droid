@@ -34,6 +34,8 @@
 ## Roadmap
 1. Add batch import export copy and test Local Host file function
 2. Add Local Host drag and sort function
+3. Add temporarily disabling or enabling specified rules function
+4. Add progressive disclosure of feedback state for some buttons
 
 ## Principles
 Using the startup parameter feature of the Chromium kernel to conceal SNI. For more details, please refer to [this article](https://nicebowl.fun/24_8)
