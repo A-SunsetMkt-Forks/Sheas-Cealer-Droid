@@ -11,7 +11,8 @@
     <Shell.SearchHandler>
         <ctrls:MainSearchHandler SearchCollection="{Binding CealHostRulesCollection}"
                                  SearchBoxVisibility="{Binding IsSearchEnabled, Converter={x:Static convs:MainConv.MainSearchHandlerSearchBoxVisibilityConv}}"
-                                 QueryIcon="search_icon.png" ClearIcon="clear_icon.png"
+                                 QueryIcon="{AppThemeBinding Light=search_icon.png, Dark=search_dark_icon.png}"
+                                 ClearIcon="{AppThemeBinding Light=clear_icon.png, Dark=clear_dark_icon.png}"
                                  QueryIconName="{x:Static consts:MainMultilangConst.MainSearchHandlerQueryIconName}"
                                  ClearIconName="{x:Static consts:MainMultilangConst.MainSearchHandlerClearIconName}"
                                  Placeholder="{x:Static consts:MainMultilangConst.MainSearchHandlerPlaceholder}"
