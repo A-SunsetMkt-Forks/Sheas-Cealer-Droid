@@ -53,12 +53,12 @@ public partial class MainPage : ContentPage
             AddImageButton.TranslationY = 60;
             new AddImageButtonSlideAnim(AddImageButton, AddImageButtonSlideAnim.SlideType.In).Commit(this, nameof(AddImageButton) + nameof(AddImageButtonSlideAnim), 8, 1000);
 
-            CealHostWatcher.Changed += CealHostWatcher_Changed;
-
             if (!File.Exists(MainConst.UpstreamHostPath))
                 await File.Create(MainConst.UpstreamHostPath).DisposeAsync();
             if (!File.Exists(MainConst.LocalHostPath))
                 await File.Create(MainConst.LocalHostPath).DisposeAsync();
+
+            CealHostWatcher.Changed += CealHostWatcher_Changed;
 
             foreach (string cealHostPath in Directory.GetFiles(CealHostWatcher.Path, CealHostWatcher.Filter))
                 CealHostWatcher_Changed(null!, new(new(), Path.GetDirectoryName(cealHostPath)!, Path.GetFileName(cealHostPath)));
