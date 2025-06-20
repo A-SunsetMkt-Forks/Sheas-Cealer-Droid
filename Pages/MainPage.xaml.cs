@@ -53,12 +53,17 @@ public partial class MainPage : ContentPage
             AddImageButton.TranslationY = 60;
             new AddImageButtonSlideAnim(AddImageButton, AddImageButtonSlideAnim.SlideType.In).Commit(this, nameof(AddImageButton) + nameof(AddImageButtonSlideAnim), 8, 1000);
 
+            Directory.CreateDirectory(MainConst.AppDataPath);
             if (!File.Exists(MainConst.UpstreamHostPath))
                 await File.Create(MainConst.UpstreamHostPath).DisposeAsync();
             if (!File.Exists(MainConst.LocalHostPath))
                 await File.Create(MainConst.LocalHostPath).DisposeAsync();
 
             CealHostWatcher.Changed += CealHostWatcher_Changed;
+            CealHostWatcher.Created += CealHostWatcher_Changed;
+            CealHostWatcher.Deleted += CealHostWatcher_Changed;
+            CealHostWatcher.Renamed += CealHostWatcher_Renamed;
+            CealHostWatcher.Error += CealHostWatcher_Error;
 
             foreach (string cealHostPath in Directory.GetFiles(CealHostWatcher.Path, CealHostWatcher.Filter))
                 CealHostWatcher_Changed(null!, new(new(), Path.GetDirectoryName(cealHostPath)!, Path.GetFileName(cealHostPath)));
@@ -384,6 +389,13 @@ public partial class MainPage : ContentPage
 
             CealHostRulesDict[cealHostName] = [];
 
+            if (!File.Exists(e.FullPath))
+            {
+                CealHostRulesDict.Remove(cealHostName);
+
+                return;
+            }
+
             string cealHost = await File.ReadAllTextAsync(e.FullPath);
 
             if (cealHost.Length == 0)
@@ -471,4 +483,10 @@ public partial class MainPage : ContentPage
             }
         }
     }
+    private void CealHostWatcher_Renamed(object sender, RenamedEventArgs e)
+    {
+        CealHostWatcher_Changed(null!, new(new(), Path.GetDirectoryName(e.OldFullPath)!, e.OldName));
+        CealHostWatcher_Changed(null!, new(new(), Path.GetDirectoryName(e.FullPath)!, e.Name));
+    }
+    private void CealHostWatcher_Error(object sender, ErrorEventArgs e) => throw e.GetException();
 }
