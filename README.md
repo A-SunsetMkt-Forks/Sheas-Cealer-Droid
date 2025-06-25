@@ -6,7 +6,7 @@
 [English README](README_EN.md)
 
 ## 自我介绍
-**Cealer (Sheas Cealer Droid)**: 一只基于 **MAUI(.Net9)** 的 SNI 伪造工具
+**Cealer (Sheas Cealer Droid)**: 一只基于 **MAUI(.Net9)** 的移动端 SNI 伪造工具
 
 * 适用平台: Android (其他平台请参考[相关项目](https://github.com/SpaceTimee/Sheas-Cealer-Droid#相关项目))
 

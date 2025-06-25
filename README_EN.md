@@ -6,7 +6,7 @@
 [中文 README](README.md)
 
 ## About
-**Cealer (Sheas Cealer Droid)**: A SNI concealing tool based on **MAUI(.Net9)**
+**Cealer (Sheas Cealer Droid)**: A mobile SNI concealing tool based on **MAUI(.Net9)**
 
 * Applicable platform: Android (For other system, please refer to [Projects](https://github.com/SpaceTimee/Sheas-Cealer-Droid#Projects))
 
