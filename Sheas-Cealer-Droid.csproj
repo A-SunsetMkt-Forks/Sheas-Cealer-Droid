@@ -10,12 +10,12 @@
 		<PackageReleaseNotes>Ceal It</PackageReleaseNotes>
 		<Authors>Space Time</Authors>
 		<Company>SpaceTime Studio</Company>
-		<AssemblyVersion>1.0.1</AssemblyVersion>
-		<Version>1.0.1</Version>
-		<FileVersion>1.0.1</FileVersion>
-		<InformationalVersion>1.0.1</InformationalVersion>
-		<ApplicationDisplayVersion>1.0.1</ApplicationDisplayVersion>
-		<ApplicationVersion>2</ApplicationVersion>
+		<AssemblyVersion>1.0.2</AssemblyVersion>
+		<Version>1.0.2</Version>
+		<FileVersion>1.0.2</FileVersion>
+		<InformationalVersion>1.0.2</InformationalVersion>
+		<ApplicationDisplayVersion>1.0.2</ApplicationDisplayVersion>
+		<ApplicationVersion>3</ApplicationVersion>
 		<PackageTags>Tool;Sheas;Cealer;Droid;Sni</PackageTags>
 		<PackageIcon>Sheas Cealer Droid Logo.png</PackageIcon>
 		<PackageReadmeFile>README.md</PackageReadmeFile>
