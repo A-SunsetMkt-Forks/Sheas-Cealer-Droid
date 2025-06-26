@@ -8,7 +8,7 @@
 ## About
 **Cealer (Sheas Cealer Droid)**: A mobile SNI concealing tool based on **MAUI(.Net9)**
 
-* Applicable platform: Android (For other system, please refer to [Projects](https://github.com/SpaceTimee/Sheas-Cealer-Droid#Projects))
+* Applicable platform: Android (For more platforms, please refer to [Projects](https://github.com/SpaceTimee/Sheas-Cealer-Droid#Projects))
 
 ## Vocabulary
 **[Cealer Dict](https://github.com/SpaceTimee/Sheas-Cealer-Droid/wiki/Cealer-Dict)**
@@ -54,7 +54,7 @@ Using the startup parameter feature of the Chromium kernel to conceal SNI. For m
 
 ## Projects
 1. [Sheas Cealer](https://github.com/SpaceTimee/Sheas-Cealer): Sheas Cealer for Windows
-2. [Sheas Cealer Nix](https://github.com/SpaceTimee/Sheas-Cealer/tree/nix): Sheas Cealer cross-platform branch
+2. [Sheas Cealer Nix](https://github.com/SpaceTimee/Sheas-Cealer/tree/nix): Sheas Cealer cross-platform for desktop
 3. [Cealing Host](https://github.com/SpaceTimee/Cealing-Host): The latest Built-in Cealing Host
 4. [Sheas Dop](https://github.com/SpaceTimee/Sheas-Dop): DNS anti-pollution resolution tool (Sheas Cealer Global Cealing subproject)
 5. [Sheas Nginx](https://github.com/SpaceTimee/Sheas-Nginx): Pixiv Nginx launcher (Sheas Cealer Global Purging × Pixiv Nginx cooperative subproject)

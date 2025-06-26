@@ -54,7 +54,7 @@
 
 ## 相关项目
 1. [Sheas Cealer](https://github.com/SpaceTimee/Sheas-Cealer): Sheas Cealer Windows 端
-2. [Sheas Cealer Nix](https://github.com/SpaceTimee/Sheas-Cealer/tree/nix): Sheas Cealer 跨平台分支
+2. [Sheas Cealer Nix](https://github.com/SpaceTimee/Sheas-Cealer/tree/nix): Sheas Cealer 跨平台桌面端
 3. [Cealing Host](https://github.com/SpaceTimee/Cealing-Host): 最新的 Sheas Cealer 内置伪造规则
 4. [Sheas Dop](https://github.com/SpaceTimee/Sheas-Dop): DNS 抗污染解析工具 (Sheas Cealer 全局净化子项目)
 5. [Sheas Nginx](https://github.com/SpaceTimee/Sheas-Nginx): Pixiv Nginx 启动器 (Sheas Cealer 全局伪造 × Pixiv Nginx 合作子项目)
